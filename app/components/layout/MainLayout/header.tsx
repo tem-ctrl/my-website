@@ -6,6 +6,7 @@ import { IoMdMoon } from 'react-icons/io';
 import { BsFillSunFill } from 'react-icons/bs';
 import { PAGES } from '@/app/config';
 import NavLink from '@/app/components/common/NavLink';
+import Link from 'next/link';
 
 const Header: FC = () => {
 	const { systemTheme, theme, setTheme } = useTheme();
@@ -21,7 +22,7 @@ const Header: FC = () => {
 
 		return (
 			<button
-				className="text-primary"
+				className="text-xl"
 				onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
 			>
 				{currentTheme === 'dark' ? <BsFillSunFill /> : <IoMdMoon />}
@@ -31,13 +32,15 @@ const Header: FC = () => {
 
 	return (
 		<header className="flex justify-between items-center h-[50px] w-full">
-			<h2>Temgoua</h2>
-			<nav className="flex gap-5 pr-10">
+			<div className="flex justify-center items-center">
+				<Link href={PAGES.home}>Temgoua</Link>
+			</div>
+			<nav className="flex gap-5 pr-5">
 				<NavLink href={PAGES.home} text="Accueil" />
-				<NavLink href={PAGES.blog} text="Blog" />
 				<NavLink href={PAGES.projects} text="Projects" />
+				<NavLink href={PAGES.blog} text="Blog" />
 				<NavLink href={PAGES.contact} text="Contact" />
-				<span>{renderThemeChanger()}</span>
+				<div className="w-[30px]">{renderThemeChanger()}</div>
 			</nav>
 		</header>
 	);
