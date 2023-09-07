@@ -17,11 +17,6 @@ const config: Config = {
 				smm: { max: '767px' },
 				mdm: { max: '1023px' },
 			},
-			// backgroundImage: {
-			//   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-			//   'gradient-conic':
-			//     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-			// },
 			colors: {
 				primaryLight: '#020202',
 				secondaryLight: '#fff',
