@@ -26,9 +26,9 @@ const HomePage = () => {
 				<p>I'm a passionate web developer based in Yaounde, Cameroon</p>
 				<p>
 					I strive to build impactful and attractive web applications leveraging <br />
-					best code standards and technologies.
+					best code standards and latest technologies.
 				</p>
-				<div className="flex justify-center items-center gap-5">
+				<div className="flex justify-center items-center gap-5 mt-5">
 					<PrimaryButton
 						onClick={() => router.replace(PAGES.aboutMe)}
 						text="MORE ABOUT ME"

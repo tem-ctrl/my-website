@@ -31,7 +31,7 @@ const Header: FC = () => {
 	};
 
 	return (
-		<header className="flex justify-between items-center h-[60px] w-full px-10 shadow-sm shadow-gray-300 dark:shadow-gray-800">
+		<header className="fixed bg-opacity-100 z-10 top-0 flex justify-between items-center h-[60px] w-full px-10 shadow-sm shadow-gray-300 dark:shadow-gray-800">
 			<div className="flex justify-center items-center">
 				<Link href={PAGES.home}>Temgoua</Link>
 			</div>

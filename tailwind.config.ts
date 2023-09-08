@@ -23,7 +23,7 @@ const config: Config = {
         linear-gradient(to right, #000000 30%, #161201be, #524210cc),',
 			},
 			colors: {
-				primary: '#8a2be2',
+				primary: '#8a2be2', // purple
 				bgLight: '#eff0f3',
 				light: '#202020',
 				secondaryLight: '#fff',
