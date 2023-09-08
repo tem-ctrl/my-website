@@ -24,9 +24,7 @@ interface RootLayoutProps {
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
 	return (
 		<html lang="en">
-			<body
-				className={`${roboto.className} min-h-[98dvh] overflow-scroll scrollbar-track-blue-500 scrollbar-thumb-white bg-white dark:bg-black text-primaryLight dark:text-primaryDark`}
-			>
+			<body className={`${roboto.className} bg-white dark:bg-black text-light dark:text-dark`}>
 				<Providers>
 					<Header />
 					{children}

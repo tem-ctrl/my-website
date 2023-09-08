@@ -36,7 +36,8 @@ const Header: FC = () => {
 				<Link href={PAGES.home}>Temgoua</Link>
 			</div>
 			<nav className="flex gap-5 pr-5">
-				<NavLink href={PAGES.home} text="Accueil" />
+				<NavLink href={PAGES.home} text="Home" />
+				<NavLink href={PAGES.aboutMe} text="About Me" />
 				<NavLink href={PAGES.projects} text="Projects" />
 				<NavLink href={PAGES.blog} text="Blog" />
 				<NavLink href={PAGES.contact} text="Contact" />

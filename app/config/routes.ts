@@ -3,4 +3,5 @@ export const PAGES = {
 	blog: '/blog',
 	projects: '/projects',
 	contact: '/contact',
+	aboutMe: '/about-me',
 };

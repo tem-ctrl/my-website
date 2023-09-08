@@ -18,11 +18,11 @@ const config: Config = {
 				mdm: { max: '1023px' },
 			},
 			colors: {
-				primaryLight: '#020202',
+				light: '#020202',
 				secondaryLight: '#fff',
 				tertiaryLight: '#fff',
 
-				primaryDark: '#efefef',
+				dark: '#efefef',
 				secondaryDark: '#fff',
 				tertiaryDark: '#fff',
 			},
