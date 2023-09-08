@@ -15,7 +15,7 @@ const PrimaryButton: FC<PrimaryButtonProps> = ({
 }) => {
 	return (
 		<button
-			className={`${className} text-white font-medium rounded-full h-10 px-5 flex justify-center items-center gap-3 bg-yellow-500 hover:bg-yellow-600`}
+			className={`${className} text-white font-medium rounded-full h-10 px-5 flex justify-center items-center gap-3 bg-primary/90 hover:bg-primary`}
 			onClick={onClick}
 		>
 			<span>{icon}</span>

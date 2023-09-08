@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import { FC } from 'react';
 import Providers from '@/app/components/layout/Providers';
-import Header from '@/app/components/layout/MainLayout/Header';
+import Header from '@/app/components/layout/Header';
 // import Footer from '@/app/components/layout/MainLayout/Footer';
 
 const roboto = Roboto({
@@ -24,7 +24,7 @@ interface RootLayoutProps {
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
 	return (
 		<html lang="en">
-			<body className={`${roboto.className} bg-white dark:bg-black text-light dark:text-dark`}>
+			<body className={`${roboto.className} bg-bgLight dark:bg-bgDark text-light dark:text-dark`}>
 				<Providers>
 					<Header />
 					{children}

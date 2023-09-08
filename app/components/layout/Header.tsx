@@ -22,7 +22,7 @@ const Header: FC = () => {
 
 		return (
 			<button
-				className="text-xl"
+				className="text-xl text-primary"
 				onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
 			>
 				{currentTheme === 'dark' ? <BsFillSunFill /> : <IoMdMoon />}
@@ -31,11 +31,11 @@ const Header: FC = () => {
 	};
 
 	return (
-		<header className="flex justify-between items-center h-[60px] w-full px-10 shadow-sm shadow-gray-100 dark:shadow-gray-800">
+		<header className="flex justify-between items-center h-[60px] w-full px-10 shadow-sm shadow-gray-300 dark:shadow-gray-800">
 			<div className="flex justify-center items-center">
 				<Link href={PAGES.home}>Temgoua</Link>
 			</div>
-			<nav className="flex gap-5">
+			<nav className="flex gap-5 items-center">
 				<NavLink href={PAGES.home} text="Home" />
 				<NavLink href={PAGES.aboutMe} text="About Me" />
 				<NavLink href={PAGES.projects} text="Projects" />
