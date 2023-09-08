@@ -17,6 +17,11 @@ const config: Config = {
 				smm: { max: '767px' },
 				mdm: { max: '1023px' },
 			},
+			backgroundImage: {
+				radialBg:
+					'linear-gradient(1turn, #000000 7.5%, #3f361617 20%, #0c0c0c6c),\
+        linear-gradient(to right, #000000 30%, #161201be, #524210cc),',
+			},
 			colors: {
 				light: '#020202',
 				secondaryLight: '#fff',

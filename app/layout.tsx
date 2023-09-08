@@ -4,7 +4,7 @@ import { Roboto } from 'next/font/google';
 import { FC } from 'react';
 import Providers from '@/app/components/layout/Providers';
 import Header from '@/app/components/layout/MainLayout/Header';
-import Footer from '@/app/components/layout/MainLayout/Footer';
+// import Footer from '@/app/components/layout/MainLayout/Footer';
 
 const roboto = Roboto({
 	subsets: ['latin'],
@@ -28,7 +28,7 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
 				<Providers>
 					<Header />
 					{children}
-					<Footer />
+					{/* <Footer /> */}
 				</Providers>
 			</body>
 		</html>

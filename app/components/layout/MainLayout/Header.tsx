@@ -31,11 +31,11 @@ const Header: FC = () => {
 	};
 
 	return (
-		<header className="flex justify-between items-center h-[50px] w-full">
+		<header className="flex justify-between items-center h-[60px] w-full px-10 shadow-sm shadow-gray-100 dark:shadow-gray-800">
 			<div className="flex justify-center items-center">
 				<Link href={PAGES.home}>Temgoua</Link>
 			</div>
-			<nav className="flex gap-5 pr-5">
+			<nav className="flex gap-5">
 				<NavLink href={PAGES.home} text="Home" />
 				<NavLink href={PAGES.aboutMe} text="About Me" />
 				<NavLink href={PAGES.projects} text="Projects" />
