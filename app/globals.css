@@ -19,6 +19,17 @@
 	border: 0.2rem solid #fff;
 }
 
+.scrollbar-none::-webkit-scrollbar {
+	width: 0;
+}
+
 .hFill {
-  height: calc(100dvh - 60px);
+  min-height: calc(100dvh - 60px);
+  overflow-y: scroll;
+}
+
+@media all and (min-width: '768px') {
+  .hFill {
+    height: calc(100dvh - 60px);
+  }
 }

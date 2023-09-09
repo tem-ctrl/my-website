@@ -10,7 +10,9 @@ interface NavLinkProps {
 
 const NavLink: FC<NavLinkProps> = ({ className = '', href, text }) => {
 	const isActive = usePathname() === href;
-	const activeClass = isActive ? 'underline decoration-4 underline-offset-8 text-primary' : '';
+	const activeClass = isActive
+		? 'underline decoration-4 underline-offset-4 md:underline-offset-8 text-primary'
+		: '';
 
 	return (
 		<Link

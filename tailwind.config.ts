@@ -26,10 +26,11 @@ const config: Config = {
 				primary: '#8a2be2', // purple
 				bgLight: '#eff0f3',
 				light: '#202020',
-				secondaryLight: '#fff',
+				secondLight: '#fff',
 				tertiaryLight: '#fff',
 
 				bgDark: '#02030f',
+				bgDarkSecond: '#070023',
 				dark: '#efefef',
 				secondaryDark: '#fff',
 				tertiaryDark: '#fff',
