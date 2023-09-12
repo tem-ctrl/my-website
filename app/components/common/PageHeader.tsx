@@ -16,7 +16,7 @@ const PageHeader: FC<PageHeaderProps> = ({ className = '', simpleText, primaryTe
 
 			<div className="flex items-center justify-center gap-5 mt-5">
 				<div className="w-10 h-0.5 bg-primary" />
-				<p className="uppercase text-sm">{tagline}</p>
+				<p className="uppercase smm:text-sm">{tagline}</p>
 				<div className="w-10 h-0.5 bg-primary" />
 			</div>
 		</div>

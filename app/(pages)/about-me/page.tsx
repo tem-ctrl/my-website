@@ -16,15 +16,15 @@ const AboutPage = () => {
 				primaryText="Me"
 				tagline="I build well-crafted modern websites, I love what I do"
 			/>
-			<div className="flex items-start w-full pt-3">
-				<div className="w-2/5 flex items-start justify-center">
+			<div className="flex smm:flex-col smm:items-center items-start w-full md:pt-3">
+				<div className="w-100px md:w-2/5 flex md:items-start justify-center">
 					<img
 						src="/assets/images/me.png"
 						alt="Gilbert Temgoua"
-						className="h-[400px] object-fill scale-x-[-1]"
+						className="h-[200px] md:h-[400px] object-fill scale-x-[-1]"
 					/>
 				</div>
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-lg">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-lg smm:mt-5">
 					<div className="col-span-1 flex flex-col gap-4">
 						<p>
 							First Name: <i>Gilbert</i>
@@ -47,12 +47,6 @@ const AboutPage = () => {
 						<p>
 							City: <i>Yaounde</i>
 						</p>
-						<PrimaryButton
-							text="DOWNLOAD MY CV"
-							onClick={() => {}}
-							icon={<FaDownload />}
-							className="!w-fit text-sm"
-						/>
 					</div>
 					<div className="col-span-1 flex flex-col gap-4">
 						<p>
@@ -71,10 +65,16 @@ const AboutPage = () => {
 							Willing to relocate to: <i>Anywhere</i>
 						</p>
 					</div>
+					<PrimaryButton
+						text="DOWNLOAD MY CV"
+						onClick={() => {}}
+						icon={<FaDownload />}
+						className="!w-fit text-sm col-span-full smm:justify-self-center"
+					/>
 				</div>
 			</div>
 			<Separator />
-			<div className="flex items-start justify-start gap-10">
+			<div className="flex smm:flex-col items-start justify-start gap-10">
 				<TimelineBlock title="Experience">
 					<TimelineItem
 						startDate="Apr 2023"
@@ -124,7 +124,7 @@ const AboutPage = () => {
 			<Separator />
 			<section className="w-full">
 				<h2 className="uppercase text-2xl mb-16">Skills</h2>
-				<div className="grid grid-cols-3 gap-x-8 gap-y-20 w-full">
+				<div className="grid md:grid-cols-3 gap-x-8 gap-y-20 w-full">
 					<SkillItem skill="HTML" value={90} />
 					<SkillItem skill="CSS" value={80} />
 					<SkillItem skill="JavaScript" value={80} />
