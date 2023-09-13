@@ -30,7 +30,7 @@ export const EXPERIENCE: TimelineItemProps[] = [
 			'Help new comers in getting involved in the projects',
 		],
 	},
-] as const;
+];
 
 export const EDUCATION: TimelineItemProps[] = [
 	{
@@ -58,7 +58,7 @@ export const EDUCATION: TimelineItemProps[] = [
 		location: 'Dschang, Cameroon',
 		description: 'Bachelor degree in Physics (major: Electronics)',
 	},
-] as const;
+];
 
 export const SKILLS: SkillItemProps[] = [
 	{
@@ -105,7 +105,7 @@ export const SKILLS: SkillItemProps[] = [
 	//   skill: 'Laravel',
 	//   value: 30,
 	// },
-] as const;
+];
 
 export const MY_PERSONAL_INFO: InfoItemProps[] = [
 	{
@@ -133,7 +133,7 @@ export const MY_PERSONAL_INFO: InfoItemProps[] = [
 		label: 'City',
 		value: 'Yaounde',
 	},
-] as const;
+];
 
 export const MY_PROFESSIONAL_INFO: InfoItemProps[] = [
 	{
@@ -160,7 +160,7 @@ export const MY_PROFESSIONAL_INFO: InfoItemProps[] = [
 		label: 'Willing to relocate to',
 		value: 'Anywhere',
 	},
-] as const;
+];
 
 export const SOCIAL_MEDIA: SocialMediaProps[] = [
 	{
