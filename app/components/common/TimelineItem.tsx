@@ -1,16 +1,7 @@
+import { TimelineItemProps } from '@/app/utils/types';
 import React, { FC } from 'react';
 import { BiSolidCalendar } from 'react-icons/bi';
 import { MdLocationOn } from 'react-icons/md';
-
-interface TimelineItemProps {
-	className?: string;
-	startDate: string;
-	endDate?: string;
-	title: string;
-	place: string;
-	description: string | string[];
-	location: string;
-}
 
 const TimelineItem: FC<TimelineItemProps> = ({
 	className = '',

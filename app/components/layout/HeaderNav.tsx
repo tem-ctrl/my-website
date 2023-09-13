@@ -6,36 +6,12 @@ import { IoMdMoon } from 'react-icons/io';
 import { BsFillSunFill } from 'react-icons/bs';
 import { usePathname } from 'next/navigation';
 import { VscMenu, VscChromeClose } from 'react-icons/vsc';
-import { PAGES } from '@/app/config';
-import { CustomLink } from '@/app/utils/types';
 import NavLink from '@/app/components/common/NavLink';
+import { NAVLINKS } from '@/app/utils/constants';
 
 interface HeaderNavProps {
 	className?: string;
 }
-
-const navLinks: CustomLink[] = [
-	{
-		text: 'Home',
-		href: PAGES.home,
-	},
-	{
-		text: 'About Me',
-		href: PAGES.aboutMe,
-	},
-	{
-		text: 'Projects',
-		href: PAGES.projects,
-	},
-	{
-		text: 'Blog',
-		href: PAGES.blog,
-	},
-	{
-		text: 'Contact',
-		href: PAGES.contact,
-	},
-];
 
 const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 	const { systemTheme, theme, setTheme } = useTheme();
@@ -83,7 +59,7 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
           bg-bgLight dark:bg-bgDark smm:w-[120px] smm:pr-5 smm:pt-3 smm:pb-7 items-end md:items-center smm:absolute smm:top-[55px] smm:right-[-15px] smm:rounded-[4px] flex smm:flex-col justify-center gap-5 md:gap-6
         `}
 			>
-				{navLinks.map((link) => (
+				{NAVLINKS.map((link) => (
 					<NavLink {...link} key={link.text} />
 				))}
 			</div>

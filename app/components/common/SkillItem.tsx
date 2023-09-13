@@ -1,10 +1,5 @@
 import React, { FC } from 'react';
-
-interface SkillItemProps {
-	className?: string;
-	skill: string;
-	value: number; // Percentage
-}
+import { SkillItemProps } from '@/app/utils/types';
 
 const SkillItem: FC<SkillItemProps> = ({ className = '', skill, value = 50 }) => {
 	return (
