@@ -1,4 +1,6 @@
-import type { Metadata } from 'next';
+'use client';
+
+// import type { Metadata } from 'next';
 import InfoItem from '@/app/components/common/InfoItem';
 import PageHeader from '@/app/components/common/PageHeader';
 import Photo from '@/app/components/common/Photo';
@@ -18,18 +20,18 @@ import {
 } from '@/app/utils/constants';
 import { FaDownload } from 'react-icons/fa';
 import { PageProps } from '@/app/utils/types';
-import { getMessages } from '@/app/utils/getMessages';
-import { createTranslator } from 'next-intl';
+// import { getMessages } from '@/app/utils/getMessages';
+// import { createTranslator } from 'next-intl';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
-	const messages = await getMessages(locale);
-	const t = createTranslator({ locale, messages });
+// export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+// 	const messages = await getMessages(locale);
+// 	const t = createTranslator({ locale, messages });
 
-	return {
-		title: t('AboutPage.title'),
-		description: t('AboutPage.description'),
-	};
-};
+// 	return {
+// 		title: t('AboutPage.title'),
+// 		description: t('AboutPage.description'),
+// 	};
+// };
 
 const AboutPage = ({ params }: PageProps) => {
 	const locale = params.locale;
