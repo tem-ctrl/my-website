@@ -2,10 +2,11 @@ import '@/app/globals.css';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import { FC } from 'react';
-import Providers from '@/app/[locale]/components/layout/Providers';
-import Header from '@/app/[locale]/components/layout/Header';
-import { NextIntlClientProvider } from 'next-intl';
-import { notFound } from 'next/navigation';
+import Providers from '@/app/components/layout/Providers';
+import Header from '@/app/components/layout/Header';
+import { NextIntlClientProvider, createTranslator } from 'next-intl';
+import { PageProps } from '@/app/utils/types';
+import { getMessages } from '@/app/utils/getMessages';
 
 const roboto = Roboto({
 	subsets: ['latin'],
@@ -19,9 +20,14 @@ export function generateStaticParams(): Locale[] {
 	return [{ locale: 'en' }, { locale: 'fr' }];
 }
 
-export const metadata: Metadata = {
-	title: 'GTemgoua Portfolio',
-	description: "Gilbert Temgoua's development porfolio and personal website",
+export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+	const messages = await getMessages(locale);
+	const t = createTranslator({ locale, messages });
+
+	return {
+		title: t('RootLayout.title'),
+		description: t('RootLayout.description'),
+	};
 };
 
 interface RootLayoutProps {
@@ -30,13 +36,7 @@ interface RootLayoutProps {
 }
 
 const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
-	let messages;
-
-	try {
-		messages = (await import(`../../messages/${params.locale}.json`)).default;
-	} catch (error) {
-		notFound();
-	}
+	const messages = await getMessages(params.locale);
 
 	return (
 		<html lang={params.locale}>

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { PAGES } from '@/app/config';
 import Link from 'next/link';
-import HeaderNav from '@/app/[locale]/components/layout/HeaderNav';
+import HeaderNav from '@/app/components/layout/HeaderNav';
 
 const Header: FC = () => {
 	return (

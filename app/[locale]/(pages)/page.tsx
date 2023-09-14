@@ -1,14 +1,16 @@
 'use client';
 
-import PrimaryButton from '@/app/[locale]/components/common/PrimaryButton';
+import PrimaryButton from '@/app/components/common/PrimaryButton';
 import { PAGES } from '@/app/config';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next-intl/client';
 import { BsBriefcaseFill } from 'react-icons/bs';
 import { BiSolidUser } from 'react-icons/bi';
-import Photo from '@/app/[locale]/components/common/Photo';
+import Photo from '@/app/components/common/Photo';
+import { useLocale } from 'next-intl';
 
 const HomePage = () => {
 	const router = useRouter();
+	const locale = useLocale();
 
 	return (
 		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-10 hFill flex smm:flex-col items-center justify-start md:justify-center bg-radialBg">
@@ -26,12 +28,12 @@ const HomePage = () => {
 				</p>
 				<div className="smm:w-full flex justify-around md:justify-center items-center gap-2 md:gap-5 mt-5">
 					<PrimaryButton
-						onClick={() => router.push(PAGES.aboutMe)}
+						onClick={() => router.push(PAGES.aboutMe, { locale })}
 						text="MORE ABOUT ME"
 						icon={<BiSolidUser />}
 					/>
 					<PrimaryButton
-						onClick={() => router.push(PAGES.projects)}
+						onClick={() => router.push(PAGES.projects, { locale })}
 						text="MY PORTFOLIO"
 						icon={<BsBriefcaseFill />}
 					/>

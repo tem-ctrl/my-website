@@ -33,3 +33,5 @@ export interface SocialMediaProps {
 	bgColor: string;
 	name?: string;
 }
+
+export type PageProps = { params: { locale: string } };

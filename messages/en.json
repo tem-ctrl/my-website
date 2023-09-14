@@ -1,6 +1,37 @@
 {
-	"navLinks": {
+	"RootLayout": {
+		"title": "Home - Gilbert Temgoua: Web Developer",
+		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowlegde of the ReactJs and NextJS ecosystem. I'm open to work immediately."
+	},
+	"HomePage": {
+		"title": "Home - Gilbert Temgoua: Web Developer",
+		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowlegde of the ReactJs and NextJS ecosystem. I'm open to work immediately."
+	},
+	"AboutPage": {
+		"title": "About Me - Gilbert Temgoua: Web Developer",
+		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowlegde of the ReactJs and NextJS ecosystem. I'm open to work immediately."
+	},
+	"ProjectsPage": {
+		"title": "Projects - Gilbert Temgoua: Web Developer",
+		"description": "Discover few of the latest development projects I've realized entirely or partly."
+	},
+	"BlogPage": {
+		"title": "Blog - Gilbert Temgoua: Web Developer",
+		"description": "Here I share my experience with everyone willing to learn from my mistakes and my researchs."
+	},
+	"ContactPage": {
+		"title": "Contact - Gilbert Temgoua: Web Developer",
+		"description": "I'm always open to suggestions, critics, greetings and job offers."
+	},
+	"HeaderNav": {
 		"home": "home",
-		"about": "about me"
+		"about": "about me",
+		"blog": "Blog",
+		"projects": "Projetcs",
+		"contact": "Contact"
+	},
+	"LocaleSwitcher": {
+		"label": "Changer de langue",
+		"locale": "{locale, select, fr {Français} en {English} other {Unknown}}"
 	}
 }

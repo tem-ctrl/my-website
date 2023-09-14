@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
+import { usePathname } from 'next-intl/client';
+import Link from 'next-intl/link';
 
 interface NavLinkProps {
 	className?: string;
@@ -9,7 +9,9 @@ interface NavLinkProps {
 }
 
 const NavLink: FC<NavLinkProps> = ({ className = '', href, text }) => {
-	const isActive = usePathname() === href;
+	const pathname = usePathname();
+	const isActive = pathname === href;
+
 	const activeClass = isActive
 		? 'underline decoration-4 underline-offset-4 md:underline-offset-8 text-primary'
 		: '';

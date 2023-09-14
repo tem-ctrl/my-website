@@ -1,14 +1,15 @@
 'use client';
 
-import InfoItem from '@/app/[locale]/components/common/InfoItem';
-import PageHeader from '@/app/[locale]/components/common/PageHeader';
-import Photo from '@/app/[locale]/components/common/Photo';
-import PrimaryButton from '@/app/[locale]/components/common/PrimaryButton';
-// import SocialMedia from '@/app/[locale]/components/common/SacialMedia';
-import Separator from '@/app/[locale]/components/common/Separator';
-import SkillItem from '@/app/[locale]/components/common/SkillItem';
-import TimelineBlock from '@/app/[locale]/components/common/TimelineBlock';
-import TimelineItem from '@/app/[locale]/components/common/TimelineItem';
+import type { Metadata } from 'next';
+import InfoItem from '@/app/components/common/InfoItem';
+import PageHeader from '@/app/components/common/PageHeader';
+import Photo from '@/app/components/common/Photo';
+import PrimaryButton from '@/app/components/common/PrimaryButton';
+// import SocialMedia from '@/app/components/common/SacialMedia';
+import Separator from '@/app/components/common/Separator';
+import SkillItem from '@/app/components/common/SkillItem';
+import TimelineBlock from '@/app/components/common/TimelineBlock';
+import TimelineItem from '@/app/components/common/TimelineItem';
 import {
 	EDUCATION,
 	EXPERIENCE,
@@ -18,10 +19,22 @@ import {
 	// SOCIAL_MEDIA
 } from '@/app/utils/constants';
 import { FaDownload } from 'react-icons/fa';
-import { useState } from 'react';
+import { PageProps } from '@/app/utils/types';
+import { getMessages } from '@/app/utils/getMessages';
+import { createTranslator } from 'next-intl';
 
-const AboutPage = () => {
-	const [locale] = useState('en');
+export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+	const messages = await getMessages(locale);
+	const t = createTranslator({ locale, messages });
+
+	return {
+		title: t('AboutPage.title'),
+		description: t('AboutPage.description'),
+	};
+};
+
+const AboutPage = ({ params }: PageProps) => {
+	const locale = params.locale;
 
 	const downloadCV = () => {
 		if (typeof window == undefined) return;

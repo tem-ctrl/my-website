@@ -6,9 +6,11 @@ import { IoMdMoon } from 'react-icons/io';
 import { BsFillSunFill } from 'react-icons/bs';
 import { usePathname } from 'next/navigation';
 import { VscMenu, VscChromeClose } from 'react-icons/vsc';
-import NavLink from '@/app/[locale]/components/common/NavLink';
-import { NAVLINKS } from '@/app/utils/constants';
-// import LanguageSwitcher from '@/app/[locale]/components/common/LanguageSwitcher';
+import LocaleSwitcher from '@/app/components/layout/LocaleSwitcher';
+import NavLink from '@/app/components/common/NavLink';
+import { useTranslations } from 'next-intl';
+import { PAGES } from '@/app/config';
+import { CustomLink } from '@/app/utils/types';
 
 interface HeaderNavProps {
 	className?: string;
@@ -20,6 +22,30 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 	const pathName = usePathname();
 	const [showMenu, setShowMenu] = useState(false);
 	const menuRef = useRef<HTMLElement>(null);
+	const t = useTranslations('HeaderNav');
+
+	const navLinks: CustomLink[] = [
+		{
+			text: t('home'),
+			href: PAGES.home,
+		},
+		{
+			text: t('about'),
+			href: PAGES.aboutMe,
+		},
+		{
+			text: t('projects'),
+			href: PAGES.projects,
+		},
+		// {
+		// 	text: t('blog'),
+		// 	href: PAGES.blog,
+		// },
+		{
+			text: t('contact'),
+			href: PAGES.contact,
+		},
+	];
 
 	useEffect(() => {
 		setMounted(true);
@@ -60,12 +86,12 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
           bg-bgLight dark:bg-bgDark smm:w-[120px] smm:pr-5 smm:pt-3 smm:pb-7 items-end md:items-center smm:absolute smm:top-[55px] smm:right-[-15px] smm:rounded-[4px] flex smm:flex-col justify-center gap-5 md:gap-6
         `}
 			>
-				{NAVLINKS.map((link) => (
+				{navLinks.map((link) => (
 					<NavLink {...link} key={link.text} />
 				))}
 			</div>
-			<div className="w-[30px] mt-2">{renderThemeChanger()}</div>
-			{/* <LanguageSwitcher /> */}
+			<div className="w-[20px] flex items-center justify-center">{renderThemeChanger()}</div>
+			<LocaleSwitcher />
 			<button
 				className="p-1.5 md:hidden text-[24px] text-myPrimary md:p-2 rounded-full bg-primary text-white cursor-pointer"
 				onClick={() => setShowMenu(!showMenu)}

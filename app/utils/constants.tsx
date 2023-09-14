@@ -1,6 +1,4 @@
-import { PAGES } from '@/app/config';
 import {
-	CustomLink,
 	InfoItemProps,
 	SkillItemProps,
 	SocialMediaProps,
@@ -223,27 +221,4 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
 	// 	link: '',
 	// 	bgColor: 'bg-[#f76721]',
 	// },
-];
-
-export const NAVLINKS: CustomLink[] = [
-	{
-		text: 'Home',
-		href: PAGES.home,
-	},
-	{
-		text: 'About Me',
-		href: PAGES.aboutMe,
-	},
-	{
-		text: 'Projects',
-		href: PAGES.projects,
-	},
-	// {
-	// 	text: 'Blog',
-	// 	href: PAGES.blog,
-	// },
-	{
-		text: 'Contact',
-		href: PAGES.contact,
-	},
 ];
