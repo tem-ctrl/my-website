@@ -6,8 +6,9 @@ import { IoMdMoon } from 'react-icons/io';
 import { BsFillSunFill } from 'react-icons/bs';
 import { usePathname } from 'next/navigation';
 import { VscMenu, VscChromeClose } from 'react-icons/vsc';
-import NavLink from '@/app/components/common/NavLink';
+import NavLink from '@/app/[locale]/components/common/NavLink';
 import { NAVLINKS } from '@/app/utils/constants';
+// import LanguageSwitcher from '@/app/[locale]/components/common/LanguageSwitcher';
 
 interface HeaderNavProps {
 	className?: string;
@@ -64,6 +65,7 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 				))}
 			</div>
 			<div className="w-[30px] mt-2">{renderThemeChanger()}</div>
+			{/* <LanguageSwitcher /> */}
 			<button
 				className="p-1.5 md:hidden text-[24px] text-myPrimary md:p-2 rounded-full bg-primary text-white cursor-pointer"
 				onClick={() => setShowMenu(!showMenu)}

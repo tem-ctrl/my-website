@@ -1,5 +1,6 @@
 {
-	"Index": {
-		"title": "Bonjour le monde"
+	"navLinks": {
+		"home": "Accueil",
+		"about": "Mes infos"
 	}
 }

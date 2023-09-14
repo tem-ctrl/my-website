@@ -1,13 +1,14 @@
 'use client';
 
-import InfoItem from '@/app/components/common/InfoItem';
-import PageHeader from '@/app/components/common/PageHeader';
-import PrimaryButton from '@/app/components/common/PrimaryButton';
-// import SocialMedia from '@/app/components/common/SacialMedia';
-import Separator from '@/app/components/common/Separator';
-import SkillItem from '@/app/components/common/SkillItem';
-import TimelineBlock from '@/app/components/common/TimelineBlock';
-import TimelineItem from '@/app/components/common/TimelineItem';
+import InfoItem from '@/app/[locale]/components/common/InfoItem';
+import PageHeader from '@/app/[locale]/components/common/PageHeader';
+import Photo from '@/app/[locale]/components/common/Photo';
+import PrimaryButton from '@/app/[locale]/components/common/PrimaryButton';
+// import SocialMedia from '@/app/[locale]/components/common/SacialMedia';
+import Separator from '@/app/[locale]/components/common/Separator';
+import SkillItem from '@/app/[locale]/components/common/SkillItem';
+import TimelineBlock from '@/app/[locale]/components/common/TimelineBlock';
+import TimelineItem from '@/app/[locale]/components/common/TimelineItem';
 import {
 	EDUCATION,
 	EXPERIENCE,
@@ -17,8 +18,18 @@ import {
 	// SOCIAL_MEDIA
 } from '@/app/utils/constants';
 import { FaDownload } from 'react-icons/fa';
+import { useState } from 'react';
 
 const AboutPage = () => {
+	const [locale] = useState('en');
+
+	const downloadCV = () => {
+		if (typeof window == undefined) return;
+		let href = `cvs/gilbert_temgoua_cv_${locale}.pdf`;
+
+		window.open(`${window.location.origin}/${href}`, '_blank');
+	};
+
 	return (
 		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-[100px] hFill py-10 flex flex-col gap-12 items-center w-full">
 			<PageHeader
@@ -27,13 +38,8 @@ const AboutPage = () => {
 				tagline="I build well-crafted modern websites, I love what I do"
 			/>
 			<div className="flex smm:flex-col smm:items-center items-start w-full md:pt-3">
-				<div className="w-100px md:w-2/5 flex md:items-start justify-center">
-					<img
-						src="/assets/images/me.png"
-						alt="Gilbert Temgoua"
-						className="h-[200px] md:h-[400px] object-fill scale-x-[-1]"
-					/>
-				</div>
+				<Photo />
+
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-lg smm:mt-5">
 					<div className="col-span-1 flex flex-col gap-4">
 						{MY_PERSONAL_INFO.map((info, i) => (
@@ -47,7 +53,7 @@ const AboutPage = () => {
 					</div>
 					<PrimaryButton
 						text="DOWNLOAD MY CV"
-						onClick={() => {}}
+						onClick={downloadCV}
 						icon={<FaDownload />}
 						className="!w-fit text-sm col-span-full smm:justify-self-center"
 					/>

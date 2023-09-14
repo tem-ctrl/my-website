@@ -1,4 +1,4 @@
-import PageHeader from '@/app/components/common/PageHeader';
+import PageHeader from '@/app/[locale]/components/common/PageHeader';
 
 const ProjectsPage = () => {
 	return (
