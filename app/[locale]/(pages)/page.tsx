@@ -14,7 +14,7 @@ const HomePage = () => {
 	const t = useTranslations('HomePage');
 
 	return (
-		<main className="scrollbar-none overflow-y-scroll mdm:pt-10 px-2.5 md:px-10 hFill flex mdm:flex-col items-center justify-start md:justify-center bg-radialBg">
+		<main className="scrollbar-none overflow-y-scroll mdm:pt-10 px-2.5 md:px-10 hFill flex mdm:flex-col items-center justify-start md:justify-center">
 			<div className="w-[100px] lg:w-1/3">
 				<Photo />
 			</div>
