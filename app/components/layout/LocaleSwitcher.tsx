@@ -27,9 +27,9 @@ const LocaleSwitcher = () => {
 		<div
 			className={`${
 				isPending && 'transition-opacity opacity-50'
-			} text-gray-500 relative h-full flex justify-center items-center text-sm`}
-			onMouseOver={() => setShowLanguages(true)}
-			// onMouseLeave={() => setShowLanguages(false)}
+			} relative h-full flex justify-center items-center text-sm`}
+			onMouseEnter={() => setShowLanguages(true)}
+			onMouseLeave={() => setShowLanguages(false)}
 			onClick={() => setShowLanguages(!showLanguages)}
 		>
 			<p className="sr-only">{t('label')}</p>
@@ -43,7 +43,7 @@ const LocaleSwitcher = () => {
 				<FaChevronDown className={`${showLanguages && 'rotate-180'} inline text-sm`} />
 
 				{showLanguages && (
-					<div className="w-[70px] flex flex-col items-start gap-0 p-0 rounded-md border border-gray-300 dark:border-gray-600  absolute top-12 -left-[8px] bg-bgLight dark:bg-bgDark [&>*:first-child]:rounded-t-md [&>*:last-child]:rounded-b-md">
+					<div className="w-[70px] flex flex-col items-start gap-0 p-0 rounded-md border border-gray-300 dark:border-gray-600 absolute top-12 -left-[8px] bg-bgLight dark:bg-bgDark [&>*:first-child]:rounded-t-md [&>*:last-child]:rounded-b-md">
 						{['en', 'fr'].map((cur) => (
 							<button
 								key={cur}
