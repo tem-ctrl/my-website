@@ -7,7 +7,7 @@ import { BsFillSunFill } from 'react-icons/bs';
 import { usePathname } from 'next/navigation';
 import { VscMenu, VscChromeClose } from 'react-icons/vsc';
 import LocaleSwitcher from '@/app/components/layout/LocaleSwitcher';
-import NavLink from '@/app/components/common/NavLink';
+import NavLink from '@/app/components/layout/NavLink';
 import { useTranslations } from 'next-intl';
 import { PAGES } from '@/app/config';
 import { CustomLink } from '@/app/utils/types';
@@ -76,7 +76,7 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 
 	return (
 		<nav
-			className={`${className} flex items-center gap-6 smm:relative`}
+			className={`${className} flex items-center h-full gap-6 smm:relative`}
 			onBlur={onStepOut}
 			ref={menuRef}
 		>
@@ -93,7 +93,7 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 			<div className="w-[20px] flex items-center justify-center">{renderThemeChanger()}</div>
 			<LocaleSwitcher />
 			<button
-				className="p-1.5 md:hidden text-[24px] text-myPrimary md:p-2 rounded-full bg-primary text-white cursor-pointer"
+				className="p-1.5 md:hidden text-[21px] text-myPrimary rounded-full bg-primary text-white cursor-pointer"
 				onClick={() => setShowMenu(!showMenu)}
 			>
 				{showMenu ? <VscChromeClose /> : <VscMenu />}

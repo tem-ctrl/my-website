@@ -5,7 +5,17 @@
 	},
 	"HomePage": {
 		"title": "Accueil - Gilbert Temgoua: Développeur web",
-		"description": "Je suis un développeur web passionné vivant à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement."
+		"description": "Je suis un développeur web passionné vivant à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement.",
+		"mainText": "",
+		"hi": "Salut !",
+		"iAm": "Je suis",
+		"whoIAm": "Je suis un développeur web passionné basé à Yaoundé, Cameroun.",
+		"whatIdo": {
+			"firstPart": "Je crée des applications web très percutantes et attractives grâce",
+			"secondPart": "aux meilleurs standards de la progrmmation et aux dernières technologies."
+		},
+		"moreButtonText": "En savoir plus",
+		"portfolioButtonText": "Mes projets"
 	},
 	"AboutPage": {
 		"title": "A propos De Moi - Gilbert Temgoua: Web Developer",
@@ -32,6 +42,7 @@
 	},
 	"LocaleSwitcher": {
 		"label": "change language",
-		"locale": "{locale, select, fr {Français} en {English} other {Unknown}}"
+		"locale": "{locale, select, fr {FR} en {EN} other {langue}}",
+		"imageAlt": "{locale, select, fr {drapeau français} en {drapeau britanique} other {drapeau}}"
 	}
 }

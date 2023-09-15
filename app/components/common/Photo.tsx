@@ -6,7 +6,7 @@ interface PhotoProps {
 
 const Photo: FC<PhotoProps> = ({ className = '' }) => {
 	return (
-		<div className={`${className} w-100px md:w-2/5 flex md:items-start justify-center`}>
+		<div className={`${className} w-full flex lg:items-start justify-center`}>
 			<img
 				src="/assets/images/me.png"
 				alt="Gilbert Temgoua"

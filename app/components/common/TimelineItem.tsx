@@ -31,14 +31,14 @@ const TimelineItem: FC<TimelineItemProps> = ({
 				<p>{location}</p>
 			</div>
 			{Array.isArray(description) ? (
-				<div>
+				<>
 					<h4 className="text-primary mb-2">Responsibilities</h4>
-					<ul className="list-[-] pl-3">
+					<ul className="list-inside list-disc flex flex-col gap-2">
 						{description.map((elt, i) => (
 							<li key={`${i}-${elt.slice(0, 10)}`}>{`${elt}.`}</li>
 						))}
 					</ul>
-				</div>
+				</>
 			) : (
 				<p>{description}</p>
 			)}

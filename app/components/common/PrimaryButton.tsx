@@ -5,6 +5,7 @@ interface PrimaryButtonProps {
 	onClick: () => void;
 	icon?: ReactNode;
 	text?: string;
+	uppercase?: boolean;
 }
 
 const PrimaryButton: FC<PrimaryButtonProps> = ({
@@ -12,10 +13,13 @@ const PrimaryButton: FC<PrimaryButtonProps> = ({
 	onClick = () => {},
 	icon = <></>,
 	text = 'button',
+	uppercase = false,
 }) => {
 	return (
 		<button
-			className={`${className} smm:text-sm text-white font-medium rounded-full h-10 px-3 md:px-5 flex justify-center items-center gap-1.5 md:gap-3 bg-primary/90 hover:bg-primary`}
+			className={`${className} ${
+				uppercase && 'uppercase'
+			} smm:text-sm text-white font-medium rounded-full h-10 px-3 md:px-5 flex justify-center items-center gap-1.5 md:gap-3 bg-primary/90 hover:bg-primary`}
 			onClick={onClick}
 		>
 			<span>{icon}</span>

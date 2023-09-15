@@ -5,7 +5,17 @@
 	},
 	"HomePage": {
 		"title": "Home - Gilbert Temgoua: Web Developer",
-		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowlegde of the ReactJs and NextJS ecosystem. I'm open to work immediately."
+		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowlegde of the ReactJs and NextJS ecosystem. I'm open to work immediately.",
+		"mainText": "",
+		"hi": "hi!",
+		"iAm": "I am",
+		"whoIAm": "I'm a passionate web developer based in Yaounde, Cameroon.",
+		"whatIdo": {
+			"firstPart": "I strive to build impactful and attractive web applications leveraging",
+			"secondPart": "best code standards and latest technologies."
+		},
+		"moreButtonText": "More about me",
+		"portfolioButtonText": "My projects"
 	},
 	"AboutPage": {
 		"title": "About Me - Gilbert Temgoua: Web Developer",
@@ -32,6 +42,7 @@
 	},
 	"LocaleSwitcher": {
 		"label": "Changer de langue",
-		"locale": "{locale, select, fr {Français} en {English} other {Unknown}}"
+		"locale": "{locale, select, fr {FR} en {EN} other {language}}",
+		"imageAlt": "{locale, select, fr {french flag} en {united kingdom's flag} other {flag}}"
 	}
 }
