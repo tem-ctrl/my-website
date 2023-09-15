@@ -28,8 +28,8 @@ const LocaleSwitcher = () => {
 			className={`${
 				isPending && 'transition-opacity opacity-50'
 			} text-gray-500 relative h-full flex justify-center items-center text-sm`}
-			onMouseEnter={() => setShowLanguages(true)}
-			onMouseLeave={() => setShowLanguages(false)}
+			onMouseOver={() => setShowLanguages(true)}
+			// onMouseLeave={() => setShowLanguages(false)}
 			onClick={() => setShowLanguages(!showLanguages)}
 		>
 			<p className="sr-only">{t('label')}</p>
@@ -49,6 +49,7 @@ const LocaleSwitcher = () => {
 								key={cur}
 								className="flex items-center justify-start gap-2 hover:bg-primary hover:text-white w-full py-1 px-3"
 								onClick={() => onLocaleChanged(cur)}
+								name="language switcher"
 							>
 								<img src={`/assets/images/${cur}-flag.png`} alt={t('imageAlt')} width={flagSize} />
 								<span>{t('locale', { locale: cur })}</span>

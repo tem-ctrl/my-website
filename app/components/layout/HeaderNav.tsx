@@ -68,6 +68,7 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 			<button
 				className="text-xl text-primary"
 				onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
+				name="theme switcher"
 			>
 				{currentTheme === 'dark' ? <BsFillSunFill /> : <IoMdMoon />}
 			</button>
@@ -95,6 +96,7 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 			<button
 				className="p-1.5 md:hidden text-[21px] text-myPrimary rounded-full bg-primary text-white cursor-pointer"
 				onClick={() => setShowMenu(!showMenu)}
+				name="mobile menu opener"
 			>
 				{showMenu ? <VscChromeClose /> : <VscMenu />}
 			</button>
