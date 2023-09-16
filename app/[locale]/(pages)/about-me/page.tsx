@@ -10,31 +10,20 @@ import Separator from '@/app/components/common/Separator';
 import SkillItem from '@/app/components/common/SkillItem';
 import TimelineBlock from '@/app/components/common/TimelineBlock';
 import TimelineItem from '@/app/components/common/TimelineItem';
-import {
-	EDUCATION,
-	EXPERIENCE,
-	MY_PERSONAL_INFO,
-	MY_PROFESSIONAL_INFO,
-	SKILLS,
-	// SOCIAL_MEDIA
-} from '@/app/utils/constants';
+import { SKILLS /* SOCIAL_MEDIA */ } from '@/app/utils/constants';
 import { FaDownload } from 'react-icons/fa';
 import { PageProps } from '@/app/utils/types';
-// import { getMessages } from '@/app/utils/getMessages';
-// import { createTranslator } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
-// export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
-// 	const messages = await getMessages(locale);
-// 	const t = createTranslator({ locale, messages });
+// export const metadata: Metadata = {
 
-// 	return {
-// 		title: t('AboutPage.title'),
-// 		description: t('AboutPage.description'),
+// 	title: t('AboutPage.title'),
+// 	description: t('AboutPage.description'),
 // 	};
-// };
 
 const AboutPage = ({ params }: PageProps) => {
 	const locale = params.locale;
+	const t = useTranslations('AboutPage');
 
 	const downloadCV = () => {
 		if (typeof window == undefined) return;
@@ -42,13 +31,25 @@ const AboutPage = ({ params }: PageProps) => {
 
 		window.open(`${window.location.origin}/${href}`, '_blank');
 	};
+	const personalInfo = ['name', 'lastName', 'phone', 'email', 'country', 'city'];
+	const professionalInfo = [
+		'experience',
+		'openToWork',
+		'availability',
+		'jobtype',
+		'jobLocation',
+		'relocateTo',
+	];
+	const experiences = [1];
+	const experienceDesc = [[1, 2, 3, 4, 5, 6]];
+	const education = [1, 2, 3];
 
 	return (
 		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-[100px] lg:px-[120px] hFill py-10 flex flex-col gap-12 items-center w-full">
 			<PageHeader
-				simpleText="About"
-				primaryText="Me"
-				tagline="I build well-crafted modern websites, I love what I do"
+				simpleText={t('PageHeader.simpleText')}
+				primaryText={t('PageHeader.primaryText')}
+				tagline={t('PageHeader.tagline')}
 			/>
 			<div className="flex smm:flex-col mdm:items-center items-start w-full md:pt-3">
 				<div className="w-[100px] lg:w-1/3">
@@ -56,17 +57,25 @@ const AboutPage = ({ params }: PageProps) => {
 				</div>
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4 text-lg smm:mt-5">
 					<div className="col-span-1 flex flex-col gap-4">
-						{MY_PERSONAL_INFO.map((info, i) => (
-							<InfoItem key={`personal-info-${i}`} {...info} />
+						{personalInfo.map((info, i) => (
+							<InfoItem
+								key={`personal-info-${i}`}
+								label={t(`personalInfo.${info}`)}
+								value={t(`personalInfo.${info}Value`)}
+							/>
 						))}
 					</div>
 					<div className="col-span-1 flex flex-col gap-4">
-						{MY_PROFESSIONAL_INFO.map((info, i) => (
-							<InfoItem key={`professional-info-${i}`} {...info} />
+						{professionalInfo.map((info, i) => (
+							<InfoItem
+								key={`professional-info-${i}`}
+								label={t(`professionalInfo.${info}`)}
+								value={t(`professionalInfo.${info}Value`)}
+							/>
 						))}
 					</div>
 					<PrimaryButton
-						text="DOWNLOAD MY CV"
+						text={t('downloadCvButton')}
 						onClick={downloadCV}
 						icon={<FaDownload />}
 						className="!w-fit text-sm col-span-full smm:justify-self-center"
@@ -76,20 +85,38 @@ const AboutPage = ({ params }: PageProps) => {
 			<Separator />
 			<div className="flex smm:flex-col items-start justify-start gap-10">
 				<TimelineBlock title="Experience">
-					{EXPERIENCE.map((experience, i) => (
-						<TimelineItem key={`experience-${i}`} {...experience} />
+					{experiences.map((i) => (
+						<TimelineItem
+							key={`experience-${i}`}
+							startDate={t(`experience-${i}.startDate`)}
+							endDate={t(`experience-${i}.endDate`)}
+							title={t(`experience-${i}.title`)}
+							location={t(`experience-${i}.location`)}
+							place={t(`experience-${i}.place`)}
+							description={experienceDesc[i - 1].map((j) =>
+								t(`experience-${i}.description.desc-${j}`)
+							)}
+						/>
 					))}
 				</TimelineBlock>
 
 				<TimelineBlock title="Education">
-					{EDUCATION.map((education, i) => (
-						<TimelineItem key={`education-${i}`} {...education} />
+					{education.map((i) => (
+						<TimelineItem
+							key={`education-${i}`}
+							startDate={t(`education-${i}.startDate`)}
+							endDate={t(`education-${i}.endDate`)}
+							place={t(`education-${i}.place`)}
+							title={t(`education-${i}.title`)}
+							location={t(`education-${i}.location`)}
+							description={t(`education-${i}.description`)}
+						/>
 					))}
 				</TimelineBlock>
 			</div>
 			<Separator />
 			<section className="w-full">
-				<h2 className="uppercase text-2xl mb-16">Skills</h2>
+				<h2 className="uppercase text-2xl mb-16">{t('skills')}</h2>
 				<div className="grid md:grid-cols-3 gap-x-8 gap-y-20 w-full">
 					{SKILLS.map((skill, i) => (
 						<SkillItem key={`skill-${i}`} {...skill} />

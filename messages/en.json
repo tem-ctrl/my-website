@@ -19,7 +19,81 @@
 	},
 	"AboutPage": {
 		"title": "About Me - Gilbert Temgoua: Web Developer",
-		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowlegde of the ReactJs and NextJS ecosystem. I'm open to work immediately."
+		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowlegde of the ReactJs and NextJS ecosystem. I'm open to work immediately.",
+		"PageHeader": {
+			"simpleText": "About",
+			"primaryText": "me",
+			"tagline": "I build well-crafted modern websites, I love what I do"
+		},
+		"personalInfo": {
+			"name": "Name",
+			"nameValue": "Gilbert",
+			"lastName": "Last Name",
+			"lastNameValue": "TEMGOUA DONKOO",
+			"phone": "Phone",
+			"phoneValue": "+237 651 331 062",
+			"email": "Email",
+			"emailValue": "gilbertemgoua@gmail.com",
+			"country": "Country",
+			"countryValue": "Cameroon",
+			"city": "City",
+			"cityValue": "Yaounde"
+		},
+		"professionalInfo": {
+			"experience": "Experience",
+			"experienceValue": "6 months",
+			"openToWork": "Open to work",
+			"openToWorkValue": "Yes",
+			"availability": "Availability",
+			"availabilityValue": "immediate",
+			"jobtype": "Job type",
+			"jobtypeValue": "Full time, Part time, Freelance",
+			"jobLocation": "Job location",
+			"jobLocationValue": "Fully remote, Onsite",
+			"relocateTo": "Willing to relocate to",
+			"relocateToValue": "Anywhere"
+		},
+		"experience-1": {
+			"startDate": "Apr 2023",
+			"endDate": "ongoing",
+			"title": "Frontend developer (freelance)",
+			"location": "Fully remote",
+			"place": "Bantubeat",
+			"description": {
+				"desc-1": "Transform Figma design into web pages using NextJs, Typescript and Tailwind CSS",
+				"desc-2": "Review, clean and refactor code to ensure excellent code quality over the entire apps",
+				"desc-3": "Manage front-end development team",
+				"desc-4": "Ensure flawless communication with APIs (REST and GraphQL) using either client side or server side rendering",
+				"desc-5": "Debug the applications",
+				"desc-6": "Help new comers in getting involved in the projects"
+			}
+		},
+		"education-1": {
+			"startDate": "Oct 2022",
+			"endDate": "Jan 2023",
+			"title": "Web developer training path",
+			"location": "Online",
+			"place": "Openclassrooms",
+			"description": "Web developer path with a strong emphasis on frontend (ReactJs) and an intoduction to backend (NodeJs)"
+		},
+		"education-2": {
+			"startDate": "Jan 2019",
+			"endDate": "Aug 2021",
+			"title": "Python and web development training",
+			"location": "Yaounde, Cameroon",
+			"place": "self-taught",
+			"description": "Learn Python, HTML, CSS and JavaScript from beginner to advanced level"
+		},
+		"education-3": {
+			"startDate": "Oct 2013",
+			"endDate": "Jul 2018",
+			"title": "Bachelor degree",
+			"location": "Dschang, Cameroon",
+			"place": "University of Dschang",
+			"description": "Bachelor degree in Physics (major: Electronics)"
+		},
+		"downloadCvButton": "DOWNLOAD MY CV",
+		"skills": "skills"
 	},
 	"ProjectsPage": {
 		"title": "Projects - Gilbert Temgoua: Web Developer",
@@ -44,5 +118,8 @@
 		"label": "Changer de langue",
 		"locale": "{locale, select, fr {FR} en {EN} other {language}}",
 		"imageAlt": "{locale, select, fr {french flag} en {united kingdom's flag} other {flag}}"
+	},
+	"TimelineItem": {
+		"responsibilities": "Responsibilities"
 	}
 }
