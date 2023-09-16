@@ -1,4 +1,5 @@
 import { TimelineItemProps } from '@/app/utils/types';
+import { useTranslations } from 'next-intl';
 import React, { FC } from 'react';
 import { BiSolidCalendar } from 'react-icons/bi';
 import { MdLocationOn } from 'react-icons/md';
@@ -12,6 +13,8 @@ const TimelineItem: FC<TimelineItemProps> = ({
 	description,
 	location,
 }) => {
+	const t = useTranslations('TimelineItem');
+
 	return (
 		<article className={`${className} flex flex-col items-start gap-3 relative pl-8`}>
 			<span className="absolute top-0 -left-2 z-10 bg-primary h-4 w-4 rounded-full border-2 border-primary" />
@@ -32,7 +35,7 @@ const TimelineItem: FC<TimelineItemProps> = ({
 			</div>
 			{Array.isArray(description) ? (
 				<>
-					<h4 className="text-primary mb-2">Responsibilities</h4>
+					<h4 className="text-primary mb-2">{t('responsibilities')}</h4>
 					<ul className="list-inside list-disc flex flex-col gap-2">
 						{description.map((elt, i) => (
 							<li key={`${i}-${elt.slice(0, 10)}`}>{`${elt}.`}</li>

@@ -66,7 +66,7 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 
 		return (
 			<button
-				className="text-xl text-primary"
+				className="text-xl hover:text-primary"
 				onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
 				name="theme switcher"
 			>

@@ -19,7 +19,81 @@
 	},
 	"AboutPage": {
 		"title": "A propos De Moi - Gilbert Temgoua: Web Developer",
-		"description": "Je suis un développeur web passionné vivant à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement."
+		"description": "Je suis un développeur web passionné vivant à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement.",
+		"PageHeader": {
+			"simpleText": "A propos",
+			"primaryText": "de moi",
+			"tagline": "Je creée des sites web modernes et très attractifs, j'adore ce que je fait"
+		},
+		"personalInfo": {
+			"name": "Prénom",
+			"nameValue": "Gilbert",
+			"lastName": "Noms",
+			"lastNameValue": "TEMGOUA DONKOO",
+			"phone": "Tél",
+			"phoneValue": "+237 651 331 062",
+			"email": "Email",
+			"emailValue": "gilbertemgoua@gmail.com",
+			"country": "Pays",
+			"countryValue": "Cameroun",
+			"city": "Ville",
+			"cityValue": "Yaounde"
+		},
+		"professionalInfo": {
+			"experience": "Expérience",
+			"experienceValue": "6 mois",
+			"openToWork": "En recherche d'emploi",
+			"openToWorkValue": "Oui",
+			"availability": "Disponibilité",
+			"availabilityValue": "immédiate",
+			"jobtype": "Type d'emploi",
+			"jobtypeValue": "Plein temps, A temps partiel, Freelance",
+			"jobLocation": "Localisation",
+			"jobLocationValue": "Telétravail, en présentiel",
+			"relocateTo": "Souhaite se relocaliser",
+			"relocateToValue": "Partout"
+		},
+		"experience-1": {
+			"startDate": "Avr 2023",
+			"endDate": "en cours",
+			"title": "Développeur frontend (freelance)",
+			"location": "Télétravail",
+			"place": "Bantubeat",
+			"description": {
+				"desc-1": "Transformer les maquettes Figma en pages web avec NextJs, Typescript et Tailwind CSS",
+				"desc-2": "Réviser, nettoyer et réusiner le code pour m'assurer de garder un code d'une excellente qualité sur toute l'application",
+				"desc-3": "Gérer l'équipe de développemnt frontend",
+				"desc-4": "Assurer une communication parfaite avec les APIs (REST et GraphQL) en utilisant le rendu côté client ou serveur",
+				"desc-5": "Déboguer les applications",
+				"desc-6": "Aider les nouveaux venus à s'intégrer aux projets"
+			}
+		},
+		"education-1": {
+			"startDate": "Oct 2022",
+			"endDate": "Jan 2023",
+			"title": "Développeur Intégrateur web",
+			"location": "En ligne",
+			"place": "Openclassrooms",
+			"description": "Parcours de développeur intégrateur Web avec un accent sur le frontend (ReactJs) et une intoduction au backend (NodeJs)"
+		},
+		"education-2": {
+			"startDate": "Jan 2019",
+			"endDate": "Août 2021",
+			"title": "Apprentissage de Python et du développement web",
+			"location": "Yaounde, Cameroon",
+			"place": "Autodidacte",
+			"description": "Apprendre Python, HTML, CSS et JavaScript de 0 au niveau avancé"
+		},
+		"education-3": {
+			"startDate": "Oct 2013",
+			"endDate": "Jul 2018",
+			"title": "Diplôme de Licence",
+			"location": "Dschang, Cameroon",
+			"place": "University of Dschang",
+			"description": "Licence Physique, option Electronique"
+		},
+		"downloadCvButton": "TELECHARGER MON CV",
+		"skills": "Compétences"
 	},
 	"ProjectsPage": {
 		"title": "Projects - Gilbert Temgoua: Web Developer",
@@ -44,5 +118,8 @@
 		"label": "change language",
 		"locale": "{locale, select, fr {FR} en {EN} other {langue}}",
 		"imageAlt": "{locale, select, fr {drapeau français} en {drapeau britanique} other {drapeau}}"
+	},
+	"TimelineItem": {
+		"responsibilities": "Responsabilités"
 	}
 }
