@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 ::-webkit-scrollbar {
 	width: 0.7rem;
 	height: 0.7rem;
@@ -27,6 +26,12 @@
   min-height: calc(100dvh - 60px);
   overflow-y: scroll;
 }
+
+/* @layer {
+  .hFill {
+    @apply overflow-y-scroll;
+  }
+} */
 
 @media all and (min-width: '768px') {
   .hFill {

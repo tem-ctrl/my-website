@@ -1,7 +1,7 @@
 import '@/app/globals.css';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import Providers from '@/app/components/layout/Providers';
 import Header from '@/app/components/layout/Header';
 import { NextIntlClientProvider, createTranslator } from 'next-intl';
