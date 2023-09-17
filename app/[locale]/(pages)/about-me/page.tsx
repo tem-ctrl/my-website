@@ -1,6 +1,5 @@
 'use client';
 
-// import type { Metadata } from 'next';
 import InfoItem from '@/app/components/pages/about-me/InfoItem';
 import PageHeader from '@/app/components/common/PageHeader';
 import Photo from '@/app/components/common/Photo';
@@ -13,12 +12,6 @@ import { PageProps } from '@/app/utils/types';
 import { useTranslations } from 'next-intl';
 import SkillItem from '@/app/components/pages/about-me/SkillItem';
 import TimelineBlock from '@/app/components/pages/about-me/TimelineBlock';
-
-// export const metadata: Metadata = {
-
-// 	title: t('AboutPage.title'),
-// 	description: t('AboutPage.description'),
-// 	};
 
 const AboutPage = ({ params }: PageProps) => {
 	const locale = params.locale;

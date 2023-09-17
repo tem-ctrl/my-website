@@ -2,20 +2,6 @@
 
 import PageHeader from '@/app/components/common/PageHeader';
 import ProjectCard from '@/app/components/pages/blog/BlogCard';
-import { getMessages } from '@/app/utils/getMessages';
-import { PageProps } from '@/app/utils/types';
-import { Metadata } from 'next';
-import { createTranslator } from 'next-intl';
-
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
-	const messages = await getMessages(locale);
-	const t = createTranslator({ locale, messages });
-
-	return {
-		title: t('BlogPage.title'),
-		description: t('BlogPage.description'),
-	};
-};
 
 const BlogPage = () => {
 	const blog = [
