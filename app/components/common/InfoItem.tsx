@@ -2,7 +2,9 @@ import { InfoItemProps } from '@/app/utils/types';
 import Link from 'next/link';
 import React, { FC } from 'react';
 
-const InfoItem: FC<InfoItemProps> = ({ className = '', label, value, isEmail = false }) => {
+const InfoItem: FC<InfoItemProps> = ({ className = '', label, value }) => {
+	const isEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
+
 	return (
 		<p className={`${className} flex gap-5`}>
 			<span className="whitespace-nowrap">{`${label} :`}</span>
