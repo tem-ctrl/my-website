@@ -17,7 +17,7 @@ const LocaleSwitcher = () => {
 	const onLocaleChanged = (locale: string): void => {
 		setCurrentLocale(locale);
 		startTransition(() => {
-			router.replace(pathname, { locale });
+			router.replace(pathname, { locale: locale, scroll: false });
 		});
 	};
 

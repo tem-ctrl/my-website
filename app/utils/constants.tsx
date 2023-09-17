@@ -1,12 +1,6 @@
 import { SkillItemProps, SocialMediaProps } from '@/app/utils/types';
-import {
-	BsWhatsapp,
-	// BsTwitter,
-	BsTiktok,
-	BsGithub,
-	BsLinkedin,
-} from 'react-icons/bs';
-// import { FaFacebookF } from 'react-icons/fa';
+import { BiLogoLinkedin } from 'react-icons/bi';
+import { BsWhatsapp, BsGithub } from 'react-icons/bs';
 
 export const SKILLS: SkillItemProps[] = [
 	{
@@ -45,28 +39,14 @@ export const SKILLS: SkillItemProps[] = [
 		skill: 'Python',
 		value: 80,
 	},
-	// {
-	//   skill: 'PHP',
-	//   value: 50,
-	// },
-	// {
-	//   skill: 'Laravel',
-	//   value: 30,
-	// },
 ];
 
 export const SOCIAL_MEDIA: SocialMediaProps[] = [
 	{
 		name: 'LinkedIn',
-		icon: <BsLinkedin />,
+		icon: <BiLogoLinkedin />,
 		link: 'https://linkedin.com/in/temgoua',
 		bgColor: 'bg-[#3e63ac]',
-	},
-	{
-		name: 'whatsapp',
-		icon: <BsWhatsapp />,
-		link: 'https://wa.me/237651331062',
-		bgColor: 'bg-green-500',
 	},
 	{
 		name: 'GitHub',
@@ -74,12 +54,12 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
 		link: 'https://github.com/tem-ctrl',
 		bgColor: 'bg-black',
 	},
-	// {
-	// 	name: 'instagram',
-	// 	icon: <BsInstagram />,
-	// 	link: '',
-	// 	bgColor: 'bg-neutral-700',
-	// },
+	{
+		name: 'whatsapp',
+		icon: <BsWhatsapp />,
+		link: 'https://wa.me/237651331062',
+		bgColor: 'bg-green-500',
+	},
 	// {
 	// 	name: 'youtube',
 	// 	icon: <BsYoutube />,
@@ -87,33 +67,15 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
 	// 	bgColor: 'bg-[#ff0000]',
 	// },
 	// {
-	// 	name: 'facebook',
-	// 	icon: <FaFacebookF />,
-	// 	link: 'https://web.facebook.com/profile.php?id=100091284335131',
-	// 	bgColor: 'bg-[#3e63ac]',
-	// },
-	// {
 	// 	name: 'twitter',
 	// 	icon: <BsTwitter />,
 	// 	link: 'https://twitter.com/gilbertemgoua',
 	// 	bgColor: 'bg-blue-500',
 	// },
-	{
-		name: 'tiktok',
-		icon: <BsTiktok />,
-		link: 'https://tiktok.com/@gnext25',
-		bgColor: 'bg-black',
-	},
 	// {
-	// 	name: 'snapchat',
-	// 	icon: <GrSnapchat />,
-	// 	link: '',
-	// 	bgColor: 'bg-[#f7f400]',
-	// },
-	// {
-	// 	name: 'sound_cloud',
-	// 	icon: <FaSoundcloud />,
-	// 	link: '',
-	// 	bgColor: 'bg-[#f76721]',
-	// },
+	// 	name: 'tiktok',
+	// 	icon: <BsTiktok />,
+	// 	link: 'https://tiktok.com/@gnext25',
+	// 	bgColor: 'bg-black',
+	// }
 ];

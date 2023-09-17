@@ -1,19 +1,18 @@
 'use client';
 
 // import type { Metadata } from 'next';
-import InfoItem from '@/app/components/common/InfoItem';
+import InfoItem from '@/app/components/pages/about-me/InfoItem';
 import PageHeader from '@/app/components/common/PageHeader';
 import Photo from '@/app/components/common/Photo';
 import PrimaryButton from '@/app/components/common/PrimaryButton';
-// import SocialMedia from '@/app/components/common/SacialMedia';
 import Separator from '@/app/components/common/Separator';
-import SkillItem from '@/app/components/common/SkillItem';
-import TimelineBlock from '@/app/components/common/TimelineBlock';
-import TimelineItem from '@/app/components/common/TimelineItem';
-import { SKILLS /* SOCIAL_MEDIA */ } from '@/app/utils/constants';
+import TimelineItem from '@/app/components/pages/about-me/TimelineItem';
+import { SKILLS } from '@/app/utils/constants';
 import { FaDownload } from 'react-icons/fa';
 import { PageProps } from '@/app/utils/types';
 import { useTranslations } from 'next-intl';
+import SkillItem from '@/app/components/pages/about-me/SkillItem';
+import TimelineBlock from '@/app/components/pages/about-me/TimelineBlock';
 
 // export const metadata: Metadata = {
 
@@ -121,13 +120,6 @@ const AboutPage = ({ params }: PageProps) => {
 					))}
 				</div>
 			</section>
-			{/* <Separator />
-      <section className="w-full">
-        <h2 className="uppercase text-2xl mb-10">Social Media</h2>
-        <div className="flex justify-between items-center w-full flex-wrap">
-          {SOCIAL_MEDIA.map(media => <SocialMedia key={`social-media-${media.name}`}  {...media}/>)}
-				</div>
-      </section> */}
 		</main>
 	);
 };

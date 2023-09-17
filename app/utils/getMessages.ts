@@ -1,9 +1,9 @@
-import { notFound } from 'next/navigation';
+import NotFound from '@/app/components/common/NotFound';
 
 export const getMessages = async (locale: string) => {
 	try {
-		return (await import(`../../messages/${locale}.json`)).default;
+		return (await import(`../../i18n/${locale}.json`)).default;
 	} catch (error) {
-		notFound();
+		NotFound();
 	}
 };

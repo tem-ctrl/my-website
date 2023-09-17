@@ -5,7 +5,7 @@ import React, { FC } from 'react';
 const SocialMedia: FC<SocialMediaProps> = ({ className = '', link, icon, bgColor, name }) => {
 	return (
 		<Link
-			className={`${className} ${bgColor} text-base md:text-xl flex justify-center items-center w-7 h-7 md:w-10 md:h-10 rounded-full text-white`}
+			className={`${className} ${bgColor} text-base md:text-xl flex justify-center items-center w-7 h-7 md:w-9 md:h-9 rounded-full text-white`}
 			href={link}
 			target="_blank"
 			aria-label={name}
