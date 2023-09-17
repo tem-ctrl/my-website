@@ -52,9 +52,7 @@ const AboutPage = ({ params }: PageProps) => {
 				tagline={t('PageHeader.tagline')}
 			/>
 			<div className="flex smm:flex-col mdm:items-center items-start w-full md:pt-3">
-				<div className="w-[100px] lg:w-1/3">
-					<Photo />
-				</div>
+				<Photo />
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4 text-lg smm:mt-5">
 					<div className="col-span-1 flex flex-col gap-4">
 						{personalInfo.map((info, i) => (
