@@ -6,7 +6,6 @@
 	"HomePage": {
 		"title": "Home - Gilbert Temgoua: Web Developer",
 		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowlegde of the ReactJs and NextJS ecosystem. I'm open to work immediately.",
-		"mainText": "",
 		"hi": "hi!",
 		"iAm": "I am",
 		"whoIAm": "I'm a passionate web developer based in Yaounde, Cameroon.",
@@ -105,7 +104,17 @@
 	},
 	"ContactPage": {
 		"title": "Contact - Gilbert Temgoua: Web Developer",
-		"description": "I'm always open to suggestions, critics, greetings and job offers."
+		"description": "I'm always open to suggestions, critics, greetings and job offers.",
+		"PageHeader": {
+			"primaryText": "IN TOUCH",
+			"simpleText": "GET",
+			"tagline": "I'M ALWAYS OPEN TO DISCUSSION about WEB DEVELOPMENT, PARTNERSHIPS ..."
+		},
+		"invitation": "If you have any suggestion, project, job or just want to say Hi.. please fill out the form below or reach out to me via social media and I will reply you shortly.",
+		"namePlaceholder": "YOUR NAME",
+		"emailPlaceholder": "YOUR EMAIL",
+		"messagePlaceholder": "YOUR MESSAGE",
+		"sendButtonText": "send"
 	},
 	"HeaderNav": {
 		"home": "home",
@@ -115,7 +124,7 @@
 		"contact": "Contact"
 	},
 	"LocaleSwitcher": {
-		"label": "Changer de langue",
+		"label": "Swicth language",
 		"locale": "{locale, select, fr {FR} en {EN} other {language}}",
 		"imageAlt": "{locale, select, fr {french flag} en {united kingdom's flag} other {flag}}"
 	},

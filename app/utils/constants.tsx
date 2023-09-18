@@ -52,7 +52,7 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
 		name: 'GitHub',
 		icon: <BsGithub />,
 		link: 'https://github.com/tem-ctrl',
-		bgColor: 'bg-black',
+		bgColor: 'bg-black/90',
 	},
 	{
 		name: 'whatsapp',
@@ -60,22 +60,4 @@ export const SOCIAL_MEDIA: SocialMediaProps[] = [
 		link: 'https://wa.me/237651331062',
 		bgColor: 'bg-green-500',
 	},
-	// {
-	// 	name: 'youtube',
-	// 	icon: <BsYoutube />,
-	// 	link: '',
-	// 	bgColor: 'bg-[#ff0000]',
-	// },
-	// {
-	// 	name: 'twitter',
-	// 	icon: <BsTwitter />,
-	// 	link: 'https://twitter.com/gilbertemgoua',
-	// 	bgColor: 'bg-blue-500',
-	// },
-	// {
-	// 	name: 'tiktok',
-	// 	icon: <BsTiktok />,
-	// 	link: 'https://tiktok.com/@gnext25',
-	// 	bgColor: 'bg-black',
-	// }
 ];

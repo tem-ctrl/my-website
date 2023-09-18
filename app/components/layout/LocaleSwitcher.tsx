@@ -51,7 +51,11 @@ const LocaleSwitcher = () => {
 								onClick={() => onLocaleChanged(cur)}
 								name="language switcher"
 							>
-								<img src={`/assets/images/${cur}-flag.png`} alt={t('imageAlt')} width={flagSize} />
+								<img
+									src={`/assets/images/${cur}-flag.png`}
+									alt={t('imageAlt', { locale: cur })}
+									width={flagSize}
+								/>
 								<span>{t('locale', { locale: cur })}</span>
 							</button>
 						))}

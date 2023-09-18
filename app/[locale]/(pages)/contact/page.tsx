@@ -1,62 +1,64 @@
+'use client';
+
+import FormInput from '@/app/components/common/FormInput';
 import PageHeader from '@/app/components/common/PageHeader';
-import ContactItem from '@/app/components/pages/contact/ContactItem';
+import PrimaryButton from '@/app/components/common/PrimaryButton';
 import SocialMedia from '@/app/components/pages/contact/SacialMedia';
 import { SOCIAL_MEDIA } from '@/app/utils/constants';
-import { ComponentProps } from 'react';
-import { BiLogoLinkedin } from 'react-icons/bi';
-import { BsGithub, BsWhatsapp } from 'react-icons/bs';
-import { HiOutlineMail } from 'react-icons/hi';
-
-type C = ComponentProps<typeof ContactItem>['item'];
-
-const contactItems: C[] = [
-	{
-		title: 'Phone',
-		value: '+237 651 331 062',
-		icon: <BsWhatsapp />,
-	},
-	{
-		title: 'Email',
-		value: 'gilbertemgoua@gmail.com',
-		icon: <HiOutlineMail />,
-	},
-	{
-		title: 'LinkedIn',
-		value: '@temgoua',
-		icon: <BiLogoLinkedin />,
-	},
-	{
-		title: 'Github',
-		value: '@tem-ctrl',
-		icon: <BsGithub />,
-	},
-];
+import { BiSolidUser } from 'react-icons/bi';
+import { HiChatAlt2 } from 'react-icons/hi';
+import { MdEmail } from 'react-icons/md';
+import { FaTelegramPlane } from 'react-icons/fa';
+import { useTranslations } from 'next-intl';
+import Head from 'next/head';
 
 const ContactPage = () => {
+	const t = useTranslations('ContactPage');
+
 	return (
-		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-[100px] hFill py-10 flex flex-col gap-12 items-center w-full">
+		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-[100px] hFill py-5 md:pt-10 flex flex-col gap-8 md:gap-12 items-center w-full">
+			<Head>
+				<title>{t('title')}</title>
+				<meta name="description" content={t('description')} />
+			</Head>
 			<PageHeader
-				simpleText="get"
-				primaryText="in touch"
-				tagline="I build well-crafted modern websites, I love what I do"
+				simpleText={t('PageHeader.simpleText')}
+				primaryText={t('PageHeader.primaryText')}
+				tagline={t('PageHeader.tagline')}
 			/>
-			<div className="grid grid-cols-1 lg:grid-cols-3 gap-16 w-full">
-				<aside className="col-span-1">
-					<div className="flex flex-col gap-5">
-						{contactItems.map((item) => (
-							<ContactItem key={item.title} item={item} />
+			<div className="flex flex-col gap-3 md:gap-5 w-full lg:w-3/4 mx-auto">
+				<p>{t('invitation')}</p>
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5 w-full">
+					<FormInput
+						type="text"
+						placeholder={t('namePlaceholder')}
+						icon={<BiSolidUser />}
+						minLength={3}
+						required
+					/>
+					<FormInput type="email" placeholder={t('emailPlaceholder')} icon={<MdEmail />} required />
+				</div>
+				<div className="w-full relative">
+					<textarea
+						className="rounded-[30px] bg-neutral-300 dark:bg-neutral-800 py-2 pl-12 pr-4 h-32 md:h-36 w-full focus:outline-none focus:ring-1 focus:ring-primary overflow-scroll scrollbar-none"
+						placeholder={t('messagePlaceholder')}
+						minLength={10}
+					/>
+					<HiChatAlt2 className="inline absolute top-3 left-4 text-2xl" />
+				</div>
+				<div className="w-full flex justify-between">
+					<PrimaryButton
+						onClick={() => {}}
+						text={t('sendButtonText')}
+						icon={<FaTelegramPlane />}
+						className="px-5 !h-11 !w-fit self-start uppercase"
+					/>
+					<div className="flex gap-2 items-center">
+						{SOCIAL_MEDIA.map((media) => (
+							<SocialMedia key={`social-media-${media.name}`} {...media} />
 						))}
 					</div>
-					<section className="w-full">
-						<h2 className="text-xl mb-2">Social Profiles</h2>
-						<div className="flex gap-2 items-center w-full flex-wrap">
-							{SOCIAL_MEDIA.map((media) => (
-								<SocialMedia key={`social-media-${media.name}`} {...media} />
-							))}
-						</div>
-					</section>
-				</aside>
-				<main className="lg:col-span-2 h-28 border-2"></main>
+				</div>
 			</div>
 		</main>
 	);

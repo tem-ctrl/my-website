@@ -6,7 +6,6 @@
 	"HomePage": {
 		"title": "Accueil - Gilbert Temgoua: Développeur web",
 		"description": "Je suis un développeur web passionné vivant à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement.",
-		"mainText": "",
 		"hi": "Salut !",
 		"iAm": "Je suis",
 		"whoIAm": "Je suis un développeur web passionné basé à Yaoundé, Cameroun.",
@@ -105,7 +104,17 @@
 	},
 	"ContactPage": {
 		"title": "Contact - Gilbert Temgoua: Web Developer",
-		"description": "Je suis toujours ouvert aux suggestions, critiques, simples salutations ou offre d'emploi."
+		"description": "Je suis toujours ouvert aux suggestions, critiques, simples salutations ou offre d'emploi.",
+		"PageHeader": {
+			"primaryText": "moi",
+			"simpleText": "contactez",
+			"tagline": "Je suis toujours ouvert aux discusions sur le développement web, les partenariats..."
+		},
+		"invitation": "Si vous avez une suggestion, un projet, un emploi, ou vous voulez juste me dire bonjour.. remplissez le formulaire ci-dessous ou contactez-moi directement via les réseau sociaux et je vous répondrai sous peu.",
+		"namePlaceholder": "VOTRE NOM",
+		"emailPlaceholder": "VOTRE EMAIL",
+		"messagePlaceholder": "VOTRE MESSAGE",
+		"sendButtonText": "ENVOYER"
 	},
 	"HeaderNav": {
 		"home": "Accueil",
@@ -115,7 +124,7 @@
 		"contact": "Contact"
 	},
 	"LocaleSwitcher": {
-		"label": "change language",
+		"label": "Changer de langue",
 		"locale": "{locale, select, fr {FR} en {EN} other {langue}}",
 		"imageAlt": "{locale, select, fr {drapeau français} en {drapeau britanique} other {drapeau}}"
 	},
