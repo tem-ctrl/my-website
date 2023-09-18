@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { SkillItemProps } from '@/app/utils/types';
+import { SkillItem } from '@/app/utils/types';
 
-const SkillItem: FC<SkillItemProps> = ({ className = '', skill, value = 50 }) => {
+const SkillItem: FC<SkillItem> = ({ className = '', skill, value = 50 }) => {
 	return (
 		<div className={`${className} relative min-w-[300px]`}>
 			<p className="uppercase absolute bottom-3 font-medium">{skill}</p>
