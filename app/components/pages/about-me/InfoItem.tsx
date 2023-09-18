@@ -1,8 +1,8 @@
-import { InfoItemProps } from '@/app/utils/types';
+import { InfoItem } from '@/app/utils/types';
 import Link from 'next/link';
 import React, { FC } from 'react';
 
-const InfoItem: FC<InfoItemProps> = ({ className = '', label, value }) => {
+const InfoItem: FC<InfoItem> = ({ className = '', label, value }) => {
 	const isEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
 
 	return (
