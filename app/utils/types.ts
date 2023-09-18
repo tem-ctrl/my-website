@@ -3,7 +3,7 @@ export type CustomLink = {
 	href: string;
 };
 
-export interface TimelineItemProps {
+export interface TimelineItem {
 	className?: string;
 	startDate: string;
 	endDate?: string;
@@ -13,20 +13,20 @@ export interface TimelineItemProps {
 	location: string;
 }
 
-export interface SkillItemProps {
+export interface SkillItem {
 	className?: string;
 	skill: string;
 	value: number; // Percentage
 }
 
-export interface InfoItemProps {
+export interface InfoItem {
 	className?: string;
 	label: string;
 	value: string;
 	isEmail?: boolean;
 }
 
-export interface SocialMediaProps {
+export interface SocialMedia {
 	className?: string;
 	link: string;
 	icon: JSX.Element;
@@ -35,3 +35,9 @@ export interface SocialMediaProps {
 }
 
 export type PageProps = { params: { locale: string } };
+
+export interface Project {
+	className?: string;
+	title: string;
+	image?: string;
+}

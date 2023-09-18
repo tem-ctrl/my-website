@@ -1,25 +1,24 @@
+import React, { FC } from 'react';
 import { PAGES } from '@/app/config';
 import { useRouter } from 'next-intl/client';
-import React, { FC } from 'react';
+import { Project } from '@/app/utils/types';
 
-interface ProjectCardProps {
-	className?: string;
-	title: string;
-}
-
-const ProjectCard: FC<ProjectCardProps> = ({ className = '', title }) => {
+const ProjectCard: FC<Project> = ({ className = '', title, image }) => {
 	const router = useRouter();
 
 	return (
 		<div
-			className={`${className} h-48 rounded-md text-2xl text-primary border-2 border-primary hover:bg-primary hover:text-white`}
+			className={`${className} overflow-hidden cursor-pointer relative h-[220px] rounded-lg bg-neutral-300 dark:bg-neutral-800`}
+			onClick={() => router.push(PAGES.projectDetails(title))}
 		>
-			<button
-				className="w-full h-full flex justify-center items-center"
-				onClick={() => router.push(PAGES.projectDetails(title))}
-			>
+			<img
+				src={image ?? `https://ui-avatars.com/api?name=${title}`}
+				alt={title}
+				className="w-full h-full bg-[length:100%_100%] hover:scale-110 transit rounded-lg"
+			/>
+			<h2 className="absolute rounded-b-lg w-full bottom-0 text-lg text-white font-semibold bg-bgDark/40 uppercase h-10 flex items-center justify-center">
 				{title}
-			</button>
+			</h2>
 		</div>
 	);
 };

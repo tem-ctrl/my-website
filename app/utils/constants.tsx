@@ -1,4 +1,4 @@
-import { SkillItemProps, SocialMediaProps } from '@/app/utils/types';
+import { SkillItemProps, SocialMedia } from '@/app/utils/types';
 import { BiLogoLinkedin } from 'react-icons/bi';
 import { BsWhatsapp, BsGithub } from 'react-icons/bs';
 
@@ -39,9 +39,13 @@ export const SKILLS: SkillItemProps[] = [
 		skill: 'Python',
 		value: 80,
 	},
+	{
+		skill: 'PHP',
+		value: 60,
+	},
 ];
 
-export const SOCIAL_MEDIA: SocialMediaProps[] = [
+export const SOCIAL_MEDIA: SocialMedia[] = [
 	{
 		name: 'LinkedIn',
 		icon: <BiLogoLinkedin />,

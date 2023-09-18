@@ -1,10 +1,10 @@
-import { TimelineItemProps } from '@/app/utils/types';
+import { TimelineItem } from '@/app/utils/types';
 import { useTranslations } from 'next-intl';
 import React, { FC } from 'react';
 import { BiSolidCalendar } from 'react-icons/bi';
 import { MdLocationOn } from 'react-icons/md';
 
-const TimelineItem: FC<TimelineItemProps> = ({
+const TimelineItem: FC<TimelineItem> = ({
 	className = '',
 	startDate,
 	endDate,

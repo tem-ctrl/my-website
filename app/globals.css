@@ -38,3 +38,9 @@
     height: calc(100dvh - 60px);
   }
 }
+
+@layer {
+  .transit {
+    @apply transition-all delay-100 ease-in-out;
+  }
+}

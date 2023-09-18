@@ -11,6 +11,7 @@ import { MdEmail } from 'react-icons/md';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { useTranslations } from 'next-intl';
 import Head from 'next/head';
+import FormTextarea from '@/app/components/common/FormTextArea';
 
 const ContactPage = () => {
 	const t = useTranslations('ContactPage');
@@ -38,14 +39,12 @@ const ContactPage = () => {
 					/>
 					<FormInput type="email" placeholder={t('emailPlaceholder')} icon={<MdEmail />} required />
 				</div>
-				<div className="w-full relative">
-					<textarea
-						className="rounded-[30px] bg-neutral-300 dark:bg-neutral-800 py-2 pl-12 pr-4 h-32 md:h-36 w-full focus:outline-none focus:ring-1 focus:ring-primary overflow-scroll scrollbar-none"
-						placeholder={t('messagePlaceholder')}
-						minLength={10}
-					/>
-					<HiChatAlt2 className="inline absolute top-3 left-4 text-2xl" />
-				</div>
+				<FormTextarea
+					placeholder={t('messagePlaceholder')}
+					minLength={10}
+					icon={<HiChatAlt2 />}
+					iconClass="text-xl"
+				/>
 				<div className="w-full flex justify-between">
 					<PrimaryButton
 						onClick={() => {}}

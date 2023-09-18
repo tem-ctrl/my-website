@@ -1,4 +1,4 @@
-import React, { forwardRef, InputHTMLAttributes } from 'react';
+import React, { forwardRef, InputHTMLAttributes, useState } from 'react';
 
 type InputProps = InputHTMLAttributes<HTMLInputElement>;
 
@@ -11,18 +11,29 @@ interface FormInputProps extends InputProps {
 
 const FormInput = forwardRef<HTMLInputElement, FormInputProps>((props, ref) => {
 	const { className, icon, inputClass, iconClass, ...restProps } = props;
+	const [isFocused, setIsFocused] = useState(false);
 
 	return (
-		<div className={`${className} ${!icon && 'contents'} relative`}>
+		<div
+			className={`${className} ${!icon && 'contents'} relative`}
+			onFocus={() => setIsFocused(true)}
+			onBlur={() => setIsFocused(false)}
+		>
 			<input
 				className={`${inputClass} ${
 					!!icon ? 'pl-12' : 'pl-4'
-				} bg-neutral-300 dark:bg-neutral-800 rounded-full h-12 w-full focus:outline-none focus:ring-1 focus:ring-primary`}
+				} text-light/80 dark:text-dark/80 ring-1 ring-neutral-300 dark:ring-neutral-900 bg-neutral-200 dark:bg-neutral-900 rounded-full h-12 w-full focus:outline-none focus:ring-primary`}
 				ref={ref}
 				{...restProps}
 			/>
 			{!!icon && (
-				<span className={`${iconClass} inline absolute top-4 left-4 text-lg`}>{icon}</span>
+				<span
+					className={`${iconClass} ${
+						isFocused && 'text-primary'
+					} inline absolute top-4 left-4 text-lg`}
+				>
+					{icon}
+				</span>
 			)}
 		</div>
 	);
