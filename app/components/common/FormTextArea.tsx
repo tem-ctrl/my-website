@@ -1,3 +1,5 @@
+'use client';
+
 import React, { forwardRef, TextareaHTMLAttributes, useState } from 'react';
 
 type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement>;

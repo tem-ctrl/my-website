@@ -96,7 +96,12 @@
 	},
 	"ProjectsPage": {
 		"title": "Projects - Gilbert Temgoua: Web Developer",
-		"description": "Discover few of the latest development projects I've realized entirely or partly."
+		"description": "Discover few of the latest development projects I've realized entirely or partly.",
+		"PageHeader": {
+			"primaryText": "PORTFOLIO",
+			"simpleText": "MY",
+			"tagline": "Web development projects I lovely carried out"
+		}
 	},
 	"BlogPage": {
 		"title": "Blog - Gilbert Temgoua: Web Developer",

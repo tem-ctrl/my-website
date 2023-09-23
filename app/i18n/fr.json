@@ -96,7 +96,12 @@
 	},
 	"ProjectsPage": {
 		"title": "Projects - Gilbert Temgoua: Web Developer",
-		"description": "Découvrez quelques uns des tous derniers projets que j'ai réalisés de moi-même ou en tant que membre d'une équipe."
+		"description": "Découvrez quelques uns des tous derniers projets que j'ai réalisés de moi-même ou en tant que membre d'une équipe.",
+		"PageHeader": {
+			"primaryText": "PORTFOLIO",
+			"simpleText": "MON",
+			"tagline": "Les projets de développement web que j'ai réalisés avec soin"
+		}
 	},
 	"BlogPage": {
 		"title": "Blog - Gilbert Temgoua: Web Developer",
