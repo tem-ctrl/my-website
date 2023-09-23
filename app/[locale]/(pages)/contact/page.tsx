@@ -1,17 +1,14 @@
 import FormInput from '@/app/components/common/FormInput';
 import PageHeader from '@/app/components/common/PageHeader';
-import PrimaryButton from '@/app/components/common/PrimaryButton';
-import SocialMedia from '@/app/components/pages/contact/SacialMedia';
-import { SOCIAL_MEDIA } from '@/app/utils/constants';
 import { BiSolidUser } from 'react-icons/bi';
 import { HiChatAlt2 } from 'react-icons/hi';
 import { MdEmail } from 'react-icons/md';
-import { FaTelegramPlane } from 'react-icons/fa';
 import { createTranslator, useTranslations } from 'next-intl';
 import FormTextarea from '@/app/components/common/FormTextArea';
 import { PageProps } from '@/app/utils/types';
 import { Metadata } from 'next';
 import { getMessages } from '@/app/utils/getMessages';
+import SendButtonAndSocial from '@/app/components/pages/contact/SendButonAndSocial';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
 	const messages = await getMessages(locale);
@@ -51,19 +48,7 @@ const ContactPage = () => {
 					icon={<HiChatAlt2 />}
 					iconClass="text-xl"
 				/>
-				<div className="w-full flex justify-between">
-					<PrimaryButton
-						onClick={() => {}}
-						text={t('sendButtonText')}
-						icon={<FaTelegramPlane />}
-						className="px-5 !h-11 !w-fit self-start uppercase"
-					/>
-					<div className="flex gap-2 items-center">
-						{SOCIAL_MEDIA.map((media) => (
-							<SocialMedia key={`social-media-${media.name}`} {...media} />
-						))}
-					</div>
-				</div>
+				<SendButtonAndSocial className="w-full flex justify-between" />
 			</div>
 		</main>
 	);
