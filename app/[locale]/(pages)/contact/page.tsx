@@ -1,5 +1,3 @@
-'use client';
-
 import FormInput from '@/app/components/common/FormInput';
 import PageHeader from '@/app/components/common/PageHeader';
 import PrimaryButton from '@/app/components/common/PrimaryButton';
@@ -9,19 +7,27 @@ import { BiSolidUser } from 'react-icons/bi';
 import { HiChatAlt2 } from 'react-icons/hi';
 import { MdEmail } from 'react-icons/md';
 import { FaTelegramPlane } from 'react-icons/fa';
-import { useTranslations } from 'next-intl';
-import Head from 'next/head';
+import { createTranslator, useTranslations } from 'next-intl';
 import FormTextarea from '@/app/components/common/FormTextArea';
+import { PageProps } from '@/app/utils/types';
+import { Metadata } from 'next';
+import { getMessages } from '@/app/utils/getMessages';
+
+export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+	const messages = await getMessages(locale);
+	const t = createTranslator({ locale, messages });
+
+	return {
+		title: t('ContactPage.title'),
+		description: t('ContactPage.description'),
+	};
+};
 
 const ContactPage = () => {
 	const t = useTranslations('ContactPage');
 
 	return (
 		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-[100px] hFill py-5 md:pt-10 flex flex-col gap-8 md:gap-12 items-center w-full">
-			<Head>
-				<title>{t('title')}</title>
-				<meta name="description" content={t('description')} />
-			</Head>
 			<PageHeader
 				simpleText={t('PageHeader.simpleText')}
 				primaryText={t('PageHeader.primaryText')}

@@ -7,6 +7,7 @@ import Header from '@/app/components/layout/Header';
 import { NextIntlClientProvider, createTranslator } from 'next-intl';
 import { PageProps } from '@/app/utils/types';
 import { getMessages } from '@/app/utils/getMessages';
+import NotFound from '@/app/components/common/NotFound';
 
 const roboto = Roboto({
 	subsets: ['latin'],
@@ -16,9 +17,9 @@ const roboto = Roboto({
 
 type Locale = { locale: string };
 
-export function generateStaticParams(): Locale[] {
-	return [{ locale: 'en' }, { locale: 'fr' }];
-}
+// export function generateStaticParams(): Locale[] {
+// 	return [{ locale: 'en' }, { locale: 'fr' }];
+// }
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
 	const messages = await getMessages(locale);
@@ -30,12 +31,18 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
 	};
 };
 
+const locales = ['en', 'fr'];
+
 interface RootLayoutProps {
 	children: React.ReactNode;
 	params: Locale;
 }
 
 const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
+	const isValidLocale = locales.some((cur) => cur === params.locale);
+
+	if (!isValidLocale) NotFound();
+
 	const messages = await getMessages(params.locale);
 
 	return (

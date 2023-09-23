@@ -1,31 +1,21 @@
-'use client';
-
-import PrimaryButton from '@/app/components/common/PrimaryButton';
-import { PAGES } from '@/app/config';
-import { useRouter } from 'next-intl/client';
-import { BsBriefcaseFill } from 'react-icons/bs';
-import { BiSolidUser } from 'react-icons/bi';
+import { Metadata, NextPage } from 'next';
 import Photo from '@/app/components/common/Photo';
-import { useLocale, useTranslations } from 'next-intl';
+import { createTranslator, useTranslations } from 'next-intl';
+import MoreAndPortfolioButtons from '@/app/components/pages/home/MoreAndProtfolioButtons';
+import { PageProps } from '@/app/utils/types';
+import { getMessages } from 'next-intl/server';
 
-// export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
-// 	const messages = await getMessages(locale);
-// 	const t = createTranslator({ locale, messages });
+export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+	const messages = await getMessages(locale);
+	const t = createTranslator({ locale, messages });
 
-// 	return {
-// 		title: t('RootLayout.title'),
-// 		description: t('RootLayout.description'),
-// 	};
-// };
+	return {
+		title: t('HomePage.title'),
+		description: t('HomePage.description'),
+	};
+};
 
-// export const metadata: Metadata = {
-//   title: 'Home - Gilbert Temgoua',
-//   description: 'I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowlegde of the ReactJs and NextJS ecosystem. I\'m open to work immediately.'
-// }
-
-const HomePage = () => {
-	const router = useRouter();
-	const locale = useLocale();
+const HomePage: NextPage = () => {
 	const t = useTranslations('HomePage');
 
 	return (
@@ -41,20 +31,7 @@ const HomePage = () => {
 					{t('whatIdo.firstPart')} <br className="smm:hidden" />
 					{t('whatIdo.secondPart')}
 				</p>
-				<div className="smm:w-full flex justify-around md:justify-center items-center gap-2 md:gap-5 mt-5">
-					<PrimaryButton
-						onClick={() => router.push(PAGES.aboutMe, { locale })}
-						text={t('moreButtonText')}
-						icon={<BiSolidUser />}
-						uppercase
-					/>
-					<PrimaryButton
-						onClick={() => router.push(PAGES.projects, { locale })}
-						text={t('portfolioButtonText')}
-						icon={<BsBriefcaseFill />}
-						uppercase
-					/>
-				</div>
+				<MoreAndPortfolioButtons className="smm:w-full flex justify-around md:justify-center items-center gap-2 md:gap-5 mt-5" />
 			</div>
 		</main>
 	);

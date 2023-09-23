@@ -1,28 +1,30 @@
-'use client';
-
 import InfoItem from '@/app/components/pages/about-me/InfoItem';
 import PageHeader from '@/app/components/common/PageHeader';
 import Photo from '@/app/components/common/Photo';
-import PrimaryButton from '@/app/components/common/PrimaryButton';
 import Separator from '@/app/components/common/Separator';
 import TimelineItem from '@/app/components/pages/about-me/TimelineItem';
 import { SKILLS } from '@/app/utils/constants';
-import { FaDownload } from 'react-icons/fa';
 import { PageProps } from '@/app/utils/types';
-import { useTranslations } from 'next-intl';
+import { createTranslator, useTranslations } from 'next-intl';
 import SkillItem from '@/app/components/pages/about-me/SkillItem';
 import TimelineBlock from '@/app/components/pages/about-me/TimelineBlock';
+import { Metadata, NextPage } from 'next';
+import { getMessages } from '@/app/utils/getMessages';
+import DownloadCvButton from '@/app/components/pages/about-me/DownloadCVButton';
 
-const AboutPage = ({ params }: PageProps) => {
-	const locale = params.locale;
+export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+	const messages = await getMessages(locale);
+	const t = createTranslator({ locale, messages });
+
+	return {
+		title: t('AboutPage.title'),
+		description: t('AboutPage.description'),
+	};
+};
+
+const AboutPage: NextPage = () => {
 	const t = useTranslations('AboutPage');
 
-	const downloadCV = () => {
-		if (typeof window == undefined) return;
-		let href = `cvs/gilbert_temgoua_cv_${locale}.pdf`;
-
-		window.open(`${window.location.origin}/${href}`, '_blank');
-	};
 	const personalInfo = ['name', 'lastName', 'phone', 'email', 'country', 'city'];
 	const professionalInfo = [
 		'experience',
@@ -64,12 +66,7 @@ const AboutPage = ({ params }: PageProps) => {
 							/>
 						))}
 					</div>
-					<PrimaryButton
-						text={t('downloadCvButton')}
-						onClick={downloadCV}
-						icon={<FaDownload />}
-						className="!w-fit text-sm col-span-full smm:justify-self-center"
-					/>
+					<DownloadCvButton />
 				</div>
 			</div>
 			<Separator />

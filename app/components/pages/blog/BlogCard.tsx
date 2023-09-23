@@ -1,3 +1,5 @@
+'use client';
+
 import { PAGES } from '@/app/config';
 import { useRouter } from 'next-intl/client';
 import React, { FC } from 'react';
