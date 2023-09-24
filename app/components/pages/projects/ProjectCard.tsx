@@ -5,16 +5,16 @@ import { PAGES } from '@/app/config';
 import { useRouter } from 'next-intl/client';
 import { Project } from '@/app/utils/types';
 
-const ProjectCard: FC<Project> = ({ className = '', title, image }) => {
+const ProjectCard: FC<Project> = ({ className = '', title, image, slug }) => {
 	const router = useRouter();
 
 	return (
 		<div
 			className={`${className} overflow-hidden cursor-pointer relative h-[220px] rounded-lg bg-neutral-300 dark:bg-neutral-800`}
-			onClick={() => router.push(PAGES.projectDetails(title))}
+			onClick={() => router.push(PAGES.projectDetails(slug))}
 		>
 			<img
-				src={image ?? `https://ui-avatars.com/api?name=${title}`}
+				src={`/assets/images/projects/${image}`}
 				alt={title}
 				className="w-full h-full bg-[length:100%_100%] hover:scale-110 transit rounded-lg"
 			/>

@@ -68,28 +68,66 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
 
 export const PROJECTS: Project[] = [
 	{
+		slug: 'my-website',
+		title: 'my Website',
+		image: 'my-website.png',
+		githubLink: 'my-website',
+		previewLink: 'https://gtemgoua.vercel.app',
+	},
+	{
+		slug: 'bantubeat',
+		title: 'bantubeat',
+		image: 'bantubeat.png',
+		previewLink: 'https://bantubeat.com',
+		requiredAuth: true,
+	},
+	{
+		slug: 'scandiweb-test',
+		title: 'Scandiweb Test',
+		image: 'scandiweb-test.png',
+		githubLink: 'scandiweb-test',
+	},
+	{
+		slug: 'kasa',
 		title: 'kasa',
-		image: '/assets/images/projects/kasa.png',
+		image: 'kasa.png',
+		githubLink: 'oc_p7_kasa',
+		previewLink: '',
 	},
 	{
+		slug: 'piiquante',
 		title: 'piiquante',
-		image: '/assets/images/projects/piiquante.png',
+		image: 'piiquante.png',
+		githubLink: 'oc_p6_piiquante',
+		previewLink: '',
 	},
 	{
+		slug: 'kanap',
 		title: 'kanap',
-		image: '/assets/images/projects/kanap.png',
+		image: 'kanap.png',
+		githubLink: 'oc_p5_kanap',
+		previewLink: '',
 	},
 	{
+		slug: 'panthere',
 		title: 'panthere',
-		image: '/assets/images/projects/panthere.png',
+		image: 'panthere.png',
+		githubLink: 'oc_p4_panthere',
+		previewLink: 'https://tem-ctrl.github.io/oc_p4_panthere',
 	},
 	{
+		slug: 'ohmyfood',
 		title: 'ohmyfood',
-		image: '/assets/images/projects/ohmyfood.png',
+		image: 'ohmyfood.png',
+		githubLink: 'oc_p3_ohmyfood',
+		previewLink: 'https://tem-ctrl.github.io/oc_p3_ohmyfood',
 	},
 	{
+		slug: 'booki',
 		title: 'booki',
-		image: '/assets/images/projects/booki.png',
+		image: 'booki.png',
+		githubLink: 'oc_p2_booki',
+		previewLink: 'https://tem-ctrl.github.io/oc_p2_booki',
 	},
 ];
 

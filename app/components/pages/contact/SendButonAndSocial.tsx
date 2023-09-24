@@ -17,7 +17,6 @@ const SendButtonAndSocial: FC<SendButtonAndSocialProps> = ({ className = '' }) =
 	return (
 		<div className={`${className}`}>
 			<PrimaryButton
-				onClick={() => {}}
 				text={t('sendButtonText')}
 				icon={<FaTelegramPlane />}
 				className="px-5 !h-11 !w-fit self-start uppercase"

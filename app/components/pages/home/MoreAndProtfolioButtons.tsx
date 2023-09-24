@@ -23,13 +23,13 @@ const MoreAndPortfolioButtons: FC<MoreAndPortfolioButtonsProps> = ({ className =
 				onClick={() => router.push(PAGES.aboutMe, { locale })}
 				text={t('moreButtonText')}
 				icon={<BiSolidUser />}
-				uppercase
+				className="uppercase"
 			/>
 			<PrimaryButton
 				onClick={() => router.push(PAGES.projects, { locale })}
 				text={t('portfolioButtonText')}
 				icon={<BsBriefcaseFill />}
-				uppercase
+				className="uppercase"
 			/>
 		</div>
 	);

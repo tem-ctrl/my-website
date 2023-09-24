@@ -1,16 +1,21 @@
-'use client';
+import { useTranslations } from 'next-intl';
 
 // import { NextPage } from 'next';
-import { useRouter } from 'next-intl/client';
-
 const ProjectDetailsPage = ({ params }: { params: { slug: string } }) => {
-	const router = useRouter();
+	const t = useTranslations(`projects.${params.slug}`);
 
 	return (
-		<div className="h-[500px] w-[500px] m-auto flex items-center justify-center gap-10">
-			<button onClick={() => router.back()}> Retour </button>
-			Project title: {decodeURI(params.slug)}
-		</div>
+		<main className="flex flex-col items-center gap-5 py-10">
+			<div className="grid grid-cols-2 gap-5">
+				<img src={`/assets/images/projects/${params.slug}.png`} alt={t('title')} />
+				<p>{t('title')}</p>
+			</div>
+			{/* <ul className='list-disc list-outside'>
+        {Object.entries(t('skills')).map(([key, skill]) => (
+          <li key={`${t('title')}-${key}`}>{skill}</li>
+        ))}
+      </ul> */}
+		</main>
 	);
 };
 

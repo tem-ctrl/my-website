@@ -38,6 +38,10 @@ export type PageProps = { params: { locale: string } };
 
 export interface Project {
 	className?: string;
+	slug: string;
 	title: string;
-	image?: string;
+	image: string;
+	githubLink?: string;
+	previewLink?: string;
+	requiredAuth?: boolean;
 }

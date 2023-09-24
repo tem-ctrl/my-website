@@ -110,6 +110,7 @@
 	"ContactPage": {
 		"title": "Contact - Gilbert Temgoua: Web Developer",
 		"description": "I'm always open to suggestions, critics, greetings and job offers.",
+		"info": "This form will be functional very soon, in the meantime click here to send me an email, thank you.",
 		"PageHeader": {
 			"primaryText": "IN TOUCH",
 			"simpleText": "GET",
@@ -135,5 +136,162 @@
 	},
 	"TimelineItem": {
 		"responsibilities": "Responsibilities"
+	},
+	"projects": {
+		"my-website": {
+			"title": "my website",
+			"purpose": "professional",
+			"description": "",
+			"skills": {
+				"sk-1": "Create a multilingual site with NextJs and next-intl",
+				"sk-2": "Apply SEO optimization best practices",
+				"sk-3": "Implement theme change (dark/light) on a site"
+			},
+			"technologies": {
+				"tech-1": "NextJs",
+				"tech-2": "JavaScript",
+				"tech-3": "TypeScript",
+				"tech-4": "HTML",
+				"tech-5": "CSS"
+			}
+		},
+		"bantubeat": {
+			"title": "Bantubeat",
+			"purpose": "professional",
+			"description": "",
+			"skills": {
+				"sk-1": "Implement responsive interfaces",
+				"sk-2": "Integrate content according to a design",
+				"sk-3": "Consume REST and GraphQl APIs",
+				"sk-4": "Track and fix bugs",
+				"sk-5": "Clean and refactor the code of a web application",
+				"sk-6": "Collaborate effectively on a medium scale project"
+			},
+			"technologies": {
+				"tech-1": "NextJs",
+				"tech-2": "JavaScript",
+				"tech-3": "TypeScript",
+				"tech-4": "HTML",
+				"tech-5": "CSS",
+				"tech-6": "Sass"
+			}
+		},
+		"scandiweb-test": {
+			"title": "Scandiweb assignement test",
+			"purpose": "professional",
+			"description": "",
+			"skills": {
+				"sk-1": "Create a simple REST API with pure PHP",
+				"sk-2": "Implement CRUD operations in PHP",
+				"sk-3": "Implement validation of a dynamic form with react-hook-form",
+				"sk-4": "Create notifications with react-toastify",
+				"sk-5": "Deploy a React project",
+				"sk-6": "Implement the basic configuration of an Apache server",
+				"sk-7": "Store data in an organized way with MySQL"
+			},
+			"technologies": {
+				"tech-1": "ReactJs",
+				"tech-2": "JavaScript",
+				"tech-3": "HTML",
+				"tech-4": "CSS",
+				"tech-5": "PHP",
+				"tech-6": "MySQL"
+			}
+		},
+		"booki": {
+			"title": "Booki",
+			"purpose": "education",
+			"description": "",
+			"skills": {
+				"sk-1": "Implement responsive interfaces",
+				"sk-2": "Integrate content according to a design"
+			},
+			"technologies": {
+				"tech-1": "HTML",
+				"tech-2": "CSS"
+			}
+		},
+		"ohmyfood": {
+			"title": "Ohmyfood",
+			"purpose": "education",
+			"description": "",
+			"skills": {
+				"sk-1": "Implement advanced CSS graphic effects",
+				"sk-2": "Set up a navigation structure for a website",
+				"sk-3": "Ensure the graphic consistency of a website",
+				"sk-4": "Use a version control system for project tracking and hosting",
+				"sk-5": "Set up your Front-End environment"
+			},
+			"technologies": {
+				"tech-1": "HTML",
+				"tech-2": "CSS",
+				"tech-3": "Sass"
+			}
+		},
+		"panthere": {
+			"title": "Panthere",
+			"purpose": "education",
+			"description": "",
+			"skills": {
+				"sk-1": "Conduct a keyword research for a website",
+				"sk-2": "Write maintainable HTML and CSS code",
+				"sk-3": "Optimize the size and speed of a website",
+				"sk-4": "Ensure the accessibility of a website",
+				"sk-5": "Optimize the SEO of a website"
+			},
+			"technologies": {
+				"tech-1": "HTML",
+				"tech-2": "CSS",
+				"tech-3": "Sass"
+			}
+		},
+		"kanap": {
+			"title": "Kanap",
+			"purpose": "education",
+			"description": "",
+			"skills": {
+				"sk-1": "Create a test plan for an application",
+				"sk-2": "Validate data from external sources",
+				"sk-3": "Interact with a web service with JavaScript",
+				"sk-4": "Manage JavaScript events"
+			},
+			"technologies": {
+				"tech-1": "HTML",
+				"tech-2": "CSS",
+				"tech-3": "JavaScript"
+			}
+		},
+		"piiquante": {
+			"title": "Piiquante",
+			"purpose": "education",
+			"description": "",
+			"skills": {
+				"sk-1": "Implement CRUD operations in a secure manner",
+				"sk-2": "Implement a logical data model in accordance with regulations",
+				"sk-3": "Store data securely"
+			},
+			"technologies": {
+				"tech-1": "NodeJs",
+				"tech-2": "Express",
+				"tech-3": "MongoDB"
+			}
+		},
+		"kasa": {
+			"title": "Kasa",
+			"purpose": "education",
+			"description": "",
+			"skills": {
+				"sk-1": "Initialize an application with Create React App",
+				"sk-2": "Configure navigation between the application's pages with React Router",
+				"sk-3": "Develop elements of a website interface using React components"
+			},
+			"technologies": {
+				"tech-1": "ReactJs",
+				"tech-2": "JavaScript",
+				"tech-3": "HTML",
+				"tech-4": "CSS",
+				"tech-5": "Sass"
+			}
+		}
 	}
 }
