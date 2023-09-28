@@ -41,7 +41,11 @@ export const SKILLS: SkillItem[] = [
 	},
 	{
 		skill: 'PHP',
-		value: 60,
+		value: 50,
+	},
+	{
+		skill: 'MySQL',
+		value: 50,
 	},
 ];
 
@@ -72,7 +76,9 @@ export const PROJECTS: Project[] = [
 		title: 'my Website',
 		image: 'my-website.png',
 		githubLink: 'my-website',
-		previewLink: 'https://gtemgoua.vercel.app',
+		previewLink: '/',
+		type: 'professional',
+		technologies: ['NextJs', 'JavaScript', 'TypeScript', 'TailwindCSS', 'HTML', 'CSS'],
 	},
 	{
 		slug: 'bantubeat',
@@ -80,12 +86,17 @@ export const PROJECTS: Project[] = [
 		image: 'bantubeat.png',
 		previewLink: 'https://bantubeat.com',
 		requiredAuth: true,
+		type: 'professional',
+		technologies: ['NextJs', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Sass'],
 	},
 	{
 		slug: 'scandiweb-test',
 		title: 'Scandiweb Test',
 		image: 'scandiweb-test.png',
 		githubLink: 'scandiweb-test',
+		previewLink: 'https://gtemgoua-scandiweb-test.000webhostapp.com',
+		type: 'professional',
+		technologies: ['ReactJs', 'JavaScript', 'HTML', 'CSS', 'PHP', 'MySQL'],
 	},
 	{
 		slug: 'kasa',
@@ -93,6 +104,8 @@ export const PROJECTS: Project[] = [
 		image: 'kasa.png',
 		githubLink: 'oc_p7_kasa',
 		previewLink: '',
+		type: 'education',
+		technologies: ['ReactJs', 'JavaScript', 'HTML', 'CSS', 'Sass'],
 	},
 	{
 		slug: 'piiquante',
@@ -100,6 +113,8 @@ export const PROJECTS: Project[] = [
 		image: 'piiquante.png',
 		githubLink: 'oc_p6_piiquante',
 		previewLink: '',
+		type: 'education',
+		technologies: ['NodeJs', 'Express', 'MongoDB'],
 	},
 	{
 		slug: 'kanap',
@@ -107,6 +122,8 @@ export const PROJECTS: Project[] = [
 		image: 'kanap.png',
 		githubLink: 'oc_p5_kanap',
 		previewLink: '',
+		type: 'education',
+		technologies: ['HTML', 'CSS', 'JavaScript'],
 	},
 	{
 		slug: 'panthere',
@@ -114,6 +131,8 @@ export const PROJECTS: Project[] = [
 		image: 'panthere.png',
 		githubLink: 'oc_p4_panthere',
 		previewLink: 'https://tem-ctrl.github.io/oc_p4_panthere',
+		type: 'education',
+		technologies: ['HTML', 'CSS', 'Sass'],
 	},
 	{
 		slug: 'ohmyfood',
@@ -121,6 +140,8 @@ export const PROJECTS: Project[] = [
 		image: 'ohmyfood.png',
 		githubLink: 'oc_p3_ohmyfood',
 		previewLink: 'https://tem-ctrl.github.io/oc_p3_ohmyfood',
+		type: 'education',
+		technologies: ['HTML', 'CSS', 'Sass'],
 	},
 	{
 		slug: 'booki',
@@ -128,6 +149,8 @@ export const PROJECTS: Project[] = [
 		image: 'booki.png',
 		githubLink: 'oc_p2_booki',
 		previewLink: 'https://tem-ctrl.github.io/oc_p2_booki',
+		type: 'education',
+		technologies: ['HTML', 'CSS'],
 	},
 ];
 

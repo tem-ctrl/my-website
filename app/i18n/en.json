@@ -4,7 +4,7 @@
 		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowlegde of the ReactJs and NextJS ecosystem. I'm open to work immediately."
 	},
 	"HomePage": {
-		"title": "Home - Gilbert Temgoua: Web Developer",
+		"title": "Home - Gilbert Temgoua",
 		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowlegde of the ReactJs and NextJS ecosystem. I'm open to work immediately.",
 		"hi": "hi!",
 		"iAm": "I am",
@@ -17,7 +17,7 @@
 		"portfolioButtonText": "My projects"
 	},
 	"AboutPage": {
-		"title": "About Me - Gilbert Temgoua: Web Developer",
+		"title": "About Me - Gilbert Temgoua",
 		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowlegde of the ReactJs and NextJS ecosystem. I'm open to work immediately.",
 		"PageHeader": {
 			"simpleText": "About",
@@ -25,7 +25,7 @@
 			"tagline": "I build well-crafted modern websites, I love what I do"
 		},
 		"personalInfo": {
-			"name": "Name",
+			"name": "First Name",
 			"nameValue": "Gilbert",
 			"lastName": "Last Name",
 			"lastNameValue": "TEMGOUA DONKOO",
@@ -95,7 +95,7 @@
 		"skills": "skills"
 	},
 	"ProjectsPage": {
-		"title": "Projects - Gilbert Temgoua: Web Developer",
+		"title": "Projects - Gilbert Temgoua",
 		"description": "Discover few of the latest development projects I've realized entirely or partly.",
 		"PageHeader": {
 			"primaryText": "PORTFOLIO",
@@ -103,12 +103,19 @@
 			"tagline": "Web development projects I lovely carried out"
 		}
 	},
+	"ProjectDetailsPage": {
+		"description": "{type, select, education {Project brief} other {Description}}",
+		"skills": "Required skills",
+		"technologies": "Technologies used",
+		"viewOnGithub": "View on GitHub",
+		"visitSite": "Visit site"
+	},
 	"BlogPage": {
-		"title": "Blog - Gilbert Temgoua: Web Developer",
+		"title": "Blog - Gilbert Temgoua",
 		"description": "Here I share my experience with everyone willing to learn from my mistakes and my researchs."
 	},
 	"ContactPage": {
-		"title": "Contact - Gilbert Temgoua: Web Developer",
+		"title": "Contact - Gilbert Temgoua",
 		"description": "I'm always open to suggestions, critics, greetings and job offers.",
 		"info": "This form will be functional very soon, in the meantime click here to send me an email, thank you.",
 		"PageHeader": {
@@ -141,157 +148,56 @@
 		"my-website": {
 			"title": "my website",
 			"purpose": "professional",
-			"description": "",
-			"skills": {
-				"sk-1": "Create a multilingual site with NextJs and next-intl",
-				"sk-2": "Apply SEO optimization best practices",
-				"sk-3": "Implement theme change (dark/light) on a site"
-			},
-			"technologies": {
-				"tech-1": "NextJs",
-				"tech-2": "JavaScript",
-				"tech-3": "TypeScript",
-				"tech-4": "HTML",
-				"tech-5": "CSS"
-			}
+			"description": "It is a website built to introduce myself, showcase my development portfolio and later share my development experience on the upcoming blog page. Every project of my portfolio can be displayed in details on a dedicated page which shows the links to view the project on GitHub and/or visit the dedicated website. There's also a contact page if you want to get in touch to hire me for example.",
+			"skills": "<sk>Create a multilingual site with NextJs and next-intl</sk><sk>Apply SEO optimization best practices</sk><sk>Implement theme change (dark/light) on a website</sk>"
 		},
 		"bantubeat": {
 			"title": "Bantubeat",
 			"purpose": "professional",
 			"description": "",
-			"skills": {
-				"sk-1": "Implement responsive interfaces",
-				"sk-2": "Integrate content according to a design",
-				"sk-3": "Consume REST and GraphQl APIs",
-				"sk-4": "Track and fix bugs",
-				"sk-5": "Clean and refactor the code of a web application",
-				"sk-6": "Collaborate effectively on a medium scale project"
-			},
-			"technologies": {
-				"tech-1": "NextJs",
-				"tech-2": "JavaScript",
-				"tech-3": "TypeScript",
-				"tech-4": "HTML",
-				"tech-5": "CSS",
-				"tech-6": "Sass"
-			}
+			"skills": "<sk>Implement responsive interfaces</sk><sk>Integrate content according to a design</sk><sk>Consume REST and GraphQl APIs</sk><sk>Track and fix bugs</sk><sk>Clean and refactor the code of a web application</sk><sk>Collaborate effectively on a medium scale project</sk>"
 		},
 		"scandiweb-test": {
 			"title": "Scandiweb assignement test",
 			"purpose": "professional",
 			"description": "",
-			"skills": {
-				"sk-1": "Create a simple REST API with pure PHP",
-				"sk-2": "Implement CRUD operations in PHP",
-				"sk-3": "Implement validation of a dynamic form with react-hook-form",
-				"sk-4": "Create notifications with react-toastify",
-				"sk-5": "Deploy a React project",
-				"sk-6": "Implement the basic configuration of an Apache server",
-				"sk-7": "Store data in an organized way with MySQL"
-			},
-			"technologies": {
-				"tech-1": "ReactJs",
-				"tech-2": "JavaScript",
-				"tech-3": "HTML",
-				"tech-4": "CSS",
-				"tech-5": "PHP",
-				"tech-6": "MySQL"
-			}
+			"skills": "<sk>Create a simple REST API with pure PHP</sk><sk>Implement CRUD operations in PHP</sk><sk>Implement validation of a dynamic form with react-hook-form</sk><sk>Create notifications with react-toastify</sk><sk>Deploy a React project</sk><sk>Implement the basic configuration of an Apache server</sk><sk>Store data in an organized way with MySQL</sk>"
 		},
 		"booki": {
 			"title": "Booki",
 			"purpose": "education",
-			"description": "",
-			"skills": {
-				"sk-1": "Implement responsive interfaces",
-				"sk-2": "Integrate content according to a design"
-			},
-			"technologies": {
-				"tech-1": "HTML",
-				"tech-2": "CSS"
-			}
+			"description": "The company wants to develop a website that allows users to find accommodation and activities in the city of their choice. <br /> You are responsible for integrating the site interface with HTML and CSS code. To do this, you work in close collaboration with Sarah, the CTO, and Loïc, the UI designer.",
+			"skills": "<sk>Implement responsive interfaces</sk><sk>Integrate content according to a design</sk>"
 		},
 		"ohmyfood": {
 			"title": "Ohmyfood",
 			"purpose": "education",
-			"description": "",
-			"skills": {
-				"sk-1": "Implement advanced CSS graphic effects",
-				"sk-2": "Set up a navigation structure for a website",
-				"sk-3": "Ensure the graphic consistency of a website",
-				"sk-4": "Use a version control system for project tracking and hosting",
-				"sk-5": "Set up your Front-End environment"
-			},
-			"technologies": {
-				"tech-1": "HTML",
-				"tech-2": "CSS",
-				"tech-3": "Sass"
-			}
+			"description": "Your mission is to develop a “mobile first” site that lists the menus of gourmet restaurants. In addition to traditional reservation systems, customers will be able to compose the menu for their meal so that the dishes are ready upon their arrival. No more waiting times at the restaurant!",
+			"skills": "<sk>Implement advanced CSS graphic effects</sk><sk>Set up a navigation structure for a website</sk><sk>Ensure the graphic consistency of a website</sk><sk>Use a version control system for project tracking and hosting</sk><sk>Set up your Front-End environment</sk>"
 		},
 		"panthere": {
 			"title": "Panthere",
 			"purpose": "education",
-			"description": "",
-			"skills": {
-				"sk-1": "Conduct a keyword research for a website",
-				"sk-2": "Write maintainable HTML and CSS code",
-				"sk-3": "Optimize the size and speed of a website",
-				"sk-4": "Ensure the accessibility of a website",
-				"sk-5": "Optimize the SEO of a website"
-			},
-			"technologies": {
-				"tech-1": "HTML",
-				"tech-2": "CSS",
-				"tech-3": "Sass"
-			}
+			"description": "You work for the La Panthère agency, a large web design agency based in Lyon. The company's activity got off to a good start but today it is losing momentum. Yes, the competition is tough. The founder of the company, Sophie, is looking for a solution to restart the activity. By typing “Web design company Lyon” on the Internet, she notices that the agency’s website only appears on the second page of search engines. Luckily, one of your colleagues, Martin, told him that you were an SEO specialist.",
+			"skills": "<sk>Conduct a keyword research for a website</sk><sk>Write maintainable HTML and CSS code</sk><sk>Optimize the size and speed of a website</sk><sk>Ensure the accessibility of a website</sk><sk>Optimize the SEO of a website</sk>"
 		},
 		"kanap": {
 			"title": "Kanap",
 			"purpose": "education",
-			"description": "",
-			"skills": {
-				"sk-1": "Create a test plan for an application",
-				"sk-2": "Validate data from external sources",
-				"sk-3": "Interact with a web service with JavaScript",
-				"sk-4": "Manage JavaScript events"
-			},
-			"technologies": {
-				"tech-1": "HTML",
-				"tech-2": "CSS",
-				"tech-3": "JavaScript"
-			}
+			"description": "You have been working in a web development agency for a few weeks now. After having successfully completed the integration of a few websites (HTML/CSS), you are entrusted with a new mission.<br /> Your client is Kanap, a sofa brand which sells its products exclusively from its store. Today, it would like to have an e-commerce platform in addition to its physical store to sell its products on the Internet.",
+			"skills": "<sk>Create a test plan for an application</sk><sk>Validate data from external sources</sk><sk>Interact with a web service with JavaScript</sk><sk>Manage JavaScript events</sk>"
 		},
 		"piiquante": {
 			"title": "Piiquante",
 			"purpose": "education",
-			"description": "",
-			"skills": {
-				"sk-1": "Implement CRUD operations in a secure manner",
-				"sk-2": "Implement a logical data model in accordance with regulations",
-				"sk-3": "Store data securely"
-			},
-			"technologies": {
-				"tech-1": "NodeJs",
-				"tech-2": "Express",
-				"tech-3": "MongoDB"
-			}
+			"description": "You've spent the last year as an independent back-end developer, working on several projects of varying sizes and difficulties. <br /> Last week, you received a message on your freelance platform asking for help with a new project. Hot sauces are becoming more and more popular, thanks in large part to the YouTube series \"Hot Ones.\" This is why this new client, the chili-based condiment brand Piiquante, wants to develop a web application for reviewing hot sauces called \"Hot Takes\".",
+			"skills": "<sk>Implement CRUD operations in a secure manner</sk><sk>Implement a logical data model in accordance with regulations</sk><sk>Store data securely</sk>"
 		},
 		"kasa": {
 			"title": "Kasa",
 			"purpose": "education",
-			"description": "",
-			"skills": {
-				"sk-1": "Initialize an application with Create React App",
-				"sk-2": "Configure navigation between the application's pages with React Router",
-				"sk-3": "Develop elements of a website interface using React components"
-			},
-			"technologies": {
-				"tech-1": "ReactJs",
-				"tech-2": "JavaScript",
-				"tech-3": "HTML",
-				"tech-4": "CSS",
-				"tech-5": "Sass"
-			}
+			"description": "The Kasa site was coded more than 10 years ago in ASP.NET with significant legacy code. Laura, the CTO, therefore launched a total overhaul to move to a complete JavaScript stack with NodeJS on the back-end, and React on the front-end. Kasa also took the opportunity to order new models from his usual designer, who is freelance. A big project for this year!",
+			"skills": "<sk>Initialize an application with Create React App</sk><sk>Configure navigation between the application's pages with React Router</sk><sk>Develop elements of a website interface using React components</sk>"
 		}
 	}
 }

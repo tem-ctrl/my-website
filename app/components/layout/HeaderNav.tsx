@@ -2,8 +2,7 @@
 
 import React, { FC, useEffect, useRef, useState } from 'react';
 import { useTheme } from 'next-themes';
-import { IoMdMoon } from 'react-icons/io';
-import { BsFillSunFill } from 'react-icons/bs';
+import { BsFillSunFill, BsMoonFill } from 'react-icons/bs';
 import { usePathname } from 'next/navigation';
 import { VscMenu, VscChromeClose } from 'react-icons/vsc';
 import LocaleSwitcher from '@/app/components/layout/LocaleSwitcher';
@@ -61,16 +60,16 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 	};
 
 	const renderThemeChanger = () => {
-		if (!mounted) return null;
+		if (!mounted) return <BsFillSunFill className="text-primary/40 text-lg" />;
 		const currentTheme = theme === 'system' ? systemTheme : theme;
 
 		return (
 			<button
-				className="text-xl text-primary"
+				className="text-lg text-primary"
 				onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
 				name="theme switcher"
 			>
-				{currentTheme === 'dark' ? <BsFillSunFill /> : <IoMdMoon />}
+				{currentTheme === 'dark' ? <BsFillSunFill /> : <BsMoonFill className="text-base" />}
 			</button>
 		);
 	};

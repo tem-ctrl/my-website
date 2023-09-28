@@ -17,10 +17,6 @@ const roboto = Roboto({
 
 type Locale = { locale: string };
 
-// export function generateStaticParams(): Locale[] {
-// 	return [{ locale: 'en' }, { locale: 'fr' }];
-// }
-
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
 	const messages = await getMessages(locale);
 	const t = createTranslator({ locale, messages });
@@ -53,7 +49,7 @@ const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
 				<NextIntlClientProvider messages={messages} locale={params.locale}>
 					<Providers>
 						<Header />
-						{children}
+						<div className="px-2.5 md:px-6 lg:px-14 w-full">{children}</div>
 						{/* <Footer /> */}
 					</Providers>
 				</NextIntlClientProvider>

@@ -5,12 +5,13 @@ import Separator from '@/app/components/common/Separator';
 import TimelineItem from '@/app/components/pages/about-me/TimelineItem';
 import { SKILLS } from '@/app/utils/constants';
 import { PageProps } from '@/app/utils/types';
-import { createTranslator, useTranslations } from 'next-intl';
+import { createTranslator, useLocale, useTranslations } from 'next-intl';
 import SkillItem from '@/app/components/pages/about-me/SkillItem';
 import TimelineBlock from '@/app/components/pages/about-me/TimelineBlock';
 import { Metadata, NextPage } from 'next';
 import { getMessages } from '@/app/utils/getMessages';
-import DownloadCvButton from '@/app/components/pages/about-me/DownloadCVButton';
+import PrimaryButtonLink from '@/app/components/common/PrimaryButtonLink';
+import { FaDownload } from 'react-icons/fa';
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
 	const messages = await getMessages(locale);
@@ -24,6 +25,7 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
 
 const AboutPage: NextPage = () => {
 	const t = useTranslations('AboutPage');
+	const locale = useLocale();
 
 	const personalInfo = ['name', 'lastName', 'phone', 'email', 'country', 'city'];
 	const professionalInfo = [
@@ -66,7 +68,14 @@ const AboutPage: NextPage = () => {
 							/>
 						))}
 					</div>
-					<DownloadCvButton />
+					<PrimaryButtonLink
+						text={t('downloadCvButton')}
+						href={`cvs/gilbert_temgoua_cv_${locale}.pdf`}
+						icon={<FaDownload />}
+						className={`!w-fit text-sm col-span-full smm:justify-self-center`}
+						target="_blank"
+					/>
+					{/* <DownloadCvButton /> */}
 				</div>
 			</div>
 			<Separator />

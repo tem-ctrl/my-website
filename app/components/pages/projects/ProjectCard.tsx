@@ -2,16 +2,14 @@
 
 import React, { FC } from 'react';
 import { PAGES } from '@/app/config';
-import { useRouter } from 'next-intl/client';
 import { Project } from '@/app/utils/types';
+import Link from 'next-intl/link';
 
 const ProjectCard: FC<Project> = ({ className = '', title, image, slug }) => {
-	const router = useRouter();
-
 	return (
-		<div
+		<Link
 			className={`${className} overflow-hidden cursor-pointer relative h-[220px] rounded-lg bg-neutral-300 dark:bg-neutral-800`}
-			onClick={() => router.push(PAGES.projectDetails(slug))}
+			href={{ pathname: PAGES.projectDetails(slug) }}
 		>
 			<img
 				src={`/assets/images/projects/${image}`}
@@ -21,7 +19,7 @@ const ProjectCard: FC<Project> = ({ className = '', title, image, slug }) => {
 			<h2 className="absolute rounded-b-lg w-full bottom-0 text-lg text-white font-semibold bg-bgDark/40 uppercase h-10 flex items-center justify-center">
 				{title}
 			</h2>
-		</div>
+		</Link>
 	);
 };
 

@@ -44,4 +44,6 @@ export interface Project {
 	githubLink?: string;
 	previewLink?: string;
 	requiredAuth?: boolean;
+	type?: 'education' | 'professional';
+	technologies?: string[];
 }

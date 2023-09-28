@@ -27,12 +27,6 @@
   overflow-y: scroll;
 }
 
-/* @layer {
-  .hFill {
-    @apply overflow-y-scroll;
-  }
-} */
-
 @media all and (min-width: '768px') {
   .hFill {
     height: calc(100dvh - 60px);

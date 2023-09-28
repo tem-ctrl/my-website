@@ -17,7 +17,7 @@
 		"portfolioButtonText": "Mes projets"
 	},
 	"AboutPage": {
-		"title": "A propos De Moi - Gilbert Temgoua: Web Developer",
+		"title": "A propos De Moi - Gilbert Temgoua",
 		"description": "Je suis un développeur web passionné vivant à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement.",
 		"PageHeader": {
 			"simpleText": "A propos",
@@ -95,7 +95,7 @@
 		"skills": "Compétences"
 	},
 	"ProjectsPage": {
-		"title": "Projects - Gilbert Temgoua: Web Developer",
+		"title": "Projects - Gilbert Temgoua",
 		"description": "Découvrez quelques uns des tous derniers projets que j'ai réalisés de moi-même ou en tant que membre d'une équipe.",
 		"PageHeader": {
 			"primaryText": "PORTFOLIO",
@@ -103,12 +103,19 @@
 			"tagline": "Les projets de développement web que j'ai réalisés avec soin"
 		}
 	},
+	"ProjectDetailsPage": {
+		"description": "{type, select, education {Scénario} other {Description}}",
+		"skills": "Compétences requises",
+		"technologies": "Technologies utilisées",
+		"viewOnGithub": "Voir sur GitHub",
+		"visitSite": "Visiter le site"
+	},
 	"BlogPage": {
-		"title": "Blog - Gilbert Temgoua: Web Developer",
+		"title": "Blog - Gilbert Temgoua",
 		"description": "Je partage ici mon experience avec quiconque souhaiterait apprendre de mes erreurs et de mes recherches personnelles."
 	},
 	"ContactPage": {
-		"title": "Contact - Gilbert Temgoua: Web Developer",
+		"title": "Contact - Gilbert Temgoua",
 		"description": "Je suis toujours ouvert aux suggestions, critiques, simples salutations ou offre d'emploi.",
 		"info": "Ce formulaire sera opérationnel sous peu, en attendant cliquez ici pour m'envoyer un mail, merci",
 		"PageHeader": {
@@ -141,157 +148,56 @@
 		"my-website": {
 			"title": "mon site web",
 			"purpose": "professional",
-			"description": "",
-			"skills": {
-				"sk-1": "Créer un site multilingue avec NextJs et next-intl",
-				"sk-2": "Appliquer les bonnes pratiques d'optimisation du SEO",
-				"sk-3": "Implémenter le changement de thème (sombre/clair) sur un site"
-			},
-			"technologies": {
-				"tech-1": "NextJs",
-				"tech-2": "JavaScript",
-				"tech-3": "TypeScript",
-				"tech-4": "HTML",
-				"tech-5": "CSS"
-			}
+			"description": "C'est un site Web construit pour me présenter, présenter mon portfolio de développement et plus tard partager mon expérience de développement sur la page du blog en cours de développement. Chaque projet de mon portfolio peut être affiché en détail sur une page dédiée qui affiche les liens pour visualiser le projet sur GitHub et/ou visiter le site dédié. Vous y trouverez aussi une page de contact si vous souhaitez me contacter pour m'embaucher par exemple.",
+			"skills": "<sk>Créer un site multilingue avec NextJs et next-intl</sk><sk>Appliquer les bonnes pratiques d'optimisation du SEO</sk><sk>Implémenter le changement de thème (sombre/clair) sur un site</sk>"
 		},
 		"bantubeat": {
 			"title": "Bantubeat",
 			"purpose": "professional",
 			"description": "",
-			"skills": {
-				"sk-1": "Implémenter des interfaces responsives",
-				"sk-2": "Intégrer du contenu conformément aux maquettes",
-				"sk-3": "Consommer des API REST et GraphQl",
-				"sk-4": "Tracker et résoudre les bugs",
-				"sk-5": "Nettoyer et réusiner le code d'une application web",
-				"sk-6": "Collaborer efficacement sur un projet de moyenne echelle"
-			},
-			"technologies": {
-				"tech-1": "NextJs",
-				"tech-2": "JavaScript",
-				"tech-3": "TypeScript",
-				"tech-4": "HTML",
-				"tech-5": "CSS",
-				"tech-6": "Sass"
-			}
+			"skills": "<sk>Implémenter des interfaces responsives</sk><sk>Intégrer du contenu conformément aux maquettes</sk><sk>Consommer des API REST et GraphQl</sk><sk>Tracker et résoudre les bugs</sk><sk>Nettoyer et réusiner le code d'une application web</sk><sk>Collaborer efficacement sur un projet de moyenne echelle</sk>"
 		},
 		"scandiweb-test": {
 			"title": "Test Scandiweb",
 			"purpose": "professional",
 			"description": "",
-			"skills": {
-				"sk-1": "Créer une simple API REST avec du pure PHP",
-				"sk-2": "Implémenter les opérations du CRUD en PHP",
-				"sk-3": "Implémenter la validation d'un formulaire dynamique avec react-hook-form",
-				"sk-4": "Créer des notifications avec react-toastify",
-				"sk-5": "Déployer un projet React",
-				"sk-6": "Implémenter la configuration de base d'un serveur Apache",
-				"sk-7": "Stcker des données de façon organisée avec MySQL"
-			},
-			"technologies": {
-				"tech-1": "ReactJs",
-				"tech-2": "JavaScript",
-				"tech-3": "HTML",
-				"tech-4": "CSS",
-				"tech-5": "PHP",
-				"tech-6": "MySQL"
-			}
+			"skills": "<sk>Créer une simple API REST avec du pure PHP</sk><sk>Implémenter les opérations du CRUD en PHP</sk><sk>Implémenter la validation d'un formulaire dynamique avec react-hook-form</sk><sk>Créer des notifications avec react-toastify</sk><sk>Déployer un projet React</sk><sk>Implémenter la configuration de base d'un serveur Apache</sk><sk>Stcker des données de façon organisée avec MySQL</sk>"
 		},
 		"booki": {
 			"title": "Booki",
 			"purpose": "education",
-			"description": "",
-			"skills": {
-				"sk-1": "Implémenter une interface responsive",
-				"sk-2": "Intégrer du contenu conformément à une maquette"
-			},
-			"technologies": {
-				"tech-1": "HTML",
-				"tech-2": "CSS"
-			}
+			"description": "L'entreprise souhaite développer un site Internet qui permette aux usagers de trouver des hébergements et des activités dans la ville de leur choix.<br /> Vous êtes chargé d'intégrer l'interface du site avec du code HTML et CSS. Pour cela, vous travaillez en étroite collaboration avec Sarah, la CTO, et Loïc, l'UI designer.",
+			"skills": "<sk>Implémenter une interface responsive</sk><sk>Intégrer du contenu conformément à une maquette</sk>"
 		},
 		"ohmyfood": {
 			"title": "Ohmyfood",
 			"purpose": "education",
-			"description": "",
-			"skills": {
-				"sk-1": "Mettre en œuvre des effets CSS graphiques avancés",
-				"sk-2": "Mettre en place une structure de navigation pour un site web",
-				"sk-3": "Assurer la cohérence graphique d'un site web",
-				"sk-4": "Utiliser un système de gestion de versions pour le suivi du projet et son hébergement",
-				"sk-5": "Mettre en place son environnement Front-End"
-			},
-			"technologies": {
-				"tech-1": "HTML",
-				"tech-2": "CSS",
-				"tech-3": "Sass"
-			}
+			"description": "Votre mission est de développer un site “mobile first” qui répertorie les menus de restaurants gastronomiques. En plus des systèmes classiques de réservation, les clients pourront composer le menu de leur repas pour que les plats soient prêts à leur arrivée. Finis, les temps d'attente au restaurant !",
+			"skills": "<sk>Mettre en œuvre des effets CSS graphiques avancés</sk><sk>Mettre en place une structure de navigation pour un site web</sk><sk>Assurer la cohérence graphique d'un site web</sk><sk>Utiliser un système de gestion de versions pour le suivi du projet et son hébergement</sk><sk>Mettre en place son environnement Front-End</sk>"
 		},
 		"panthere": {
 			"title": "Panthere",
 			"purpose": "education",
-			"description": "",
-			"skills": {
-				"sk-1": "Réaliser une recherche de mots clés pour un site web",
-				"sk-2": "Écrire un code HTML et CSS maintenable",
-				"sk-3": "Optimiser la taille et la vitesse d'un site web",
-				"sk-4": "Assurer l'accessibilité d'un site web",
-				"sk-5": "Optimiser le référencement d'un site web"
-			},
-			"technologies": {
-				"tech-1": "HTML",
-				"tech-2": "CSS",
-				"tech-3": "Sass"
-			}
+			"description": "Vous travaillez pour l'agence La Panthère, une grande agence de web design basée à Lyon. L'activité de l'entreprise a bien démarré mais aujourd'hui, elle est en perte de vitesse. Eh oui, la concurrence est rude. La fondatrice de l'entreprise, Sophie, cherche une solution pour faire repartir l'activité. En tapant “Entreprise web design Lyon” sur Internet, elle s'aperçoit que le site de l'agence apparaît seulement en deuxième page des moteurs de recherche. Par chance, un de vos collègues, Martin, lui a dit que vous étiez un spécialiste en référencement.",
+			"skills": "<sk>Réaliser une recherche de mots clés pour un site web</sk><sk>Écrire un code HTML et CSS maintenable</sk><sk>Optimiser la taille et la vitesse d'un site web</sk><sk>Assurer l'accessibilité d'un site web</sk><sk>Optimiser le référencement d'un site web</sk>"
 		},
 		"kanap": {
 			"title": "Kanap",
 			"purpose": "education",
-			"description": "",
-			"skills": {
-				"sk-1": "Créer un plan de test pour une application",
-				"sk-2": "Valider des données issues de sources externes",
-				"sk-3": "Interagir avec un web service avec JavaScript",
-				"sk-4": "Gérer des événements JavaScript"
-			},
-			"technologies": {
-				"tech-1": "HTML",
-				"tech-2": "CSS",
-				"tech-3": "JavaScript"
-			}
+			"description": "Vous êtes en poste dans une agence de développement web depuis quelques semaines maintenant. Après avoir réalisé avec succès l'intégration de quelques sites web (HTML/CSS), on vous confie une nouvelle mission.<br /> Votre client est Kanap, une marque de canapés qui vend ses produits depuis sa boutique exclusivement. Aujourd'hui, celle-ci souhaiterait avoir une plateforme de e-commerce en plus de sa boutique physique pour vendre ses produits sur Internet.",
+			"skills": "<sk>Créer un plan de test pour une application</sk><sk>Valider des données issues de sources externes</sk><sk>Interagir avec un web service avec JavaScript</sk><sk>Gérer des événements JavaScript</sk>"
 		},
 		"piiquante": {
 			"title": "Piiquante",
 			"purpose": "education",
-			"description": "",
-			"skills": {
-				"sk-1": "Mettre en œuvre des opérations CRUD de manière sécurisée",
-				"sk-2": "Implémenter un modèle logique de données conformément à la réglementation",
-				"sk-3": "Stocker des données de manière sécurisée"
-			},
-			"technologies": {
-				"tech-1": "NodeJs",
-				"tech-2": "Express",
-				"tech-3": "MongoDB"
-			}
+			"description": "Vous avez passé la dernière année en tant que développeur back-end indépendant et vous avez travaillé sur plusieurs projets de tailles et de difficultés variées. <br /> La semaine dernière, vous avez reçu un message sur votre plateforme de freelance vous demandant de l'aide pour un nouveau projet. Les sauces piquantes sont de plus en plus populaires, en grande partie grâce à la série YouTube « Hot Ones » . C'est pourquoi ce nouveau client, la marque de condiments à base de piment Piiquante, veut développer une application web de critique des sauces piquantes appelée « Hot Takes ».",
+			"skills": "<sk>Mettre en œuvre des opérations CRUD de manière sécurisée</sk><sk>Implémenter un modèle logique de données conformément à la réglementation</sk><sk>Stocker des données de manière sécurisée</sk>"
 		},
 		"kasa": {
 			"title": "Kasa",
 			"purpose": "education",
-			"description": "",
-			"skills": {
-				"sk-1": "Initialiser une application avec Create React App",
-				"sk-2": "Configurer la navigation entre les pages de l'application avec React Router",
-				"sk-3": "Développer des éléments de l'interface d'un site web grâce à des composants React"
-			},
-			"technologies": {
-				"tech-1": "ReactJs",
-				"tech-2": "JavaScript",
-				"tech-3": "HTML",
-				"tech-4": "CSS",
-				"tech-5": "Sass"
-			}
+			"description": "Le site de Kasa a été codé il y a maintenant plus de 10 ans en ASP.NET avec un code legacy important. Laura, la CTO, a donc lancé une refonte totale pour passer à une stack complète en JavaScript avec NodeJS côté back-end, et React côté front-end. Kasa en a également profité pour commander de nouvelles maquettes auprès de son designer habituel, qui est en freelance. Un gros chantier pour cette année !",
+			"skills": "<sk>Initialiser une application avec Create React App</sk><sk>Configurer la navigation entre les pages de l'application avec React Router</sk><sk>Développer des éléments de l'interface d'un site web grâce à des composants React</sk>"
 		}
 	}
 }
