@@ -1,13 +1,14 @@
 import '@/app/globals.css';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
-import React, { FC } from 'react';
+import React, { FC, Suspense } from 'react';
 import Providers from '@/app/components/layout/Providers';
 import Header from '@/app/components/layout/Header';
 import { NextIntlClientProvider, createTranslator } from 'next-intl';
 import { PageProps } from '@/app/utils/types';
 import { getMessages } from '@/app/utils/getMessages';
 import NotFound from '@/app/components/common/NotFound';
+import GoogleAnalytics from '@/app/components/layout/GoogleAnalytics';
 
 const roboto = Roboto({
 	subsets: ['latin'],
@@ -46,6 +47,9 @@ const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
 			<body
 				className={`${roboto.className} max-w-[1600px] mx-auto bg-bgLight dark:bg-bgDark text-light dark:text-dark`}
 			>
+				<Suspense>
+					<GoogleAnalytics />
+				</Suspense>
 				<NextIntlClientProvider messages={messages} locale={params.locale}>
 					<Providers>
 						<Header />

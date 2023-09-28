@@ -14,6 +14,7 @@ interface PrimaryButtonLinkProps extends MyButtonLink {
 
 const PrimaryButtonLink = forwardRef<HTMLAnchorElement, PrimaryButtonLinkProps>((props, ref) => {
 	const { className, icon, text, href, newTab, ...restProps } = props;
+	const blank = newTab && href !== '/';
 
 	return (
 		<Link
@@ -21,12 +22,12 @@ const PrimaryButtonLink = forwardRef<HTMLAnchorElement, PrimaryButtonLinkProps>(
 			ref={ref}
 			href={href}
 			{...restProps}
-			target={newTab ? '_blank' : '_self'}
+			target={blank ? '_blank' : '_self'}
 		>
-			<span>{icon}</span>
+			{!!icon && <span>{icon}</span>}
 			<span>
 				{text}
-				{newTab && <MdOpenInNew className="ml-1 inline" />}
+				{blank && <MdOpenInNew className="ml-1 inline" />}
 			</span>
 		</Link>
 	);
