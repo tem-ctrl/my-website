@@ -8,7 +8,7 @@ import { NextIntlClientProvider, createTranslator } from 'next-intl';
 import { PageProps } from '@/app/utils/types';
 import { getMessages } from '@/app/utils/getMessages';
 import NotFound from '@/app/components/common/NotFound';
-import GoogleAnalytics from '@/app/components/layout/GoogleAnalytics';
+import GoogleTag from '@/app/components/robot/GoogleTag';
 
 const roboto = Roboto({
 	subsets: ['latin'],
@@ -48,7 +48,7 @@ const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
 				className={`${roboto.className} max-w-[1600px] mx-auto bg-bgLight dark:bg-bgDark text-light dark:text-dark`}
 			>
 				<Suspense>
-					<GoogleAnalytics />
+					<GoogleTag />
 				</Suspense>
 				<NextIntlClientProvider messages={messages} locale={params.locale}>
 					<Providers>
