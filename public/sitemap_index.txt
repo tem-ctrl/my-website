@@ -1,6 +1,5 @@
 https://gtemgoua.vercel.app
 https://gtemgoua.vercel.app/about-me
-https://gtemgoua.vercel.app/about-me
 https://gtemgoua.vercel.app/projects
 https://gtemgoua.vercel.app/projects/my-website
 https://gtemgoua.vercel.app/projects/scandiweb-test
