@@ -73,9 +73,8 @@ const AboutPage: NextPage = () => {
 						href={`cvs/gilbert_temgoua_cv_${locale}.pdf`}
 						icon={<FaDownload />}
 						className={`!w-fit text-sm col-span-full smm:justify-self-center`}
-						target="_blank"
+						newTab
 					/>
-					{/* <DownloadCvButton /> */}
 				</div>
 			</div>
 			<Separator />
