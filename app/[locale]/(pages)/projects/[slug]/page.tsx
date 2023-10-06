@@ -31,7 +31,7 @@ const ProjectDetailsPage = ({ params }: { params: { slug: string } }) => {
 				className="rounded-lg w-full"
 			/>
 			<div className="flex flex-col gap-5 lg:gap-3">
-				<p className="text-3xl text-primary uppercase font-bold mdm:text-center">{t('title')}</p>
+				<h1 className="text-3xl text-primary uppercase font-bold mdm:text-center">{t('title')}</h1>
 				<div className="flex lg:flex-col gap-3 ">
 					{project.githubLink && (
 						<PrimaryButtonLink
