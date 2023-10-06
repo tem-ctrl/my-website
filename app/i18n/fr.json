@@ -1,11 +1,11 @@
 {
 	"RootLayout": {
 		"title": "Gilbert Temgoua - Développeur web",
-		"description": "Je suis un développeur web passionné vivant à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement."
+		"description": "Je suis un développeur web passionné basé à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement."
 	},
 	"HomePage": {
 		"title": "Accueil - Gilbert Temgoua: Développeur web",
-		"description": "Je suis un développeur web passionné vivant à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement.",
+		"description": "Je suis un développeur web passionné basé à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement.",
 		"hi": "Salut !",
 		"iAm": "Je suis",
 		"whoIAm": "Je suis un développeur web passionné basé à Yaoundé, Cameroun.",
@@ -18,7 +18,7 @@
 	},
 	"AboutPage": {
 		"title": "A propos De Moi - Gilbert Temgoua",
-		"description": "Je suis un développeur web passionné vivant à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement.",
+		"description": "Je suis un développeur web passionné basé à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement.",
 		"PageHeader": {
 			"simpleText": "A propos",
 			"primaryText": "de moi",
