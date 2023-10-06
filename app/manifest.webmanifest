@@ -1,0 +1,21 @@
+{
+  "name": "Gilbert Temgoua's personal website including web development portfolio and a blog(upcoming)",
+  "short_name": "Gilbert Temgoua - Web Developer",
+  "description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowlegde of the ReactJs and NextJS ecosystem. I'm open to work immediately.",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#8a2be2",
+  "background_color": "#02030f",
+  "display": "standalone"
+}
