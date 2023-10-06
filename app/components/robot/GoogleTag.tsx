@@ -1,6 +1,6 @@
 'use client';
 
-import { GTM_ID, pageview } from '@/app/utils/gtm';
+import  { pageview, GTM_ID } from '@/app/utils/gtm';
 import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
 import { useEffect } from 'react';
@@ -39,7 +39,7 @@ const GoogleTag = () => {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
           
-            gtag('config', ${GTM_ID});
+            gtag('config', '${GTM_ID}');
           `,
 				}}
 			/>
