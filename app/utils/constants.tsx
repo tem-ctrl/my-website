@@ -1,8 +1,8 @@
-import { Project, SkillItem, SocialMedia } from '@/app/utils/types';
+import { Project, SkillItemProps, SocialMedia } from '@/app/utils/types';
 import { BiLogoLinkedin } from 'react-icons/bi';
 import { BsWhatsapp, BsGithub } from 'react-icons/bs';
 
-export const SKILLS: SkillItem[] = [
+export const SKILLS: SkillItemProps[] = [
 	{
 		skill: 'HTML',
 		value: 90,
