@@ -3,8 +3,11 @@
 import React, { FC, ReactNode } from 'react';
 import { ThemeProvider } from 'next-themes';
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
+import useInitAOS from '@/app/hooks/useInitAOS';
 
 const Providers: FC<{ children: ReactNode }> = ({ children }) => {
+  useInitAOS();
+
 	return (
 		<ThemeProvider enableSystem attribute="class">
 			<div className="pt-[60px]">{children}</div>

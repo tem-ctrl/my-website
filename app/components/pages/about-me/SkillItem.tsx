@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { SkillItem } from '@/app/utils/types';
+import { SkillItemProps } from '@/app/utils/types';
 
-const SkillItem: FC<SkillItem> = ({ className = '', skill, value = 50 }) => {
+const SkillItem: FC<SkillItemProps> = ({ className = '', skill, value = 50 }) => {
 	return (
-		<div className={`${className} relative min-w-[300px]`}>
+		<div data-aos='fade-up' className={`${className} relative min-w-[300px]`}>
 			<p className="uppercase absolute bottom-3 font-medium">{skill}</p>
 			<p
 				className={`w-11 h-8 border border-primary rounded-[4px] flex justify-center items-center z-10 bg-bgLight dark:bg-bgDark`}

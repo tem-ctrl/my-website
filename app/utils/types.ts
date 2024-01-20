@@ -13,17 +13,18 @@ export interface TimelineItem {
 	location: string;
 }
 
-export interface SkillItem {
+export interface SkillItemProps {
 	className?: string;
 	skill: string;
 	value: number; // Percentage
 }
 
-export interface InfoItem {
+export interface InfoItemType {
 	className?: string;
 	label: string;
 	value: string;
 	isEmail?: boolean;
+  isExperience?: boolean;
 }
 
 export interface SocialMedia {

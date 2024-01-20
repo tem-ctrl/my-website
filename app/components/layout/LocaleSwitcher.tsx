@@ -44,7 +44,7 @@ const LocaleSwitcher = () => {
 
 				{showLanguages && (
 					<div className="w-[70px] flex flex-col items-start gap-0 p-0 rounded-md border border-gray-300 dark:border-gray-600 absolute top-12 -left-[8px] bg-bgLight dark:bg-bgDark [&>*:first-child]:rounded-t-md [&>*:last-child]:rounded-b-md">
-						{['en', 'fr'].map((cur) => (
+						{['en', 'fr'].filter(l => !currentLocale.includes(l)).map((cur) => (
 							<button
 								key={cur}
 								className="flex items-center justify-start gap-2 hover:bg-primary hover:text-white w-full py-1 px-3"

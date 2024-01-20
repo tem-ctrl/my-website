@@ -40,7 +40,7 @@
 		},
 		"professionalInfo": {
 			"experience": "Experience",
-			"experienceValue": "6 months",
+			"experienceValue": "",
 			"openToWork": "Open to work",
 			"openToWorkValue": "Yes",
 			"availability": "Availability",
@@ -133,7 +133,7 @@
 		"home": "home",
 		"about": "about me",
 		"blog": "Blog",
-		"projects": "Projetcs",
+		"projects": "Projects",
 		"contact": "Contact"
 	},
 	"LocaleSwitcher": {

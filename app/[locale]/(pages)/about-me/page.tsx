@@ -65,6 +65,7 @@ const AboutPage: NextPage = () => {
 								key={`professional-info-${i}`}
 								label={t(`professionalInfo.${info}`)}
 								value={t(`professionalInfo.${info}Value`)}
+                isExperience={info === 'experience'}
 							/>
 						))}
 					</div>
@@ -73,7 +74,8 @@ const AboutPage: NextPage = () => {
 						href={`cvs/gilbert_temgoua_cv_${locale}.pdf`}
 						icon={<FaDownload />}
 						className={`!w-fit text-sm col-span-full smm:justify-self-center`}
-						newTab
+						// newTab
+            download
 					/>
 				</div>
 			</div>
