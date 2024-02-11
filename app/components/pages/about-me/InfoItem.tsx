@@ -17,7 +17,7 @@ const InfoItem: FC<InfoItemType> = ({ className = '', label, value, isExperience
     const m1 = today.getMonth() - start.getMonth()
     + (12 * (today.getFullYear() - start.getFullYear()));
 
-    const m = today.getDate() > 10 ? m1 + 1 : m1;
+    const m = today.getDate() > 20 ? m1 + 1 : m1;
     const y = Math.floor(m / 12);
     const m2 = m % 12;
 
