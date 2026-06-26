@@ -1,41 +1,38 @@
 import { Metadata, NextPage } from 'next';
-import Photo from '@/app/components/common/Photo';
-import { createTranslator, useTranslations } from 'next-intl';
-import { PageProps } from '@/app/utils/types';
-import { getMessages } from 'next-intl/server';
-import PrimaryButtonLink from '@/app/components/common/PrimaryButtonLink';
-import { PAGES } from '@/app/config';
+import Photo from '@/components/common/Photo';
+import { useTranslations } from 'next-intl';
+import { PageProps } from '@/utils/types';
+import { getTranslations } from 'next-intl/server';
+import PrimaryButtonLink from '@/components/common/PrimaryButtonLink';
+import { PAGES } from '@/config';
 import { BiSolidUser } from 'react-icons/bi';
 import { BsBriefcaseFill } from 'react-icons/bs';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
-	const messages = await getMessages(locale);
-	const t = createTranslator({ locale, messages });
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: 'HomePage' });
 
-	return {
-		title: t('HomePage.title'),
-		description: t('HomePage.description'),
-	};
+	return { title: t('title'), description: t('description') };
 };
 
 const HomePage: NextPage = () => {
 	const t = useTranslations('HomePage');
 
 	return (
-		<main className="scrollbar-none overflow-y-scroll mdm:pt-10 px-2.5 md:px-10 hFill flex mdm:flex-col items-center justify-start lg:justify-center">
+		<main className="scrollbar-none overflow-y-scroll pt-10 md:pt-0 px-2.5 md:px-10 hFill flex flex-col md:flex-row items-center justify-start lg:justify-center">
 			<Photo />
-			<div className="mdm:mt-4 w-full lg:w-2/3 flex flex-col justify-center items-start gap-3 text-lg">
-				<p className="mdm:mx-auto uppercase">{t('hi')}</p>
+			<div className="mt-4 md:mt-0 w-full lg:w-2/3 flex flex-col justify-center items-start gap-3 text-lg">
+				<p className="mx-auto md:mx-0 uppercase">{t('hi')}</p>
 				<h1 className="text-3xl md:text-4xl uppercase mb-2 md:mb-5">
-					<span>{t('iAm')}</span> <span className="text-primary font-[900]">Gilbert Temgoua</span>
+					<span>{t('iAm')}</span> <span className="text-primary font-black">Gilbert Temgoua</span>
 				</h1>
 				<p>{t('whoIAm')}</p>
 				<p>
-					{t('whatIdo.firstPart')} <br className="smm:hidden" />
+					{t('whatIdo.firstPart')} <br className="hidden sm:inline" />
 					{t('whatIdo.secondPart')}
 				</p>
 				<div
-					className={`smm:w-full flex justify-around md:justify-center items-center gap-2 md:gap-5 mt-5`}
+					className={`w-full md:w-fit flex justify-around md:justify-center items-center gap-2 md:gap-5 mt-5`}
 				>
 					<PrimaryButtonLink
 						href={PAGES.aboutMe}

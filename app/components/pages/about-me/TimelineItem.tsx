@@ -1,4 +1,4 @@
-import { TimelineItem } from '@/app/utils/types';
+import type { TimelineItem } from '@/utils/types';
 import { useTranslations } from 'next-intl';
 import React, { FC } from 'react';
 import { BiSolidCalendar } from 'react-icons/bi';

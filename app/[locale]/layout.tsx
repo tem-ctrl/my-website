@@ -1,14 +1,16 @@
-import '@/app/globals.css';
+import '@/globals.css';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
-import React, { FC, Suspense } from 'react';
-import Providers from '@/app/components/layout/Providers';
-import Header from '@/app/components/layout/Header';
-import { NextIntlClientProvider, createTranslator } from 'next-intl';
-import { PageProps } from '@/app/utils/types';
-import { getMessages } from '@/app/utils/getMessages';
-import NotFound from '@/app/components/common/NotFound';
-import GoogleTag from '@/app/components/robot/GoogleTag';
+import React, { FC, Suspense, ReactNode } from 'react';
+import Providers from '@/components/layout/Providers';
+import Header from '@/components/layout/Header';
+import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { PageProps } from '@/utils/types';
+import NotFound from '@/components/common/NotFound';
+import GoogleTag from '@/components/robot/GoogleTag';
+import { routing } from '@/i18n/routing';
+import { getTranslations, getMessages } from 'next-intl/server';
+import Footer from '@/components/layout/Footer';
 
 const roboto = Roboto({
 	subsets: ['latin'],
@@ -16,45 +18,49 @@ const roboto = Roboto({
 	display: 'swap',
 });
 
-type Locale = { locale: string };
+type Locale = Promise<{ locale: string }>;
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
-	const messages = await getMessages(locale);
-	const t = createTranslator({ locale, messages });
+export const generateStaticParams = () => {
+  return routing.locales.map((locale) => ({locale}));
+};
+
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: 'RootLayout' });
 
 	return {
-		title: t('RootLayout.title'),
-		description: t('RootLayout.description'),
+		title: t('title'),
+		description: t('description')
 	};
 };
 
-const locales = ['en', 'fr'];
-
 interface RootLayoutProps {
-	children: React.ReactNode;
+	children: ReactNode;
 	params: Locale;
 }
 
 const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
-	const isValidLocale = locales.some((cur) => cur === params.locale);
+	const { locale } = await params;
+	const messages = await getMessages();
 
-	if (!isValidLocale) NotFound();
-
-	const messages = await getMessages(params.locale);
+	if (!hasLocale(routing.locales, locale)) {
+		return <NotFound />;
+	}
 
 	return (
-		<html lang={params.locale}>
+		// Fix AOS braking scroll behavior: data-scroll-behavior="smooth"
+		<html lang={locale} suppressHydrationWarning data-scroll-behavior="smooth">
 			<body
-				className={`${roboto.className} max-w-[1600px] mx-auto bg-bgLight dark:bg-bgDark text-light dark:text-dark`}
+				className={`${roboto.className} bg-bgLight dark:bg-bgDark text-light dark:text-dark`}
 			>
 				<Suspense>
 					<GoogleTag />
 				</Suspense>
-				<NextIntlClientProvider messages={messages} locale={params.locale}>
+				<NextIntlClientProvider locale={locale} messages={messages}>
 					<Providers>
 						<Header />
-						<div className="px-2.5 md:px-6 lg:px-14 w-full">{children}</div>
-						{/* <Footer /> */}
+						<div className="px-2.5 pt-15 md:px-6 lg:px-14 w-full">{children}</div>
+						<Footer />
 					</Providers>
 				</NextIntlClientProvider>
 			</body>

@@ -10,7 +10,7 @@ const Photo: FC<PhotoProps> = ({ className = '' }) => {
 			<img
 				src="/assets/images/me.png"
 				alt="Gilbert Temgoua"
-				className="h-44 md:h-[300px] object-fill scale-x-[-1] rounded-full"
+				className="h-44 md:h-75 object-fill scale-x-[-1] rounded-full"
 			/>
 		</div>
 	);

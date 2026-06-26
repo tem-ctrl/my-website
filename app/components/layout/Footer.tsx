@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 const Footer: FC = () => {
 	return (
-		<footer className="flex justify-between items-center h-[50px] w-full">
+		<footer className="flex justify-between items-center h-12.5 w-full">
 			&copy; {new Date().getFullYear()} Gilbert Temgoua
 		</footer>
 	);

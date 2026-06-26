@@ -1,25 +1,49 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Screens / Breakpoints */
+  --breakpoint-xs: 475px;
+
+  /* Background Images */
+  --background-image-radial-bg: linear-gradient(1turn, #000000 7.5%, #3f361617 20%, #0c0c0c6c), linear-gradient(to right, #000000 30%, #161201be, #524210cc);
+
+  /* Custom Color Palette */
+  --color-primary: #8a2be2;
+  --color-bg-light: #eff0f3;
+  --color-light: #202020;
+  --color-second-light: #fff;
+  --color-tertiary-light: #fff;
+
+  --color-bg-dark: #02030f;
+  --color-bg-dark-second: #070023;
+  --color-dark: #efefef;
+  --color-secondary-dark: #fff;
+  --color-tertiary-dark: #fff;
+}
+
+/* Third-Party Tailwind Plugins (v4 Syntax) */
+@plugin "tailwind-scrollbar";
 
 ::-webkit-scrollbar {
-	width: 0.7rem;
-	height: 0.7rem;
+  width: 0.7rem;
+  height: 0.7rem;
 }
 
 ::-webkit-scrollbar-track {
-	background-color: #fff;
-	border-radius: 0.5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: #8a2be2;
-	border-radius: 0.5rem;
-	border: 0.2rem solid #fff;
+  background-color: #8a2be2;
+  border-radius: 0.5rem;
+  border: 0.2rem solid #fff;
 }
 
 .scrollbar-none::-webkit-scrollbar {
-	width: 0;
+  width: 0;
 }
 
 .hFill {
@@ -33,8 +57,11 @@
   }
 }
 
-@layer {
-  .transit {
-    @apply transition-all delay-100 ease-in-out;
-  }
+@utility transit {
+  @apply transition-all delay-100 ease-in-out;
+}
+
+@utility text-size-inherit {
+  font-size: inherit;
+  line-height: normal;
 }
