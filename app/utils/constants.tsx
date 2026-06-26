@@ -1,52 +1,19 @@
-import { Project, SkillItemProps, SocialMedia } from '@/app/utils/types';
+import { Project, SkillItemProps, SocialMedia } from '@/utils/types';
 import { BiLogoLinkedin } from 'react-icons/bi';
 import { BsWhatsapp, BsGithub } from 'react-icons/bs';
 
 export const SKILLS: SkillItemProps[] = [
-	{
-		skill: 'HTML',
-		value: 90,
-	},
-	{
-		skill: 'CSS',
-		value: 80,
-	},
-	{
-		skill: 'Sass',
-		value: 70,
-	},
-	{
-		skill: 'Tailwind CSS',
-		value: 80,
-	},
-	{
-		skill: 'JavaScript',
-		value: 80,
-	},
-	{
-		skill: 'Typescript',
-		value: 60,
-	},
-	{
-		skill: 'ReactJs',
-		value: 70,
-	},
-	{
-		skill: 'NextJs',
-		value: 80,
-	},
-	{
-		skill: 'Python',
-		value: 80,
-	},
-	{
-		skill: 'PHP',
-		value: 50,
-	},
-	{
-		skill: 'MySQL',
-		value: 50,
-	},
+	{ skill: 'HTML', value: 90 },
+	{ skill: 'CSS', value: 80 },
+	{ skill: 'Sass', value: 70 },
+	{ skill: 'Tailwind CSS', value: 80 },
+	{ skill: 'JavaScript', value: 80 },
+	{ skill: 'Typescript', value: 60 },
+	{ skill: 'ReactJs', value: 70 },
+	{ skill: 'NextJs', value: 80 },
+	{ skill: 'Python', value: 80 },
+	{ skill: 'PHP', value: 50 },
+	{ skill: 'MySQL', value: 50 },
 ];
 
 export const SOCIAL_MEDIA: SocialMedia[] = [

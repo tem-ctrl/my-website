@@ -1,6 +1,6 @@
 'use client';
 
-import  { pageview, GTM_ID } from '@/app/utils/gtm';
+import { pageview, GTM_ID } from '@/utils/gtm';
 import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
 import { useEffect } from 'react';

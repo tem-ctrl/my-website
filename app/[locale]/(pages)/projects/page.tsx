@@ -1,8 +1,8 @@
-import PageHeader from '@/app/components/common/PageHeader';
-import ProjectCard from '@/app/components/pages/projects/ProjectCard';
-import { PROJECTS } from '@/app/utils/constants';
+import PageHeader from '@/components/common/PageHeader';
+import ProjectCard from '@/components/pages/projects/ProjectCard';
+import { PROJECTS } from '@/utils/constants';
 import { getTranslations } from 'next-intl/server';
-import { PageProps } from '@/app/utils/types';
+import { PageProps } from '@/utils/types';
 import { Metadata, NextPage } from 'next';
 import { useTranslations } from 'next-intl';
 
@@ -17,7 +17,7 @@ const ProjectsPage: NextPage = () => {
 	const t = useTranslations('ProjectsPage');
 
 	return (
-		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-[100px] hFill py-10 flex flex-col gap-12 items-center w-full">
+		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-25 hFill py-10 flex flex-col gap-12 items-center w-full">
 			<PageHeader
 				simpleText={t('PageHeader.simpleText')}
 				primaryText={t('PageHeader.primaryText')}

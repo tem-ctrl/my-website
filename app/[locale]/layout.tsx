@@ -1,15 +1,16 @@
-import '@/app/globals.css';
+import '@/globals.css';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import React, { FC, Suspense, ReactNode } from 'react';
-import Providers from '@/app/components/layout/Providers';
-import Header from '@/app/components/layout/Header';
+import Providers from '@/components/layout/Providers';
+import Header from '@/components/layout/Header';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
-import { PageProps } from '@/app/utils/types';
-import NotFound from '@/app/components/common/NotFound';
-import GoogleTag from '@/app/components/robot/GoogleTag';
-import { routing } from '@/app/i18n/routing';
+import { PageProps } from '@/utils/types';
+import NotFound from '@/components/common/NotFound';
+import GoogleTag from '@/components/robot/GoogleTag';
+import { routing } from '@/i18n/routing';
 import { getTranslations, getMessages } from 'next-intl/server';
+import Footer from '@/components/layout/Footer';
 
 const roboto = Roboto({
 	subsets: ['latin'],
@@ -47,9 +48,10 @@ const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
 	}
 
 	return (
-		<html lang={locale} suppressHydrationWarning>
+		// Fix AOS braking scroll behavior: data-scroll-behavior="smooth"
+		<html lang={locale} suppressHydrationWarning data-scroll-behavior="smooth">
 			<body
-				className={`${roboto.className} max-w-[1600px] mx-auto bg-bgLight dark:bg-bgDark text-light dark:text-dark`}
+				className={`${roboto.className} bg-bgLight dark:bg-bgDark text-light dark:text-dark`}
 			>
 				<Suspense>
 					<GoogleTag />
@@ -57,8 +59,8 @@ const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
 				<NextIntlClientProvider locale={locale} messages={messages}>
 					<Providers>
 						<Header />
-						<div className="px-2.5 md:px-6 lg:px-14 w-full">{children}</div>
-						{/* <Footer /> */}
+						<div className="px-2.5 pt-15 md:px-6 lg:px-14 w-full">{children}</div>
+						<Footer />
 					</Providers>
 				</NextIntlClientProvider>
 			</body>

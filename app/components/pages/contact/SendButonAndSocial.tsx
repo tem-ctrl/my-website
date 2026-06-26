@@ -1,8 +1,8 @@
 'use client';
 
-import PrimaryButton from '@/app/components/common/PrimaryButton';
-import SocialMedia from '@/app/components/pages/contact/SacialMedia';
-import { SOCIAL_MEDIA } from '@/app/utils/constants';
+import PrimaryButton from '@/components/common/PrimaryButton';
+import SocialMedia from '@/components/pages/contact/SacialMedia';
+import { SOCIAL_MEDIA } from '@/utils/constants';
 import { useTranslations } from 'next-intl';
 import React, { FC } from 'react';
 import { FaTelegramPlane } from 'react-icons/fa';

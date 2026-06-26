@@ -5,11 +5,11 @@ import { useTheme } from 'next-themes';
 import { BsFillSunFill, BsMoonFill } from 'react-icons/bs';
 import { usePathname } from 'next/navigation';
 import { VscMenu, VscChromeClose } from 'react-icons/vsc';
-import LocaleSwitcher from '@/app/components/layout/LocaleSwitcher';
-import NavLink from '@/app/components/layout/NavLink';
+import LocaleSwitcher from '@/components/layout/LocaleSwitcher';
+import NavLink from '@/components/layout/NavLink';
 import { useTranslations } from 'next-intl';
-import { PAGES } from '@/app/config';
-import { CustomLink } from '@/app/utils/types';
+import { PAGES } from '@/config';
+import { CustomLink } from '@/utils/types';
 
 interface HeaderNavProps {
 	className?: string;
@@ -76,21 +76,21 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 
 	return (
 		<nav
-			className={`${className} flex items-center h-full gap-6 smm:relative`}
+			className={`${className} flex items-center h-full gap-6 relative md:static`}
 			onBlur={onStepOut}
 			ref={menuRef}
 		>
 			<div
 				className={`
-          ${showMenu ? 'smm:flex' : 'smm:hidden'} 
-          bg-bgLight dark:bg-bgDark smm:w-[120px] smm:pr-5 smm:pt-3 smm:pb-7 items-end md:items-center smm:absolute smm:top-[55px] smm:right-[-15px] smm:rounded-[4px] flex smm:flex-col justify-center gap-5 md:gap-6
+          ${showMenu ? 'flex' : 'hidden md:flex'}
+          bg-bgLight dark:bg-bgDark w-30 md:w-fit pr-5 pt-3 md:pt-0 pb-7 md:pb-0 items-end md:items-center absolute md:static top-13.75 md:top-0 -right-3.75 md:right-0 rounded-sm md:rounded-none flex flex-col md:flex-row justify-center gap-5 md:gap-6
         `}
 			>
 				{navLinks.map((link) => (
 					<NavLink {...link} key={link.text} />
 				))}
 			</div>
-			<div className="w-[20px] flex items-center justify-center">{renderThemeChanger()}</div>
+			<div className="w-5 flex items-center justify-center">{renderThemeChanger()}</div>
 			<LocaleSwitcher />
 			<button
 				className="p-1.5 md:hidden text-[21px] text-myPrimary rounded-full bg-primary text-white cursor-pointer"

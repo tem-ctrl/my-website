@@ -1,4 +1,4 @@
-import { SocialMedia } from '@/app/utils/types';
+import type { SocialMedia } from '@/utils/types';
 import Link from 'next/link';
 import React, { FC } from 'react';
 

@@ -1,16 +1,16 @@
-import InfoItem from '@/app/components/pages/about-me/InfoItem';
-import PageHeader from '@/app/components/common/PageHeader';
-import Photo from '@/app/components/common/Photo';
-import Separator from '@/app/components/common/Separator';
-import TimelineItem from '@/app/components/pages/about-me/TimelineItem';
-import { SKILLS } from '@/app/utils/constants';
-import { PageProps } from '@/app/utils/types';
+import InfoItem from '@/components/pages/about-me/InfoItem';
+import PageHeader from '@/components/common/PageHeader';
+import Photo from '@/components/common/Photo';
+import Separator from '@/components/common/Separator';
+import TimelineItem from '@/components/pages/about-me/TimelineItem';
+import { SKILLS } from '@/utils/constants';
+import { PageProps } from '@/utils/types';
 import { useLocale, useTranslations } from 'next-intl';
-import SkillItem from '@/app/components/pages/about-me/SkillItem';
-import TimelineBlock from '@/app/components/pages/about-me/TimelineBlock';
+import SkillItem from '@/components/pages/about-me/SkillItem';
+import TimelineBlock from '@/components/pages/about-me/TimelineBlock';
 import { Metadata, NextPage } from 'next';
 import { getTranslations } from 'next-intl/server';
-import PrimaryButtonLink from '@/app/components/common/PrimaryButtonLink';
+import PrimaryButtonLink from '@/components/common/PrimaryButtonLink';
 import { FaDownload } from 'react-icons/fa';
 
 export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
@@ -41,15 +41,15 @@ const AboutPage: NextPage = () => {
 	const education = [1, 2, 3];
 
 	return (
-		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-[100px] lg:px-[120px] hFill py-10 flex flex-col gap-12 items-center w-full">
+		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-25 lg:px-30 hFill py-10 flex flex-col gap-12 items-center w-full">
 			<PageHeader
 				simpleText={t('PageHeader.simpleText')}
 				primaryText={t('PageHeader.primaryText')}
 				tagline={t('PageHeader.tagline')}
 			/>
-			<div className="flex smm:flex-col mdm:items-center items-start w-full md:pt-3">
+			<div className="flex flex-col md:flex-row items-center md:items-start w-full md:pt-3">
 				<Photo />
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4 text-lg smm:mt-5">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4 text-lg mt-5 md:mt-0">
 					<div className="col-span-1 flex flex-col gap-4">
 						{personalInfo.map((info, i) => (
 							<InfoItem
@@ -73,14 +73,14 @@ const AboutPage: NextPage = () => {
 						text={t('downloadCvButton')}
 						href={`cvs/gilbert_temgoua_cv_${locale}.pdf`}
 						icon={<FaDownload />}
-						className={`w-fit! text-sm col-span-full smm:justify-self-center`}
+						className={`w-fit! text-sm col-span-full justify-self-center md:justify-self-auto`}
 						// newTab
             download
 					/>
 				</div>
 			</div>
 			<Separator />
-			<div className="flex smm:flex-col items-start justify-start gap-10">
+			<div className="flex flex-col md:flex-row items-start justify-start gap-10">
 				<TimelineBlock title="Experience">
 					{experiences.map((i) => (
 						<TimelineItem

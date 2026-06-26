@@ -1,8 +1,8 @@
-import PageHeader from '@/app/components/common/PageHeader';
-import BlogCard from '@/app/components/pages/blog/BlogCard';
-import { BLOG_POSTS } from '@/app/utils/constants';
+import PageHeader from '@/components/common/PageHeader';
+import BlogCard from '@/components/pages/blog/BlogCard';
+import { BLOG_POSTS } from '@/utils/constants';
 import { getTranslations } from 'next-intl/server';
-import { PageProps } from '@/app/utils/types';
+import { PageProps } from '@/utils/types';
 import { Metadata, NextPage } from 'next';
 
 export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {

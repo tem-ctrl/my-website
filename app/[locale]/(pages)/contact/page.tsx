@@ -1,14 +1,14 @@
-import FormInput from '@/app/components/common/FormInput';
-import PageHeader from '@/app/components/common/PageHeader';
+import FormInput from '@/components/common/FormInput';
+import PageHeader from '@/components/common/PageHeader';
 import { BiSolidUser } from 'react-icons/bi';
 import { HiChatAlt2 } from 'react-icons/hi';
 import { MdEmail } from 'react-icons/md';
 import { useTranslations } from 'next-intl';
-import FormTextarea from '@/app/components/common/FormTextArea';
-import { PageProps } from '@/app/utils/types';
+import FormTextarea from '@/components/common/FormTextArea';
+import { PageProps } from '@/utils/types';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import SendButtonAndSocial from '@/app/components/pages/contact/SendButonAndSocial';
+import SendButtonAndSocial from '@/components/pages/contact/SendButonAndSocial';
 import { BsInfoCircleFill } from 'react-icons/bs';
 import Link from 'next/link';
 
@@ -30,7 +30,7 @@ const ContactPage = () => {
 				tagline={t('PageHeader.tagline')}
 			/>
 			<Link
-				className="border-2 border-orange-500 text-orange-500 hover:border-primary hover:text-primary rounded-md flex relative justify-center items-center smm:w-full py-3 md:p-4"
+				className="border-2 border-orange-500 text-orange-500 hover:border-primary hover:text-primary rounded-md flex relative justify-center items-center w-full md:w-fit py-3 md:p-4"
 				href="mailto:gilbertemgoua@gmail.com"
 			>
 				<BsInfoCircleFill className="absolute -top-3 -left-3 text-2xl z-10 bg-bgLight dark:bg-bgDark" />

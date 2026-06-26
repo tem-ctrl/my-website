@@ -1,7 +1,7 @@
 'use client';
 
-import { PAGES } from '@/app/config';
-import { useRouter } from '@/app/i18n/navigation';
+import { PAGES } from '@/config';
+import { useRouter } from '@/i18n/navigation';
 import React, { FC } from 'react';
 
 interface BlogCardProps {

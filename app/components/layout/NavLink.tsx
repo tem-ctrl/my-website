@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { usePathname } from '@/app/i18n/navigation';
-import { Link } from '@/app/i18n/navigation';
+import { usePathname } from '@/i18n/navigation';
+import { Link } from '@/i18n/navigation';
 
 interface NavLinkProps {
 	className?: string;

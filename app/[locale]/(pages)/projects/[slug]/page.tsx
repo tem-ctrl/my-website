@@ -1,9 +1,9 @@
 import { getTranslations } from 'next-intl/server';
-import { PageProps, Project } from '@/app/utils/types';
+import { PageProps, Project } from '@/utils/types';
 import { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
-import { PROJECTS } from '@/app/utils/constants';
-import PrimaryButtonLink from '@/app/components/common/PrimaryButtonLink';
+import { PROJECTS } from '@/utils/constants';
+import PrimaryButtonLink from '@/components/common/PrimaryButtonLink';
 import { BsGithub } from 'react-icons/bs';
 
 export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
@@ -31,7 +31,7 @@ const ProjectDetailsPage = ({ params }: { params: { slug: string } }) => {
 				className="rounded-lg w-full"
 			/>
 			<div className="flex flex-col gap-5 lg:gap-3">
-				<h1 className="text-3xl text-primary uppercase font-bold mdm:text-center">{t('title')}</h1>
+				<h1 className="text-3xl text-primary uppercase font-bold text-center md:text-left">{t('title')}</h1>
 				<div className="flex lg:flex-col gap-3 ">
 					{project.githubLink && (
 						<PrimaryButtonLink
@@ -65,7 +65,7 @@ const ProjectDetailsPage = ({ params }: { params: { slug: string } }) => {
 			</div>
 			<div className="col-span-full grid grid-col-1 lg:grid-cols-2 gap-5 lg:gap-10">
 				<section>
-					<h2 className={commonClassNames}>{p('description', { type: project.type })}</h2>
+					<h2 className={commonClassNames}>{p('description', { type: project.type ?? '' })}</h2>
 					<p dangerouslySetInnerHTML={{ __html: t.raw('description') }} />
 				</section>
 				<div>
