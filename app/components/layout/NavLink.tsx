@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { usePathname } from 'next-intl/client';
-import Link from 'next-intl/link';
+import { Link } from '@/app/i18n/navigation';
 
 interface NavLinkProps {
 	className?: string;

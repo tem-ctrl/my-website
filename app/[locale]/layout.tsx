@@ -1,14 +1,15 @@
 import '@/app/globals.css';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
-import React, { FC, Suspense } from 'react';
+import React, { FC, Suspense, ReactNode } from 'react';
 import Providers from '@/app/components/layout/Providers';
 import Header from '@/app/components/layout/Header';
-import { NextIntlClientProvider, createTranslator } from 'next-intl';
+import { NextIntlClientProvider, hasLocale, createTranslator } from 'next-intl';
 import { PageProps } from '@/app/utils/types';
 import { getMessages } from '@/app/utils/getMessages';
 import NotFound from '@/app/components/common/NotFound';
 import GoogleTag from '@/app/components/robot/GoogleTag';
+import { routing } from '@/app/i18n/routing';
 
 const roboto = Roboto({
 	subsets: ['latin'],
@@ -16,41 +17,45 @@ const roboto = Roboto({
 	display: 'swap',
 });
 
-type Locale = { locale: string };
+type Locale = Promise<{ locale: string }>;
+
+export const generateStaticParams = () => {
+  return routing.locales.map((locale) => ({locale}));
+};
 
 export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
 	const messages = await getMessages(locale);
-	const t = createTranslator({ locale, messages });
+	const t = createTranslator({ locale, messages, namespace: 'RootLayout' });
 
 	return {
-		title: t('RootLayout.title'),
-		description: t('RootLayout.description'),
+		title: t('title'),
+		description: t('description'),
 	};
 };
 
 const locales = ['en', 'fr'];
 
 interface RootLayoutProps {
-	children: React.ReactNode;
+	children: ReactNode;
 	params: Locale;
 }
 
 const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
-	const isValidLocale = locales.some((cur) => cur === params.locale);
+	const { locale } = await params;
 
-	if (!isValidLocale) NotFound();
-
-	const messages = await getMessages(params.locale);
+	if (!hasLocale(routing.locales, locale)) {
+		return <NotFound />;
+	}
 
 	return (
-		<html lang={params.locale}>
+		<html lang={locale}>
 			<body
 				className={`${roboto.className} max-w-[1600px] mx-auto bg-bgLight dark:bg-bgDark text-light dark:text-dark`}
 			>
 				<Suspense>
 					<GoogleTag />
 				</Suspense>
-				<NextIntlClientProvider messages={messages} locale={params.locale}>
+				<NextIntlClientProvider>
 					<Providers>
 						<Header />
 						<div className="px-2.5 md:px-6 lg:px-14 w-full">{children}</div>
