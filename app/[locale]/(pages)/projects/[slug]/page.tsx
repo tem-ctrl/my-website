@@ -1,18 +1,18 @@
-import { getMessages } from '@/app/utils/getMessages';
+import { getTranslations } from 'next-intl/server';
 import { PageProps, Project } from '@/app/utils/types';
 import { Metadata } from 'next';
-import { createTranslator, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { PROJECTS } from '@/app/utils/constants';
 import PrimaryButtonLink from '@/app/components/common/PrimaryButtonLink';
 import { BsGithub } from 'react-icons/bs';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
-	const messages = await getMessages(locale);
-	const t = createTranslator({ locale, messages });
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: 'ProjectsPage' });
 
 	return {
-		title: t('ProjectsPage.title'),
-		description: t('ProjectsPage.description'),
+		title: t('title'),
+		description: t('description'),
 	};
 };
 

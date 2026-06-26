@@ -3,30 +3,27 @@ import PageHeader from '@/app/components/common/PageHeader';
 import { BiSolidUser } from 'react-icons/bi';
 import { HiChatAlt2 } from 'react-icons/hi';
 import { MdEmail } from 'react-icons/md';
-import { createTranslator, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import FormTextarea from '@/app/components/common/FormTextArea';
 import { PageProps } from '@/app/utils/types';
 import { Metadata } from 'next';
-import { getMessages } from '@/app/utils/getMessages';
+import { getTranslations } from 'next-intl/server';
 import SendButtonAndSocial from '@/app/components/pages/contact/SendButonAndSocial';
 import { BsInfoCircleFill } from 'react-icons/bs';
 import Link from 'next/link';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
-	const messages = await getMessages(locale);
-	const t = createTranslator({ locale, messages });
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: 'ContactPage' });
 
-	return {
-		title: t('ContactPage.title'),
-		description: t('ContactPage.description'),
-	};
+	return { title: t('title'), description: t('description') };
 };
 
 const ContactPage = () => {
 	const t = useTranslations('ContactPage');
 
 	return (
-		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-[100px] hFill py-5 md:pt-10 flex flex-col gap-8 md:gap-12 items-center w-full">
+		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-25 hFill py-5 md:pt-10 flex flex-col gap-8 md:gap-12 items-center w-full">
 			<PageHeader
 				simpleText={t('PageHeader.simpleText')}
 				primaryText={t('PageHeader.primaryText')}

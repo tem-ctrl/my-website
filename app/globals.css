@@ -1,25 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 ::-webkit-scrollbar {
-	width: 0.7rem;
-	height: 0.7rem;
+  width: 0.7rem;
+  height: 0.7rem;
 }
 
 ::-webkit-scrollbar-track {
-	background-color: #fff;
-	border-radius: 0.5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: #8a2be2;
-	border-radius: 0.5rem;
-	border: 0.2rem solid #fff;
+  background-color: #8a2be2;
+  border-radius: 0.5rem;
+  border: 0.2rem solid #fff;
 }
 
 .scrollbar-none::-webkit-scrollbar {
-	width: 0;
+  width: 0;
 }
 
 .hFill {
@@ -30,11 +28,5 @@
 @media all and (min-width: '768px') {
   .hFill {
     height: calc(100dvh - 60px);
-  }
-}
-
-@layer {
-  .transit {
-    @apply transition-all delay-100 ease-in-out;
   }
 }

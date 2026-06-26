@@ -1,19 +1,16 @@
 import PageHeader from '@/app/components/common/PageHeader';
 import ProjectCard from '@/app/components/pages/projects/ProjectCard';
 import { PROJECTS } from '@/app/utils/constants';
-import { getMessages } from '@/app/utils/getMessages';
+import { getTranslations } from 'next-intl/server';
 import { PageProps } from '@/app/utils/types';
 import { Metadata, NextPage } from 'next';
-import { createTranslator, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
-	const messages = await getMessages(locale);
-	const t = createTranslator({ locale, messages });
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: 'ProjectsPage' });
 
-	return {
-		title: t('ProjectsPage.title'),
-		description: t('ProjectsPage.description'),
-	};
+	return { title: t('title'), description: t('description') };
 };
 
 const ProjectsPage: NextPage = () => {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useLocale, useTranslations } from 'next-intl';
-import { usePathname, useRouter } from 'next-intl/client';
+import { usePathname, useRouter } from '@/app/i18n/navigation';
 import React, { useState, useTransition } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 
@@ -43,22 +43,24 @@ const LocaleSwitcher = () => {
 				<FaChevronDown className={`${showLanguages && 'rotate-180'} inline text-sm`} />
 
 				{showLanguages && (
-					<div className="w-[70px] flex flex-col items-start gap-0 p-0 rounded-md border border-gray-300 dark:border-gray-600 absolute top-12 -left-[8px] bg-bgLight dark:bg-bgDark [&>*:first-child]:rounded-t-md [&>*:last-child]:rounded-b-md">
-						{['en', 'fr'].filter(l => !currentLocale.includes(l)).map((cur) => (
-							<button
-								key={cur}
-								className="flex items-center justify-start gap-2 hover:bg-primary hover:text-white w-full py-1 px-3"
-								onClick={() => onLocaleChanged(cur)}
-								name="language switcher"
-							>
-								<img
-									src={`/assets/images/${cur}-flag.png`}
-									alt={t('imageAlt', { locale: cur })}
-									width={flagSize}
-								/>
-								<span>{t('locale', { locale: cur })}</span>
-							</button>
-						))}
+					<div className="w-[70px] flex flex-col items-start gap-0 p-0 rounded-md border border-gray-300 dark:border-gray-600 absolute top-12 left-[-8px] bg-bgLight dark:bg-bgDark [&>*:first-child]:rounded-t-md [&>*:last-child]:rounded-b-md">
+						{['en', 'fr']
+							.filter((l) => !currentLocale.includes(l))
+							.map((cur) => (
+								<button
+									key={cur}
+									className="flex items-center justify-start gap-2 hover:bg-primary hover:text-white w-full py-1 px-3"
+									onClick={() => onLocaleChanged(cur)}
+									name="language switcher"
+								>
+									<img
+										src={`/assets/images/${cur}-flag.png`}
+										alt={t('imageAlt', { locale: cur })}
+										width={flagSize}
+									/>
+									<span>{t('locale', { locale: cur })}</span>
+								</button>
+							))}
 					</div>
 				)}
 			</div>

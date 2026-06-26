@@ -19,7 +19,7 @@ const SendButtonAndSocial: FC<SendButtonAndSocialProps> = ({ className = '' }) =
 			<PrimaryButton
 				text={t('sendButtonText')}
 				icon={<FaTelegramPlane />}
-				className="px-5 !h-11 !w-fit self-start uppercase"
+				className="px-5 h-11! w-fit! self-start uppercase"
 			/>
 			<div className="flex gap-2 items-center">
 				{SOCIAL_MEDIA.map((media) => (

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { usePathname } from 'next-intl/client';
+import { usePathname } from '@/app/i18n/navigation';
 import { Link } from '@/app/i18n/navigation';
 
 interface NavLinkProps {

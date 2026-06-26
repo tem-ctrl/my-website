@@ -5,21 +5,21 @@ import Separator from '@/app/components/common/Separator';
 import TimelineItem from '@/app/components/pages/about-me/TimelineItem';
 import { SKILLS } from '@/app/utils/constants';
 import { PageProps } from '@/app/utils/types';
-import { createTranslator, useLocale, useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import SkillItem from '@/app/components/pages/about-me/SkillItem';
 import TimelineBlock from '@/app/components/pages/about-me/TimelineBlock';
 import { Metadata, NextPage } from 'next';
-import { getMessages } from '@/app/utils/getMessages';
+import { getTranslations } from 'next-intl/server';
 import PrimaryButtonLink from '@/app/components/common/PrimaryButtonLink';
 import { FaDownload } from 'react-icons/fa';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
-	const messages = await getMessages(locale);
-	const t = createTranslator({ locale, messages });
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: 'AboutPage' });
 
 	return {
-		title: t('AboutPage.title'),
-		description: t('AboutPage.description'),
+		title: t('title'),
+		description: t('description')
 	};
 };
 
@@ -73,7 +73,7 @@ const AboutPage: NextPage = () => {
 						text={t('downloadCvButton')}
 						href={`cvs/gilbert_temgoua_cv_${locale}.pdf`}
 						icon={<FaDownload />}
-						className={`!w-fit text-sm col-span-full smm:justify-self-center`}
+						className={`w-fit! text-sm col-span-full smm:justify-self-center`}
 						// newTab
             download
 					/>

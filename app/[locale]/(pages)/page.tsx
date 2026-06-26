@@ -1,21 +1,18 @@
 import { Metadata, NextPage } from 'next';
 import Photo from '@/app/components/common/Photo';
-import { createTranslator, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { PageProps } from '@/app/utils/types';
-import { getMessages } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import PrimaryButtonLink from '@/app/components/common/PrimaryButtonLink';
 import { PAGES } from '@/app/config';
 import { BiSolidUser } from 'react-icons/bi';
 import { BsBriefcaseFill } from 'react-icons/bs';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
-	const messages = await getMessages(locale);
-	const t = createTranslator({ locale, messages });
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: 'HomePage' });
 
-	return {
-		title: t('HomePage.title'),
-		description: t('HomePage.description'),
-	};
+	return { title: t('title'), description: t('description') };
 };
 
 const HomePage: NextPage = () => {
