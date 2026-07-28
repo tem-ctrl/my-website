@@ -2,6 +2,7 @@
 
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
+import { routing } from '@/i18n/routing';
 import React, { useState, useTransition } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 
@@ -14,10 +15,12 @@ const LocaleSwitcher = () => {
 	const [currentLocale, setCurrentLocale] = useState(locale);
 	const [showLanguages, setShowLanguages] = useState(false);
 
+	const locales = routing.locales;
+
 	const onLocaleChanged = (locale: string): void => {
 		setCurrentLocale(locale);
 		startTransition(() => {
-			router.replace(pathname, { locale: locale, scroll: false });
+			router.replace(pathname, { locale, scroll: false });
 		});
 	};
 
@@ -44,7 +47,7 @@ const LocaleSwitcher = () => {
 
 				{showLanguages && (
 					<div className="w-17.5 flex flex-col items-start gap-0 p-0 rounded-md border border-gray-300 dark:border-gray-600 absolute top-12 -left-2 bg-bgLight dark:bg-bgDark [&>*:first-child]:rounded-t-md [&>*:last-child]:rounded-b-md">
-						{['en', 'fr']
+						{locales
 							.filter((l) => !currentLocale.includes(l))
 							.map((cur) => (
 								<button
