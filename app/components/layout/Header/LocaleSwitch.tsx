@@ -3,11 +3,11 @@
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
-import React, { useState, useTransition } from 'react';
+import { useState, useTransition } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 
-const LocaleSwitcher = () => {
-	const t = useTranslations('LocaleSwitcher');
+const LocaleSwitch = () => {
+	const t = useTranslations('LocaleSwitch');
 	const [isPending, startTransition] = useTransition();
 	const locale = useLocale();
 	const router = useRouter();
@@ -46,7 +46,7 @@ const LocaleSwitcher = () => {
 				<FaChevronDown className={`${showLanguages && 'rotate-180'} inline text-sm`} />
 
 				{showLanguages && (
-					<div className="w-17.5 flex flex-col items-start gap-0 p-0 rounded-md border border-gray-300 dark:border-gray-600 absolute top-12 -left-2 bg-bgLight dark:bg-bgDark [&>*:first-child]:rounded-t-md [&>*:last-child]:rounded-b-md">
+					<div className="w-17.5 flex flex-col items-start gap-0 p-0 rounded-md border border-gray-300 dark:border-gray-600 absolute top-12 -left-2  [&>*:first-child]:rounded-t-md [&>*:last-child]:rounded-b-md">
 						{locales
 							.filter((l) => !currentLocale.includes(l))
 							.map((cur) => (
@@ -71,4 +71,4 @@ const LocaleSwitcher = () => {
 	);
 };
 
-export default LocaleSwitcher;
+export default LocaleSwitch;

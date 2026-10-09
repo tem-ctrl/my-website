@@ -1,4 +1,6 @@
-import React, { FC } from 'react';
+'use client';
+
+import { FC } from 'react';
 import { usePathname } from '@/i18n/navigation';
 import { Link } from '@/i18n/navigation';
 
