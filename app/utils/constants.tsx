@@ -5,15 +5,16 @@ import { BsWhatsapp, BsGithub } from 'react-icons/bs';
 export const SKILLS: SkillItemProps[] = [
 	{ skill: 'HTML', value: 90 },
 	{ skill: 'CSS', value: 80 },
-	{ skill: 'Sass', value: 70 },
+	{ skill: 'SCSS', value: 70 },
 	{ skill: 'Tailwind CSS', value: 80 },
 	{ skill: 'JavaScript', value: 80 },
 	{ skill: 'Typescript', value: 60 },
 	{ skill: 'ReactJs', value: 70 },
 	{ skill: 'NextJs', value: 80 },
-	{ skill: 'Python', value: 80 },
-	{ skill: 'PHP', value: 50 },
-	{ skill: 'MySQL', value: 50 },
+	{ skill: 'Python', value: 70 },
+	{ skill: 'PHP', value: 70 },
+	{ skill: 'MySQL', value: 70 },
+	{ skill: 'Magento 2', value: 60 },
 ];
 
 export const SOCIAL_MEDIA: SocialMedia[] = [
@@ -39,13 +40,12 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
 
 export const PROJECTS: Project[] = [
 	{
-		slug: 'my-website',
-		title: 'my Website',
-		image: 'my-website.png',
-		githubLink: 'my-website',
-		previewLink: '/',
+		slug: 'panhomestores',
+		title: 'panhomestores',
+		image: 'panhomestores.png',
+		previewLink: 'https://www.panhomestores.com/uae_en/',
 		type: 'professional',
-		technologies: ['NextJs', 'JavaScript', 'TypeScript', 'TailwindCSS', 'HTML', 'CSS'],
+		technologies: ['Magento 2', 'React', 'Redux', 'GraphQL', 'HTML', 'SCSS'],
 	},
 	{
 		slug: 'bantubeat',
@@ -55,15 +55,6 @@ export const PROJECTS: Project[] = [
 		requiredAuth: true,
 		type: 'professional',
 		technologies: ['NextJs', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Sass'],
-	},
-	{
-		slug: 'scandiweb-test',
-		title: 'Scandiweb Test',
-		image: 'scandiweb-test.png',
-		githubLink: 'scandiweb-test',
-		previewLink: 'https://gtemgoua-scandiweb-test.000webhostapp.com',
-		type: 'professional',
-		technologies: ['ReactJs', 'JavaScript', 'HTML', 'CSS', 'PHP', 'MySQL'],
 	},
 	{
 		slug: 'kasa',

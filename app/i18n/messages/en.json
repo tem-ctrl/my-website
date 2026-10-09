@@ -198,6 +198,12 @@
 			"purpose": "education",
 			"description": "The Kasa site was coded more than 10 years ago in ASP.NET with significant legacy code. Laura, the CTO, therefore launched a total overhaul to move to a complete JavaScript stack with NodeJS on the back-end, and React on the front-end. Kasa also took the opportunity to order new models from his usual designer, who is freelance. A big project for this year!",
 			"skills": "<sk>Initialize an application with Create React App</sk><sk>Configure navigation between the application's pages with React Router</sk><sk>Develop elements of a website interface using React components</sk>"
+		},
+		"panhomestores": {
+			"title": "Pan Home",
+			"purpose": "professional",
+			"description": "Best UAE store",
+			"skills": "<sk>Optimize a Magento 2 application</sk>"
 		}
 	}
 }
