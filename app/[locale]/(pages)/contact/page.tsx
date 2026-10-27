@@ -33,7 +33,7 @@ const ContactPage = () => {
 				className="border-2 border-orange-500 text-orange-500 hover:border-primary hover:text-primary rounded-md flex relative justify-center items-center w-full md:w-fit py-3 md:p-4"
 				href="mailto:gilbertemgoua@gmail.com"
 			>
-				<BsInfoCircleFill className="absolute -top-3 -left-3 text-2xl z-10 bg-bgLight dark:bg-bgDark" />
+				<BsInfoCircleFill className="absolute -top-3 -left-3 text-2xl z-10 " />
 				<p className="text-center">{t('info')}</p>
 			</Link>
 			<div className="flex flex-col gap-3 md:gap-5 w-full lg:w-3/4 mx-auto">
