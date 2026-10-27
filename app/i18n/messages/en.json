@@ -136,7 +136,7 @@
 		"projects": "Projects",
 		"contact": "Contact"
 	},
-	"LocaleSwitcher": {
+	"LocaleSwitch": {
 		"label": "Swicth language",
 		"locale": "{locale, select, fr {FR} en {EN} other {language}}",
 		"imageAlt": "{locale, select, fr {french flag} en {united kingdom's flag} other {flag}}"

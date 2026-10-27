@@ -21,7 +21,7 @@ const roboto = Roboto({
 type Locale = Promise<{ locale: string }>;
 
 export const generateStaticParams = () => {
-  return routing.locales.map((locale) => ({locale}));
+	return routing.locales.map((locale) => ({ locale }));
 };
 
 export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
@@ -30,7 +30,7 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
 
 	return {
 		title: t('title'),
-		description: t('description')
+		description: t('description'),
 	};
 };
 
@@ -49,20 +49,18 @@ const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
 
 	return (
 		// Fix AOS braking scroll behavior: data-scroll-behavior="smooth"
-		<html lang={locale} suppressHydrationWarning data-scroll-behavior="smooth">
-			<body
-				className={`${roboto.className} bg-bgLight dark:bg-bgDark text-light dark:text-dark`}
-			>
+		<html lang={locale} suppressHydrationWarning>
+			<body className={`${roboto.className}  text-light dark:text-dark`}>
 				<Suspense>
 					<GoogleTag />
 				</Suspense>
-				<NextIntlClientProvider locale={locale} messages={messages}>
-					<Providers>
+				<Providers>
+					<NextIntlClientProvider locale={locale} messages={messages}>
 						<Header />
 						<div className="px-2.5 pt-15 md:px-6 lg:px-14 w-full">{children}</div>
 						<Footer />
-					</Providers>
-				</NextIntlClientProvider>
+					</NextIntlClientProvider>
+				</Providers>
 			</body>
 		</html>
 	);
