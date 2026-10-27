@@ -11,7 +11,7 @@ const PageHeader: FC<PageHeaderProps> = ({ className = '', simpleText, primaryTe
 	return (
 		<div className={`${className}`}>
 			<h1 className="text-center text-3xl font-black uppercase md:text-5xl">
-				{simpleText} <span className="text-primary">{primaryText}</span>
+				{simpleText} <span className="text-primary-text">{primaryText}</span>
 			</h1>
 
 			<div className="mt-5 flex items-center justify-center gap-5">

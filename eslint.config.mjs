@@ -13,12 +13,6 @@ const eslintConfig = defineConfig([
 		'build/**',
 		'next-env.d.ts',
 	]),
-	{
-		rules: {
-			// Plain <img> tags are used on purpose (same markup as the original site)
-			'@next/next/no-img-element': 'off',
-		},
-	},
 ]);
 
 export default eslintConfig;

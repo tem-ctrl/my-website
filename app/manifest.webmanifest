@@ -1,7 +1,7 @@
 {
-	"name": "Gilbert Temgoua's personal website including web development portfolio and a blog(upcoming)",
+	"name": "Gilbert Temgoua - Web Developer Portfolio",
 	"short_name": "Gilbert Temgoua - Web Developer",
-	"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowlegde of the ReactJs and NextJS ecosystem. I'm open to work immediately.",
+	"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowledge of the ReactJs and NextJS ecosystem. I'm open to work immediately.",
 	"start_url": "/",
 	"icons": [
 		{

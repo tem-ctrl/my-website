@@ -2,15 +2,17 @@ import { Metadata } from 'next';
 import { Suspense, use } from 'react';
 import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { pageMetadata } from '@/lib/seo';
+import { PAGES } from '@/lib/routes';
 import InfoItem from '@/components/pages/about-me/InfoItem';
 import PageHeader from '@/components/common/PageHeader';
 import Photo from '@/components/common/Photo';
 import Separator from '@/components/common/Separator';
 import TimelineItem from '@/components/pages/about-me/TimelineItem';
-import SkillItem from '@/components/pages/about-me/SkillItem';
+import SkillGroups from '@/components/pages/about-me/SkillGroups';
 import TimelineBlock from '@/components/pages/about-me/TimelineBlock';
 import PrimaryButtonLink from '@/components/common/PrimaryButtonLink';
-import { SKILLS } from '@/lib/constants';
+import { cvPath } from '@/lib/constants';
 import { FaDownload } from 'react-icons/fa';
 
 export const generateMetadata = async ({
@@ -19,10 +21,12 @@ export const generateMetadata = async ({
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: 'AboutPage' });
 
-	return {
+	return pageMetadata({
+		locale,
+		path: PAGES.aboutMe,
 		title: t('title'),
 		description: t('description'),
-	};
+	});
 };
 
 const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
@@ -46,7 +50,7 @@ const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
 	const education = [1, 2, 3];
 
 	return (
-		<main className="scrollbar-none flex h-page w-full flex-col items-center gap-12 px-2.5 py-10 md:px-25 lg:px-30">
+		<main className="mx-auto flex min-h-page w-full max-w-6xl flex-col items-center gap-12 py-10">
 			<PageHeader
 				simpleText={t('PageHeader.simpleText')}
 				primaryText={t('PageHeader.primaryText')}
@@ -82,7 +86,7 @@ const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
 					</div>
 					<PrimaryButtonLink
 						text={t('downloadCvButton')}
-						href={`cvs/gilbert_temgoua_cv_${locale}.pdf`}
+						href={cvPath(locale)}
 						icon={<FaDownload />}
 						className="col-span-full w-fit! text-sm max-md:justify-self-center"
 						// newTab
@@ -91,8 +95,8 @@ const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
 				</div>
 			</div>
 			<Separator />
-			<div className="flex items-start justify-start gap-10 max-md:flex-col">
-				<TimelineBlock title="Experience">
+			<div className="grid w-full items-start gap-10 md:grid-cols-2">
+				<TimelineBlock title={t('experienceTitle')}>
 					{experiences.map((i) => (
 						<TimelineItem
 							key={`experience-${i}`}
@@ -108,7 +112,7 @@ const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
 					))}
 				</TimelineBlock>
 
-				<TimelineBlock title="Education">
+				<TimelineBlock title={t('educationTitle')}>
 					{education.map((i) => (
 						<TimelineItem
 							key={`education-${i}`}
@@ -124,12 +128,8 @@ const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
 			</div>
 			<Separator />
 			<section className="w-full">
-				<h2 className="mb-16 text-2xl uppercase">{t('skills')}</h2>
-				<div className="grid w-full gap-x-8 gap-y-20 md:grid-cols-3">
-					{SKILLS.map((skill, i) => (
-						<SkillItem key={`skill-${i}`} {...skill} />
-					))}
-				</div>
+				<h2 className="mb-10 text-2xl font-black uppercase">{t('skills')}</h2>
+				<SkillGroups />
 			</section>
 		</main>
 	);

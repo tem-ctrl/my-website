@@ -7,6 +7,8 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import Providers from '@/components/layout/Providers';
+import Background from '@/components/layout/Background';
+import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import GoogleTag from '@/components/robot/GoogleTag';
 
@@ -40,14 +42,15 @@ const RootLayout = async ({ children, params }: LayoutProps<'/[locale]'>) => {
 	return (
 		<html lang={locale} className={roboto.variable} suppressHydrationWarning>
 			<body>
+				<Background />
 				<Suspense>
 					<GoogleTag />
 				</Suspense>
 				<NextIntlClientProvider>
 					<Providers>
 						<Header />
-						<div className="w-full px-2.5 md:px-6 lg:px-14">{children}</div>
-						{/* <Footer /> */}
+						<div className="w-full px-5 md:px-6 lg:px-14">{children}</div>
+						<Footer />
 					</Providers>
 				</NextIntlClientProvider>
 			</body>

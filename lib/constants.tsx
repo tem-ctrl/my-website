@@ -1,53 +1,25 @@
-import { Project, SkillItemProps, SocialMedia } from '@/lib/types';
+import { Project, SkillGroup, SocialMedia, TechItem } from '@/lib/types';
 import { BiLogoLinkedin } from 'react-icons/bi';
 import { BsWhatsapp, BsGithub } from 'react-icons/bs';
-
-export const SKILLS: SkillItemProps[] = [
-	{
-		skill: 'HTML',
-		value: 90,
-	},
-	{
-		skill: 'CSS',
-		value: 80,
-	},
-	{
-		skill: 'Sass',
-		value: 70,
-	},
-	{
-		skill: 'Tailwind CSS',
-		value: 80,
-	},
-	{
-		skill: 'JavaScript',
-		value: 80,
-	},
-	{
-		skill: 'Typescript',
-		value: 60,
-	},
-	{
-		skill: 'ReactJs',
-		value: 70,
-	},
-	{
-		skill: 'NextJs',
-		value: 80,
-	},
-	{
-		skill: 'Python',
-		value: 80,
-	},
-	{
-		skill: 'PHP',
-		value: 50,
-	},
-	{
-		skill: 'MySQL',
-		value: 50,
-	},
-];
+import { FaMagento } from 'react-icons/fa';
+import {
+	SiCss,
+	SiFigma,
+	SiGit,
+	SiGraphql,
+	SiHtml5,
+	SiJavascript,
+	SiMysql,
+	SiNextdotjs,
+	SiNodedotjs,
+	SiPhp,
+	SiPython,
+	SiReact,
+	SiRedux,
+	SiSass,
+	SiTailwindcss,
+	SiTypescript,
+} from 'react-icons/si';
 
 export const SOCIAL_MEDIA: SocialMedia[] = [
 	{
@@ -66,19 +38,18 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
 		name: 'whatsapp',
 		icon: <BsWhatsapp />,
 		link: 'https://wa.me/237651331062',
-		bgColor: 'bg-green-500',
+		bgColor: 'bg-[#22c55e]',
 	},
 ];
 
 export const PROJECTS: Project[] = [
 	{
-		slug: 'my-website',
-		title: 'my Website',
-		image: 'my-website.png',
-		githubLink: 'my-website',
-		previewLink: '/',
+		slug: 'panhomestores',
+		title: 'panhomestores',
+		image: 'panhomestores.png',
+		previewLink: 'https://www.panhomestores.com/uae_en/',
 		type: 'professional',
-		technologies: ['NextJs', 'JavaScript', 'TypeScript', 'TailwindCSS', 'HTML', 'CSS'],
+		technologies: ['Magento 2', 'React', 'Redux', 'GraphQL', 'HTML', 'SCSS'],
 	},
 	{
 		slug: 'bantubeat',
@@ -88,15 +59,6 @@ export const PROJECTS: Project[] = [
 		requiredAuth: true,
 		type: 'professional',
 		technologies: ['NextJs', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Sass'],
-	},
-	{
-		slug: 'scandiweb-test',
-		title: 'Scandiweb Test',
-		image: 'scandiweb-test.png',
-		githubLink: 'scandiweb-test',
-		previewLink: 'https://gtemgoua-scandiweb-test.000webhostapp.com',
-		type: 'professional',
-		technologies: ['ReactJs', 'JavaScript', 'HTML', 'CSS', 'PHP', 'MySQL'],
 	},
 	{
 		slug: 'kasa',
@@ -154,11 +116,58 @@ export const PROJECTS: Project[] = [
 	},
 ];
 
-export const BLOG_POSTS = [
-	'Next new Generation',
-	'React Server Components',
-	'My Blasting blog post',
-	'Next new Generation 5',
-	'React Server Components 25',
-	'My Blasting blog post 96',
+export const SITE_URL = 'https://gtemgoua.vercel.app';
+
+export const CONTACT_EMAIL = 'gilbertemgoua@gmail.com';
+
+/** Start of professional experience, used to compute years of experience */
+export const EXPERIENCE_START = '2023-04-01';
+
+export const cvPath = (locale: string) => `/cvs/gilbert_temgoua_cv_${locale}.pdf`;
+
+export const TECH_STACK: TechItem[] = [
+	{ name: 'Next.js', icon: <SiNextdotjs /> },
+	{ name: 'React', icon: <SiReact /> },
+	{ name: 'TypeScript', icon: <SiTypescript /> },
+	{ name: 'JavaScript', icon: <SiJavascript /> },
+	{ name: 'Tailwind CSS', icon: <SiTailwindcss /> },
+	{ name: 'GraphQL', icon: <SiGraphql /> },
+	{ name: 'Redux', icon: <SiRedux /> },
+	{ name: 'HTML5', icon: <SiHtml5 /> },
+	{ name: 'CSS', icon: <SiCss /> },
+	{ name: 'Sass', icon: <SiSass /> },
+	{ name: 'Magento 2', icon: <FaMagento /> },
+	{ name: 'Node.js', icon: <SiNodedotjs /> },
+	{ name: 'PHP', icon: <SiPhp /> },
+	{ name: 'MySQL', icon: <SiMysql /> },
+	{ name: 'Python', icon: <SiPython /> },
+	{ name: 'Figma', icon: <SiFigma /> },
+	{ name: 'Git', icon: <SiGit /> },
+];
+
+/** View transition name shared by a project's card and details page image, so it morphs between them */
+export const projectImageTransitionName = (slug: string) => `project-image-${slug}`;
+
+const techByName = (names: string[]) => TECH_STACK.filter(({ name }) => names.includes(name));
+
+export const SKILL_GROUPS: SkillGroup[] = [
+	{
+		key: 'frontend',
+		items: techByName([
+			'Next.js',
+			'React',
+			'TypeScript',
+			'JavaScript',
+			'Tailwind CSS',
+			'Redux',
+			'HTML5',
+			'CSS',
+			'Sass',
+		]),
+	},
+	{
+		key: 'backend',
+		items: techByName(['GraphQL', 'Node.js', 'PHP', 'MySQL', 'Python', 'Magento 2']),
+	},
+	{ key: 'tools', items: techByName(['Git', 'Figma']) },
 ];

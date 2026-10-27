@@ -3,9 +3,20 @@
 /* Class-based dark mode, toggled by next-themes on <html>. */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Brand palette (unchanged values from the original site). */
+/* Brand palette */
 @theme {
-	--color-primary: #8a2be2; /* purple */
+	--color-primary: #8a2be2;
+	/* purple */
+
+	/*
+	 * Gradient partners of the primary. All colors are hex: Tailwind's own palette is wide-gamut
+	 * oklch and renders more vivid on phone screens than on desktop monitors.
+	 */
+	--color-accent: #e12afb;
+	--color-accent-strong: #c800de;
+
+	/* "Available for work" status dot */
+	--color-online: #22c55e;
 
 	--color-bg-light: #eff0f3;
 	--color-light: #202020;
@@ -20,6 +31,60 @@
 
 	/* Fixed header height: enables h-header, pt-header, top-header... */
 	--spacing-header: 60px;
+
+	/* Slow ambient drift for the background glows (see components/layout/Background.tsx) */
+	--animate-drift: drift 24s ease-in-out infinite alternate;
+	--animate-drift-reverse: drift 30s ease-in-out infinite alternate-reverse;
+	--animate-spin-slow: spin 8s linear infinite;
+	--animate-icon-in: icon-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+
+	/* Hero entrance: plain CSS so it plays on first paint, before JavaScript loads */
+	--animate-fade-up: fade-up 0.6s ease-out both;
+	--animate-blur-in: blur-in 0.5s ease-out both;
+	--animate-zoom-in: zoom-in 0.8s ease-out both;
+
+	@keyframes fade-up {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+	}
+
+	@keyframes blur-in {
+		from {
+			opacity: 0;
+			transform: translateY(24px);
+			filter: blur(8px);
+		}
+	}
+
+	/* No opacity change: the portrait is the LCP element and must count as painted immediately */
+	@keyframes zoom-in {
+		from {
+			transform: scale(0.9);
+		}
+	}
+
+	@keyframes icon-in {
+		from {
+			opacity: 0;
+			transform: rotate(-90deg) scale(0);
+		}
+	}
+
+	@keyframes drift {
+		0% {
+			transform: translate3d(0, 0, 0) scale(1);
+		}
+
+		50% {
+			transform: translate3d(8vw, 6vh, 0) scale(1.15);
+		}
+
+		100% {
+			transform: translate3d(-6vw, 10vh, 0) scale(0.95);
+		}
+	}
 }
 
 /*
@@ -29,21 +94,34 @@
 :root {
 	--background: var(--color-bg-light);
 	--foreground: var(--color-light);
-	--field: var(--color-neutral-200);
-	--field-ring: var(--color-neutral-300);
-	--card: var(--color-neutral-300);
-	--line: var(--color-gray-300);
-	--border: var(--color-gray-300);
+	--field: #e5e5e5;
+	--field-ring: #d4d4d4;
+	--card: #d4d4d4;
+	--line: #d1d5db;
+	--border: #d1d5db;
+	--dot: #20202024;
+	--glow: #8a2be238;
+	--grain-opacity: 0.05;
+	/* Brand purple for text: tuned per theme to keep a 4.5:1+ contrast ratio */
+	--primary-text: #7525c0;
+	--success: #16a34a;
+	--danger: #dc2626;
 }
 
 .dark {
 	--background: var(--color-bg-dark);
 	--foreground: var(--color-dark);
-	--field: var(--color-neutral-900);
-	--field-ring: var(--color-neutral-900);
-	--card: var(--color-neutral-800);
-	--line: var(--color-gray-800);
-	--border: var(--color-gray-600);
+	--field: #171717;
+	--field-ring: #171717;
+	--card: #262626;
+	--line: #1f2937;
+	--border: #4b5563;
+	--dot: #efefef1a;
+	--glow: #8a2be24d;
+	--grain-opacity: 0.07;
+	--primary-text: #b980ee;
+	--success: #4ade80;
+	--danger: #f87171;
 }
 
 @theme inline {
@@ -54,6 +132,10 @@
 	--color-card: var(--card);
 	--color-line: var(--line);
 	--color-border: var(--border);
+	--color-glow: var(--glow);
+	--color-primary-text: var(--primary-text);
+	--color-success: var(--success);
+	--color-danger: var(--danger);
 
 	--font-sans: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
 }
@@ -69,15 +151,22 @@
 	}
 
 	::-webkit-scrollbar-track {
-		background-color: #fff;
+		background-color: var(--background);
 		border-radius: 0.5rem;
 	}
 
 	::-webkit-scrollbar-thumb {
 		background-color: var(--color-primary);
 		border-radius: 0.5rem;
-		border: 0.2rem solid #fff;
+		border: 0.2rem solid var(--background);
 	}
+}
+
+/* Theme switch reveal (see ThemeSwitcher): the clip-path animation replaces the default crossfade */
+html.theme-transition::view-transition-old(root),
+html.theme-transition::view-transition-new(root) {
+	animation: none;
+	mix-blend-mode: normal;
 }
 
 @utility scrollbar-none {
@@ -88,12 +177,19 @@
 	}
 }
 
-/* Scrollable page area filling the viewport below the fixed header. */
-@utility h-page {
+/* Page area filling at least the viewport below the fixed header. */
+@utility min-h-page {
 	min-height: calc(100dvh - var(--spacing-header));
-	overflow-y: scroll;
+}
 
-	@variant md {
-		height: calc(100dvh - var(--spacing-header));
-	}
+/* Dot grid, faded out towards the edges of the viewport. */
+@utility bg-dots {
+	background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+	background-size: 24px 24px;
+	mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 40%, transparent 100%);
+}
+
+/* Film grain from an inline SVG noise filter. */
+@utility bg-grain {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }

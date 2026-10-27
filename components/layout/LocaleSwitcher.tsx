@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
+import Image from 'next/image';
 import React, { useState, useTransition } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 
@@ -23,6 +24,8 @@ const LocaleSwitcher = () => {
 	};
 
 	const flagSize = 18;
+	// Flags are 512x358
+	const flagHeight = Math.round((flagSize * 358) / 512);
 
 	return (
 		<div
@@ -35,10 +38,12 @@ const LocaleSwitcher = () => {
 		>
 			<p className="sr-only">{t('label')}</p>
 			<div className="flex cursor-pointer items-center justify-start gap-1.5">
-				<img
+				<Image
 					src={`/assets/images/${currentLocale}-flag.png`}
 					alt={t('imageAlt', { locale: currentLocale })}
 					width={flagSize}
+					height={flagHeight}
+					loading="eager"
 				/>
 				<span>{t('locale', { locale: currentLocale })}</span>
 				<FaChevronDown className={`${showLanguages && 'rotate-180'} inline text-sm`} />
@@ -54,10 +59,11 @@ const LocaleSwitcher = () => {
 									onClick={() => onLocaleChanged(cur)}
 									name="language switcher"
 								>
-									<img
+									<Image
 										src={`/assets/images/${cur}-flag.png`}
 										alt={t('imageAlt', { locale: cur })}
 										width={flagSize}
+										height={flagHeight}
 									/>
 									<span>{t('locale', { locale: cur })}</span>
 								</button>

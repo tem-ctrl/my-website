@@ -15,12 +15,6 @@ export interface TimelineItem {
 	location: string;
 }
 
-export interface SkillItemProps {
-	className?: string;
-	skill: string;
-	value: number; // Percentage
-}
-
 export interface InfoItemType {
 	className?: string;
 	label: string;
@@ -47,4 +41,14 @@ export interface Project {
 	requiredAuth?: boolean;
 	type?: 'education' | 'professional';
 	technologies?: string[];
+}
+
+export interface TechItem {
+	name: string;
+	icon: React.JSX.Element;
+}
+
+export interface SkillGroup {
+	key: 'frontend' | 'backend' | 'tools';
+	items: TechItem[];
 }

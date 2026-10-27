@@ -37,7 +37,7 @@ const FormInput = ({
 			/>
 			{!!icon && (
 				<span
-					className={`${iconClass} ${isFocused && 'text-primary'} absolute top-4 left-4 inline text-lg`}
+					className={`${iconClass} ${isFocused && 'text-primary-text'} absolute top-4 left-4 inline text-lg`}
 				>
 					{icon}
 				</span>

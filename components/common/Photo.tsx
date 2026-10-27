@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { FC } from 'react';
 
 interface PhotoProps {
@@ -7,10 +8,13 @@ interface PhotoProps {
 const Photo: FC<PhotoProps> = ({ className = '' }) => {
 	return (
 		<div className={`${className} flex w-full justify-center lg:w-1/3 lg:items-start`}>
-			<img
+			<Image
 				src="/assets/images/me.png"
 				alt="Gilbert Temgoua"
-				className="h-44 -scale-x-100 rounded-full object-fill md:h-75"
+				width={392}
+				height={475}
+				sizes="(min-width: 768px) 248px, 146px"
+				className="h-44 w-auto -scale-x-100 rounded-full object-fill md:h-75"
 			/>
 		</div>
 	);
