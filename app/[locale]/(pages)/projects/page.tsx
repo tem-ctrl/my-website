@@ -26,7 +26,7 @@ const ProjectsPage = ({ params }: PageProps<'/[locale]/projects'>) => {
 	const t = useTranslations('ProjectsPage');
 
 	return (
-		<main className="scrollbar-none flex h-page w-full flex-col items-center gap-12 px-2.5 py-10 md:px-25">
+		<main className="flex min-h-page w-full flex-col items-center gap-12 px-2.5 py-10 md:px-25">
 			<PageHeader
 				simpleText={t('PageHeader.simpleText')}
 				primaryText={t('PageHeader.primaryText')}

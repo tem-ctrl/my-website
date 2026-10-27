@@ -46,7 +46,7 @@ const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
 	const education = [1, 2, 3];
 
 	return (
-		<main className="scrollbar-none flex h-page w-full flex-col items-center gap-12 px-2.5 py-10 md:px-25 lg:px-30">
+		<main className="flex min-h-page w-full flex-col items-center gap-12 px-2.5 py-10 md:px-25 lg:px-30">
 			<PageHeader
 				simpleText={t('PageHeader.simpleText')}
 				primaryText={t('PageHeader.primaryText')}

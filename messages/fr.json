@@ -110,14 +110,9 @@
 		"viewOnGithub": "Voir sur GitHub",
 		"visitSite": "Visiter le site"
 	},
-	"BlogPage": {
-		"title": "Blog - Gilbert Temgoua",
-		"description": "Je partage ici mon experience avec quiconque souhaiterait apprendre de mes erreurs et de mes recherches personnelles."
-	},
 	"ContactPage": {
 		"title": "Contact - Gilbert Temgoua",
 		"description": "Je suis toujours ouvert aux suggestions, critiques, simples salutations ou offre d'emploi.",
-		"info": "Ce formulaire sera opérationnel sous peu, en attendant cliquez ici pour m'envoyer un mail, merci",
 		"PageHeader": {
 			"primaryText": "moi",
 			"simpleText": "contactez",
@@ -127,12 +122,12 @@
 		"namePlaceholder": "VOTRE NOM",
 		"emailPlaceholder": "VOTRE EMAIL",
 		"messagePlaceholder": "VOTRE MESSAGE",
-		"sendButtonText": "ENVOYER"
+		"sendButtonText": "ENVOYER",
+		"subject": "Message de {name} via gtemgoua.vercel.app"
 	},
 	"HeaderNav": {
 		"home": "Accueil",
 		"about": "Mes infos",
-		"blog": "Blog",
 		"projects": "Projets",
 		"contact": "Contact"
 	},
@@ -145,23 +140,11 @@
 		"responsibilities": "Responsabilités"
 	},
 	"projects": {
-		"my-website": {
-			"title": "mon site web",
-			"purpose": "professional",
-			"description": "C'est un site Web construit pour me présenter, présenter mon portfolio de développement et plus tard partager mon expérience de développement sur la page du blog en cours de développement. Chaque projet de mon portfolio peut être affiché en détail sur une page dédiée qui affiche les liens pour visualiser le projet sur GitHub et/ou visiter le site dédié. Vous y trouverez aussi une page de contact si vous souhaitez me contacter pour m'embaucher par exemple.",
-			"skills": "<sk>Créer un site multilingue avec NextJs et next-intl</sk><sk>Appliquer les bonnes pratiques d'optimisation du SEO</sk><sk>Implémenter le changement de thème (sombre/clair) sur un site</sk>"
-		},
 		"bantubeat": {
 			"title": "Bantubeat",
 			"purpose": "professional",
 			"description": "",
 			"skills": "<sk>Implémenter des interfaces responsives</sk><sk>Intégrer du contenu conformément aux maquettes</sk><sk>Consommer des API REST et GraphQl</sk><sk>Tracker et résoudre les bugs</sk><sk>Nettoyer et réusiner le code d'une application web</sk><sk>Collaborer efficacement sur un projet de moyenne echelle</sk>"
-		},
-		"scandiweb-test": {
-			"title": "Test Scandiweb",
-			"purpose": "professional",
-			"description": "",
-			"skills": "<sk>Créer une simple API REST avec du pure PHP</sk><sk>Implémenter les opérations du CRUD en PHP</sk><sk>Implémenter la validation d'un formulaire dynamique avec react-hook-form</sk><sk>Créer des notifications avec react-toastify</sk><sk>Déployer un projet React</sk><sk>Implémenter la configuration de base d'un serveur Apache</sk><sk>Stcker des données de façon organisée avec MySQL</sk>"
 		},
 		"booki": {
 			"title": "Booki",
@@ -198,6 +181,15 @@
 			"purpose": "education",
 			"description": "Le site de Kasa a été codé il y a maintenant plus de 10 ans en ASP.NET avec un code legacy important. Laura, la CTO, a donc lancé une refonte totale pour passer à une stack complète en JavaScript avec NodeJS côté back-end, et React côté front-end. Kasa en a également profité pour commander de nouvelles maquettes auprès de son designer habituel, qui est en freelance. Un gros chantier pour cette année !",
 			"skills": "<sk>Initialiser une application avec Create React App</sk><sk>Configurer la navigation entre les pages de l'application avec React Router</sk><sk>Développer des éléments de l'interface d'un site web grâce à des composants React</sk>"
+		},
+		"panhomestores": {
+			"title": "Pan Home",
+			"purpose": "professionnel",
+			"description": "Meilleur fournisseur des Emirats Arabe Unis",
+			"skills": "<sk>Optimiser une boutique en ligne conçue avec a Magento 2</sk>"
 		}
+	},
+	"Footer": {
+		"rights": "Tous droits réservés."
 	}
 }

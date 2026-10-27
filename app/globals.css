@@ -20,6 +20,22 @@
 
 	/* Fixed header height: enables h-header, pt-header, top-header... */
 	--spacing-header: 60px;
+
+	/* Slow ambient drift for the background glows (see components/layout/Background.tsx) */
+	--animate-drift: drift 24s ease-in-out infinite alternate;
+	--animate-drift-reverse: drift 30s ease-in-out infinite alternate-reverse;
+
+	@keyframes drift {
+		0% {
+			transform: translate3d(0, 0, 0) scale(1);
+		}
+		50% {
+			transform: translate3d(8vw, 6vh, 0) scale(1.15);
+		}
+		100% {
+			transform: translate3d(-6vw, 10vh, 0) scale(0.95);
+		}
+	}
 }
 
 /*
@@ -34,6 +50,9 @@
 	--card: var(--color-neutral-300);
 	--line: var(--color-gray-300);
 	--border: var(--color-gray-300);
+	--dot: color-mix(in oklab, var(--color-light) 14%, transparent);
+	--glow: color-mix(in oklab, var(--color-primary) 22%, transparent);
+	--grain-opacity: 0.05;
 }
 
 .dark {
@@ -44,6 +63,9 @@
 	--card: var(--color-neutral-800);
 	--line: var(--color-gray-800);
 	--border: var(--color-gray-600);
+	--dot: color-mix(in oklab, var(--color-dark) 10%, transparent);
+	--glow: color-mix(in oklab, var(--color-primary) 30%, transparent);
+	--grain-opacity: 0.07;
 }
 
 @theme inline {
@@ -54,6 +76,7 @@
 	--color-card: var(--card);
 	--color-line: var(--line);
 	--color-border: var(--border);
+	--color-glow: var(--glow);
 
 	--font-sans: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
 }
@@ -69,14 +92,14 @@
 	}
 
 	::-webkit-scrollbar-track {
-		background-color: #fff;
+		background-color: var(--background);
 		border-radius: 0.5rem;
 	}
 
 	::-webkit-scrollbar-thumb {
 		background-color: var(--color-primary);
 		border-radius: 0.5rem;
-		border: 0.2rem solid #fff;
+		border: 0.2rem solid var(--background);
 	}
 }
 
@@ -88,12 +111,19 @@
 	}
 }
 
-/* Scrollable page area filling the viewport below the fixed header. */
-@utility h-page {
+/* Page area filling at least the viewport below the fixed header. */
+@utility min-h-page {
 	min-height: calc(100dvh - var(--spacing-header));
-	overflow-y: scroll;
+}
 
-	@variant md {
-		height: calc(100dvh - var(--spacing-header));
-	}
+/* Dot grid, faded out towards the edges of the viewport. */
+@utility bg-dots {
+	background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+	background-size: 24px 24px;
+	mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 40%, transparent 100%);
+}
+
+/* Film grain from an inline SVG noise filter. */
+@utility bg-grain {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }

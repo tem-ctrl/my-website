@@ -12,7 +12,7 @@ export const SKILLS: SkillItemProps[] = [
 		value: 80,
 	},
 	{
-		skill: 'Sass',
+		skill: 'SCSS',
 		value: 70,
 	},
 	{
@@ -37,15 +37,19 @@ export const SKILLS: SkillItemProps[] = [
 	},
 	{
 		skill: 'Python',
-		value: 80,
+		value: 70,
 	},
 	{
 		skill: 'PHP',
-		value: 50,
+		value: 70,
 	},
 	{
 		skill: 'MySQL',
-		value: 50,
+		value: 70,
+	},
+	{
+		skill: 'Magento 2',
+		value: 60,
 	},
 ];
 
@@ -72,13 +76,12 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
 
 export const PROJECTS: Project[] = [
 	{
-		slug: 'my-website',
-		title: 'my Website',
-		image: 'my-website.png',
-		githubLink: 'my-website',
-		previewLink: '/',
+		slug: 'panhomestores',
+		title: 'panhomestores',
+		image: 'panhomestores.png',
+		previewLink: 'https://www.panhomestores.com/uae_en/',
 		type: 'professional',
-		technologies: ['NextJs', 'JavaScript', 'TypeScript', 'TailwindCSS', 'HTML', 'CSS'],
+		technologies: ['Magento 2', 'React', 'Redux', 'GraphQL', 'HTML', 'SCSS'],
 	},
 	{
 		slug: 'bantubeat',
@@ -88,15 +91,6 @@ export const PROJECTS: Project[] = [
 		requiredAuth: true,
 		type: 'professional',
 		technologies: ['NextJs', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Sass'],
-	},
-	{
-		slug: 'scandiweb-test',
-		title: 'Scandiweb Test',
-		image: 'scandiweb-test.png',
-		githubLink: 'scandiweb-test',
-		previewLink: 'https://gtemgoua-scandiweb-test.000webhostapp.com',
-		type: 'professional',
-		technologies: ['ReactJs', 'JavaScript', 'HTML', 'CSS', 'PHP', 'MySQL'],
 	},
 	{
 		slug: 'kasa',
@@ -154,11 +148,6 @@ export const PROJECTS: Project[] = [
 	},
 ];
 
-export const BLOG_POSTS = [
-	'Next new Generation',
-	'React Server Components',
-	'My Blasting blog post',
-	'Next new Generation 5',
-	'React Server Components 25',
-	'My Blasting blog post 96',
-];
+export const SITE_URL = 'https://gtemgoua.vercel.app';
+
+export const CONTACT_EMAIL = 'gilbertemgoua@gmail.com';

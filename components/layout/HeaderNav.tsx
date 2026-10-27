@@ -40,10 +40,6 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 			text: t('projects'),
 			href: PAGES.projects,
 		},
-		// {
-		// 	text: t('blog'),
-		// 	href: PAGES.blog,
-		// },
 		{
 			text: t('contact'),
 			href: PAGES.contact,

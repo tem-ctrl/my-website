@@ -26,7 +26,7 @@ const HomePage = ({ params }: PageProps<'/[locale]'>) => {
 	const t = useTranslations('HomePage');
 
 	return (
-		<main className="scrollbar-none flex h-page items-center justify-start px-2.5 max-lg:flex-col max-lg:pt-10 md:px-10 lg:justify-center">
+		<main className="flex min-h-page items-center justify-start px-2.5 max-lg:flex-col max-lg:pt-10 md:px-10 lg:justify-center">
 			<Photo />
 			<div className="flex w-full flex-col items-start justify-center gap-3 text-lg max-lg:mt-4 lg:w-2/3">
 				<p className="uppercase max-lg:mx-auto">{t('hi')}</p>
