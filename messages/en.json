@@ -10,7 +10,7 @@
 			"badge": "Available for new opportunities",
 			"greeting": "Hi, I’m Gilbert Temgoua",
 			"headline": "I build fast, polished web apps people love to use.",
-			"rolePrefix": "Front-end developer specialized in",
+			"rolePrefix": "Web Developer specialized in",
 			"intro": "Based in Yaoundé, Cameroon, I turn designs into fast, accessible and maintainable products, and I’ve led front-end teams doing it.",
 			"viewWork": "View my work",
 			"downloadCv": "Download CV",
@@ -93,7 +93,7 @@
 		"experience-1": {
 			"startDate": "Apr 2023",
 			"endDate": "ongoing",
-			"title": "Frontend developer (freelance)",
+			"title": "Web Developer (freelance)",
 			"location": "Fully remote",
 			"place": "Bantubeat",
 			"description": {

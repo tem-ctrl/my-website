@@ -6,7 +6,7 @@ import HeaderNav from '@/components/layout/HeaderNav';
 
 const Header: FC = () => {
 	return (
-		<header className="fixed inset-x-0 top-0 z-20 mx-auto flex h-header w-full items-center justify-between bg-background/80 px-2.5 shadow-sm shadow-line backdrop-blur-md md:px-10 lg:px-14">
+		<header className="fixed inset-x-0 top-0 z-20 mx-auto flex h-header w-full items-center justify-between bg-background/80 px-5 shadow-sm shadow-line backdrop-blur-md md:px-10 lg:px-14">
 			<Link href={PAGES.home} className="flex w-20 items-center justify-center md:w-30">
 				<Image
 					src="/assets/images/logo.png"

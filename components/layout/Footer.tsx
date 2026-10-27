@@ -16,7 +16,7 @@ const Footer: FC = () => {
 	const t = useTranslations('Footer');
 
 	return (
-		<footer className="flex w-full items-center justify-between gap-4 border-t border-line px-2.5 py-6 text-sm max-md:flex-col md:px-6 lg:px-14">
+		<footer className="flex w-full items-center justify-between gap-4 border-t border-line px-5 py-6 text-sm max-md:flex-col md:px-6 lg:px-14">
 			<p>
 				&copy; <CurrentYear /> Gilbert Temgoua. {t('rights')}
 			</p>

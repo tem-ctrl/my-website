@@ -55,7 +55,10 @@ const Hero: FC = () => {
 				</h1>
 
 				<p className="text-lg motion-safe:animate-fade-up md:text-xl" style={delay(headlineEnd)}>
-					{t('rolePrefix')} <RotatingRole roles={ROLES} />
+					{t('rolePrefix')}{' '}
+					<span className="max-md:block">
+						<RotatingRole roles={ROLES} />
+					</span>
 				</p>
 
 				<p
