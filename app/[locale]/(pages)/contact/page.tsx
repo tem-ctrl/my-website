@@ -12,7 +12,8 @@ import SendButtonAndSocial from '@/app/components/pages/contact/SendButonAndSoci
 import { BsInfoCircleFill } from 'react-icons/bs';
 import Link from 'next/link';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+	const { locale } = await params;
 	const messages = await getMessages(locale);
 	const t = createTranslator({ locale, messages });
 

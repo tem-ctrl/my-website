@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
-
-const defaultTheme = require('tailwindcss/defaultTheme');
+import defaultTheme from 'tailwindcss/defaultTheme';
+import tailwindScrollbar from 'tailwind-scrollbar';
 
 const config: Config = {
 	content: ['./app/**/*.tsx'],
@@ -33,7 +33,7 @@ const config: Config = {
 			},
 		},
 	},
-	plugins: [require('tailwind-scrollbar')],
+	plugins: [tailwindScrollbar],
 };
 
 export default config;

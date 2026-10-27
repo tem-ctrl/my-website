@@ -16,9 +16,8 @@ const roboto = Roboto({
 	display: 'swap',
 });
 
-type Locale = { locale: string };
-
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+	const { locale } = await params;
 	const messages = await getMessages(locale);
 	const t = createTranslator({ locale, messages });
 
@@ -32,25 +31,26 @@ const locales = ['en', 'fr'];
 
 interface RootLayoutProps {
 	children: React.ReactNode;
-	params: Locale;
+	params: Promise<{ locale: string }>;
 }
 
 const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
-	const isValidLocale = locales.some((cur) => cur === params.locale);
+	const { locale } = await params;
+	const isValidLocale = locales.some((cur) => cur === locale);
 
 	if (!isValidLocale) NotFound();
 
-	const messages = await getMessages(params.locale);
+	const messages = await getMessages(locale);
 
 	return (
-		<html lang={params.locale}>
+		<html lang={locale}>
 			<body
 				className={`${roboto.className} max-w-[1600px] mx-auto bg-bgLight dark:bg-bgDark text-light dark:text-dark`}
 			>
 				<Suspense>
 					<GoogleTag />
 				</Suspense>
-				<NextIntlClientProvider messages={messages} locale={params.locale}>
+				<NextIntlClientProvider messages={messages} locale={locale}>
 					<Providers>
 						<Header />
 						<div className="px-2.5 md:px-6 lg:px-14 w-full">{children}</div>

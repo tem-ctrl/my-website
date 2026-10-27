@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { PAGES } from '@/app/config';
-import Link from 'next-intl/link';
+import { Link } from '@/app/i18n/navigation';
 import HeaderNav from '@/app/components/layout/HeaderNav';
 
 const Header: FC = () => {

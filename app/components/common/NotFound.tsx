@@ -1,4 +1,4 @@
-import Link from 'next-intl/link';
+import { Link } from '@/app/i18n/navigation';
 
 const NotFound = () => {
 	return (

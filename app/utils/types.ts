@@ -1,3 +1,5 @@
+import type React from 'react';
+
 export type CustomLink = {
 	text: string;
 	href: string;
@@ -30,12 +32,12 @@ export interface InfoItemType {
 export interface SocialMedia {
 	className?: string;
 	link: string;
-	icon: JSX.Element;
+	icon: React.JSX.Element;
 	bgColor: string;
 	name?: string;
 }
 
-export type PageProps = { params: { locale: string } };
+export type PageProps = { params: Promise<{ locale: string }> };
 
 export interface Project {
 	className?: string;

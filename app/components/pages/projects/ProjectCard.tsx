@@ -3,7 +3,7 @@
 import React, { FC } from 'react';
 import { PAGES } from '@/app/config';
 import { Project } from '@/app/utils/types';
-import Link from 'next-intl/link';
+import { Link } from '@/app/i18n/navigation';
 
 const ProjectCard: FC<Project> = ({ className = '', title, image, slug }) => {
 	return (

@@ -1,7 +1,7 @@
 'use client';
 
 import { PAGES } from '@/app/config';
-import { useRouter } from 'next-intl/client';
+import { useRouter } from '@/app/i18n/navigation';
 import React, { FC } from 'react';
 
 interface BlogCardProps {

@@ -1,12 +1,14 @@
 import { getMessages } from '@/app/utils/getMessages';
 import { PageProps, Project } from '@/app/utils/types';
 import { Metadata } from 'next';
-import { createTranslator, useTranslations } from 'next-intl';
+import { createTranslator } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { PROJECTS } from '@/app/utils/constants';
 import PrimaryButtonLink from '@/app/components/common/PrimaryButtonLink';
 import { BsGithub } from 'react-icons/bs';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+	const { locale } = await params;
 	const messages = await getMessages(locale);
 	const t = createTranslator({ locale, messages });
 
@@ -16,10 +18,10 @@ export const generateMetadata = async ({ params: { locale } }: PageProps): Promi
 	};
 };
 
-const ProjectDetailsPage = ({ params }: { params: { slug: string } }) => {
-	const slug = params.slug;
-	const t = useTranslations(`projects.${slug}`);
-	const p = useTranslations('ProjectDetailsPage');
+const ProjectDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+	const { slug } = await params;
+	const t = await getTranslations(`projects.${slug}`);
+	const p = await getTranslations('ProjectDetailsPage');
 	const project = PROJECTS.find((item) => item.slug === slug) ?? ({} as Project);
 	const commonClassNames = 'text-xl underline font-medium mb-2';
 
@@ -65,7 +67,7 @@ const ProjectDetailsPage = ({ params }: { params: { slug: string } }) => {
 			</div>
 			<div className="col-span-full grid grid-col-1 lg:grid-cols-2 gap-5 lg:gap-10">
 				<section>
-					<h2 className={commonClassNames}>{p('description', { type: project.type })}</h2>
+					<h2 className={commonClassNames}>{p('description', { type: project.type ?? '' })}</h2>
 					<p dangerouslySetInnerHTML={{ __html: t.raw('description') }} />
 				</section>
 				<div>

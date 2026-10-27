@@ -6,7 +6,8 @@ import { PageProps } from '@/app/utils/types';
 import { Metadata, NextPage } from 'next';
 import { createTranslator } from 'next-intl';
 
-export const generateMetadata = async ({ params: { locale } }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+	const { locale } = await params;
 	const messages = await getMessages(locale);
 	const t = createTranslator({ locale, messages });
 
