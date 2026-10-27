@@ -37,9 +37,11 @@ Next.js 16 (App Router, Turbopack) with React 19, Tailwind CSS v4, `next-intl` f
 
 ### Routes & content
 
-- Pages are in the `app/[locale]/(pages)/` route group: home, `about-me`, `projects`, `projects/[slug]`, `blog`, `blog/[slug]`, `contact`. Path strings are centralized in `lib/routes.ts` (`PAGES`).
-- Content is static data, not a CMS: `lib/constants.tsx` holds `SKILLS`, `SOCIAL_MEDIA`, `PROJECTS` (drives `projects/[slug]` static params), and `BLOG_POSTS`. Types are in `lib/types.ts`. Images are under `public/assets/`.
-- Per-route OG/Twitter images are file-convention `opengraph-image.png` / `twitter-image.png` with `.alt.txt` siblings.
+- Pages are in the `app/[locale]/(pages)/` route group: home, `about-me`, `projects`, `projects/[slug]`, `contact`. Path strings are centralized in `lib/routes.ts` (`PAGES`).
+- Content is static data, not a CMS: `lib/constants.tsx` holds `TECH_STACK`, `SKILL_GROUPS`, `SOCIAL_MEDIA` and `PROJECTS` (drives `projects/[slug]` static params). Types are in `lib/types.ts`. Images are under `public/assets/`.
+- Per-route OG/Twitter images are file-convention `opengraph-image.png` / `twitter-image.png` with `.alt.txt` siblings; project pages generate theirs with `next/og` (`projects/[slug]/opengraph-image.tsx`).
+- SEO helpers live in `lib/seo.ts` (`pageMetadata` for canonical/hreflang/OG tags, `personJsonLd`). `app/sitemap.ts` and `app/robots.ts` are generated.
+- LLM-friendly content: `/llms.txt` and `/llms-full.txt` are route handlers built by `lib/llms.ts` from the same messages and data as the pages (English). New projects, experience or education entries appear there automatically.
 - Components: `components/layout/` (header, nav, theme/locale switchers, `Providers`), `components/common/` (shared UI), `components/pages/<page>/` (page-specific).
 
 ### Styling
