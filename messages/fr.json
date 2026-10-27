@@ -1,0 +1,203 @@
+{
+	"RootLayout": {
+		"title": "Gilbert Temgoua - Développeur web",
+		"description": "Je suis un développeur web passionné basé à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement."
+	},
+	"HomePage": {
+		"title": "Accueil - Gilbert Temgoua: Développeur web",
+		"description": "Je suis un développeur web passionné basé à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement.",
+		"hi": "Salut !",
+		"iAm": "Je suis",
+		"whoIAm": "Je suis un développeur web passionné basé à Yaoundé, Cameroun.",
+		"whatIdo": {
+			"firstPart": "Je crée des applications web très percutantes et attractives",
+			"secondPart": "grâce aux technologies de pointe."
+		},
+		"moreButtonText": "En savoir plus",
+		"portfolioButtonText": "Mes projets"
+	},
+	"AboutPage": {
+		"title": "A propos De Moi - Gilbert Temgoua",
+		"description": "Je suis un développeur web passionné basé à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement.",
+		"PageHeader": {
+			"simpleText": "A propos",
+			"primaryText": "de moi",
+			"tagline": "Je creée des sites web modernes et très attractifs, j'adore ce que je fait"
+		},
+		"personalInfo": {
+			"name": "Prénom",
+			"nameValue": "Gilbert",
+			"lastName": "Noms",
+			"lastNameValue": "TEMGOUA DONKOO",
+			"phone": "Tél",
+			"phoneValue": "+237 651 331 062",
+			"email": "Email",
+			"emailValue": "gilbertemgoua@gmail.com",
+			"country": "Pays",
+			"countryValue": "Cameroun",
+			"city": "Ville",
+			"cityValue": "Yaounde"
+		},
+		"professionalInfo": {
+			"experience": "Expérience",
+			"experienceValue": "",
+			"openToWork": "En recherche d'emploi",
+			"openToWorkValue": "Oui",
+			"availability": "Disponibilité",
+			"availabilityValue": "immédiate",
+			"jobtype": "Type d'emploi",
+			"jobtypeValue": "Plein temps, A temps partiel, Freelance",
+			"jobLocation": "Localisation",
+			"jobLocationValue": "Telétravail, en présentiel",
+			"relocateTo": "Souhaite se relocaliser",
+			"relocateToValue": "Partout"
+		},
+		"experience-1": {
+			"startDate": "Avr 2023",
+			"endDate": "en cours",
+			"title": "Développeur frontend (freelance)",
+			"location": "Télétravail",
+			"place": "Bantubeat",
+			"description": {
+				"desc-1": "Transformer les maquettes Figma en pages web avec NextJs, Typescript et Tailwind CSS",
+				"desc-2": "Réviser, nettoyer et réusiner le code pour m'assurer de garder un code d'une excellente qualité sur toute l'application",
+				"desc-3": "Gérer l'équipe de développemnt frontend",
+				"desc-4": "Assurer une communication parfaite avec les APIs (REST et GraphQL) en utilisant le rendu côté client ou serveur",
+				"desc-5": "Déboguer les applications",
+				"desc-6": "Aider les nouveaux venus à s'intégrer aux projets"
+			}
+		},
+		"education-1": {
+			"startDate": "Oct 2022",
+			"endDate": "Jan 2023",
+			"title": "Développeur Intégrateur web",
+			"location": "En ligne",
+			"place": "Openclassrooms",
+			"description": "Parcours de développeur intégrateur Web avec un accent sur le frontend (ReactJs) et une intoduction au backend (NodeJs)"
+		},
+		"education-2": {
+			"startDate": "Jan 2019",
+			"endDate": "Août 2021",
+			"title": "Apprentissage de Python et du développement web",
+			"location": "Yaounde, Cameroon",
+			"place": "Autodidacte",
+			"description": "Apprendre Python, HTML, CSS et JavaScript de 0 au niveau avancé"
+		},
+		"education-3": {
+			"startDate": "Oct 2013",
+			"endDate": "Jul 2018",
+			"title": "Diplôme de Licence",
+			"location": "Dschang, Cameroon",
+			"place": "University of Dschang",
+			"description": "Licence Physique, option Electronique"
+		},
+		"downloadCvButton": "TELECHARGER MON CV",
+		"skills": "Compétences"
+	},
+	"ProjectsPage": {
+		"title": "Projects - Gilbert Temgoua",
+		"description": "Découvrez quelques uns des tous derniers projets que j'ai réalisés de moi-même ou en tant que membre d'une équipe.",
+		"PageHeader": {
+			"primaryText": "PORTFOLIO",
+			"simpleText": "MON",
+			"tagline": "Les projets de développement web que j'ai réalisés avec soin"
+		}
+	},
+	"ProjectDetailsPage": {
+		"description": "{type, select, education {Scénario} other {Description}}",
+		"skills": "Compétences requises",
+		"technologies": "Technologies utilisées",
+		"viewOnGithub": "Voir sur GitHub",
+		"visitSite": "Visiter le site"
+	},
+	"BlogPage": {
+		"title": "Blog - Gilbert Temgoua",
+		"description": "Je partage ici mon experience avec quiconque souhaiterait apprendre de mes erreurs et de mes recherches personnelles."
+	},
+	"ContactPage": {
+		"title": "Contact - Gilbert Temgoua",
+		"description": "Je suis toujours ouvert aux suggestions, critiques, simples salutations ou offre d'emploi.",
+		"info": "Ce formulaire sera opérationnel sous peu, en attendant cliquez ici pour m'envoyer un mail, merci",
+		"PageHeader": {
+			"primaryText": "moi",
+			"simpleText": "contactez",
+			"tagline": "Je suis toujours ouvert aux discusions sur le développement web, les partenariats..."
+		},
+		"invitation": "Si vous avez une suggestion, un projet, un emploi, ou vous voulez juste me dire bonjour.. remplissez le formulaire ci-dessous ou contactez-moi directement via les réseau sociaux et je vous répondrai sous peu.",
+		"namePlaceholder": "VOTRE NOM",
+		"emailPlaceholder": "VOTRE EMAIL",
+		"messagePlaceholder": "VOTRE MESSAGE",
+		"sendButtonText": "ENVOYER"
+	},
+	"HeaderNav": {
+		"home": "Accueil",
+		"about": "Mes infos",
+		"blog": "Blog",
+		"projects": "Projets",
+		"contact": "Contact"
+	},
+	"LocaleSwitcher": {
+		"label": "Changer de langue",
+		"locale": "{locale, select, fr {FR} en {EN} other {langue}}",
+		"imageAlt": "{locale, select, fr {drapeau français} en {drapeau britanique} other {drapeau}}"
+	},
+	"TimelineItem": {
+		"responsibilities": "Responsabilités"
+	},
+	"projects": {
+		"my-website": {
+			"title": "mon site web",
+			"purpose": "professional",
+			"description": "C'est un site Web construit pour me présenter, présenter mon portfolio de développement et plus tard partager mon expérience de développement sur la page du blog en cours de développement. Chaque projet de mon portfolio peut être affiché en détail sur une page dédiée qui affiche les liens pour visualiser le projet sur GitHub et/ou visiter le site dédié. Vous y trouverez aussi une page de contact si vous souhaitez me contacter pour m'embaucher par exemple.",
+			"skills": "<sk>Créer un site multilingue avec NextJs et next-intl</sk><sk>Appliquer les bonnes pratiques d'optimisation du SEO</sk><sk>Implémenter le changement de thème (sombre/clair) sur un site</sk>"
+		},
+		"bantubeat": {
+			"title": "Bantubeat",
+			"purpose": "professional",
+			"description": "",
+			"skills": "<sk>Implémenter des interfaces responsives</sk><sk>Intégrer du contenu conformément aux maquettes</sk><sk>Consommer des API REST et GraphQl</sk><sk>Tracker et résoudre les bugs</sk><sk>Nettoyer et réusiner le code d'une application web</sk><sk>Collaborer efficacement sur un projet de moyenne echelle</sk>"
+		},
+		"scandiweb-test": {
+			"title": "Test Scandiweb",
+			"purpose": "professional",
+			"description": "",
+			"skills": "<sk>Créer une simple API REST avec du pure PHP</sk><sk>Implémenter les opérations du CRUD en PHP</sk><sk>Implémenter la validation d'un formulaire dynamique avec react-hook-form</sk><sk>Créer des notifications avec react-toastify</sk><sk>Déployer un projet React</sk><sk>Implémenter la configuration de base d'un serveur Apache</sk><sk>Stcker des données de façon organisée avec MySQL</sk>"
+		},
+		"booki": {
+			"title": "Booki",
+			"purpose": "education",
+			"description": "L'entreprise souhaite développer un site Internet qui permette aux usagers de trouver des hébergements et des activités dans la ville de leur choix.<br /> Vous êtes chargé d'intégrer l'interface du site avec du code HTML et CSS. Pour cela, vous travaillez en étroite collaboration avec Sarah, la CTO, et Loïc, l'UI designer.",
+			"skills": "<sk>Implémenter une interface responsive</sk><sk>Intégrer du contenu conformément à une maquette</sk>"
+		},
+		"ohmyfood": {
+			"title": "Ohmyfood",
+			"purpose": "education",
+			"description": "Votre mission est de développer un site “mobile first” qui répertorie les menus de restaurants gastronomiques. En plus des systèmes classiques de réservation, les clients pourront composer le menu de leur repas pour que les plats soient prêts à leur arrivée. Finis, les temps d'attente au restaurant !",
+			"skills": "<sk>Mettre en œuvre des effets CSS graphiques avancés</sk><sk>Mettre en place une structure de navigation pour un site web</sk><sk>Assurer la cohérence graphique d'un site web</sk><sk>Utiliser un système de gestion de versions pour le suivi du projet et son hébergement</sk><sk>Mettre en place son environnement Front-End</sk>"
+		},
+		"panthere": {
+			"title": "Panthere",
+			"purpose": "education",
+			"description": "Vous travaillez pour l'agence La Panthère, une grande agence de web design basée à Lyon. L'activité de l'entreprise a bien démarré mais aujourd'hui, elle est en perte de vitesse. Eh oui, la concurrence est rude. La fondatrice de l'entreprise, Sophie, cherche une solution pour faire repartir l'activité. En tapant “Entreprise web design Lyon” sur Internet, elle s'aperçoit que le site de l'agence apparaît seulement en deuxième page des moteurs de recherche. Par chance, un de vos collègues, Martin, lui a dit que vous étiez un spécialiste en référencement.",
+			"skills": "<sk>Réaliser une recherche de mots clés pour un site web</sk><sk>Écrire un code HTML et CSS maintenable</sk><sk>Optimiser la taille et la vitesse d'un site web</sk><sk>Assurer l'accessibilité d'un site web</sk><sk>Optimiser le référencement d'un site web</sk>"
+		},
+		"kanap": {
+			"title": "Kanap",
+			"purpose": "education",
+			"description": "Vous êtes en poste dans une agence de développement web depuis quelques semaines maintenant. Après avoir réalisé avec succès l'intégration de quelques sites web (HTML/CSS), on vous confie une nouvelle mission.<br /> Votre client est Kanap, une marque de canapés qui vend ses produits depuis sa boutique exclusivement. Aujourd'hui, celle-ci souhaiterait avoir une plateforme de e-commerce en plus de sa boutique physique pour vendre ses produits sur Internet.",
+			"skills": "<sk>Créer un plan de test pour une application</sk><sk>Valider des données issues de sources externes</sk><sk>Interagir avec un web service avec JavaScript</sk><sk>Gérer des événements JavaScript</sk>"
+		},
+		"piiquante": {
+			"title": "Piiquante",
+			"purpose": "education",
+			"description": "Vous avez passé la dernière année en tant que développeur back-end indépendant et vous avez travaillé sur plusieurs projets de tailles et de difficultés variées. <br /> La semaine dernière, vous avez reçu un message sur votre plateforme de freelance vous demandant de l'aide pour un nouveau projet. Les sauces piquantes sont de plus en plus populaires, en grande partie grâce à la série YouTube « Hot Ones » . C'est pourquoi ce nouveau client, la marque de condiments à base de piment Piiquante, veut développer une application web de critique des sauces piquantes appelée « Hot Takes ».",
+			"skills": "<sk>Mettre en œuvre des opérations CRUD de manière sécurisée</sk><sk>Implémenter un modèle logique de données conformément à la réglementation</sk><sk>Stocker des données de manière sécurisée</sk>"
+		},
+		"kasa": {
+			"title": "Kasa",
+			"purpose": "education",
+			"description": "Le site de Kasa a été codé il y a maintenant plus de 10 ans en ASP.NET avec un code legacy important. Laura, la CTO, a donc lancé une refonte totale pour passer à une stack complète en JavaScript avec NodeJS côté back-end, et React côté front-end. Kasa en a également profité pour commander de nouvelles maquettes auprès de son designer habituel, qui est en freelance. Un gros chantier pour cette année !",
+			"skills": "<sk>Initialiser une application avec Create React App</sk><sk>Configurer la navigation entre les pages de l'application avec React Router</sk><sk>Développer des éléments de l'interface d'un site web grâce à des composants React</sk>"
+		}
+	}
+}

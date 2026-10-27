@@ -1,39 +1,44 @@
-import { Metadata, NextPage } from 'next';
-import Photo from '@/components/common/Photo';
+import { Metadata } from 'next';
+import { use } from 'react';
 import { useTranslations } from 'next-intl';
-import { PageProps } from '@/utils/types';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import Photo from '@/components/common/Photo';
 import PrimaryButtonLink from '@/components/common/PrimaryButtonLink';
-import { PAGES } from '@/config';
+import { PAGES } from '@/lib/routes';
 import { BiSolidUser } from 'react-icons/bi';
 import { BsBriefcaseFill } from 'react-icons/bs';
 
-export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: PageProps<'/[locale]'>): Promise<Metadata> => {
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: 'HomePage' });
 
-	return { title: t('title'), description: t('description') };
+	return {
+		title: t('title'),
+		description: t('description'),
+	};
 };
 
-const HomePage: NextPage = () => {
+const HomePage = ({ params }: PageProps<'/[locale]'>) => {
+	const { locale } = use(params);
+
+	setRequestLocale(locale);
+
 	const t = useTranslations('HomePage');
 
 	return (
-		<main className="scrollbar-none overflow-y-scroll pt-10 md:pt-0 px-2.5 md:px-10 hFill flex flex-col md:flex-row items-center justify-start lg:justify-center">
+		<main className="scrollbar-none flex h-page items-center justify-start px-2.5 max-lg:flex-col max-lg:pt-10 md:px-10 lg:justify-center">
 			<Photo />
-			<div className="mt-4 md:mt-0 w-full lg:w-2/3 flex flex-col justify-center items-start gap-3 text-lg">
-				<p className="mx-auto md:mx-0 uppercase">{t('hi')}</p>
-				<h1 className="text-3xl md:text-4xl uppercase mb-2 md:mb-5">
-					<span>{t('iAm')}</span> <span className="text-primary font-black">Gilbert Temgoua</span>
+			<div className="flex w-full flex-col items-start justify-center gap-3 text-lg max-lg:mt-4 lg:w-2/3">
+				<p className="uppercase max-lg:mx-auto">{t('hi')}</p>
+				<h1 className="mb-2 text-3xl uppercase md:mb-5 md:text-4xl">
+					<span>{t('iAm')}</span> <span className="font-black text-primary">Gilbert Temgoua</span>
 				</h1>
 				<p>{t('whoIAm')}</p>
 				<p>
-					{t('whatIdo.firstPart')} <br className="hidden sm:inline" />
+					{t('whatIdo.firstPart')} <br className="max-md:hidden" />
 					{t('whatIdo.secondPart')}
 				</p>
-				<div
-					className={`w-full md:w-fit flex justify-around md:justify-center items-center gap-2 md:gap-5 mt-5`}
-				>
+				<div className="mt-5 flex items-center justify-around gap-2 max-md:w-full md:justify-center md:gap-5">
 					<PrimaryButtonLink
 						href={PAGES.aboutMe}
 						text={t('moreButtonText')}

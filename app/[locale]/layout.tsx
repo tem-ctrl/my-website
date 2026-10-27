@@ -1,66 +1,55 @@
-import '@/globals.css';
+import '@/app/globals.css';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
-import React, { FC, Suspense, ReactNode } from 'react';
+import { notFound } from 'next/navigation';
+import React, { Suspense } from 'react';
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
 import Providers from '@/components/layout/Providers';
 import Header from '@/components/layout/Header';
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
-import { PageProps } from '@/utils/types';
-import NotFound from '@/components/common/NotFound';
 import GoogleTag from '@/components/robot/GoogleTag';
-import { routing } from '@/i18n/routing';
-import { getTranslations, getMessages } from 'next-intl/server';
-import Footer from '@/components/layout/Footer';
 
 const roboto = Roboto({
 	subsets: ['latin'],
 	weight: ['300', '400', '500', '700', '900'],
 	display: 'swap',
+	variable: '--font-roboto',
 });
 
-type Locale = Promise<{ locale: string }>;
+export const generateStaticParams = () => routing.locales.map((locale) => ({ locale }));
 
-export const generateStaticParams = () => {
-	return routing.locales.map((locale) => ({ locale }));
-};
-
-export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> => {
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: 'RootLayout' });
 
 	return {
+		metadataBase: new URL('https://gtemgoua.vercel.app'),
 		title: t('title'),
 		description: t('description'),
 	};
 };
 
-interface RootLayoutProps {
-	children: ReactNode;
-	params: Locale;
-}
-
-const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
+const RootLayout = async ({ children, params }: LayoutProps<'/[locale]'>) => {
 	const { locale } = await params;
-	const messages = await getMessages();
 
-	if (!hasLocale(routing.locales, locale)) {
-		return <NotFound />;
-	}
+	if (!hasLocale(routing.locales, locale)) notFound();
+
+	setRequestLocale(locale);
 
 	return (
-		// Fix AOS braking scroll behavior: data-scroll-behavior="smooth"
-		<html lang={locale} suppressHydrationWarning>
-			<body className={`${roboto.className}  text-light dark:text-dark`}>
+		<html lang={locale} className={roboto.variable} suppressHydrationWarning>
+			<body>
 				<Suspense>
 					<GoogleTag />
 				</Suspense>
-				<Providers>
-					<NextIntlClientProvider locale={locale} messages={messages}>
+				<NextIntlClientProvider>
+					<Providers>
 						<Header />
-						<div className="px-2.5 pt-15 md:px-6 lg:px-14 w-full">{children}</div>
-						<Footer />
-					</NextIntlClientProvider>
-				</Providers>
+						<div className="w-full px-2.5 md:px-6 lg:px-14">{children}</div>
+						{/* <Footer /> */}
+					</Providers>
+				</NextIntlClientProvider>
 			</body>
 		</html>
 	);

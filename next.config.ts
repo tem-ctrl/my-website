@@ -1,9 +1,20 @@
-/** @type {import('next').NextConfig} */
-
-import { NextConfig } from 'next';
+import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+	cacheComponents: true,
+	partialPrefetching: true,
+	turbopack: {
+		rules: {
+			'*.css': {
+				loaders: ['@tailwindcss/turbopack'],
+				as: '*.css',
+			},
+		},
+	},
+};
 
-const withNextIntl = createNextIntlPlugin( './app/i18n/request.ts');
+// Picks up ./i18n/request.ts
+const withNextIntl = createNextIntlPlugin();
+
 export default withNextIntl(nextConfig);

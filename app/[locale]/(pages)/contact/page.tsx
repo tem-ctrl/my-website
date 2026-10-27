@@ -1,44 +1,53 @@
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { use } from 'react';
+import { useTranslations } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import FormInput from '@/components/common/FormInput';
+import FormTextarea from '@/components/common/FormTextArea';
 import PageHeader from '@/components/common/PageHeader';
+import SendButtonAndSocial from '@/components/pages/contact/SendButonAndSocial';
 import { BiSolidUser } from 'react-icons/bi';
+import { BsInfoCircleFill } from 'react-icons/bs';
 import { HiChatAlt2 } from 'react-icons/hi';
 import { MdEmail } from 'react-icons/md';
-import { useTranslations } from 'next-intl';
-import FormTextarea from '@/components/common/FormTextArea';
-import { PageProps } from '@/utils/types';
-import { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
-import SendButtonAndSocial from '@/components/pages/contact/SendButonAndSocial';
-import { BsInfoCircleFill } from 'react-icons/bs';
-import Link from 'next/link';
 
-export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({
+	params,
+}: PageProps<'/[locale]/contact'>): Promise<Metadata> => {
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: 'ContactPage' });
 
-	return { title: t('title'), description: t('description') };
+	return {
+		title: t('title'),
+		description: t('description'),
+	};
 };
 
-const ContactPage = () => {
+const ContactPage = ({ params }: PageProps<'/[locale]/contact'>) => {
+	const { locale } = use(params);
+
+	setRequestLocale(locale);
+
 	const t = useTranslations('ContactPage');
 
 	return (
-		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-25 hFill py-5 md:pt-10 flex flex-col gap-8 md:gap-12 items-center w-full">
+		<main className="scrollbar-none flex h-page w-full flex-col items-center gap-8 px-2.5 py-5 md:gap-12 md:px-25 md:pt-10">
 			<PageHeader
 				simpleText={t('PageHeader.simpleText')}
 				primaryText={t('PageHeader.primaryText')}
 				tagline={t('PageHeader.tagline')}
 			/>
 			<Link
-				className="border-2 border-orange-500 text-orange-500 hover:border-primary hover:text-primary rounded-md flex relative justify-center items-center w-full md:w-fit py-3 md:p-4"
+				className="relative flex items-center justify-center rounded-md border-2 border-orange-500 py-3 text-orange-500 hover:border-primary hover:text-primary max-md:w-full md:p-4"
 				href="mailto:gilbertemgoua@gmail.com"
 			>
-				<BsInfoCircleFill className="absolute -top-3 -left-3 text-2xl z-10 " />
+				<BsInfoCircleFill className="absolute -top-3 -left-3 z-10 bg-background text-2xl" />
 				<p className="text-center">{t('info')}</p>
 			</Link>
-			<div className="flex flex-col gap-3 md:gap-5 w-full lg:w-3/4 mx-auto">
+			<div className="mx-auto flex w-full flex-col gap-3 md:gap-5 lg:w-3/4">
 				<p>{t('invitation')}</p>
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5 w-full">
+				<div className="grid w-full grid-cols-1 gap-3 md:grid-cols-2 md:gap-5">
 					<FormInput
 						type="text"
 						placeholder={t('namePlaceholder')}
@@ -54,7 +63,7 @@ const ContactPage = () => {
 					icon={<HiChatAlt2 />}
 					iconClass="text-xl"
 				/>
-				<SendButtonAndSocial className="w-full flex justify-between" />
+				<SendButtonAndSocial className="flex w-full justify-between" />
 			</div>
 		</main>
 	);
