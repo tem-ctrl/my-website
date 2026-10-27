@@ -28,8 +28,8 @@ const Hero: FC = () => {
 			<div className="flex flex-col items-start gap-6 max-lg:order-2 max-lg:items-center max-lg:text-center">
 				<span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-primary-text motion-safe:animate-fade-up">
 					<span className="relative flex size-2">
-						<span className="absolute inline-flex size-full animate-ping rounded-full bg-green-500 opacity-75" />
-						<span className="relative inline-flex size-2 rounded-full bg-green-500" />
+						<span className="absolute inline-flex size-full animate-ping rounded-full bg-online opacity-75" />
+						<span className="relative inline-flex size-2 rounded-full bg-online" />
 					</span>
 					{t('badge')}
 				</span>
@@ -44,7 +44,7 @@ const Hero: FC = () => {
 							key={`${word}-${i}`}
 							className={`inline-block motion-safe:animate-blur-in ${
 								i >= words.length - HIGHLIGHTED_WORDS
-									? 'bg-linear-to-r from-primary to-fuchsia-500 bg-clip-text text-transparent'
+									? 'bg-linear-to-r from-primary to-accent bg-clip-text text-transparent'
 									: ''
 							}`}
 							style={delay(0.2 + i * 0.06)}
@@ -92,8 +92,8 @@ const Hero: FC = () => {
 			</div>
 
 			<div className="relative mx-auto size-56 motion-safe:animate-zoom-in max-lg:order-1 md:size-80">
-				<div className="absolute -inset-6 rounded-full bg-linear-to-tr from-primary to-fuchsia-500 opacity-40 blur-3xl" />
-				<div className="absolute -inset-1.5 rounded-full bg-[conic-gradient(from_0deg,var(--color-primary),transparent_35%,var(--color-fuchsia-500),transparent_70%,var(--color-primary))] motion-safe:animate-spin-slow" />
+				<div className="absolute -inset-6 rounded-full bg-linear-to-tr from-primary to-accent opacity-40 blur-3xl" />
+				<div className="absolute -inset-1.5 rounded-full bg-[conic-gradient(from_0deg,var(--color-primary),transparent_35%,var(--color-accent),transparent_70%,var(--color-primary))] motion-safe:animate-spin-slow" />
 				<Image
 					src="/assets/images/me.png"
 					alt={t('photoAlt')}

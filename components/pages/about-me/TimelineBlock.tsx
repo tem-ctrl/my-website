@@ -23,7 +23,7 @@ const TimelineBlock: FC<TimelineBlockProps> = ({ className = '', children = <></
 				<div aria-hidden className="absolute inset-y-0 left-0 w-0.5 rounded-full bg-line" />
 				<motion.div
 					aria-hidden
-					className="absolute inset-y-0 left-0 w-0.5 origin-top rounded-full bg-linear-to-b from-primary to-fuchsia-500"
+					className="absolute inset-y-0 left-0 w-0.5 origin-top rounded-full bg-linear-to-b from-primary to-accent"
 					style={{ scaleY: reduceMotion ? 1 : scaleY }}
 				/>
 				{children}

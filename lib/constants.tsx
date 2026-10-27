@@ -38,7 +38,7 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
 		name: 'whatsapp',
 		icon: <BsWhatsapp />,
 		link: 'https://wa.me/237651331062',
-		bgColor: 'bg-green-500',
+		bgColor: 'bg-[#22c55e]',
 	},
 ];
 

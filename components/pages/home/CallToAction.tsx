@@ -12,7 +12,7 @@ const CallToAction: FC = () => {
 
 	return (
 		<Reveal>
-			<section className="relative overflow-hidden rounded-3xl bg-linear-to-br from-primary to-fuchsia-600 px-6 py-16 text-center text-white md:px-16 md:py-20">
+			<section className="relative overflow-hidden rounded-3xl bg-linear-to-br from-primary to-accent-strong px-6 py-16 text-center text-white md:px-16 md:py-20">
 				<div
 					aria-hidden
 					className="absolute inset-0 bg-[radial-gradient(rgb(255_255_255/0.15)_1px,transparent_1px)] bg-size-[20px_20px]"

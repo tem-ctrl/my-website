@@ -36,7 +36,7 @@ const Stats: FC = () => {
 					<Counter
 						value={value}
 						suffix={suffix}
-						className="bg-linear-to-r from-primary to-fuchsia-500 bg-clip-text text-4xl font-black text-transparent md:text-5xl"
+						className="bg-linear-to-r from-primary to-accent bg-clip-text text-4xl font-black text-transparent md:text-5xl"
 					/>
 					<span className="text-sm text-foreground/70 uppercase">{t(key)}</span>
 				</Reveal>
