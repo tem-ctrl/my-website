@@ -1,4 +1,4 @@
-import { Project, SkillItemProps, SocialMedia, TechItem } from '@/lib/types';
+import { Project, SkillGroup, SocialMedia, TechItem } from '@/lib/types';
 import { BiLogoLinkedin } from 'react-icons/bi';
 import { BsWhatsapp, BsGithub } from 'react-icons/bs';
 import { FaMagento } from 'react-icons/fa';
@@ -20,57 +20,6 @@ import {
 	SiTailwindcss,
 	SiTypescript,
 } from 'react-icons/si';
-
-export const SKILLS: SkillItemProps[] = [
-	{
-		skill: 'HTML',
-		value: 90,
-	},
-	{
-		skill: 'CSS',
-		value: 80,
-	},
-	{
-		skill: 'SCSS',
-		value: 70,
-	},
-	{
-		skill: 'Tailwind CSS',
-		value: 80,
-	},
-	{
-		skill: 'JavaScript',
-		value: 80,
-	},
-	{
-		skill: 'Typescript',
-		value: 60,
-	},
-	{
-		skill: 'ReactJs',
-		value: 70,
-	},
-	{
-		skill: 'NextJs',
-		value: 80,
-	},
-	{
-		skill: 'Python',
-		value: 70,
-	},
-	{
-		skill: 'PHP',
-		value: 70,
-	},
-	{
-		skill: 'MySQL',
-		value: 70,
-	},
-	{
-		skill: 'Magento 2',
-		value: 60,
-	},
-];
 
 export const SOCIAL_MEDIA: SocialMedia[] = [
 	{
@@ -198,3 +147,27 @@ export const TECH_STACK: TechItem[] = [
 
 /** View transition name shared by a project's card and details page image, so it morphs between them */
 export const projectImageTransitionName = (slug: string) => `project-image-${slug}`;
+
+const techByName = (names: string[]) => TECH_STACK.filter(({ name }) => names.includes(name));
+
+export const SKILL_GROUPS: SkillGroup[] = [
+	{
+		key: 'frontend',
+		items: techByName([
+			'Next.js',
+			'React',
+			'TypeScript',
+			'JavaScript',
+			'Tailwind CSS',
+			'Redux',
+			'HTML5',
+			'CSS',
+			'Sass',
+		]),
+	},
+	{
+		key: 'backend',
+		items: techByName(['GraphQL', 'Node.js', 'PHP', 'MySQL', 'Python', 'Magento 2']),
+	},
+	{ key: 'tools', items: techByName(['Git', 'Figma']) },
+];

@@ -129,7 +129,14 @@
 			"description": "Bachelor degree in Physics (major: Electronics)"
 		},
 		"downloadCvButton": "DOWNLOAD MY CV",
-		"skills": "skills"
+		"skills": "skills",
+		"experienceTitle": "Experience",
+		"educationTitle": "Education",
+		"skillGroups": {
+			"frontend": "Front-end",
+			"backend": "Back-end & data",
+			"tools": "Tools & design"
+		}
 	},
 	"ProjectsPage": {
 		"title": "Projects - Gilbert Temgoua",
@@ -173,7 +180,13 @@
 		"emailPlaceholder": "YOUR EMAIL",
 		"messagePlaceholder": "YOUR MESSAGE",
 		"sendButtonText": "send",
-		"subject": "Message from {name} via gtemgoua.vercel.app"
+		"subject": "Message from {name} via gtemgoua.vercel.app",
+		"status": {
+			"sending": "Sending…",
+			"success": "Thanks! Your message has been sent, I’ll get back to you shortly.",
+			"invalid": "Please check the form: a name of 3+ characters, a valid email and a message of 10+ characters.",
+			"error": "Something went wrong. Please try again or email me directly at {email}."
+		}
 	},
 	"HeaderNav": {
 		"home": "home",

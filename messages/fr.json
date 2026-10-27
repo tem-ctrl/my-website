@@ -129,7 +129,14 @@
 			"description": "Licence Physique, option Electronique"
 		},
 		"downloadCvButton": "TELECHARGER MON CV",
-		"skills": "Compétences"
+		"skills": "Compétences",
+		"experienceTitle": "Expérience",
+		"educationTitle": "Formation",
+		"skillGroups": {
+			"frontend": "Front-end",
+			"backend": "Back-end & données",
+			"tools": "Outils & design"
+		}
 	},
 	"ProjectsPage": {
 		"title": "Projects - Gilbert Temgoua",
@@ -173,7 +180,13 @@
 		"emailPlaceholder": "VOTRE EMAIL",
 		"messagePlaceholder": "VOTRE MESSAGE",
 		"sendButtonText": "ENVOYER",
-		"subject": "Message de {name} via gtemgoua.vercel.app"
+		"subject": "Message de {name} via gtemgoua.vercel.app",
+		"status": {
+			"sending": "Envoi…",
+			"success": "Merci ! Votre message a bien été envoyé, je vous réponds très vite.",
+			"invalid": "Veuillez vérifier le formulaire : un nom de 3 caractères minimum, un e-mail valide et un message de 10 caractères minimum.",
+			"error": "Une erreur est survenue. Réessayez ou écrivez-moi directement à {email}."
+		}
 	},
 	"HeaderNav": {
 		"home": "Accueil",
