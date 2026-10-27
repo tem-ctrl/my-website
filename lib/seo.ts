@@ -32,6 +32,8 @@ export const pageMetadata = ({
 				...Object.fromEntries(routing.locales.map((l) => [l, localizedUrl(l, path)])),
 				'x-default': localizedUrl(routing.defaultLocale, path),
 			},
+			// Markdown version of the site for LLMs and AI agents
+			types: { 'text/markdown': `${SITE_URL}/llms.txt` },
 		},
 		openGraph: {
 			type: 'website',
