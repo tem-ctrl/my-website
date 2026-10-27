@@ -16,7 +16,7 @@ const ProjectCard: FC<Project> = ({ className = '', title, image, slug }) => {
 				alt={title}
 				className="w-full h-full bg-size-[100%_100%] hover:scale-110 transit rounded-lg"
 			/>
-			<h2 className="absolute rounded-b-lg w-full bottom-0 text-lg text-white font-semibold bg-bgDark/40 uppercase h-10 flex items-center justify-center">
+			<h2 className="absolute rounded-b-lg w-full bottom-0 text-lg text-white font-semibold bg-background/40 uppercase h-10 flex items-center justify-center">
 				{title}
 			</h2>
 		</Link>

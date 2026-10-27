@@ -1,26 +1,46 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:is(.dark *));
 
-@theme {
+:root {
+  --background: #eff0f3;
+  --foreground: #202020;
+  /* Brand colors — light mode (plus vives sur fond clair) */
+  --primary: #8a2be2;
+  --secondary: #fff;
+}
+
+.dark {
+  --background: #02030f;
+  --foreground: #efefef;
+  /* Brand colors — dark mode (versions profondes sur fond sombre) */
+  --primary: #8a2be2;
+  --secondary: #1e6c86;
+  --tertiary: #3c0a22;
+  --black-custom: #011921;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
   /* Screens / Breakpoints */
   --breakpoint-xs: 475px;
+  --color-radial: linear-gradient(1turn, #000000 7.5%, #3f361617 20%, #0c0c0c6c), linear-gradient(to right, #000000 30%, #161201be, #524210cc);
+}
 
-  /* Background Images */
-  --background-image-radial-bg: linear-gradient(1turn, #000000 7.5%, #3f361617 20%, #0c0c0c6c), linear-gradient(to right, #000000 30%, #161201be, #524210cc);
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
 
-  /* Custom Color Palette */
-  --color-primary: #8a2be2;
-  --color-bg-light: #eff0f3;
-  --color-light: #202020;
-  --color-second-light: #fff;
-  --color-tertiary-light: #fff;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --breakpoint-xs: 475px;
+  --color-radial: linear-gradient(1turn, #000000 7.5%, #3f361617 20%, #0c0c0c6c), linear-gradient(to right, #000000 30%, #161201be, #524210cc);
+}
 
-  --color-bg-dark: #02030f;
-  --color-bg-dark-second: #070023;
-  --color-dark: #efefef;
-  --color-secondary-dark: #fff;
-  --color-tertiary-dark: #fff;
+body {
+  background: var(--background);
+  color: var(--foreground);
 }
 
 /* Third-Party Tailwind Plugins (v4 Syntax) */
@@ -51,7 +71,7 @@
   overflow-y: scroll;
 }
 
-@media all and (min-width: '768px') {
+@media all and (min-width: 768px) {
   .hFill {
     height: calc(100dvh - 60px);
   }
@@ -64,4 +84,361 @@
 @utility text-size-inherit {
   font-size: inherit;
   line-height: normal;
+}
+
+/* **********************************************************************
+*********************************************************************** */
+
+/* Animated Border Gradient Styles */
+@keyframes dash-move {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -280;
+  }
+}
+
+.border-anim-base {
+  fill: transparent;
+  stroke: var(--primary);
+  stroke-width: 2.5;
+  rx: 12;
+}
+
+.border-anim-moving {
+  fill: transparent;
+  stroke: var(--secondary);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 200;
+  animation: dash-move 5s ease-in-out infinite;
+  vector-effect: non-scaling-stroke;
+  mix-blend-mode: screen;
+}
+
+/* End of Animated Border Gradient Styles */
+
+/* Animation pour le tiroir de gauche */
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Animation pour le tiroir de droite */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out-right {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes progress-grow {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Animation de fondu + léger décalage, pour l'apparition de contenu (ex: changement d'onglet) */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apparition avec décalage vertical + stagger (auth, listes...) */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Secousse courte pour signaler une erreur de formulaire */
+@keyframes shake-x {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-6px);
+  }
+
+  40% {
+    transform: translateX(5px);
+  }
+
+  60% {
+    transform: translateX(-3px);
+  }
+
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+/* Halo d'ambiance qui respire lentement */
+@keyframes float-glow {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: translate3d(0, -18px, 0) scale(1.06);
+    opacity: 1;
+  }
+}
+
+/* Application des animations en tant qu'utilitaires */
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-shake {
+    animation: shake-x 0.4s ease-in-out both;
+  }
+
+  .animate-float-glow {
+    animation: float-glow 9s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .animate-fade-in-up,
+    .animate-shake,
+    .animate-float-glow,
+    .animate-fade-in {
+      animation: none;
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out both;
+  }
+
+  .animate-progress-grow {
+    transform-origin: left;
+    animation: progress-grow 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .animate-fade-in-up,
+    .animate-fade-in,
+    .animate-progress-grow {
+      animation: none;
+    }
+  }
+
+  .slide-in-left {
+    animation: slide-in-left 0.3s ease-out forwards;
+  }
+
+  .slide-out-left {
+    animation: slide-out-left 0.3s ease-in forwards;
+  }
+
+  .slide-in-right {
+    animation: slide-in-right 0.3s ease-out forwards;
+  }
+
+  .slide-out-right {
+    animation: slide-out-right 0.3s ease-in forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.35s ease-out forwards;
+  }
+}
+
+/* Scroll reveal animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.7s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.7s ease-out forwards;
+  }
+}
+
+/* 1. Définition de la largeur de la barre de défilement */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* 2. Définition de l'arrière-plan (la "piste") */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+/* 3. Définition de la "poignée" (le pouce de défilement) */
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+/* 4. Style de la poignée au survol (optionnel, pour l'interactivité) */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-tertiary);
+}
+
+@layer utilities {
+  .font-montserrat {
+    font-family: var(--font-montserrat);
+  }
+
+  /* La classe de base pour activer la bordure magique */
+  .border-gradient {
+    position: relative;
+    background: transparent;
+    /* Assure la transparence */
+    isolation: isolate;
+    /* Crée un nouveau contexte d'empilement */
+  }
+
+  /* Le pseudo-élément qui dessine la bordure */
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Prend toute la place */
+    z-index: -1;
+    /* Se place derrière le texte */
+
+    /* CONFIGURATION MODIFIABLE */
+    border-radius: inherit;
+    /* Copie l'arrondi du parent automatiquement */
+    padding: 1px;
+    /* ÉPAISSEUR DE LA BORDURE */
+    background: linear-gradient(to right,
+        #a51f5c,
+        #2b6ca3);
+    /* COULEURS PAR DÉFAUT */
+
+    /* LA MAGIE DU MASQUE (Transparent au centre) */
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
 }

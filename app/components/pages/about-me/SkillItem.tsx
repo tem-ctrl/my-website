@@ -6,7 +6,7 @@ const SkillItem: FC<SkillItemProps> = ({ className = '', skill, value = 50 }) =>
 		<div data-aos="fade-up" className={`${className} relative min-w-75`}>
 			<p className="uppercase absolute bottom-3 font-medium">{skill}</p>
 			<p
-				className={`w-11 h-8 border border-primary rounded flex justify-center items-center z-10 bg-bgLight dark:bg-bgDark`}
+				className={`w-11 h-8 border border-primary rounded flex justify-center items-center z-10 `}
 				style={{ position: 'absolute', left: `calc(${value}% - 22px)`, bottom: '12px' }}
 			>
 				{value}%

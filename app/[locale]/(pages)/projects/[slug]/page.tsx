@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { PageProps, Project } from '@/utils/types';
 import { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
+import { ReactNode } from 'react';
 import { PROJECTS } from '@/utils/constants';
 import PrimaryButtonLink from '@/components/common/PrimaryButtonLink';
 import { BsGithub } from 'react-icons/bs';
@@ -16,10 +16,10 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
 	};
 };
 
-const ProjectDetailsPage = ({ params }: { params: { slug: string } }) => {
-	const slug = params.slug;
-	const t = useTranslations(`projects.${slug}`);
-	const p = useTranslations('ProjectDetailsPage');
+const ProjectDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+	const { slug } = await params;
+	const t = await getTranslations(`projects.${slug}`);
+	const p = await getTranslations('ProjectDetailsPage');
 	const project = PROJECTS.find((item) => item.slug === slug) ?? ({} as Project);
 	const commonClassNames = 'text-xl underline font-medium mb-2';
 
@@ -31,7 +31,9 @@ const ProjectDetailsPage = ({ params }: { params: { slug: string } }) => {
 				className="rounded-lg w-full"
 			/>
 			<div className="flex flex-col gap-5 lg:gap-3">
-				<h1 className="text-3xl text-primary uppercase font-bold text-center md:text-left">{t('title')}</h1>
+				<h1 className="text-3xl text-primary uppercase font-bold text-center md:text-left">
+					{t('title')}
+				</h1>
 				<div className="flex lg:flex-col gap-3 ">
 					{project.githubLink && (
 						<PrimaryButtonLink
@@ -46,7 +48,6 @@ const ProjectDetailsPage = ({ params }: { params: { slug: string } }) => {
 						<PrimaryButtonLink
 							text={p('visitSite')}
 							href={project.previewLink}
-							// icon={<BsGithub />}
 							className="w-full lg:w-fit"
 							newTab
 						/>
@@ -56,7 +57,7 @@ const ProjectDetailsPage = ({ params }: { params: { slug: string } }) => {
 					<h2 className={commonClassNames}>{p('technologies')}</h2>
 					<ul className="flex gap-3 items-center flex-wrap">
 						{project.technologies?.map((tech) => (
-							<li key={tech} className="font-medium">
+							<li key={tech} className="font-medium border rounded-full px-3 py-1">
 								{tech}
 							</li>
 						))}
@@ -72,7 +73,7 @@ const ProjectDetailsPage = ({ params }: { params: { slug: string } }) => {
 					<h2 className={commonClassNames}>{p('skills')}</h2>
 					<ul className="list-disc list-outside pl-3 ml-2">
 						{t.rich('skills', {
-							sk: (skill) => <li>{skill}</li>,
+							sk: (skill: ReactNode) => <li>{skill}</li>,
 						})}
 					</ul>
 				</div>
