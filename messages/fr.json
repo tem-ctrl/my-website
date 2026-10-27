@@ -25,10 +25,7 @@
 		"featured": {
 			"title": "Projets phares",
 			"subtitle": "Une sélection de projets en production auxquels j’ai contribué.",
-			"seeAll": "Voir tous les projets",
-			"caseStudy": "Voir le projet",
-			"panhomestores": "Optimisation d’une grande boutique e-commerce Magento 2 au service de clients aux Émirats arabes unis.",
-			"bantubeat": "Direction du front-end d’une plateforme musicale construite avec Next.js, TypeScript et GraphQL."
+			"seeAll": "Voir tous les projets"
 		},
 		"stack": {
 			"title": "Mes technologies",
@@ -136,19 +133,32 @@
 	},
 	"ProjectsPage": {
 		"title": "Projects - Gilbert Temgoua",
-		"description": "Découvrez quelques uns des tous derniers projets que j'ai réalisés de moi-même ou en tant que membre d'une équipe.",
+		"description": "Découvrez quelques-uns de mes derniers projets de développement web, réalisés seul ou au sein d’une équipe.",
 		"PageHeader": {
 			"primaryText": "PORTFOLIO",
 			"simpleText": "MON",
 			"tagline": "Les projets de développement web que j'ai réalisés avec soin"
-		}
+		},
+		"filters": {
+			"all": "Tous",
+			"professional": "Professionnel",
+			"education": "Formation"
+		},
+		"viewProject": "Voir le projet"
 	},
 	"ProjectDetailsPage": {
 		"description": "{type, select, education {Scénario} other {Description}}",
 		"skills": "Compétences requises",
 		"technologies": "Technologies utilisées",
 		"viewOnGithub": "Voir sur GitHub",
-		"visitSite": "Visiter le site"
+		"visitSite": "Visiter le site",
+		"back": "Tous les projets",
+		"role": "Mon rôle",
+		"outcome": "Résultat",
+		"type": "Type",
+		"links": "Liens",
+		"previous": "Projet précédent",
+		"next": "Projet suivant"
 	},
 	"ContactPage": {
 		"title": "Contact - Gilbert Temgoua",
@@ -184,49 +194,57 @@
 			"title": "Bantubeat",
 			"purpose": "professional",
 			"description": "",
-			"skills": "<sk>Implémenter des interfaces responsives</sk><sk>Intégrer du contenu conformément aux maquettes</sk><sk>Consommer des API REST et GraphQl</sk><sk>Tracker et résoudre les bugs</sk><sk>Nettoyer et réusiner le code d'une application web</sk><sk>Collaborer efficacement sur un projet de moyenne echelle</sk>"
+			"skills": "<sk>Implémenter des interfaces responsives</sk><sk>Intégrer du contenu conformément aux maquettes</sk><sk>Consommer des API REST et GraphQl</sk><sk>Tracker et résoudre les bugs</sk><sk>Nettoyer et réusiner le code d'une application web</sk><sk>Collaborer efficacement sur un projet de moyenne echelle</sk>",
+			"summary": "Direction du front-end d’une plateforme musicale construite avec Next.js, TypeScript et GraphQL."
 		},
 		"booki": {
 			"title": "Booki",
 			"purpose": "education",
 			"description": "L'entreprise souhaite développer un site Internet qui permette aux usagers de trouver des hébergements et des activités dans la ville de leur choix.<br /> Vous êtes chargé d'intégrer l'interface du site avec du code HTML et CSS. Pour cela, vous travaillez en étroite collaboration avec Sarah, la CTO, et Loïc, l'UI designer.",
-			"skills": "<sk>Implémenter une interface responsive</sk><sk>Intégrer du contenu conformément à une maquette</sk>"
+			"skills": "<sk>Implémenter une interface responsive</sk><sk>Intégrer du contenu conformément à une maquette</sk>",
+			"summary": "Page responsive de réservation d’hébergements et d’activités intégrée depuis une maquette."
 		},
 		"ohmyfood": {
 			"title": "Ohmyfood",
 			"purpose": "education",
 			"description": "Votre mission est de développer un site “mobile first” qui répertorie les menus de restaurants gastronomiques. En plus des systèmes classiques de réservation, les clients pourront composer le menu de leur repas pour que les plats soient prêts à leur arrivée. Finis, les temps d'attente au restaurant !",
-			"skills": "<sk>Mettre en œuvre des effets CSS graphiques avancés</sk><sk>Mettre en place une structure de navigation pour un site web</sk><sk>Assurer la cohérence graphique d'un site web</sk><sk>Utiliser un système de gestion de versions pour le suivi du projet et son hébergement</sk><sk>Mettre en place son environnement Front-End</sk>"
+			"skills": "<sk>Mettre en œuvre des effets CSS graphiques avancés</sk><sk>Mettre en place une structure de navigation pour un site web</sk><sk>Assurer la cohérence graphique d'un site web</sk><sk>Utiliser un système de gestion de versions pour le suivi du projet et son hébergement</sk><sk>Mettre en place son environnement Front-End</sk>",
+			"summary": "Site mobile-first de menus de restaurants avec des animations CSS avancées."
 		},
 		"panthere": {
 			"title": "Panthere",
 			"purpose": "education",
 			"description": "Vous travaillez pour l'agence La Panthère, une grande agence de web design basée à Lyon. L'activité de l'entreprise a bien démarré mais aujourd'hui, elle est en perte de vitesse. Eh oui, la concurrence est rude. La fondatrice de l'entreprise, Sophie, cherche une solution pour faire repartir l'activité. En tapant “Entreprise web design Lyon” sur Internet, elle s'aperçoit que le site de l'agence apparaît seulement en deuxième page des moteurs de recherche. Par chance, un de vos collègues, Martin, lui a dit que vous étiez un spécialiste en référencement.",
-			"skills": "<sk>Réaliser une recherche de mots clés pour un site web</sk><sk>Écrire un code HTML et CSS maintenable</sk><sk>Optimiser la taille et la vitesse d'un site web</sk><sk>Assurer l'accessibilité d'un site web</sk><sk>Optimiser le référencement d'un site web</sk>"
+			"skills": "<sk>Réaliser une recherche de mots clés pour un site web</sk><sk>Écrire un code HTML et CSS maintenable</sk><sk>Optimiser la taille et la vitesse d'un site web</sk><sk>Assurer l'accessibilité d'un site web</sk><sk>Optimiser le référencement d'un site web</sk>",
+			"summary": "Audit et optimisation SEO et accessibilité du site d’une agence de web design."
 		},
 		"kanap": {
 			"title": "Kanap",
 			"purpose": "education",
 			"description": "Vous êtes en poste dans une agence de développement web depuis quelques semaines maintenant. Après avoir réalisé avec succès l'intégration de quelques sites web (HTML/CSS), on vous confie une nouvelle mission.<br /> Votre client est Kanap, une marque de canapés qui vend ses produits depuis sa boutique exclusivement. Aujourd'hui, celle-ci souhaiterait avoir une plateforme de e-commerce en plus de sa boutique physique pour vendre ses produits sur Internet.",
-			"skills": "<sk>Créer un plan de test pour une application</sk><sk>Valider des données issues de sources externes</sk><sk>Interagir avec un web service avec JavaScript</sk><sk>Gérer des événements JavaScript</sk>"
+			"skills": "<sk>Créer un plan de test pour une application</sk><sk>Valider des données issues de sources externes</sk><sk>Interagir avec un web service avec JavaScript</sk><sk>Gérer des événements JavaScript</sk>",
+			"summary": "Front-end e-commerce dynamique en JavaScript natif, connecté à une API produits."
 		},
 		"piiquante": {
 			"title": "Piiquante",
 			"purpose": "education",
 			"description": "Vous avez passé la dernière année en tant que développeur back-end indépendant et vous avez travaillé sur plusieurs projets de tailles et de difficultés variées. <br /> La semaine dernière, vous avez reçu un message sur votre plateforme de freelance vous demandant de l'aide pour un nouveau projet. Les sauces piquantes sont de plus en plus populaires, en grande partie grâce à la série YouTube « Hot Ones » . C'est pourquoi ce nouveau client, la marque de condiments à base de piment Piiquante, veut développer une application web de critique des sauces piquantes appelée « Hot Takes ».",
-			"skills": "<sk>Mettre en œuvre des opérations CRUD de manière sécurisée</sk><sk>Implémenter un modèle logique de données conformément à la réglementation</sk><sk>Stocker des données de manière sécurisée</sk>"
+			"skills": "<sk>Mettre en œuvre des opérations CRUD de manière sécurisée</sk><sk>Implémenter un modèle logique de données conformément à la réglementation</sk><sk>Stocker des données de manière sécurisée</sk>",
+			"summary": "API REST sécurisée pour une application d’avis sur des sauces piquantes, avec Node.js, Express et MongoDB."
 		},
 		"kasa": {
 			"title": "Kasa",
 			"purpose": "education",
 			"description": "Le site de Kasa a été codé il y a maintenant plus de 10 ans en ASP.NET avec un code legacy important. Laura, la CTO, a donc lancé une refonte totale pour passer à une stack complète en JavaScript avec NodeJS côté back-end, et React côté front-end. Kasa en a également profité pour commander de nouvelles maquettes auprès de son designer habituel, qui est en freelance. Un gros chantier pour cette année !",
-			"skills": "<sk>Initialiser une application avec Create React App</sk><sk>Configurer la navigation entre les pages de l'application avec React Router</sk><sk>Développer des éléments de l'interface d'un site web grâce à des composants React</sk>"
+			"skills": "<sk>Initialiser une application avec Create React App</sk><sk>Configurer la navigation entre les pages de l'application avec React Router</sk><sk>Développer des éléments de l'interface d'un site web grâce à des composants React</sk>",
+			"summary": "Refonte du front-end d’une plateforme de location en application React avec React Router."
 		},
 		"panhomestores": {
 			"title": "Pan Home",
 			"purpose": "professionnel",
 			"description": "Meilleur fournisseur des Emirats Arabe Unis",
-			"skills": "<sk>Optimiser une boutique en ligne conçue avec a Magento 2</sk>"
+			"skills": "<sk>Optimiser une boutique en ligne conçue avec a Magento 2</sk>",
+			"summary": "Optimisation d’une grande boutique e-commerce Magento 2 au service de clients aux Émirats arabes unis."
 		}
 	},
 	"Footer": {

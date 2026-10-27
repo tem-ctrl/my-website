@@ -195,3 +195,6 @@ export const TECH_STACK: TechItem[] = [
 	{ name: 'Figma', icon: <SiFigma /> },
 	{ name: 'Git', icon: <SiGit /> },
 ];
+
+/** View transition name shared by a project's card and details page image, so it morphs between them */
+export const projectImageTransitionName = (slug: string) => `project-image-${slug}`;
