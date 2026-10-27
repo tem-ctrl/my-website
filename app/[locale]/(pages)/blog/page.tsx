@@ -1,27 +1,31 @@
-import PageHeader from '@/app/components/common/PageHeader';
-import BlogCard from '@/app/components/pages/blog/BlogCard';
-import { BLOG_POSTS } from '@/app/utils/constants';
-import { getMessages } from '@/app/utils/getMessages';
-import { PageProps } from '@/app/utils/types';
-import { Metadata, NextPage } from 'next';
-import { createTranslator } from 'next-intl';
+import { Metadata } from 'next';
+import { use } from 'react';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import PageHeader from '@/components/common/PageHeader';
+import BlogCard from '@/components/pages/blog/BlogCard';
+import { BLOG_POSTS } from '@/lib/constants';
 
-export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({
+	params,
+}: PageProps<'/[locale]/blog'>): Promise<Metadata> => {
 	const { locale } = await params;
-	const messages = await getMessages(locale);
-	const t = createTranslator({ locale, messages });
+	const t = await getTranslations({ locale, namespace: 'BlogPage' });
 
 	return {
-		title: t('BlogPage.title'),
-		description: t('BlogPage.description'),
+		title: t('title'),
+		description: t('description'),
 	};
 };
 
-const BlogPage: NextPage = () => {
+const BlogPage = ({ params }: PageProps<'/[locale]/blog'>) => {
+	const { locale } = use(params);
+
+	setRequestLocale(locale);
+
 	return (
-		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-[100px] hFill py-10 flex flex-col gap-12 items-center w-full">
+		<main className="scrollbar-none flex h-page w-full flex-col items-center gap-12 px-2.5 py-10 md:px-25">
 			<PageHeader simpleText="latest" primaryText="posts" tagline="My latest blog articles" />
-			<div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
+			<div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2">
 				{BLOG_POSTS.map((blog) => (
 					<BlogCard key={blog} title={blog} />
 				))}

@@ -1,39 +1,99 @@
 @import 'tailwindcss';
-@config '../tailwind.config.mts';
 
-::-webkit-scrollbar {
-	width: 0.7rem;
-	height: 0.7rem;
+/* Class-based dark mode, toggled by next-themes on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Brand palette (unchanged values from the original site). */
+@theme {
+	--color-primary: #8a2be2; /* purple */
+
+	--color-bg-light: #eff0f3;
+	--color-light: #202020;
+	--color-second-light: #fff;
+	--color-tertiary-light: #fff;
+
+	--color-bg-dark: #02030f;
+	--color-bg-dark-second: #070023;
+	--color-dark: #efefef;
+	--color-secondary-dark: #fff;
+	--color-tertiary-dark: #fff;
+
+	/* Fixed header height: enables h-header, pt-header, top-header... */
+	--spacing-header: 60px;
 }
 
-::-webkit-scrollbar-track {
-	background-color: #fff;
-	border-radius: 0.5rem;
+/*
+ * Semantic theme tokens. Components use these (bg-background, text-foreground, ...)
+ * and never need a `dark:` counterpart: the values swap under `.dark`.
+ */
+:root {
+	--background: var(--color-bg-light);
+	--foreground: var(--color-light);
+	--field: var(--color-neutral-200);
+	--field-ring: var(--color-neutral-300);
+	--card: var(--color-neutral-300);
+	--line: var(--color-gray-300);
+	--border: var(--color-gray-300);
 }
 
-::-webkit-scrollbar-thumb {
-	background-color: #8a2be2;
-	border-radius: 0.5rem;
-	border: 0.2rem solid #fff;
+.dark {
+	--background: var(--color-bg-dark);
+	--foreground: var(--color-dark);
+	--field: var(--color-neutral-900);
+	--field-ring: var(--color-neutral-900);
+	--card: var(--color-neutral-800);
+	--line: var(--color-gray-800);
+	--border: var(--color-gray-600);
 }
 
-.scrollbar-none::-webkit-scrollbar {
-	width: 0;
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-field: var(--field);
+	--color-field-ring: var(--field-ring);
+	--color-card: var(--card);
+	--color-line: var(--line);
+	--color-border: var(--border);
+
+	--font-sans: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
 }
 
-.hFill {
-  min-height: calc(100dvh - 60px);
-  overflow-y: scroll;
+@layer base {
+	body {
+		@apply mx-auto max-w-400 bg-background text-foreground;
+	}
+
+	::-webkit-scrollbar {
+		width: 0.7rem;
+		height: 0.7rem;
+	}
+
+	::-webkit-scrollbar-track {
+		background-color: #fff;
+		border-radius: 0.5rem;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: var(--color-primary);
+		border-radius: 0.5rem;
+		border: 0.2rem solid #fff;
+	}
 }
 
-@media all and (min-width: 768px) {
-  .hFill {
-    height: calc(100dvh - 60px);
-  }
+@utility scrollbar-none {
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
-@layer {
-  .transit {
-    @apply transition-all delay-100 ease-in-out;
-  }
+/* Scrollable page area filling the viewport below the fixed header. */
+@utility h-page {
+	min-height: calc(100dvh - var(--spacing-header));
+	overflow-y: scroll;
+
+	@variant md {
+		height: calc(100dvh - var(--spacing-header));
+	}
 }

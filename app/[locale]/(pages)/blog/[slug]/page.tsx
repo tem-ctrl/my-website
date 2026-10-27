@@ -1,19 +1,16 @@
-'use client';
-
-// import { NextPage } from 'next';
 import { use } from 'react';
-import { useRouter } from '@/app/i18n/navigation';
+import { setRequestLocale } from 'next-intl/server';
+import BlogDetails from '@/components/pages/blog/BlogDetails';
+import { BLOG_POSTS } from '@/lib/constants';
 
-const BlogDetailsPage = ({ params }: { params: Promise<{ slug: string }> }) => {
-	const { slug } = use(params);
-	const router = useRouter();
+export const generateStaticParams = () => BLOG_POSTS.map((slug) => ({ slug }));
 
-	return (
-		<div className="h-[500px] w-[500px] m-auto flex items-center justify-center gap-10">
-			<button onClick={() => router.back()}> Retour </button>
-			Blog title: {decodeURI(slug)}
-		</div>
-	);
+const BlogDetailsPage = ({ params }: PageProps<'/[locale]/blog/[slug]'>) => {
+	const { locale, slug } = use(params);
+
+	setRequestLocale(locale);
+
+	return <BlogDetails slug={slug} />;
 };
 
 export default BlogDetailsPage;

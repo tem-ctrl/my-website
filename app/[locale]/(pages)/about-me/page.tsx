@@ -1,32 +1,36 @@
-import InfoItem from '@/app/components/pages/about-me/InfoItem';
-import PageHeader from '@/app/components/common/PageHeader';
-import Photo from '@/app/components/common/Photo';
-import Separator from '@/app/components/common/Separator';
-import TimelineItem from '@/app/components/pages/about-me/TimelineItem';
-import { SKILLS } from '@/app/utils/constants';
-import { PageProps } from '@/app/utils/types';
-import { createTranslator, useLocale, useTranslations } from 'next-intl';
-import SkillItem from '@/app/components/pages/about-me/SkillItem';
-import TimelineBlock from '@/app/components/pages/about-me/TimelineBlock';
-import { Metadata, NextPage } from 'next';
-import { getMessages } from '@/app/utils/getMessages';
-import PrimaryButtonLink from '@/app/components/common/PrimaryButtonLink';
+import { Metadata } from 'next';
+import { Suspense, use } from 'react';
+import { useTranslations } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import InfoItem from '@/components/pages/about-me/InfoItem';
+import PageHeader from '@/components/common/PageHeader';
+import Photo from '@/components/common/Photo';
+import Separator from '@/components/common/Separator';
+import TimelineItem from '@/components/pages/about-me/TimelineItem';
+import SkillItem from '@/components/pages/about-me/SkillItem';
+import TimelineBlock from '@/components/pages/about-me/TimelineBlock';
+import PrimaryButtonLink from '@/components/common/PrimaryButtonLink';
+import { SKILLS } from '@/lib/constants';
 import { FaDownload } from 'react-icons/fa';
 
-export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({
+	params,
+}: PageProps<'/[locale]/about-me'>): Promise<Metadata> => {
 	const { locale } = await params;
-	const messages = await getMessages(locale);
-	const t = createTranslator({ locale, messages });
+	const t = await getTranslations({ locale, namespace: 'AboutPage' });
 
 	return {
-		title: t('AboutPage.title'),
-		description: t('AboutPage.description'),
+		title: t('title'),
+		description: t('description'),
 	};
 };
 
-const AboutPage: NextPage = () => {
+const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
+	const { locale } = use(params);
+
+	setRequestLocale(locale);
+
 	const t = useTranslations('AboutPage');
-	const locale = useLocale();
 
 	const personalInfo = ['name', 'lastName', 'phone', 'email', 'country', 'city'];
 	const professionalInfo = [
@@ -42,15 +46,15 @@ const AboutPage: NextPage = () => {
 	const education = [1, 2, 3];
 
 	return (
-		<main className="scrollbar-none overflow-y-scroll px-2.5 md:px-[100px] lg:px-[120px] hFill py-10 flex flex-col gap-12 items-center w-full">
+		<main className="scrollbar-none flex h-page w-full flex-col items-center gap-12 px-2.5 py-10 md:px-25 lg:px-30">
 			<PageHeader
 				simpleText={t('PageHeader.simpleText')}
 				primaryText={t('PageHeader.primaryText')}
 				tagline={t('PageHeader.tagline')}
 			/>
-			<div className="flex smm:flex-col mdm:items-center items-start w-full md:pt-3">
+			<div className="flex w-full items-start max-lg:items-center max-md:flex-col md:pt-3">
 				<Photo />
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4 text-lg smm:mt-5">
+				<div className="grid grid-cols-1 gap-x-8 gap-y-4 text-lg max-md:mt-5 lg:grid-cols-2">
 					<div className="col-span-1 flex flex-col gap-4">
 						{personalInfo.map((info, i) => (
 							<InfoItem
@@ -61,27 +65,33 @@ const AboutPage: NextPage = () => {
 						))}
 					</div>
 					<div className="col-span-1 flex flex-col gap-4">
-						{professionalInfo.map((info, i) => (
-							<InfoItem
-								key={`professional-info-${i}`}
-								label={t(`professionalInfo.${info}`)}
-								value={t(`professionalInfo.${info}Value`)}
-                isExperience={info === 'experience'}
-							/>
-						))}
+						{professionalInfo.map((info, i) => {
+							const label = t(`professionalInfo.${info}`);
+							const value = t(`professionalInfo.${info}Value`);
+							const key = `professional-info-${i}`;
+
+							// Experience is computed from today's date, so it is rendered per request
+							return info === 'experience' ? (
+								<Suspense key={key} fallback={<InfoItem label={label} value="" />}>
+									<InfoItem label={label} value={value} isExperience />
+								</Suspense>
+							) : (
+								<InfoItem key={key} label={label} value={value} />
+							);
+						})}
 					</div>
 					<PrimaryButtonLink
 						text={t('downloadCvButton')}
 						href={`cvs/gilbert_temgoua_cv_${locale}.pdf`}
 						icon={<FaDownload />}
-						className={`!w-fit text-sm col-span-full smm:justify-self-center`}
+						className="col-span-full w-fit! text-sm max-md:justify-self-center"
 						// newTab
-            download
+						download
 					/>
 				</div>
 			</div>
 			<Separator />
-			<div className="flex smm:flex-col items-start justify-start gap-10">
+			<div className="flex items-start justify-start gap-10 max-md:flex-col">
 				<TimelineBlock title="Experience">
 					{experiences.map((i) => (
 						<TimelineItem
@@ -114,8 +124,8 @@ const AboutPage: NextPage = () => {
 			</div>
 			<Separator />
 			<section className="w-full">
-				<h2 className="uppercase text-2xl mb-16">{t('skills')}</h2>
-				<div className="grid md:grid-cols-3 gap-x-8 gap-y-20 w-full">
+				<h2 className="mb-16 text-2xl uppercase">{t('skills')}</h2>
+				<div className="grid w-full gap-x-8 gap-y-20 md:grid-cols-3">
 					{SKILLS.map((skill, i) => (
 						<SkillItem key={`skill-${i}`} {...skill} />
 					))}

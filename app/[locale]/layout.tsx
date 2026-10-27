@@ -1,59 +1,52 @@
 import '@/app/globals.css';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
-import React, { FC, Suspense } from 'react';
-import Providers from '@/app/components/layout/Providers';
-import Header from '@/app/components/layout/Header';
-import { NextIntlClientProvider, createTranslator } from 'next-intl';
-import { PageProps } from '@/app/utils/types';
-import { getMessages } from '@/app/utils/getMessages';
-import NotFound from '@/app/components/common/NotFound';
-import GoogleTag from '@/app/components/robot/GoogleTag';
+import { notFound } from 'next/navigation';
+import React, { Suspense } from 'react';
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
+import Providers from '@/components/layout/Providers';
+import Header from '@/components/layout/Header';
+import GoogleTag from '@/components/robot/GoogleTag';
 
 const roboto = Roboto({
 	subsets: ['latin'],
 	weight: ['300', '400', '500', '700', '900'],
 	display: 'swap',
+	variable: '--font-roboto',
 });
 
-export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
+export const generateStaticParams = () => routing.locales.map((locale) => ({ locale }));
+
+export const generateMetadata = async ({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> => {
 	const { locale } = await params;
-	const messages = await getMessages(locale);
-	const t = createTranslator({ locale, messages });
+	const t = await getTranslations({ locale, namespace: 'RootLayout' });
 
 	return {
-		title: t('RootLayout.title'),
-		description: t('RootLayout.description'),
+		metadataBase: new URL('https://gtemgoua.vercel.app'),
+		title: t('title'),
+		description: t('description'),
 	};
 };
 
-const locales = ['en', 'fr'];
-
-interface RootLayoutProps {
-	children: React.ReactNode;
-	params: Promise<{ locale: string }>;
-}
-
-const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
+const RootLayout = async ({ children, params }: LayoutProps<'/[locale]'>) => {
 	const { locale } = await params;
-	const isValidLocale = locales.some((cur) => cur === locale);
 
-	if (!isValidLocale) NotFound();
+	if (!hasLocale(routing.locales, locale)) notFound();
 
-	const messages = await getMessages(locale);
+	setRequestLocale(locale);
 
 	return (
-		<html lang={locale}>
-			<body
-				className={`${roboto.className} max-w-[1600px] mx-auto bg-bgLight dark:bg-bgDark text-light dark:text-dark`}
-			>
+		<html lang={locale} className={roboto.variable} suppressHydrationWarning>
+			<body>
 				<Suspense>
 					<GoogleTag />
 				</Suspense>
-				<NextIntlClientProvider messages={messages} locale={locale}>
+				<NextIntlClientProvider>
 					<Providers>
 						<Header />
-						<div className="px-2.5 md:px-6 lg:px-14 w-full">{children}</div>
+						<div className="w-full px-2.5 md:px-6 lg:px-14">{children}</div>
 						{/* <Footer /> */}
 					</Providers>
 				</NextIntlClientProvider>
