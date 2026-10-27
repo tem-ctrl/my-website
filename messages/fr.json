@@ -6,15 +6,55 @@
 	"HomePage": {
 		"title": "Accueil - Gilbert Temgoua: Développeur web",
 		"description": "Je suis un développeur web passionné basé à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement.",
-		"hi": "Salut !",
-		"iAm": "Je suis",
-		"whoIAm": "Je suis un développeur web passionné basé à Yaoundé, Cameroun.",
-		"whatIdo": {
-			"firstPart": "Je crée des applications web très percutantes et attractives",
-			"secondPart": "grâce aux technologies de pointe."
+		"hero": {
+			"badge": "Disponible pour de nouvelles opportunités",
+			"greeting": "Bonjour, je suis Gilbert Temgoua",
+			"headline": "Je crée des applications web rapides et soignées que les utilisateurs adorent.",
+			"rolePrefix": "Développeur front-end spécialisé en",
+			"intro": "Basé à Yaoundé, au Cameroun, je transforme des maquettes en produits rapides, accessibles et maintenables, et j’ai dirigé des équipes front-end pour le faire.",
+			"viewWork": "Voir mes projets",
+			"downloadCv": "Télécharger mon CV",
+			"photoAlt": "Portrait de Gilbert Temgoua"
 		},
-		"moreButtonText": "En savoir plus",
-		"portfolioButtonText": "Mes projets"
+		"stats": {
+			"experience": "Années d’expérience",
+			"projects": "Projets réalisés",
+			"technologies": "Technologies maîtrisées",
+			"remote": "Prêt pour le télétravail"
+		},
+		"featured": {
+			"title": "Projets phares",
+			"subtitle": "Une sélection de projets en production auxquels j’ai contribué.",
+			"seeAll": "Voir tous les projets",
+			"caseStudy": "Voir le projet",
+			"panhomestores": "Optimisation d’une grande boutique e-commerce Magento 2 au service de clients aux Émirats arabes unis.",
+			"bantubeat": "Direction du front-end d’une plateforme musicale construite avec Next.js, TypeScript et GraphQL."
+		},
+		"stack": {
+			"title": "Mes technologies",
+			"subtitle": "Les outils que j’utilise au quotidien pour livrer des produits fiables."
+		},
+		"howIWork": {
+			"title": "Ma façon de travailler",
+			"subtitle": "Ce à quoi vous pouvez vous attendre en travaillant avec moi.",
+			"design": {
+				"title": "Fidèle au pixel près",
+				"text": "Les maquettes Figma deviennent des interfaces responsives et accessibles, fidèles au design au pixel près."
+			},
+			"quality": {
+				"title": "Code propre et relu",
+				"text": "Un code lisible, typé et refactorisé, avec des revues qui gardent toute la base de code saine."
+			},
+			"api": {
+				"title": "Pensé pour les API",
+				"text": "Une intégration fluide des API REST et GraphQL, avec un rendu côté client ou serveur selon le besoin."
+			}
+		},
+		"cta": {
+			"title": "Un projet en tête ?",
+			"text": "Construisons ensemble quelque chose de remarquable. Je suis ouvert aux postes à temps plein, à temps partiel et en freelance, en télétravail ou sur site.",
+			"button": "Discutons-en"
+		}
 	},
 	"AboutPage": {
 		"title": "A propos De Moi - Gilbert Temgoua",

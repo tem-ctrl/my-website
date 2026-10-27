@@ -48,3 +48,8 @@ export interface Project {
 	type?: 'education' | 'professional';
 	technologies?: string[];
 }
+
+export interface TechItem {
+	name: string;
+	icon: React.JSX.Element;
+}

@@ -10,7 +10,7 @@ import TimelineItem from '@/components/pages/about-me/TimelineItem';
 import SkillItem from '@/components/pages/about-me/SkillItem';
 import TimelineBlock from '@/components/pages/about-me/TimelineBlock';
 import PrimaryButtonLink from '@/components/common/PrimaryButtonLink';
-import { SKILLS } from '@/lib/constants';
+import { SKILLS, cvPath } from '@/lib/constants';
 import { FaDownload } from 'react-icons/fa';
 
 export const generateMetadata = async ({
@@ -82,7 +82,7 @@ const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
 					</div>
 					<PrimaryButtonLink
 						text={t('downloadCvButton')}
-						href={`cvs/gilbert_temgoua_cv_${locale}.pdf`}
+						href={cvPath(locale)}
 						icon={<FaDownload />}
 						className="col-span-full w-fit! text-sm max-md:justify-self-center"
 						// newTab

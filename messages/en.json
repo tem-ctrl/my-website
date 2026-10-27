@@ -6,15 +6,55 @@
 	"HomePage": {
 		"title": "Home - Gilbert Temgoua",
 		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowledge of the ReactJs and NextJS ecosystem. I'm open to work immediately.",
-		"hi": "hi!",
-		"iAm": "I am",
-		"whoIAm": "I'm a passionate web developer based in Yaounde, Cameroon.",
-		"whatIdo": {
-			"firstPart": "I strive to build impactful and attractive web applications leveraging",
-			"secondPart": "best code standards and latest technologies."
+		"hero": {
+			"badge": "Available for new opportunities",
+			"greeting": "Hi, I’m Gilbert Temgoua",
+			"headline": "I build fast, polished web apps people love to use.",
+			"rolePrefix": "Front-end developer specialized in",
+			"intro": "Based in Yaoundé, Cameroon, I turn designs into fast, accessible and maintainable products, and I’ve led front-end teams doing it.",
+			"viewWork": "View my work",
+			"downloadCv": "Download CV",
+			"photoAlt": "Portrait of Gilbert Temgoua"
 		},
-		"moreButtonText": "More about me",
-		"portfolioButtonText": "My projects"
+		"stats": {
+			"experience": "Years of experience",
+			"projects": "Projects delivered",
+			"technologies": "Technologies mastered",
+			"remote": "Remote-ready"
+		},
+		"featured": {
+			"title": "Featured work",
+			"subtitle": "A selection of production projects I’ve contributed to.",
+			"seeAll": "See all projects",
+			"caseStudy": "View project",
+			"panhomestores": "Optimized a large Magento 2 e-commerce store serving customers across the UAE.",
+			"bantubeat": "Led the front-end of a music platform built with Next.js, TypeScript and GraphQL."
+		},
+		"stack": {
+			"title": "My tech stack",
+			"subtitle": "Tools I use every day to ship reliable products."
+		},
+		"howIWork": {
+			"title": "How I work",
+			"subtitle": "What you can expect when we build together.",
+			"design": {
+				"title": "Pixel-perfect from design",
+				"text": "Figma mockups become responsive, accessible interfaces that match the design down to the pixel."
+			},
+			"quality": {
+				"title": "Clean, reviewed code",
+				"text": "Readable, typed and refactored code, with reviews that keep the whole codebase healthy."
+			},
+			"api": {
+				"title": "API-first mindset",
+				"text": "Smooth integration with REST and GraphQL APIs, rendered on the client or the server as needed."
+			}
+		},
+		"cta": {
+			"title": "Have a project in mind?",
+			"text": "Let’s build something great together. I’m open to full-time, part-time and freelance roles, remote or onsite.",
+			"button": "Let’s talk"
+		}
 	},
 	"AboutPage": {
 		"title": "About Me - Gilbert Temgoua",

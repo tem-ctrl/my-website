@@ -1,6 +1,25 @@
-import { Project, SkillItemProps, SocialMedia } from '@/lib/types';
+import { Project, SkillItemProps, SocialMedia, TechItem } from '@/lib/types';
 import { BiLogoLinkedin } from 'react-icons/bi';
 import { BsWhatsapp, BsGithub } from 'react-icons/bs';
+import { FaMagento } from 'react-icons/fa';
+import {
+	SiCss,
+	SiFigma,
+	SiGit,
+	SiGraphql,
+	SiHtml5,
+	SiJavascript,
+	SiMysql,
+	SiNextdotjs,
+	SiNodedotjs,
+	SiPhp,
+	SiPython,
+	SiReact,
+	SiRedux,
+	SiSass,
+	SiTailwindcss,
+	SiTypescript,
+} from 'react-icons/si';
 
 export const SKILLS: SkillItemProps[] = [
 	{
@@ -151,3 +170,28 @@ export const PROJECTS: Project[] = [
 export const SITE_URL = 'https://gtemgoua.vercel.app';
 
 export const CONTACT_EMAIL = 'gilbertemgoua@gmail.com';
+
+/** Start of professional experience, used to compute years of experience */
+export const EXPERIENCE_START = '2023-04-01';
+
+export const cvPath = (locale: string) => `/cvs/gilbert_temgoua_cv_${locale}.pdf`;
+
+export const TECH_STACK: TechItem[] = [
+	{ name: 'Next.js', icon: <SiNextdotjs /> },
+	{ name: 'React', icon: <SiReact /> },
+	{ name: 'TypeScript', icon: <SiTypescript /> },
+	{ name: 'JavaScript', icon: <SiJavascript /> },
+	{ name: 'Tailwind CSS', icon: <SiTailwindcss /> },
+	{ name: 'GraphQL', icon: <SiGraphql /> },
+	{ name: 'Redux', icon: <SiRedux /> },
+	{ name: 'HTML5', icon: <SiHtml5 /> },
+	{ name: 'CSS', icon: <SiCss /> },
+	{ name: 'Sass', icon: <SiSass /> },
+	{ name: 'Magento 2', icon: <FaMagento /> },
+	{ name: 'Node.js', icon: <SiNodedotjs /> },
+	{ name: 'PHP', icon: <SiPhp /> },
+	{ name: 'MySQL', icon: <SiMysql /> },
+	{ name: 'Python', icon: <SiPython /> },
+	{ name: 'Figma', icon: <SiFigma /> },
+	{ name: 'Git', icon: <SiGit /> },
+];

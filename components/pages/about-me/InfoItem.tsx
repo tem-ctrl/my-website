@@ -2,6 +2,7 @@
 
 import React, { FC, useCallback } from 'react';
 import { InfoItemType } from '@/lib/types';
+import { EXPERIENCE_START } from '@/lib/constants';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
 
@@ -10,7 +11,7 @@ const InfoItem: FC<InfoItemType> = ({ className = '', label, value, isExperience
 	const locale = useLocale();
 
 	const exp = useCallback((): string => {
-		const start = new Date('2023-04-01');
+		const start = new Date(EXPERIENCE_START);
 		const today = new Date();
 		const isEn = locale.includes('en');
 
