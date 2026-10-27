@@ -36,7 +36,7 @@ const ProjectsExplorer: FC = () => {
 						aria-selected={filter === value}
 						onClick={() => setFilter(value)}
 						className={`relative cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-colors md:px-5 ${
-							filter === value ? 'text-white' : 'hover:text-primary'
+							filter === value ? 'text-white' : 'hover:text-primary-text'
 						}`}
 					>
 						{filter === value && (
@@ -53,6 +53,7 @@ const ProjectsExplorer: FC = () => {
 				))}
 			</div>
 
+			<h2 className="sr-only">{t(filter)}</h2>
 			<motion.ul layout className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-6">
 				<AnimatePresence mode="popLayout" initial={false}>
 					{projects.map((project) => (

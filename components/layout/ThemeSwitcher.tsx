@@ -47,7 +47,7 @@ const ThemeSwitcher = () => {
 
 	return (
 		<button
-			className="relative flex size-5 cursor-pointer items-center justify-center text-lg text-primary"
+			className="relative flex size-5 cursor-pointer items-center justify-center text-lg text-primary-text"
 			onClick={onToggle}
 			name="theme switcher"
 			aria-label="Toggle theme"

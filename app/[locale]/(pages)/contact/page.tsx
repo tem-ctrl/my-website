@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import { use } from 'react';
 import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { pageMetadata } from '@/lib/seo';
+import { PAGES } from '@/lib/routes';
 import PageHeader from '@/components/common/PageHeader';
 import ContactForm from '@/components/pages/contact/ContactForm';
 
@@ -11,10 +13,12 @@ export const generateMetadata = async ({
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: 'ContactPage' });
 
-	return {
+	return pageMetadata({
+		locale,
+		path: PAGES.contact,
 		title: t('title'),
 		description: t('description'),
-	};
+	});
 };
 
 const ContactPage = ({ params }: PageProps<'/[locale]/contact'>) => {

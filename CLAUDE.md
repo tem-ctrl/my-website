@@ -47,7 +47,7 @@ Next.js 16 (App Router, Turbopack) with React 19, Tailwind CSS v4, `next-intl` f
 - Tailwind v4 configured CSS-first in `app/globals.css` (no `tailwind.config`), processed via the `@tailwindcss/turbopack` loader.
 - Dark mode is class-based (`next-themes` sets `.dark` on `<html>`, `@custom-variant dark`).
 - Prefer the semantic tokens (`bg-background`, `text-foreground`, `bg-card`, `bg-field`, `border-border`, `border-line`) which swap automatically under `.dark`, so no `dark:` variant is needed. Brand color is `primary`; header height is the `header` spacing token (`h-header`, `pt-header`).
-- Plain `<img>` is used intentionally (`@next/next/no-img-element` is disabled).
+- Images use `next/image` (the `@next/next/no-img-element` lint rule is on). Project screenshots use `fill` inside a sized container; other images pass explicit `width`/`height`.
 
 ### Analytics
 

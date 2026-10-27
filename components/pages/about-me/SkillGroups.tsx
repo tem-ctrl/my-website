@@ -23,7 +23,7 @@ const SkillGroups: FC<SkillGroupsProps> = ({ className = '' }) => {
 						{items.map(({ name, icon }) => (
 							<li
 								key={name}
-								className="flex items-center gap-2 rounded-xl border border-border/60 bg-background/60 px-3 py-2 text-sm font-medium transition-colors hover:border-primary/50 hover:text-primary"
+								className="flex items-center gap-2 rounded-xl border border-border/60 bg-background/60 px-3 py-2 text-sm font-medium transition-colors hover:border-primary/50 hover:text-primary-text"
 							>
 								<span className="text-lg">{icon}</span>
 								{name}

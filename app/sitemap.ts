@@ -1,10 +1,8 @@
 import type { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
-import { PROJECTS, SITE_URL } from '@/lib/constants';
+import { PROJECTS } from '@/lib/constants';
 import { PAGES } from '@/lib/routes';
-
-const localizedUrl = (locale: string, path: string) =>
-	`${SITE_URL}/${locale}${path === '/' ? '' : path}`;
+import { localizedUrl } from '@/lib/seo';
 
 const sitemap = (): MetadataRoute.Sitemap => {
 	const paths = [

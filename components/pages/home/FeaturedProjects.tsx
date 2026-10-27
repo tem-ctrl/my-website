@@ -28,7 +28,7 @@ const FeaturedProjects: FC = () => {
 			<Reveal className="flex justify-center">
 				<Link
 					href={PAGES.projects}
-					className="group flex items-center gap-2 font-medium text-primary hover:underline"
+					className="group flex items-center gap-2 font-medium text-primary-text hover:underline"
 				>
 					{t('seeAll')}
 					<FiArrowRight className="transition-transform group-hover:translate-x-1" />

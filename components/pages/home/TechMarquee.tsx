@@ -8,7 +8,7 @@ import { TechItem } from '@/lib/types';
 
 const TechChip: FC<TechItem> = ({ name, icon }) => {
 	return (
-		<li className="flex items-center gap-3 rounded-xl border border-border/60 bg-background/60 px-5 py-3 whitespace-nowrap backdrop-blur-sm transition-colors hover:border-primary/50 hover:text-primary">
+		<li className="flex items-center gap-3 rounded-xl border border-border/60 bg-background/60 px-5 py-3 whitespace-nowrap backdrop-blur-sm transition-colors hover:border-primary/50 hover:text-primary-text">
 			<span className="text-2xl">{icon}</span>
 			<span className="font-medium">{name}</span>
 		</li>

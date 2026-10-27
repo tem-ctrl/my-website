@@ -26,7 +26,7 @@ const TimelineItem: FC<TimelineItem> = ({
 						<span>{startDate}</span> &ndash; <span>{endDate ?? 'ongoing'}</span>
 					</p>
 				</div>
-				<h3 className="text-primary uppercase">
+				<h3 className="text-primary-text uppercase">
 					<span>{title}</span>
 					<span> &ndash; </span>
 					<span className="font-bold">{place}</span>
@@ -37,7 +37,7 @@ const TimelineItem: FC<TimelineItem> = ({
 				</div>
 				{Array.isArray(description) ? (
 					<>
-						<h4 className="mb-2 text-primary">{t('responsibilities')}</h4>
+						<h4 className="mb-2 text-primary-text">{t('responsibilities')}</h4>
 						<ul className="flex list-inside list-disc flex-col gap-2">
 							{description.map((elt, i) => (
 								<li key={`${i}-${elt.slice(0, 10)}`}>{`${elt}.`}</li>

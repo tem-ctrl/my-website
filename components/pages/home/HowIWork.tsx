@@ -24,7 +24,7 @@ const HowIWork: FC = () => {
 						delay={i * 0.15}
 						className="group flex flex-col gap-4 rounded-2xl border border-border/60 bg-background/60 p-8 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-primary/50"
 					>
-						<span className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-2xl text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+						<span className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-2xl text-primary-text transition-colors group-hover:bg-primary group-hover:text-white">
 							{icon}
 						</span>
 						<h3 className="text-xl font-bold">{t(`${key}.title`)}</h3>

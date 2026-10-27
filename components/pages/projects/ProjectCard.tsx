@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React, { FC, MouseEvent, ViewTransition } from 'react';
 import {
 	motion,
@@ -68,10 +69,12 @@ const ProjectCard: FC<Project> = ({ className = '', slug, image, type, technolog
 			<Link href={PAGES.projectDetails(slug)} className="flex h-full flex-col">
 				<div className="relative aspect-video overflow-hidden rounded-t-2xl">
 					<ViewTransition name={projectImageTransitionName(slug)}>
-						<img
+						<Image
 							src={`/assets/images/projects/${image}`}
 							alt={p('title')}
-							className="size-full object-cover object-top transition duration-500 group-hover:scale-105"
+							fill
+							sizes="(min-width: 1152px) 560px, (min-width: 768px) 50vw, 100vw"
+							className="object-cover object-top transition duration-500 group-hover:scale-105"
 						/>
 					</ViewTransition>
 
@@ -97,20 +100,20 @@ const ProjectCard: FC<Project> = ({ className = '', slug, image, type, technolog
 				<div className="flex flex-1 flex-col gap-3 p-5">
 					<div className="flex items-center justify-between gap-4">
 						<h3 className="text-xl font-bold uppercase">{p('title')}</h3>
-						<FiArrowUpRight className="shrink-0 text-xl text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+						<FiArrowUpRight className="shrink-0 text-xl text-primary-text transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
 					</div>
 					<p className="line-clamp-2 text-sm text-foreground/70">{p('summary')}</p>
 					<ul className="mt-auto flex flex-wrap gap-2 pt-2">
 						{visibleTechnologies.map((tech) => (
 							<li
 								key={tech}
-								className="rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary"
+								className="rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary-text"
 							>
 								{tech}
 							</li>
 						))}
 						{hiddenTechnologiesCount > 0 && (
-							<li className="rounded-full border border-border px-2.5 py-0.5 text-xs font-medium text-foreground/60">
+							<li className="rounded-full border border-border px-2.5 py-0.5 text-xs font-medium text-foreground/70">
 								+{hiddenTechnologiesCount}
 							</li>
 						)}

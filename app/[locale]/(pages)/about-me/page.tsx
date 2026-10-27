@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import { Suspense, use } from 'react';
 import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { pageMetadata } from '@/lib/seo';
+import { PAGES } from '@/lib/routes';
 import InfoItem from '@/components/pages/about-me/InfoItem';
 import PageHeader from '@/components/common/PageHeader';
 import Photo from '@/components/common/Photo';
@@ -19,10 +21,12 @@ export const generateMetadata = async ({
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: 'AboutPage' });
 
-	return {
+	return pageMetadata({
+		locale,
+		path: PAGES.aboutMe,
 		title: t('title'),
 		description: t('description'),
-	};
+	});
 };
 
 const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {

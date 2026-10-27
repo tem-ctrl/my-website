@@ -28,7 +28,7 @@ const NavLink: FC<NavLinkProps> = ({
 }) => {
 	return (
 		<Link
-			className={`${className} ${isActive ? 'text-primary' : ''} relative inline-block text-sm font-medium uppercase transition-colors hover:text-primary`}
+			className={`${className} ${isActive ? 'text-primary-text' : ''} relative inline-block text-sm font-medium uppercase transition-colors hover:text-primary-text`}
 			href={href}
 			onClick={onClick}
 			onMouseEnter={onMouseEnter}

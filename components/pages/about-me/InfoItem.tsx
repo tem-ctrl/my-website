@@ -35,11 +35,11 @@ const InfoItem: FC<InfoItemType> = ({ className = '', label, value, isExperience
 		<p className={`${className} flex gap-5`}>
 			<span className="whitespace-nowrap">{`${label} :`}</span>
 			{isEmail ? (
-				<Link className="text-primary italic" target="_blank" href={`mailto:${value}`}>
+				<Link className="text-primary-text italic" target="_blank" href={`mailto:${value}`}>
 					{value}
 				</Link>
 			) : (
-				<span className="text-primary italic">{isExperience ? exp() : value}</span>
+				<span className="text-primary-text italic">{isExperience ? exp() : value}</span>
 			)}
 		</p>
 	);
