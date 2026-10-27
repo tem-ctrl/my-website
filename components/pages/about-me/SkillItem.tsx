@@ -3,7 +3,7 @@ import { SkillItemProps } from '@/lib/types';
 
 const SkillItem: FC<SkillItemProps> = ({ className = '', skill, value = 50 }) => {
 	return (
-		<div data-aos="fade-up" className={`${className} relative min-w-75`}>
+		<div className={`${className} relative min-w-75`}>
 			<p className="absolute bottom-3 font-medium uppercase">{skill}</p>
 			<p
 				className="absolute bottom-3 z-10 flex h-8 w-11 items-center justify-center rounded-sm border border-primary bg-background"
