@@ -1,17 +1,14 @@
 import { Metadata } from 'next';
-import { use } from 'react';
 import { useTranslations } from 'next-intl';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { pageMetadata } from '@/lib/seo';
 import { PAGES } from '@/lib/routes';
 import PageHeader from '@/components/common/PageHeader';
 import ContactForm from '@/components/pages/contact/ContactForm';
 
-export const generateMetadata = async ({
-	params,
-}: PageProps<'/[locale]/contact'>): Promise<Metadata> => {
-	const { locale } = await params;
-	const t = await getTranslations({ locale, namespace: 'ContactPage' });
+export const generateMetadata = async (): Promise<Metadata> => {
+	const locale = await getLocale();
+	const t = await getTranslations('ContactPage');
 
 	return pageMetadata({
 		locale,
@@ -21,11 +18,7 @@ export const generateMetadata = async ({
 	});
 };
 
-const ContactPage = ({ params }: PageProps<'/[locale]/contact'>) => {
-	const { locale } = use(params);
-
-	setRequestLocale(locale);
-
+const ContactPage = () => {
 	const t = useTranslations('ContactPage');
 
 	return (

@@ -229,9 +229,9 @@
 		"contact": "Contact"
 	},
 	"LocaleSwitcher": {
-		"label": "Swicth language",
+		"label": "Switch language",
 		"locale": "{locale, select, fr {FR} en {EN} other {language}}",
-		"imageAlt": "{locale, select, fr {french flag} en {united kingdom's flag} other {flag}}"
+		"name": "{locale, select, fr {Français} en {English} other {Language}}"
 	},
 	"TimelineItem": {
 		"responsibilities": "Responsibilities",

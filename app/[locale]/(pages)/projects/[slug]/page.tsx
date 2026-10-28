@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Suspense, use, ViewTransition } from 'react';
 import { useTranslations } from 'next-intl';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { BsGithub } from 'react-icons/bs';
 import { FiArrowLeft, FiArrowRight, FiCheckCircle, FiExternalLink } from 'react-icons/fi';
 import Reveal from '@/components/common/Reveal';
@@ -17,8 +17,9 @@ export const generateStaticParams = () => PROJECTS.map(({ slug }) => ({ slug }))
 export const generateMetadata = async ({
 	params,
 }: PageProps<'/[locale]/projects/[slug]'>): Promise<Metadata> => {
-	const { locale, slug } = await params;
-	const t = await getTranslations({ locale, namespace: 'projects' });
+	const { slug } = await params;
+	const locale = await getLocale();
+	const t = await getTranslations('projects');
 
 	if (!PROJECTS.some((project) => project.slug === slug)) return {};
 
@@ -46,9 +47,7 @@ const ProjectDetailsSkeleton = () => (
 );
 
 const ProjectDetails = ({ params }: Pick<PageProps<'/[locale]/projects/[slug]'>, 'params'>) => {
-	const { locale, slug } = use(params);
-
-	setRequestLocale(locale);
+	const { slug } = use(params);
 
 	const index = PROJECTS.findIndex((item) => item.slug === slug);
 

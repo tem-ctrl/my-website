@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import { Suspense, use } from 'react';
-import { useTranslations } from 'next-intl';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { Suspense } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { pageMetadata } from '@/lib/seo';
 import { PAGES } from '@/lib/routes';
 import AvailabilityBadge from '@/components/common/AvailabilityBadge';
@@ -17,11 +17,9 @@ import { cvPath, EXPERIENCES } from '@/lib/constants';
 import { formatMonth } from '@/lib/experience';
 import { FaDownload } from 'react-icons/fa';
 
-export const generateMetadata = async ({
-	params,
-}: PageProps<'/[locale]/about-me'>): Promise<Metadata> => {
-	const { locale } = await params;
-	const t = await getTranslations({ locale, namespace: 'AboutPage' });
+export const generateMetadata = async (): Promise<Metadata> => {
+	const locale = await getLocale();
+	const t = await getTranslations('AboutPage');
 
 	return pageMetadata({
 		locale,
@@ -31,11 +29,8 @@ export const generateMetadata = async ({
 	});
 };
 
-const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
-	const { locale } = use(params);
-
-	setRequestLocale(locale);
-
+const AboutPage = () => {
+	const locale = useLocale();
 	const t = useTranslations('AboutPage');
 
 	const personalInfo = ['name', 'lastName', 'phone', 'email', 'country', 'city'];

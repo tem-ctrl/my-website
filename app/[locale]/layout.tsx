@@ -1,10 +1,9 @@
 import '@/app/globals.css';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
-import { notFound } from 'next/navigation';
-import React, { Suspense } from 'react';
-import { hasLocale, NextIntlClientProvider } from 'next-intl';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { Suspense } from 'react';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import Providers from '@/components/layout/Providers';
 import Background from '@/components/layout/Background';
@@ -21,9 +20,8 @@ const roboto = Roboto({
 
 export const generateStaticParams = () => routing.locales.map((locale) => ({ locale }));
 
-export const generateMetadata = async ({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> => {
-	const { locale } = await params;
-	const t = await getTranslations({ locale, namespace: 'RootLayout' });
+export const generateMetadata = async (): Promise<Metadata> => {
+	const t = await getTranslations('RootLayout');
 
 	return {
 		metadataBase: new URL('https://gtemgoua.vercel.app'),
@@ -32,12 +30,9 @@ export const generateMetadata = async ({ params }: LayoutProps<'/[locale]'>): Pr
 	};
 };
 
-const RootLayout = async ({ children, params }: LayoutProps<'/[locale]'>) => {
-	const { locale } = await params;
-
-	if (!hasLocale(routing.locales, locale)) notFound();
-
-	setRequestLocale(locale);
+const RootLayout = async ({ children }: LayoutProps<'/[locale]'>) => {
+	// Unknown locales are rejected with notFound() in i18n/request.ts
+	const locale = await getLocale();
 
 	return (
 		<html lang={locale} className={roboto.variable} suppressHydrationWarning>

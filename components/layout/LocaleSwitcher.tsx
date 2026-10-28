@@ -1,76 +1,61 @@
 'use client';
 
-import { useLocale, useTranslations } from 'next-intl';
+import { useOptimistic, useTransition } from 'react';
+import { motion } from 'motion/react';
+import { Locale, useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
-import Image from 'next/image';
-import React, { useState, useTransition } from 'react';
-import { FaChevronDown } from 'react-icons/fa';
 
 const LocaleSwitcher = () => {
 	const t = useTranslations('LocaleSwitcher');
-	const [isPending, startTransition] = useTransition();
 	const locale = useLocale();
 	const router = useRouter();
 	const pathname = usePathname();
-	const [currentLocale, setCurrentLocale] = useState(locale);
-	const [showLanguages, setShowLanguages] = useState(false);
+	const [isPending, startTransition] = useTransition();
+	const [activeLocale, setActiveLocale] = useOptimistic(locale);
 
-	const onLocaleChanged = (locale: string): void => {
-		setCurrentLocale(locale);
+	const onLocaleChange = (nextLocale: Locale) => {
+		if (nextLocale === activeLocale) return;
+
 		startTransition(() => {
-			router.replace(pathname, { locale: locale, scroll: false });
+			setActiveLocale(nextLocale);
+			router.replace(pathname, { locale: nextLocale, scroll: false });
 		});
 	};
 
-	const flagSize = 18;
-	// Flags are 512x358
-	const flagHeight = Math.round((flagSize * 358) / 512);
-
 	return (
 		<div
-			className={`${
-				isPending && 'opacity-50 transition-opacity'
-			} relative flex h-full items-center justify-center text-sm`}
-			onMouseEnter={() => setShowLanguages(true)}
-			onMouseLeave={() => setShowLanguages(false)}
-			onClick={() => setShowLanguages(!showLanguages)}
+			role="group"
+			aria-label={t('label')}
+			aria-busy={isPending}
+			className="flex items-center rounded-full border border-border/60 bg-background/60 p-0.5 text-xs font-semibold"
 		>
-			<p className="sr-only">{t('label')}</p>
-			<div className="flex cursor-pointer items-center justify-start gap-1.5">
-				<Image
-					src={`/assets/images/${currentLocale}-flag.png`}
-					alt={t('imageAlt', { locale: currentLocale })}
-					width={flagSize}
-					height={flagHeight}
-					loading="eager"
-				/>
-				<span>{t('locale', { locale: currentLocale })}</span>
-				<FaChevronDown className={`${showLanguages && 'rotate-180'} inline text-sm`} />
+			{routing.locales.map((cur) => {
+				const isActive = cur === activeLocale;
 
-				{showLanguages && (
-					<div className="absolute top-12 -left-2 flex w-17.5 flex-col items-start gap-0 rounded-md border border-border bg-background p-0 [&>*:first-child]:rounded-t-md [&>*:last-child]:rounded-b-md">
-						{routing.locales
-							.filter((l) => !currentLocale.includes(l))
-							.map((cur) => (
-								<button
-									key={cur}
-									className="flex w-full items-center justify-start gap-2 px-3 py-1 hover:bg-primary hover:text-white"
-									onClick={() => onLocaleChanged(cur)}
-									name="language switcher"
-								>
-									<Image
-										src={`/assets/images/${cur}-flag.png`}
-										alt={t('imageAlt', { locale: cur })}
-										width={flagSize}
-										height={flagHeight}
-									/>
-									<span>{t('locale', { locale: cur })}</span>
-								</button>
-							))}
-					</div>
-				)}
-			</div>
+				return (
+					<button
+						key={cur}
+						type="button"
+						lang={cur}
+						aria-pressed={isActive}
+						aria-label={t('name', { locale: cur })}
+						onClick={() => onLocaleChange(cur)}
+						className={`${
+							isActive ? 'text-white' : 'text-foreground/70 hover:text-primary-text'
+						} relative cursor-pointer rounded-full px-2.5 py-1 transition-colors`}
+					>
+						{isActive && (
+							<motion.span
+								layoutId="locale-indicator"
+								className="absolute inset-0 rounded-full bg-primary shadow-md shadow-primary/30"
+								transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+							/>
+						)}
+						<span className="relative">{t('locale', { locale: cur })}</span>
+					</button>
+				);
+			})}
 		</div>
 	);
 };
