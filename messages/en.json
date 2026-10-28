@@ -91,8 +91,37 @@
 			"relocateToValue": "Anywhere"
 		},
 		"experience-1": {
-			"startDate": "Apr 2023",
-			"endDate": "ongoing",
+			"startDate": "Aug 2026",
+			"endDate": "Aug 2026",
+			"title": "AI Trainer",
+			"location": "Fully remote",
+			"place": "Micro1",
+			"description": {
+				"desc-1": "Record videos for AI model training, following detailed instructions down to the smallest details",
+				"desc-2": "Capture diverse image data under different lighting conditions, backgrounds and angles",
+				"desc-3": "Upload photos and videos and report issues found"
+			}
+		},
+		"experience-2": {
+			"startDate": "Jul 2024",
+			"endDate": "Apr 2026",
+			"title": "Web Developer",
+			"location": "Fully remote",
+			"place": "Scandiweb",
+			"description": {
+				"desc-1": "Build and ship full-stack features on ScandiPWA, a React + Redux + GraphQL storefront theme for Magento 2, for global e-commerce clients ranging from YC-stage startups to enterprise merchants",
+				"desc-2": "Engineer Magento 2 storefronts with Hyvä (Alpine.js + Tailwind CSS), optimizing for performance, accessibility and responsive behavior",
+				"desc-3": "Develop billing-critical interfaces and flows (pricing, totals and payment states) with careful edge-case handling",
+				"desc-4": "Integrate GraphQL queries and REST API calls with efficient, reusable data-fetching patterns",
+				"desc-5": "Build and maintain a WooCommerce e-commerce store",
+				"desc-6": "Build and maintain the company's internal employee management platform for project assignments and vacation planning, including custom scheduling algorithms",
+				"desc-7": "Debug issues across frontend, backend, database and network layers in large codebases",
+				"desc-8": "Write technical documentation for new features and collaborate with designers, product owners, project managers and clients across time zones"
+			}
+		},
+		"experience-3": {
+			"startDate": "Mar 2023",
+			"endDate": "Jul 2024",
 			"title": "Web Developer (freelance)",
 			"location": "Fully remote",
 			"place": "Bantubeat",

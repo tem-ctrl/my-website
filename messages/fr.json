@@ -91,8 +91,37 @@
 			"relocateToValue": "Partout"
 		},
 		"experience-1": {
-			"startDate": "Avr 2023",
-			"endDate": "en cours",
+			"startDate": "Août 2026",
+			"endDate": "Août 2026",
+			"title": "Entraîneur IA",
+			"location": "Télétravail",
+			"place": "Micro1",
+			"description": {
+				"desc-1": "Enregistrer des vidéos pour l'entraînement de modèles d'IA en suivant des instructions détaillées jusque dans les moindres détails",
+				"desc-2": "Capturer des données visuelles variées sous différents éclairages, arrière-plans et angles",
+				"desc-3": "Téléverser les photos et vidéos et signaler les anomalies constatées"
+			}
+		},
+		"experience-2": {
+			"startDate": "Juil 2024",
+			"endDate": "Avr 2026",
+			"title": "Développeur web",
+			"location": "Télétravail",
+			"place": "Scandiweb",
+			"description": {
+				"desc-1": "Concevoir et livrer des fonctionnalités full-stack sur ScandiPWA, un thème storefront React + Redux + GraphQL pour Magento 2, pour des clients e-commerce internationaux, des startups issues de Y Combinator aux grandes enseignes",
+				"desc-2": "Développer des boutiques Magento 2 avec Hyvä (Alpine.js + Tailwind CSS), optimisées pour la performance, l'accessibilité et le responsive",
+				"desc-3": "Développer des interfaces et parcours critiques pour la facturation (prix, totaux et états de paiement) avec une gestion rigoureuse des cas limites",
+				"desc-4": "Intégrer des requêtes GraphQL et des appels d'API REST avec des modèles de récupération de données efficaces et réutilisables",
+				"desc-5": "Développer et maintenir une boutique e-commerce WooCommerce",
+				"desc-6": "Développer et maintenir la plateforme interne de gestion des employés (affectation aux projets, planification des congés), incluant des algorithmes de planification sur mesure",
+				"desc-7": "Déboguer sur les couches frontend, backend, base de données et réseau dans de larges bases de code",
+				"desc-8": "Rédiger la documentation technique des nouvelles fonctionnalités et collaborer avec designers, product owners, chefs de projet et clients sur plusieurs fuseaux horaires"
+			}
+		},
+		"experience-3": {
+			"startDate": "Mars 2023",
+			"endDate": "Juil 2024",
 			"title": "Développeur web (freelance)",
 			"location": "Télétravail",
 			"place": "Bantubeat",

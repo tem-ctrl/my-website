@@ -45,8 +45,12 @@ const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
 		'jobLocation',
 		'relocateTo',
 	];
-	const experiences = [1];
-	const experienceDesc = [[1, 2, 3, 4, 5, 6]];
+	const experiences = [1, 2, 3];
+	const experienceDesc = [
+		[1, 2, 3],
+		[1, 2, 3, 4, 5, 6, 7, 8],
+		[1, 2, 3, 4, 5, 6],
+	];
 	const education = [1, 2, 3];
 
 	return (
