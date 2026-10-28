@@ -228,7 +228,7 @@
 		"projects": "Projects",
 		"contact": "Contact"
 	},
-	"LocaleSwitcher": {
+	"LocaleSwitch": {
 		"label": "Switch language",
 		"locale": "{locale, select, fr {FR} en {EN} other {language}}",
 		"name": "{locale, select, fr {Français} en {English} other {Language}}"

@@ -6,8 +6,8 @@ import { Locale, useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 
-const LocaleSwitcher = () => {
-	const t = useTranslations('LocaleSwitcher');
+const LocaleSwitch = () => {
+	const t = useTranslations('LocaleSwitch');
 	const locale = useLocale();
 	const router = useRouter();
 	const pathname = usePathname();
@@ -60,4 +60,4 @@ const LocaleSwitcher = () => {
 	);
 };
 
-export default LocaleSwitcher;
+export default LocaleSwitch;
