@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { use, ViewTransition } from 'react';
+import { Suspense, use, ViewTransition } from 'react';
 import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { BsGithub } from 'react-icons/bs';
@@ -32,7 +32,20 @@ export const generateMetadata = async ({
 
 const sectionTitle = 'mb-4 text-2xl font-bold';
 
-const ProjectDetailsPage = ({ params }: PageProps<'/[locale]/projects/[slug]'>) => {
+// Placeholder shown until the slug resolves; project links prefetch the full page, so it rarely shows
+const ProjectDetailsSkeleton = () => (
+	<div aria-hidden className="flex animate-pulse flex-col gap-12">
+		<div className="h-6 w-32 rounded-full bg-foreground/10" />
+		<div className="flex flex-col gap-5">
+			<div className="h-6 w-24 rounded-full bg-foreground/10" />
+			<div className="h-14 w-2/3 rounded-xl bg-foreground/10 md:h-16" />
+			<div className="h-6 w-full max-w-3xl rounded-xl bg-foreground/10" />
+		</div>
+		<div className="aspect-video w-full rounded-2xl bg-foreground/10" />
+	</div>
+);
+
+const ProjectDetails = ({ params }: Pick<PageProps<'/[locale]/projects/[slug]'>, 'params'>) => {
 	const { locale, slug } = use(params);
 
 	setRequestLocale(locale);
@@ -53,7 +66,7 @@ const ProjectDetailsPage = ({ params }: PageProps<'/[locale]/projects/[slug]'>) 
 	const description = t.raw('description') as string;
 
 	return (
-		<main className="mx-auto flex w-full max-w-6xl flex-col gap-12 py-10">
+		<>
 			<Link
 				href={PAGES.projects}
 				className="group flex w-fit items-center gap-2 font-medium text-foreground/70 hover:text-primary-text"
@@ -187,6 +200,7 @@ const ProjectDetailsPage = ({ params }: PageProps<'/[locale]/projects/[slug]'>) 
 			<nav className="grid gap-4 border-t border-line pt-10 sm:grid-cols-2">
 				<Link
 					href={PAGES.projectDetails(previous.slug)}
+					prefetch
 					className="group flex flex-col gap-1 rounded-2xl border border-border/60 bg-background/60 p-5 backdrop-blur-sm transition-colors hover:border-primary/50"
 				>
 					<span className="flex items-center gap-2 text-sm text-foreground/70">
@@ -199,6 +213,7 @@ const ProjectDetailsPage = ({ params }: PageProps<'/[locale]/projects/[slug]'>) 
 				</Link>
 				<Link
 					href={PAGES.projectDetails(next.slug)}
+					prefetch
 					className="group flex flex-col items-end gap-1 rounded-2xl border border-border/60 bg-background/60 p-5 text-right backdrop-blur-sm transition-colors hover:border-primary/50"
 				>
 					<span className="flex items-center gap-2 text-sm text-foreground/70">
@@ -210,8 +225,17 @@ const ProjectDetailsPage = ({ params }: PageProps<'/[locale]/projects/[slug]'>) 
 					</span>
 				</Link>
 			</nav>
-		</main>
+		</>
 	);
 };
+
+// `params` must be read inside Suspense, even with generateStaticParams, to keep navigations instant
+const ProjectDetailsPage = ({ params }: PageProps<'/[locale]/projects/[slug]'>) => (
+	<main className="mx-auto flex w-full max-w-6xl flex-col gap-12 py-10">
+		<Suspense fallback={<ProjectDetailsSkeleton />}>
+			<ProjectDetails params={params} />
+		</Suspense>
+	</main>
+);
 
 export default ProjectDetailsPage;

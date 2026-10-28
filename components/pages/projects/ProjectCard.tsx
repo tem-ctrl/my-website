@@ -66,7 +66,7 @@ const ProjectCard: FC<Project> = ({ className = '', slug, image, type, technolog
 				style={{ background: spotlight }}
 			/>
 
-			<Link href={PAGES.projectDetails(slug)} className="flex h-full flex-col">
+			<Link href={PAGES.projectDetails(slug)} prefetch className="flex h-full flex-col">
 				<div className="relative aspect-video overflow-hidden rounded-t-2xl">
 					<ViewTransition name={projectImageTransitionName(slug)}>
 						<Image
