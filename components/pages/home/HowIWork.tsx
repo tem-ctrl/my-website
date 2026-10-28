@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { FiCode, FiFigma, FiShare2 } from 'react-icons/fi';
 import Reveal from '@/components/common/Reveal';

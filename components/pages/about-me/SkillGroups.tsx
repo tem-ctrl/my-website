@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import Reveal from '@/components/common/Reveal';
 import { SKILL_GROUPS } from '@/lib/constants';

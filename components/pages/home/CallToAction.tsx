@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import { FiMail } from 'react-icons/fi';
 import Magnetic from '@/components/common/Magnetic';

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, useEffect, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { animate, useInView, useReducedMotion } from 'motion/react';
 
 interface CounterProps {

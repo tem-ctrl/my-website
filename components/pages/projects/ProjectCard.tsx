@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import React, { FC, MouseEvent, ViewTransition } from 'react';
+import { FC, MouseEvent, ViewTransition } from 'react';
 import {
 	motion,
 	useMotionTemplate,

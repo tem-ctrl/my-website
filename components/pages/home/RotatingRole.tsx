@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 
 interface RotatingRoleProps {

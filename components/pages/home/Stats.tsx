@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import Counter from '@/components/common/Counter';
 import Reveal from '@/components/common/Reveal';

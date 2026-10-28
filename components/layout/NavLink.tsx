@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, MouseEventHandler } from 'react';
+import { FC, MouseEventHandler } from 'react';
 import { motion } from 'motion/react';
 import { Link } from '@/i18n/navigation';
 

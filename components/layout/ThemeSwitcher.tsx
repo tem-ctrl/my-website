@@ -1,6 +1,6 @@
 'use client';
 
-import React, { MouseEvent } from 'react';
+import { MouseEvent } from 'react';
 import { flushSync } from 'react-dom';
 import { useTheme } from 'next-themes';
 import { BsFillSunFill, BsMoonFill } from 'react-icons/bs';

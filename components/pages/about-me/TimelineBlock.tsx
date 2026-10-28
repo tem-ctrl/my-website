@@ -1,11 +1,11 @@
 'use client';
 
-import React, { FC, useRef } from 'react';
+import { ReactNode, FC, useRef } from 'react';
 import { motion, useReducedMotion, useScroll, useSpring } from 'motion/react';
 
 interface TimelineBlockProps {
 	className?: string;
-	children?: React.ReactNode;
+	children?: ReactNode;
 	title: string;
 }
 

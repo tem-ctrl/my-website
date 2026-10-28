@@ -4,7 +4,7 @@ import PrimaryButton from '@/components/common/PrimaryButton';
 import SocialMedia from '@/components/pages/contact/SacialMedia';
 import { SOCIAL_MEDIA } from '@/lib/constants';
 import { useTranslations } from 'next-intl';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { FiLoader } from 'react-icons/fi';
 

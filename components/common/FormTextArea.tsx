@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Ref, TextareaHTMLAttributes, useId, useState } from 'react';
+import { ReactNode, Ref, TextareaHTMLAttributes, useId, useState } from 'react';
 import { FiCheck, FiX } from 'react-icons/fi';
 import { FieldStatus, statusRingClass } from '@/components/common/FormInput';
 
@@ -10,7 +10,7 @@ interface FormTextareaProps extends TextareaProps {
 	className?: string;
 	textareaClass?: string;
 	iconClass?: string;
-	icon?: React.ReactNode;
+	icon?: ReactNode;
 	status?: FieldStatus;
 	error?: string;
 	ref?: Ref<HTMLTextAreaElement>;

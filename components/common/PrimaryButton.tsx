@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ReactNode, ButtonHTMLAttributes, Ref } from 'react';
+import { ReactNode, ButtonHTMLAttributes, Ref } from 'react';
 
 type Mybutton = ButtonHTMLAttributes<HTMLButtonElement>;
 

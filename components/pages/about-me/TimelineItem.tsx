@@ -1,6 +1,6 @@
 import type { TimelineItem } from '@/lib/types';
 import { useTranslations } from 'next-intl';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { BiSolidCalendar } from 'react-icons/bi';
 import { MdLocationOn } from 'react-icons/md';
 import Reveal from '@/components/common/Reveal';

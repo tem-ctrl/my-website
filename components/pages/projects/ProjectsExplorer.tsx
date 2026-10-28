@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import ProjectCard from '@/components/pages/projects/ProjectCard';

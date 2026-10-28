@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, useCallback } from 'react';
+import { FC, useCallback } from 'react';
 import { InfoItemType } from '@/lib/types';
 import { formatDuration, monthsOfExperience } from '@/lib/experience';
 import Link from 'next/link';

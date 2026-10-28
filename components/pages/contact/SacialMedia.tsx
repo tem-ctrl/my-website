@@ -1,6 +1,6 @@
 import type { SocialMedia } from '@/lib/types';
 import Link from 'next/link';
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 const SocialMedia: FC<SocialMedia> = ({ className = '', link, icon, bgColor, name }) => {
 	return (

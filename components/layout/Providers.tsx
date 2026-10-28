@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 import { ThemeProvider } from 'next-themes';
 import { ProgressProvider } from '@bprogress/next/app';
 import { MotionConfig } from 'motion/react';

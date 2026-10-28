@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, KeyboardEvent, useRef, useState } from 'react';
+import { FC, KeyboardEvent, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import LocaleSwitch from '@/components/layout/LocaleSwitch';

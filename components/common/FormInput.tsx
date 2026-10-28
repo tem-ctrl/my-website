@@ -1,6 +1,6 @@
 'use client';
 
-import React, { InputHTMLAttributes, Ref, useId, useState } from 'react';
+import { ReactNode, InputHTMLAttributes, Ref, useId, useState } from 'react';
 import { FiCheck, FiX } from 'react-icons/fi';
 
 type InputProps = InputHTMLAttributes<HTMLInputElement>;
@@ -11,7 +11,7 @@ interface FormInputProps extends InputProps {
 	className?: string;
 	inputClass?: string;
 	iconClass?: string;
-	icon?: React.ReactNode;
+	icon?: ReactNode;
 	status?: FieldStatus;
 	error?: string;
 	ref?: Ref<HTMLInputElement>;

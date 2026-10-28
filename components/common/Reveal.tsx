@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 import { motion } from 'motion/react';
 
 interface RevealProps {

@@ -1,4 +1,4 @@
-import React, { ReactNode, AnchorHTMLAttributes, Ref } from 'react';
+import { ReactNode, AnchorHTMLAttributes, Ref } from 'react';
 import Link from 'next/link';
 import { MdOpenInNew } from 'react-icons/md';
 

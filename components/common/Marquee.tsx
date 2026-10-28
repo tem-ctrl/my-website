@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, ReactNode, useEffect, useRef, useState } from 'react';
+import { FC, ReactNode, useEffect, useRef, useState } from 'react';
 import { motion, useAnimationFrame, useMotionValue, useSpring } from 'motion/react';
 
 interface MarqueeProps {
