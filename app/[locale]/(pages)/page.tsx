@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
-import { use } from 'react';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { personJsonLd, pageMetadata } from '@/lib/seo';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import JsonLd from '@/components/common/JsonLd';
 import { CONTACT_EMAIL, SOCIAL_MEDIA, TECH_STACK } from '@/lib/constants';
 import { PAGES } from '@/lib/routes';
@@ -13,9 +12,9 @@ import HowIWork from '@/components/pages/home/HowIWork';
 import Stats from '@/components/pages/home/Stats';
 import TechMarquee from '@/components/pages/home/TechMarquee';
 
-export const generateMetadata = async ({ params }: PageProps<'/[locale]'>): Promise<Metadata> => {
-	const { locale } = await params;
-	const t = await getTranslations({ locale, namespace: 'HomePage' });
+export const generateMetadata = async (): Promise<Metadata> => {
+	const locale = await getLocale();
+	const t = await getTranslations('HomePage');
 
 	return pageMetadata({
 		locale,
@@ -25,11 +24,8 @@ export const generateMetadata = async ({ params }: PageProps<'/[locale]'>): Prom
 	});
 };
 
-const HomePage = ({ params }: PageProps<'/[locale]'>) => {
-	const { locale } = use(params);
-
-	setRequestLocale(locale);
-
+const HomePage = () => {
+	const locale = useLocale();
 	const t = useTranslations('HomePage');
 
 	return (

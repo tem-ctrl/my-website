@@ -3,7 +3,7 @@
 import React, { FC, KeyboardEvent, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
-import LocaleSwitcher from '@/components/layout/LocaleSwitcher';
+import LocaleSwitch from '@/components/layout/LocaleSwitch';
 import MenuToggle from '@/components/layout/MenuToggle';
 import NavLink from '@/components/layout/NavLink';
 import ThemeSwitcher from '@/components/layout/ThemeSwitcher';
@@ -99,7 +99,7 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 			<div className="flex w-5 items-center justify-center">
 				<ThemeSwitcher />
 			</div>
-			<LocaleSwitcher />
+			<LocaleSwitch />
 			<MenuToggle className="md:hidden" isOpen={showMenu} onToggle={() => setShowMenu(!showMenu)} />
 
 			{/* Mobile menu: springs open from the toggle, links slide in one after another */}

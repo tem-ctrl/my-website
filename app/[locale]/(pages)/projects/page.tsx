@@ -1,17 +1,14 @@
 import { Metadata } from 'next';
-import { use } from 'react';
 import { useTranslations } from 'next-intl';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { pageMetadata } from '@/lib/seo';
 import { PAGES } from '@/lib/routes';
 import PageHeader from '@/components/common/PageHeader';
 import ProjectsExplorer from '@/components/pages/projects/ProjectsExplorer';
 
-export const generateMetadata = async ({
-	params,
-}: PageProps<'/[locale]/projects'>): Promise<Metadata> => {
-	const { locale } = await params;
-	const t = await getTranslations({ locale, namespace: 'ProjectsPage' });
+export const generateMetadata = async (): Promise<Metadata> => {
+	const locale = await getLocale();
+	const t = await getTranslations('ProjectsPage');
 
 	return pageMetadata({
 		locale,
@@ -21,11 +18,7 @@ export const generateMetadata = async ({
 	});
 };
 
-const ProjectsPage = ({ params }: PageProps<'/[locale]/projects'>) => {
-	const { locale } = use(params);
-
-	setRequestLocale(locale);
-
+const ProjectsPage = () => {
 	const t = useTranslations('ProjectsPage');
 
 	return (
