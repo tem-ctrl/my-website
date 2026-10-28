@@ -23,7 +23,7 @@ const TimelineItem: FC<TimelineItem> = ({
 				<div className="flex items-center justify-start gap-3">
 					<BiSolidCalendar size={20} />
 					<p>
-						<span>{startDate}</span> &ndash; <span>{endDate ?? 'ongoing'}</span>
+						<span>{startDate}</span> &ndash; <span>{endDate ?? t('ongoing')}</span>
 					</p>
 				</div>
 				<h3 className="text-primary-text uppercase">

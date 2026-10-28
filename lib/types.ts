@@ -48,6 +48,15 @@ export interface TechItem {
 	icon: React.JSX.Element;
 }
 
+/** `YYYY-MM` */
+export type YearMonth = `${number}-${number}`;
+
+export interface Experience {
+	start: YearMonth;
+	/** Last month worked (inclusive), omitted while ongoing */
+	end?: YearMonth;
+}
+
 export interface SkillGroup {
 	key: 'frontend' | 'backend' | 'cms' | 'tools';
 	items: TechItem[];

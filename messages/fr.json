@@ -91,8 +91,6 @@
 			"relocateToValue": "Partout"
 		},
 		"experience-1": {
-			"startDate": "Août 2026",
-			"endDate": "Août 2026",
 			"title": "Entraîneur IA",
 			"location": "Télétravail",
 			"place": "Micro1",
@@ -103,8 +101,6 @@
 			}
 		},
 		"experience-2": {
-			"startDate": "Juil 2024",
-			"endDate": "Avr 2026",
 			"title": "Développeur web",
 			"location": "Télétravail",
 			"place": "Scandiweb",
@@ -120,8 +116,6 @@
 			}
 		},
 		"experience-3": {
-			"startDate": "Mars 2023",
-			"endDate": "Juil 2024",
 			"title": "Développeur web (freelance)",
 			"location": "Télétravail",
 			"place": "Bantubeat",
@@ -238,7 +232,8 @@
 		"imageAlt": "{locale, select, fr {drapeau français} en {drapeau britanique} other {drapeau}}"
 	},
 	"TimelineItem": {
-		"responsibilities": "Responsabilités"
+		"responsibilities": "Responsabilités",
+		"ongoing": "en cours"
 	},
 	"projects": {
 		"bantubeat": {

@@ -2,7 +2,7 @@
 
 import React, { FC, useCallback } from 'react';
 import { InfoItemType } from '@/lib/types';
-import { EXPERIENCE_START } from '@/lib/constants';
+import { formatDuration, monthsOfExperience } from '@/lib/experience';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
 
@@ -10,26 +10,7 @@ const InfoItem: FC<InfoItemType> = ({ className = '', label, value, isExperience
 	const isEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
 	const locale = useLocale();
 
-	const exp = useCallback((): string => {
-		const start = new Date(EXPERIENCE_START);
-		const today = new Date();
-		const isEn = locale.includes('en');
-
-		const m1 =
-			today.getMonth() - start.getMonth() + 12 * (today.getFullYear() - start.getFullYear());
-
-		const m = today.getDate() > 20 ? m1 + 1 : m1;
-		const y = Math.floor(m / 12);
-		const m2 = m % 12;
-
-		const mths = isEn ? `month${m2 > 1 ? 's' : ''}` : 'mois';
-		const yrs = isEn ? `year${y > 1 ? 's' : ''}` : `an${y > 1 ? 's' : ''}`;
-
-		if (y === 0) return `${m2} ${mths}`;
-		if (m2 === 0) return `${y} ${yrs}`;
-
-		return `${y} ${yrs} ${m2} ${mths}`;
-	}, [locale]);
+	const exp = useCallback((): string => formatDuration(monthsOfExperience(), locale), [locale]);
 
 	return (
 		<p className={`${className} flex gap-5`}>

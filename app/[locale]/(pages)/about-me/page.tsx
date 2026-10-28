@@ -12,7 +12,8 @@ import TimelineItem from '@/components/pages/about-me/TimelineItem';
 import SkillGroups from '@/components/pages/about-me/SkillGroups';
 import TimelineBlock from '@/components/pages/about-me/TimelineBlock';
 import PrimaryButtonLink from '@/components/common/PrimaryButtonLink';
-import { cvPath } from '@/lib/constants';
+import { cvPath, EXPERIENCES } from '@/lib/constants';
+import { formatMonth } from '@/lib/experience';
 import { FaDownload } from 'react-icons/fa';
 
 export const generateMetadata = async ({
@@ -45,7 +46,6 @@ const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
 		'jobLocation',
 		'relocateTo',
 	];
-	const experiences = [1, 2, 3];
 	const experienceDesc = [
 		[1, 2, 3],
 		[1, 2, 3, 4, 5, 6, 7, 8],
@@ -101,19 +101,23 @@ const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
 			<Separator />
 			<div className="grid w-full items-start gap-10 md:grid-cols-2">
 				<TimelineBlock title={t('experienceTitle')}>
-					{experiences.map((i) => (
-						<TimelineItem
-							key={`experience-${i}`}
-							startDate={t(`experience-${i}.startDate`)}
-							endDate={t(`experience-${i}.endDate`)}
-							title={t(`experience-${i}.title`)}
-							location={t(`experience-${i}.location`)}
-							place={t(`experience-${i}.place`)}
-							description={experienceDesc[i - 1].map((j) =>
-								t(`experience-${i}.description.desc-${j}`)
-							)}
-						/>
-					))}
+					{EXPERIENCES.map(({ start, end }, index) => {
+						const i = index + 1;
+
+						return (
+							<TimelineItem
+								key={`experience-${i}`}
+								startDate={formatMonth(start, locale)}
+								endDate={end && formatMonth(end, locale)}
+								title={t(`experience-${i}.title`)}
+								location={t(`experience-${i}.location`)}
+								place={t(`experience-${i}.place`)}
+								description={experienceDesc[index].map((j) =>
+									t(`experience-${i}.description.desc-${j}`)
+								)}
+							/>
+						);
+					})}
 				</TimelineBlock>
 
 				<TimelineBlock title={t('educationTitle')}>

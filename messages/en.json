@@ -91,8 +91,6 @@
 			"relocateToValue": "Anywhere"
 		},
 		"experience-1": {
-			"startDate": "Aug 2026",
-			"endDate": "Aug 2026",
 			"title": "AI Trainer",
 			"location": "Fully remote",
 			"place": "Micro1",
@@ -103,8 +101,6 @@
 			}
 		},
 		"experience-2": {
-			"startDate": "Jul 2024",
-			"endDate": "Apr 2026",
 			"title": "Web Developer",
 			"location": "Fully remote",
 			"place": "Scandiweb",
@@ -120,8 +116,6 @@
 			}
 		},
 		"experience-3": {
-			"startDate": "Mar 2023",
-			"endDate": "Jul 2024",
 			"title": "Web Developer (freelance)",
 			"location": "Fully remote",
 			"place": "Bantubeat",
@@ -238,7 +232,8 @@
 		"imageAlt": "{locale, select, fr {french flag} en {united kingdom's flag} other {flag}}"
 	},
 	"TimelineItem": {
-		"responsibilities": "Responsibilities"
+		"responsibilities": "Responsibilities",
+		"ongoing": "ongoing"
 	},
 	"projects": {
 		"bantubeat": {

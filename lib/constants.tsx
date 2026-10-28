@@ -1,4 +1,4 @@
-import { Project, SkillGroup, SocialMedia, TechItem } from '@/lib/types';
+import { Experience, Project, SkillGroup, SocialMedia, TechItem } from '@/lib/types';
 import { BiLogoLinkedin } from 'react-icons/bi';
 import { BsWhatsapp, BsGithub } from 'react-icons/bs';
 import { AiOutlineApi } from 'react-icons/ai';
@@ -140,8 +140,12 @@ export const SITE_URL = 'https://gtemgoua.vercel.app';
 
 export const CONTACT_EMAIL = 'gilbertemgoua@gmail.com';
 
-/** Start of professional experience, used to compute years of experience */
-export const EXPERIENCE_START = '2023-04-01';
+/** Work periods, in the same order as the `AboutPage.experience-N` messages */
+export const EXPERIENCES: Experience[] = [
+	{ start: '2026-08', end: '2026-08' }, // Micro1
+	{ start: '2024-07', end: '2026-04' }, // Scandiweb
+	{ start: '2023-03', end: '2024-07' }, // Bantubeat
+];
 
 export const cvPath = (locale: string) => `/cvs/gilbert_temgoua_cv_${locale}.pdf`;
 
