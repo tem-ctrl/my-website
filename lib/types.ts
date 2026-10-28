@@ -44,6 +44,8 @@ export interface Project {
 	/** Shown in the home page "Featured work" section */
 	featured?: boolean;
 	type?: ProjectType;
+	/** Company I built the project for/with, shown on the project page */
+	company?: string;
 	technologies?: string[];
 }
 

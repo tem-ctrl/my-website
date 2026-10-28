@@ -156,8 +156,9 @@ const ProjectDetails = ({ params }: Pick<PageProps<'/[locale]/projects/[slug]'>,
 						</Reveal>
 					)}
 					<Reveal>
-						<h2 className={sectionTitle}>{p('skills')}</h2>
-						<ul className="grid gap-3 sm:grid-cols-2">
+						<h2 className={sectionTitle}>{p('skills', { type: project.type ?? '' })}</h2>
+						{/* Short training skills fit two columns; longer contribution bullets read better in one */}
+						<ul className={`grid gap-3 ${project.type === 'education' ? 'sm:grid-cols-2' : ''}`}>
 							{t.rich('skills', {
 								sk: (skill) => (
 									<li className="flex items-start gap-3">
@@ -178,6 +179,14 @@ const ProjectDetails = ({ params }: Pick<PageProps<'/[locale]/projects/[slug]'>,
 							</h2>
 							<p className="font-medium">{project.type && filters(project.type)}</p>
 						</div>
+						{project.company && (
+							<div>
+								<h2 className="mb-2 text-sm font-semibold text-foreground/70 uppercase">
+									{p('company')}
+								</h2>
+								<p className="font-medium">{project.company}</p>
+							</div>
+						)}
 						<div>
 							<h2 className="mb-3 text-sm font-semibold text-foreground/70 uppercase">
 								{p('technologies')}
