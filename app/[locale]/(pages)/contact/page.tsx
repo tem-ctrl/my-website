@@ -35,7 +35,7 @@ const ContactPage = ({ params }: PageProps<'/[locale]/contact'>) => {
 				primaryText={t('PageHeader.primaryText')}
 				tagline={t('PageHeader.tagline')}
 			/>
-			<ContactForm className="mx-auto w-full lg:w-3/4" />
+			<ContactForm className="mx-auto w-full max-w-2xl" />
 		</main>
 	);
 };

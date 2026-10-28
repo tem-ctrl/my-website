@@ -11,22 +11,23 @@ export interface ContactState {
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Sends the contact form to CONTACT_EMAIL through Resend (https://resend.com/docs/api-reference/emails/send-email).
-// Requires RESEND_API_KEY; CONTACT_FROM_EMAIL is optional (needs a domain verified in Resend).
 export const sendContactMessage = async (
 	_previous: ContactState,
 	formData: FormData
 ): Promise<ContactState> => {
 	// Honeypot: invisible to humans, bots fill it in. Pretend it worked.
-	if (formData.get('company')) return { status: 'success' };
+	if (formData.get('website')) return { status: 'success' };
 
 	const name = String(formData.get('name') ?? '').trim();
 	const email = String(formData.get('email') ?? '').trim();
+	const company = String(formData.get('company') ?? '').trim();
 	const message = String(formData.get('message') ?? '').trim();
 
 	if (
 		name.length < 3 ||
 		name.length > 100 ||
 		!EMAIL_PATTERN.test(email) ||
+		company.length > 100 ||
 		message.length < 10 ||
 		message.length > 5000
 	) {
@@ -41,6 +42,8 @@ export const sendContactMessage = async (
 		return { status: 'error' };
 	}
 
+	const sender = company ? `${name} (${company})` : name;
+
 	try {
 		const response = await fetch('https://api.resend.com/emails', {
 			method: 'POST',
@@ -49,8 +52,8 @@ export const sendContactMessage = async (
 				from: process.env.CONTACT_FROM_EMAIL ?? 'Portfolio <onboarding@resend.dev>',
 				to: [CONTACT_EMAIL],
 				reply_to: email,
-				subject: `Portfolio: new message from ${name}`,
-				text: `${message}\n\n${name} <${email}>`,
+				subject: `Portfolio: new message from ${sender}`,
+				text: `${message}\n\n${sender} <${email}>`,
 			}),
 		});
 

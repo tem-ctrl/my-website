@@ -177,9 +177,10 @@
 			"tagline": "I'M ALWAYS OPEN TO DISCUSSION about WEB DEVELOPMENT, PARTNERSHIPS ..."
 		},
 		"invitation": "If you have any suggestion, project, job or just want to say Hi.. please fill out the form below or reach out to me via social media and I will reply you shortly.",
-		"namePlaceholder": "YOUR NAME",
-		"emailPlaceholder": "YOUR EMAIL",
-		"messagePlaceholder": "YOUR MESSAGE",
+		"namePlaceholder": "Your name",
+		"emailPlaceholder": "Your email",
+		"companyPlaceholder": "Your company (optional)",
+		"messagePlaceholder": "Your message",
 		"sendButtonText": "send",
 		"subject": "Message from {name} via gtemgoua.vercel.app",
 		"status": {
