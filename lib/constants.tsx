@@ -64,6 +64,70 @@ export const SOCIAL_MEDIA: SocialMedia[] = [
 
 export const PROJECTS: Project[] = [
 	{
+		slug: 'saloonprived',
+		title: 'saloonprived',
+		image: 'saloonprived.png',
+		previewLink: 'https://saloonprived.com/',
+		type: 'professional',
+		// TODO: confirm the full stack
+		technologies: ['Next.js'],
+	},
+	{
+		slug: 'featlink',
+		title: 'featlink',
+		image: 'featlink.png',
+		previewLink: 'https://feat-link.com/',
+		type: 'professional',
+		// TODO: confirm the full stack
+		technologies: ['Next.js'],
+	},
+	{
+		slug: 'dobell',
+		title: 'dobell',
+		image: 'dobell.png',
+		previewLink: 'https://www.dobell.co.uk/',
+		type: 'professional',
+		// TODO: confirm the full stack
+		technologies: ['Magento 2'],
+	},
+	{
+		slug: 'legeakademiet',
+		title: 'legeakademiet',
+		// TODO: replace with a real screenshot (the site blocks headless browsers)
+		image: 'legeakademiet.png',
+		previewLink: 'https://legeakademiet.dk/',
+		type: 'professional',
+		// TODO: confirm the full stack
+		technologies: ['Magento 2'],
+	},
+	{
+		slug: 'hoitolatukku',
+		title: 'hoitolatukku',
+		image: 'hoitolatukku.png',
+		previewLink: 'https://hoitolatukku.fi/',
+		type: 'professional',
+		technologies: ['WordPress', 'WooCommerce', 'Akeneo', 'PHP'],
+	},
+	{
+		slug: 'juliussilvert',
+		title: 'juliussilvert',
+		image: 'juliussilvert.png',
+		previewLink: 'https://my.juliussilvert.com/',
+		requiredAuth: true,
+		type: 'professional',
+		// TODO: confirm the full stack
+		technologies: ['Magento 2'],
+	},
+	{
+		slug: 'seriesaddict',
+		title: 'seriesaddict',
+		image: 'seriesaddict.png',
+		previewLink: 'https://seriesaddict.fr/',
+		type: 'professional',
+		// TODO: confirm the full stack
+		technologies: ['Vue.js'],
+	},
+	{
 		slug: 'panhomestores',
 		title: 'panhomestores',
 		image: 'panhomestores.png',
@@ -79,6 +143,24 @@ export const PROJECTS: Project[] = [
 		requiredAuth: true,
 		type: 'professional',
 		technologies: ['NextJs', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Sass'],
+	},
+	{
+		slug: 'open-source-guru',
+		title: 'open-source-guru',
+		image: 'open-source-guru.png',
+		githubLink: 'open-source-guru',
+		previewLink: 'https://open-source-guru.dev/',
+		type: 'personal',
+		technologies: ['Next.js', 'TypeScript', 'Fastify', 'PostgreSQL', 'Docker'],
+	},
+	{
+		slug: 'retrouve-moi',
+		title: 'retrouve-moi',
+		image: 'retrouve-moi.png',
+		githubLink: 'retrouve-moi',
+		previewLink: 'https://retrouve-moi.com/',
+		type: 'personal',
+		technologies: ['Next.js', 'TypeScript', 'Laravel', 'Tailwind CSS', 'Docker', 'Playwright'],
 	},
 	{
 		slug: 'kasa',

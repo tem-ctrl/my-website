@@ -31,6 +31,8 @@ export interface SocialMedia {
 	name?: string;
 }
 
+export type ProjectType = 'professional' | 'personal' | 'education';
+
 export interface Project {
 	className?: string;
 	slug: string;
@@ -39,7 +41,7 @@ export interface Project {
 	githubLink?: string;
 	previewLink?: string;
 	requiredAuth?: boolean;
-	type?: 'education' | 'professional';
+	type?: ProjectType;
 	technologies?: string[];
 }
 

@@ -81,9 +81,11 @@ const ProjectCard: FC<Project> = ({ className = '', slug, image, type, technolog
 					{type && (
 						<span
 							className={`absolute top-3 left-3 rounded-full px-3 py-1 text-xs font-semibold backdrop-blur-md ${
-								type === 'professional'
-									? 'bg-primary/90 text-white'
-									: 'bg-background/80 text-foreground'
+								{
+									professional: 'bg-primary/90 text-white',
+									personal: 'bg-background/80 text-primary-text',
+									education: 'bg-background/80 text-foreground',
+								}[type]
 							}`}
 						>
 							{t(`filters.${type}`)}

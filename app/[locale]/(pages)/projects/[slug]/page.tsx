@@ -66,9 +66,11 @@ const ProjectDetailsPage = ({ params }: PageProps<'/[locale]/projects/[slug]'>) 
 				{project.type && (
 					<span
 						className={`w-fit rounded-full px-3 py-1 text-xs font-semibold ${
-							project.type === 'professional'
-								? 'bg-primary text-white'
-								: 'border border-border bg-background/60'
+							{
+								professional: 'bg-primary text-white',
+								personal: 'border border-primary/50 bg-primary/10 text-primary-text',
+								education: 'border border-border bg-background/60',
+							}[project.type]
 						}`}
 					>
 						{filters(project.type)}

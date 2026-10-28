@@ -7,13 +7,12 @@ import ProjectCard from '@/components/pages/projects/ProjectCard';
 import { PROJECTS } from '@/lib/constants';
 import { Project } from '@/lib/types';
 
-const FILTERS = ['all', 'professional', 'education'] as const;
+const FILTERS = ['all', 'professional', 'personal', 'education'] as const;
 
 type Filter = (typeof FILTERS)[number];
 
-// Professional work gets wider cards (2 per row vs 3) to stand out from training projects
-const cardSpan = ({ type }: Project) =>
-	type === 'professional' ? 'lg:col-span-3' : 'lg:col-span-2';
+// Real-world work gets wider cards (2 per row vs 3) to stand out from training projects
+const cardSpan = ({ type }: Project) => (type === 'education' ? 'lg:col-span-2' : 'lg:col-span-3');
 
 const ProjectsExplorer: FC = () => {
 	const t = useTranslations('ProjectsPage.filters');

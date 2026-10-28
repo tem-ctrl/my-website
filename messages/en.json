@@ -174,6 +174,7 @@
 		"filters": {
 			"all": "All",
 			"professional": "Professional",
+			"personal": "Personal",
 			"education": "Training"
 		},
 		"viewProject": "View project"
@@ -236,12 +237,82 @@
 		"ongoing": "ongoing"
 	},
 	"projects": {
+		"saloonprived": {
+			"title": "SaloonPrived",
+			"purpose": "professional",
+			"description": "SaloonPrived is a video platform from the Bantubeat network, built to support and pay African content creators. Creators share their videos, grow an audience and withdraw their earnings through local payment methods such as mobile money. Accounts are shared with Bantubeat.",
+			"skills": "<sk>[TODO] Skills to be added</sk>",
+			"summary": "Content platform that lets African creators earn money from their videos."
+		},
+		"featlink": {
+			"title": "Featlink",
+			"purpose": "professional",
+			"description": "Featlink is a relational social network from the Bantubeat network. Members create a profile, discover other people and connect with them through an integrated chat.",
+			"skills": "<sk>[TODO] Skills to be added</sk>",
+			"summary": "Social network of the Bantubeat ecosystem for meeting and chatting with people."
+		},
+		"dobell": {
+			"title": "Dobell",
+			"purpose": "professional",
+			"description": "Dobell is a UK menswear brand founded in 2003 and specialized in formal wear: suits, tuxedos, morning suits, waistcoats and accessories. Its multistore Magento 2 webshop serves customers in the UK and internationally.",
+			"skills": "<sk>[TODO] Skills to be added</sk>",
+			"summary": "Multistore Magento 2 e-commerce for a UK formal menswear brand."
+		},
+		"legeakademiet": {
+			"title": "Legeakademiet",
+			"purpose": "professional",
+			"description": "Legeakademiet is a Danish webshop selling learning and developmental toys to parents, grandparents and institutions, with brands such as BRIO, Magna-Tiles and Educa. It runs as a multistore e-commerce platform.",
+			"skills": "<sk>[TODO] Skills to be added</sk>",
+			"summary": "Multistore e-commerce for a Danish retailer of educational toys."
+		},
+		"hoitolatukku": {
+			"title": "Hoitolatukku",
+			"purpose": "professional",
+			"description": "Suomen Hoitolatukku is the largest wholesaler for beauty and wellness professionals in Finland, with more than 5,500 products from over 75 brands. Its WordPress/WooCommerce store, with product data managed in Akeneo, lets registered salons order at trade prices with next-day delivery, and also offers training courses, a blog and a repair service.",
+			"skills": "<sk>[TODO] Skills to be added</sk>",
+			"summary": "WooCommerce B2B store, fed by Akeneo, for Finland’s largest beauty wholesaler."
+		},
+		"juliussilvert": {
+			"title": "Julius Silvert",
+			"purpose": "professional",
+			"description": "Julius Silvert is a food distributor founded in 1915 and based in Philadelphia. Its Magento B2B portal lets foodservice customers see their custom pricing, build order guides with requisition lists, reorder past orders and place orders before a daily cutoff for next-day delivery.",
+			"skills": "<sk>[TODO] Skills to be added</sk>",
+			"summary": "B2B Magento ordering portal for a Philadelphia food distributor."
+		},
+		"seriesaddict": {
+			"title": "Series Addict",
+			"purpose": "professional",
+			"description": "Series Addict is a French-language website specialized in American TV series, with news, reviews and editorial guides for fans.",
+			"skills": "<sk>[TODO] Skills to be added</sk>",
+			"summary": "French website dedicated to American TV series."
+		},
+		"panhomestores": {
+			"title": "Pan Home",
+			"purpose": "professional",
+			"description": "Best UAE store",
+			"skills": "<sk>Optimize a Magento 2 application</sk>",
+			"summary": "Optimized a large Magento 2 e-commerce store serving customers across the UAE."
+		},
 		"bantubeat": {
 			"title": "Bantubeat",
 			"purpose": "professional",
 			"description": "",
 			"skills": "<sk>Implement responsive interfaces</sk><sk>Integrate content according to a design</sk><sk>Consume REST and GraphQl APIs</sk><sk>Track and fix bugs</sk><sk>Clean and refactor the code of a web application</sk><sk>Collaborate effectively on a medium scale project</sk>",
 			"summary": "Led the front-end of a music platform built with Next.js, TypeScript and GraphQL."
+		},
+		"open-source-guru": {
+			"title": "Open Source Guru",
+			"purpose": "personal",
+			"description": "Open Source Guru helps developers find their next open-source contribution. After signing in with GitHub, users follow up to 50 repositories and the labels they care about (such as “good first issue” or “help wanted”), then receive instant, hourly or daily email alerts. It also tracks contributions with streaks and goals, offers a public profile with a README badge, and exposes a REST API for managing subscriptions.",
+			"skills": "<sk>[TODO] Skills to be added</sk>",
+			"summary": "Free, open-source service that emails developers when good first issues appear in repos they follow."
+		},
+		"retrouve-moi": {
+			"title": "Retrouve-moi",
+			"purpose": "personal",
+			"description": "Retrouve-moi is a free citizen platform for reporting and searching for missing people, lost objects and lost documents across the ten regions of Cameroon. Anyone can submit a report without an account; reports are browsable by region and on an interactive map, alongside case statistics and emergency numbers.",
+			"skills": "<sk>[TODO] Skills to be added</sk>",
+			"summary": "Citizen platform for reporting missing people and lost items in Cameroon."
 		},
 		"booki": {
 			"title": "Booki",
@@ -284,13 +355,6 @@
 			"description": "The Kasa site was coded more than 10 years ago in ASP.NET with significant legacy code. Laura, the CTO, therefore launched a total overhaul to move to a complete JavaScript stack with NodeJS on the back-end, and React on the front-end. Kasa also took the opportunity to order new models from his usual designer, who is freelance. A big project for this year!",
 			"skills": "<sk>Initialize an application with Create React App</sk><sk>Configure navigation between the application's pages with React Router</sk><sk>Develop elements of a website interface using React components</sk>",
 			"summary": "Rebuilt a rental platform front-end as a React single-page app with React Router."
-		},
-		"panhomestores": {
-			"title": "Pan Home",
-			"purpose": "professional",
-			"description": "Best UAE store",
-			"skills": "<sk>Optimize a Magento 2 application</sk>",
-			"summary": "Optimized a large Magento 2 e-commerce store serving customers across the UAE."
 		}
 	},
 	"Footer": {
