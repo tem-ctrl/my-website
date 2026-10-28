@@ -169,7 +169,7 @@ const ContactForm: FC<ContactFormProps> = ({ className = '' }) => {
 				tabIndex={-1}
 				autoComplete="off"
 				aria-hidden
-				className="absolute left-[9999px] size-px opacity-0"
+				className="pointer-events-none absolute top-0 left-0 size-px overflow-hidden opacity-0"
 			/>
 
 			<AnimatePresence mode="wait">

@@ -49,7 +49,7 @@ const RootLayout = async ({ children, params }: LayoutProps<'/[locale]'>) => {
 				<NextIntlClientProvider>
 					<Providers>
 						<Header />
-						<div className="w-full px-5 md:px-6 lg:px-14">{children}</div>
+						<div className="flex w-full flex-1 flex-col px-5 md:px-6 lg:px-14">{children}</div>
 						<Footer />
 					</Providers>
 				</NextIntlClientProvider>

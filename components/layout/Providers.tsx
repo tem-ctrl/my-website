@@ -11,7 +11,7 @@ const Providers: FC<{ children: ReactNode }> = ({ children }) => {
 			<ProgressProvider height="2px" color="var(--color-primary)" options={{ showSpinner: false }}>
 				{/* Animations respect the OS "reduce motion" setting */}
 				<MotionConfig reducedMotion="user">
-					<div className="pt-header">{children}</div>
+					<div className="flex min-h-dvh flex-col pt-header">{children}</div>
 				</MotionConfig>
 			</ProgressProvider>
 		</ThemeProvider>

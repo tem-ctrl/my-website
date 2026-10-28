@@ -29,7 +29,7 @@ const ContactPage = ({ params }: PageProps<'/[locale]/contact'>) => {
 	const t = useTranslations('ContactPage');
 
 	return (
-		<main className="flex min-h-page w-full flex-col items-center gap-8 py-5 md:gap-12 md:px-25 md:pt-10">
+		<main className="flex w-full flex-1 flex-col items-center gap-8 py-5 md:gap-10 md:px-25 md:py-8">
 			<PageHeader
 				simpleText={t('PageHeader.simpleText')}
 				primaryText={t('PageHeader.primaryText')}
