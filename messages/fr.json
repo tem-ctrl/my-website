@@ -183,6 +183,12 @@
 		"messagePlaceholder": "Votre message",
 		"sendButtonText": "ENVOYER",
 		"subject": "Message de {name} via gtemgoua.vercel.app",
+		"validation": {
+			"required": "Veuillez remplir ce champ.",
+			"tooShort": "Au moins {min} caractères.",
+			"tooLong": "Au plus {max} caractères.",
+			"invalidEmail": "Veuillez saisir une adresse email valide."
+		},
 		"status": {
 			"sending": "Envoi…",
 			"success": "Merci ! Votre message a bien été envoyé, je vous réponds très vite.",

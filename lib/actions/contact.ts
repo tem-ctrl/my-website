@@ -1,14 +1,13 @@
 'use server';
 
 import { CONTACT_EMAIL } from '@/lib/constants';
+import { CONTACT_FIELDS, validateContactField } from '@/lib/validation/contact';
 
 export type ContactStatus = 'idle' | 'success' | 'invalid' | 'error';
 
 export interface ContactState {
 	status: ContactStatus;
 }
-
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Sends the contact form to CONTACT_EMAIL through Resend (https://resend.com/docs/api-reference/emails/send-email).
 export const sendContactMessage = async (
@@ -24,12 +23,7 @@ export const sendContactMessage = async (
 	const message = String(formData.get('message') ?? '').trim();
 
 	if (
-		name.length < 3 ||
-		name.length > 100 ||
-		!EMAIL_PATTERN.test(email) ||
-		company.length > 100 ||
-		message.length < 10 ||
-		message.length > 5000
+		CONTACT_FIELDS.some((field) => validateContactField(field, String(formData.get(field) ?? '')))
 	) {
 		return { status: 'invalid' };
 	}
