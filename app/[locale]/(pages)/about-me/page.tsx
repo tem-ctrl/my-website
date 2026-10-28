@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { pageMetadata } from '@/lib/seo';
 import { PAGES } from '@/lib/routes';
+import AvailabilityBadge from '@/components/common/AvailabilityBadge';
 import InfoItem from '@/components/pages/about-me/InfoItem';
 import PageHeader from '@/components/common/PageHeader';
 import Photo from '@/components/common/Photo';
@@ -12,7 +13,8 @@ import TimelineItem from '@/components/pages/about-me/TimelineItem';
 import SkillGroups from '@/components/pages/about-me/SkillGroups';
 import TimelineBlock from '@/components/pages/about-me/TimelineBlock';
 import PrimaryButtonLink from '@/components/common/PrimaryButtonLink';
-import { cvPath } from '@/lib/constants';
+import { cvPath, EXPERIENCES } from '@/lib/constants';
+import { formatMonth } from '@/lib/experience';
 import { FaDownload } from 'react-icons/fa';
 
 export const generateMetadata = async ({
@@ -45,8 +47,11 @@ const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
 		'jobLocation',
 		'relocateTo',
 	];
-	const experiences = [1];
-	const experienceDesc = [[1, 2, 3, 4, 5, 6]];
+	const experienceDesc = [
+		[1, 2, 3],
+		[1, 2, 3, 4, 5, 6, 7, 8],
+		[1, 2, 3, 4, 5, 6],
+	];
 	const education = [1, 2, 3];
 
 	return (
@@ -59,6 +64,7 @@ const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
 			<div className="flex w-full items-start max-lg:items-center max-md:flex-col md:pt-3">
 				<Photo />
 				<div className="grid grid-cols-1 gap-x-8 gap-y-4 text-lg max-md:mt-5 lg:grid-cols-2">
+					<AvailabilityBadge className="col-span-full max-md:justify-self-center" />
 					<div className="col-span-1 flex flex-col gap-4">
 						{personalInfo.map((info, i) => (
 							<InfoItem
@@ -97,19 +103,23 @@ const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
 			<Separator />
 			<div className="grid w-full items-start gap-10 md:grid-cols-2">
 				<TimelineBlock title={t('experienceTitle')}>
-					{experiences.map((i) => (
-						<TimelineItem
-							key={`experience-${i}`}
-							startDate={t(`experience-${i}.startDate`)}
-							endDate={t(`experience-${i}.endDate`)}
-							title={t(`experience-${i}.title`)}
-							location={t(`experience-${i}.location`)}
-							place={t(`experience-${i}.place`)}
-							description={experienceDesc[i - 1].map((j) =>
-								t(`experience-${i}.description.desc-${j}`)
-							)}
-						/>
-					))}
+					{EXPERIENCES.map(({ start, end }, index) => {
+						const i = index + 1;
+
+						return (
+							<TimelineItem
+								key={`experience-${i}`}
+								startDate={formatMonth(start, locale)}
+								endDate={end && formatMonth(end, locale)}
+								title={t(`experience-${i}.title`)}
+								location={t(`experience-${i}.location`)}
+								place={t(`experience-${i}.place`)}
+								description={experienceDesc[index].map((j) =>
+									t(`experience-${i}.description.desc-${j}`)
+								)}
+							/>
+						);
+					})}
 				</TimelineBlock>
 
 				<TimelineBlock title={t('educationTitle')}>

@@ -2,12 +2,14 @@ import { getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import {
 	CONTACT_EMAIL,
+	EXPERIENCES,
 	PROJECTS,
 	SKILL_GROUPS,
 	SOCIAL_MEDIA,
 	cvPath,
 	SITE_URL,
 } from '@/lib/constants';
+import { formatDuration, formatMonth, monthsOfExperience } from '@/lib/experience';
 import { PAGES } from '@/lib/routes';
 import { localizedUrl } from '@/lib/seo';
 
@@ -134,14 +136,20 @@ export const buildLlmsFullTxt = async () => {
 		`- Name: Gilbert Temgoua Donkoo`,
 		`- Location: Yaoundé, Cameroon`,
 		`- Email: ${CONTACT_EMAIL}`,
-		`- Professional experience since April 2023`,
+		`- Professional experience: ${formatDuration(monthsOfExperience(), LOCALE)}`,
 		...['openToWork', 'availability', 'jobtype', 'jobLocation', 'relocateTo'].map(
 			(key) => `- ${professionalInfo[key]}: ${professionalInfo[`${key}Value`]}`
 		),
 		'',
 		`## ${t('experienceTitle')}`,
 		'',
-		...numbered(about, 'experience').flatMap(entry),
+		...numbered(about, 'experience')
+			.map((experience, i) => ({
+				...experience,
+				startDate: formatMonth(EXPERIENCES[i].start, LOCALE),
+				endDate: EXPERIENCES[i].end && formatMonth(EXPERIENCES[i].end, LOCALE),
+			}))
+			.flatMap(entry),
 		`## ${t('educationTitle')}`,
 		'',
 		...numbered(about, 'education').flatMap(entry),

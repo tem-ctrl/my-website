@@ -4,16 +4,11 @@ import React, { FC } from 'react';
 import { useTranslations } from 'next-intl';
 import Counter from '@/components/common/Counter';
 import Reveal from '@/components/common/Reveal';
-import { EXPERIENCE_START, PROJECTS, TECH_STACK } from '@/lib/constants';
+import { PROJECTS, TECH_STACK } from '@/lib/constants';
+import { monthsOfExperience } from '@/lib/experience';
 
 // Computed on the client so the value never goes stale in the static page
-const yearsOfExperience = () => {
-	const start = new Date(EXPERIENCE_START);
-	const now = new Date();
-	const months = (now.getFullYear() - start.getFullYear()) * 12 + now.getMonth() - start.getMonth();
-
-	return Math.floor(months / 12);
-};
+const yearsOfExperience = () => Math.floor(monthsOfExperience() / 12);
 
 const STATS = [
 	{ key: 'experience', value: yearsOfExperience, suffix: '+' },

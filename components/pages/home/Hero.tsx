@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { CSSProperties, FC } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { FiArrowRight, FiDownload } from 'react-icons/fi';
+import AvailabilityBadge from '@/components/common/AvailabilityBadge';
 import Magnetic from '@/components/common/Magnetic';
 import RotatingRole from '@/components/pages/home/RotatingRole';
 import { Link } from '@/i18n/navigation';
@@ -26,13 +27,7 @@ const Hero: FC = () => {
 	return (
 		<section className="grid min-h-page items-center gap-12 py-12 lg:grid-cols-[1.4fr_1fr]">
 			<div className="flex flex-col items-start gap-6 max-lg:order-2 max-lg:items-center max-lg:text-center">
-				<span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-primary-text motion-safe:animate-fade-up">
-					<span className="relative flex size-2">
-						<span className="absolute inline-flex size-full animate-ping rounded-full bg-online opacity-75" />
-						<span className="relative inline-flex size-2 rounded-full bg-online" />
-					</span>
-					{t('badge')}
-				</span>
+				<AvailabilityBadge className="motion-safe:animate-fade-up" />
 
 				<p className="text-lg text-foreground/80 motion-safe:animate-fade-up" style={delay(0.1)}>
 					{t('greeting')}
