@@ -7,19 +7,24 @@ import ProjectCard from '@/components/pages/projects/ProjectCard';
 import { PROJECTS } from '@/lib/constants';
 import { Project } from '@/lib/types';
 
-const FILTERS = ['all', 'professional', 'education'] as const;
+const FILTERS = ['all', 'professional', 'personal', 'education'] as const;
 
 type Filter = (typeof FILTERS)[number];
 
-// Professional work gets wider cards (2 per row vs 3) to stand out from training projects
-const cardSpan = ({ type }: Project) =>
-	type === 'professional' ? 'lg:col-span-3' : 'lg:col-span-2';
+// Professional work first, then personal, then training (stable sort keeps the in-group order)
+const TYPE_ORDER: Project['type'][] = ['professional', 'personal', 'education'];
+const SORTED_PROJECTS = PROJECTS.toSorted(
+	(a, b) => TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type)
+);
+
+// Real-world work gets wider cards (2 per row vs 3) to stand out from training projects
+const cardSpan = ({ type }: Project) => (type === 'education' ? 'lg:col-span-2' : 'lg:col-span-3');
 
 const ProjectsExplorer: FC = () => {
 	const t = useTranslations('ProjectsPage.filters');
 	const [filter, setFilter] = useState<Filter>('all');
 
-	const projects = PROJECTS.filter(({ type }) => filter === 'all' || type === filter);
+	const projects = SORTED_PROJECTS.filter(({ type }) => filter === 'all' || type === filter);
 	const count = (value: Filter) =>
 		value === 'all' ? PROJECTS.length : PROJECTS.filter(({ type }) => type === value).length;
 

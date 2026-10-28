@@ -174,13 +174,14 @@
 		"filters": {
 			"all": "Tous",
 			"professional": "Professionnel",
+			"personal": "Personnel",
 			"education": "Formation"
 		},
 		"viewProject": "Voir le projet"
 	},
 	"ProjectDetailsPage": {
 		"description": "{type, select, education {Scénario} other {Description}}",
-		"skills": "Compétences requises",
+		"skills": "{type, select, education {Compétences requises} other {Mes contributions}}",
 		"technologies": "Technologies utilisées",
 		"viewOnGithub": "Voir sur GitHub",
 		"visitSite": "Visiter le site",
@@ -188,6 +189,7 @@
 		"role": "Mon rôle",
 		"outcome": "Résultat",
 		"type": "Type",
+		"company": "Entreprise",
 		"links": "Liens",
 		"previous": "Projet précédent",
 		"next": "Projet suivant"
@@ -236,12 +238,87 @@
 		"ongoing": "en cours"
 	},
 	"projects": {
+		"saloonprived": {
+			"title": "SaloonPrived",
+			"purpose": "professional",
+			"description": "SaloonPrived est une plateforme vidéo du réseau Bantubeat, conçue pour soutenir et rémunérer les créateurs de contenu africains. Les créateurs partagent leurs vidéos, développent leur audience et retirent leurs gains via des moyens de paiement locaux comme le mobile money. Les comptes sont partagés avec Bantubeat.",
+			"skills": "<sk>Intégration de nombreuses pages de la plateforme</sk><sk>Installation et configuration du client GraphQL urql</sk><sk>Création de la page d’accueil avec un fil vidéo vertical façon TikTok</sk><sk>Création du composant de streaming vidéo avec hls.js</sk>",
+			"summary": "Plateforme de contenu qui permet aux créateurs africains de monétiser leurs vidéos."
+		},
+		"featlink": {
+			"title": "Featlink",
+			"purpose": "professional",
+			"description": "Featlink est un réseau social relationnel du réseau Bantubeat. Les membres créent un profil, découvrent d’autres personnes et échangent avec elles grâce à un chat intégré.",
+			"skills": "<sk>Intégration de nombreuses pages de l’application</sk><sk>Création du composant de swipe et de ses actions associées avec Framer Motion</sk>",
+			"summary": "Réseau social de l’écosystème Bantubeat pour faire des rencontres et discuter."
+		},
+		"dobell": {
+			"title": "Dobell",
+			"purpose": "professional",
+			"description": "Dobell est une marque britannique de prêt-à-porter masculin fondée en 2003, spécialisée dans les tenues de cérémonie : costumes, smokings, jaquettes, gilets et accessoires. Sa boutique Magento 2 multistore sert des clients au Royaume-Uni et à l’international.<br /><br />Le projet consistait à faire passer Magento de la version 2.4.4 à la 2.4.7 et à migrer la boutique du thème Magento par défaut vers ScandiPWA, en préservant toutes les fonctionnalités existantes et en ajoutant de nouvelles fonctionnalités convenues. Le point le plus critique concernait les paiements : les nouvelles boutiques devaient prendre en charge des moyens de paiement absents des anciennes, à savoir Google Pay, Apple Pay, Klarna, Clearpay (Royaume-Uni uniquement) et iDEAL (Pays-Bas uniquement).",
+			"role": "Développeur full-stack sur l’intégration des paiements Adyen, du back-end Magento au front-end ScandiPWA.",
+			"skills": "<sk>Mise à jour des modules PHP Adyen et adaptation des personnalisations Adyen existantes pour qu’elles continuent de fonctionner</sk><sk>Configuration des nouveaux moyens de paiement dans le compte Adyen</sk><sk>Création de resolvers GraphQL pour fournir les données de paiement au nouveau front-end ScandiPWA</sk><sk>Installation des modules JavaScript Adyen et écriture des requêtes et mutations GraphQL pour chaque moyen de paiement</sk><sk>Personnalisation des interfaces des moyens de paiement selon le design du site</sk>",
+			"summary": "Montée de version vers Magento 2.4.7 et migration vers ScandiPWA pour une marque britannique de prêt-à-porter masculin habillé, avec de nouveaux moyens de paiement Adyen."
+		},
+		"legeakademiet": {
+			"title": "Legeakademiet",
+			"purpose": "professional",
+			"description": "Legeakademiet est une boutique en ligne danoise qui vend des jouets éducatifs et d’éveil aux parents, grands-parents et institutions, avec des marques comme BRIO, Magna-Tiles et Educa. Elle fonctionne comme une plateforme e-commerce multistore.",
+			"skills": "<sk>Intégration des pages d’authentification et de compte client avec HTML, Alpine.js et Tailwind CSS</sk><sk>Mise en place de la connexion via Google, Facebook et Instagram</sk><sk>Refonte de la page d’accueil selon la nouvelle maquette</sk>",
+			"summary": "E-commerce multistore pour un distributeur danois de jouets éducatifs."
+		},
+		"hoitolatukku": {
+			"title": "Hoitolatukku",
+			"purpose": "professional",
+			"description": "Suomen Hoitolatukku est le plus grand grossiste finlandais pour les professionnels de la beauté et du bien-être, avec plus de 5 500 produits de plus de 75 marques. Sa boutique WordPress/WooCommerce, dont les données produits sont gérées dans Akeneo, permet aux salons inscrits de commander aux prix de gros avec livraison le lendemain, et propose aussi des formations, un blog et un service de réparation.",
+			"role": "Responsable de bout en bout du PIM Akeneo et de la boutique WooCommerce, de la phase de découverte avec le client jusqu’à la livraison.",
+			"skills": "<sk>Développement complet des produits groupés (bundles) : synchronisation ERP vers Akeneo, éditeur de bundles dans Akeneo, contrôleur REST WooCommerce sur mesure, et page produit, ajout au panier et synchronisation des stocks adaptés</sk><sk>Conception et développement de la fonctionnalité Événements, de la découverte à la mise en production, en concertation avec le client</sk><sk>Refonte des pages listing et produit dans Elementor, avec filtres et tri FacetWP</sk><sk>Nettoyage du code et suppression des plugins WordPress inutilisés sans rien casser sur le site</sk>",
+			"summary": "Boutique B2B WooCommerce, alimentée par Akeneo, pour le plus grand grossiste beauté de Finlande."
+		},
+		"juliussilvert": {
+			"title": "Julius Silvert",
+			"purpose": "professional",
+			"description": "Julius Silvert est un distributeur alimentaire fondé en 1915 et basé à Philadelphie. Son portail B2B Magento permet aux professionnels de la restauration de consulter leurs prix personnalisés, de créer des guides de commande avec des listes de réquisition, de recommander leurs commandes passées et de commander avant une heure limite pour être livrés le lendemain.<br /><br />Le projet consistait en une migration complète d’Adobe Commerce (Magento Enterprise Edition) vers Magento Open Source, couplée à une montée de version de Magento. Toutes les fonctionnalités existantes devaient être reproduites : les plus simples ont été développées de zéro, les autres reposent sur des extensions Magento 2 tierces que nous avons installées, configurées, personnalisées et, si nécessaire, alimentées par une migration de données.",
+			"skills": "<sk>Migration des données des comptes entreprise, des entreprises B2B natives d’Adobe Commerce vers Amasty Company Account</sk><sk>Installation, configuration et personnalisation d’Aheadworks Requisition Lists</sk><sk>Mise à jour des extensions Amasty Layered Navigation et de leur code personnalisé</sk>",
+			"summary": "Migration d’un portail de commande B2B Magento d’Adobe Commerce vers Magento Open Source, pour un distributeur alimentaire de Philadelphie."
+		},
+		"seriesaddict": {
+			"title": "Series Addict",
+			"purpose": "professional",
+			"description": "Series Addict est un site francophone spécialisé dans les séries TV américaines, avec des actualités, des critiques et des guides éditoriaux pour les fans.",
+			"role": "Développeur front-end, chargé de transformer les maquettes en pages de production connectées à l’API back-end.",
+			"skills": "<sk>Intégration de maquettes Figma en pages responsives, accessibles et fidèles au pixel près</sk><sk>Connexion des pages à l’API back-end, avec un rendu côté client ou côté serveur selon les besoins de chaque page</sk><sk>Mise en place de l’affichage et de la navigation paginée pour les longues listes de séries, d’articles d’actualité, etc.</sk><sk>Tests de fumée (smoke tests) et remontée des anomalies sur GitHub</sk>",
+			"summary": "Site français consacré aux séries TV américaines."
+		},
+		"panhomestores": {
+			"title": "Pan Home",
+			"purpose": "professionnel",
+			"description": "Meilleur fournisseur des Emirats Arabe Unis",
+			"skills": "<sk>Optimiser une boutique en ligne conçue avec a Magento 2</sk>",
+			"summary": "Optimisation d’une grande boutique e-commerce Magento 2 au service de clients aux Émirats arabes unis."
+		},
 		"bantubeat": {
 			"title": "Bantubeat",
 			"purpose": "professional",
 			"description": "",
-			"skills": "<sk>Implémenter des interfaces responsives</sk><sk>Intégrer du contenu conformément aux maquettes</sk><sk>Consommer des API REST et GraphQl</sk><sk>Tracker et résoudre les bugs</sk><sk>Nettoyer et réusiner le code d'une application web</sk><sk>Collaborer efficacement sur un projet de moyenne echelle</sk>",
+			"skills": "<sk>Intégration des pages à partir des maquettes Figma</sk><sk>Développement du formulaire musical multi-étapes et très dynamique, de la collecte des données à la soumission avec un indicateur de chargement visuel</sk><sk>Création des interfaces TypeScript pour les modèles de données de l’API</sk>",
 			"summary": "Direction du front-end d’une plateforme musicale construite avec Next.js, TypeScript et GraphQL."
+		},
+		"open-source-guru": {
+			"title": "Open Source Guru",
+			"purpose": "personal",
+			"description": "Open Source Guru aide les développeurs à trouver leur prochaine contribution open source. Après une connexion avec GitHub, l’utilisateur suit jusqu’à 50 dépôts et les labels qui l’intéressent (comme « good first issue » ou « help wanted »), puis reçoit des alertes par e-mail instantanées, horaires ou quotidiennes. Le service suit aussi les contributions avec des séries et des objectifs, propose un profil public avec un badge pour le README et expose une API REST pour gérer les abonnements.",
+			"role": "Projet en solo : j’ai tout conçu, développé et déployé, du schéma de base de données jusqu’au serveur de production.",
+			"skills": "<sk>Conception du schéma de base de données PostgreSQL et développement de l’API REST avec Fastify</sk><sk>Développement du worker en arrière-plan (pg-boss) qui surveille les dépôts suivis et envoie des alertes par e-mail instantanées, horaires ou quotidiennes</sk><sk>Mise en place de la connexion avec GitHub via une GitHub App et Better Auth</sk><sk>Création de l’identité visuelle de l’application</sk><sk>Développement du front-end Next.js</sk><sk>Création du site de documentation avec Fumadocs, incluant la référence OpenAPI de l’API publique</sk><sk>Écriture de tests unitaires et d’intégration avec Vitest, exécutés sur une vraie base PostgreSQL grâce à Testcontainers</sk><sk>Mise en place d’une chaîne CI/CD avec GitHub Actions : lint, vérification des commits selon Conventional Commits et tests, construction des images Docker et publication sur GitHub Container Registry, puis déploiement sur un VPS via SSH qui synchronise le fichier Docker Compose, récupère les images et reconstruit les conteneurs</sk><sk>Configuration du serveur NGINX, achat du nom de domaine et configuration du DNS</sk>",
+			"summary": "Service gratuit et open source qui alerte les développeurs par e-mail dès qu’une « good first issue » apparaît dans les dépôts qu’ils suivent."
+		},
+		"retrouve-moi": {
+			"title": "Retrouve-moi",
+			"purpose": "personal",
+			"description": "Retrouve-moi est une plateforme citoyenne gratuite pour signaler et rechercher des personnes disparues, des objets perdus et des documents égarés dans les dix régions du Cameroun. Chacun peut publier un signalement sans compte ; les annonces se consultent par région et sur une carte interactive, avec des statistiques et les numéros d’urgence.",
+			"role": "Projet en solo : j’ai tout conçu, développé et déployé, du schéma de base de données jusqu’au serveur de production.",
+			"skills": "<sk>Conception du schéma de base de données MySQL et développement de l’API REST avec Laravel, avec une authentification par jetons Sanctum et Redis pour le cache, les files d’attente et les sessions</sk><sk>Création de l’identité visuelle de l’application</sk><sk>Développement du front-end Next.js, dont une carte interactive Leaflet des signalements avec regroupement des marqueurs</sk><sk>Développement du parcours de signalement, accessible sans compte, avec des formulaires validés par react-hook-form et zod</sk><sk>Écriture de tests PHPUnit pour l’API, ainsi que de tests unitaires Vitest et de tests de bout en bout Playwright pour le front-end, avec MSW pour simuler l’API</sk><sk>Mise en place de la CI avec GitHub Actions : tests et build du front-end à chaque push, et construction des images Docker du front-end et de l’API publiées sur GitHub Container Registry</sk><sk>Déploiement de l’ensemble sur un VPS avec Docker Compose (Next.js, NGINX avec PHP-FPM, scheduler, Redis et MySQL) derrière un reverse proxy NGINX qui gère le TLS, et configuration du nom de domaine et de son DNS</sk>",
+			"summary": "Plateforme citoyenne de signalement des personnes disparues et objets perdus au Cameroun."
 		},
 		"booki": {
 			"title": "Booki",
@@ -284,13 +361,6 @@
 			"description": "Le site de Kasa a été codé il y a maintenant plus de 10 ans en ASP.NET avec un code legacy important. Laura, la CTO, a donc lancé une refonte totale pour passer à une stack complète en JavaScript avec NodeJS côté back-end, et React côté front-end. Kasa en a également profité pour commander de nouvelles maquettes auprès de son designer habituel, qui est en freelance. Un gros chantier pour cette année !",
 			"skills": "<sk>Initialiser une application avec Create React App</sk><sk>Configurer la navigation entre les pages de l'application avec React Router</sk><sk>Développer des éléments de l'interface d'un site web grâce à des composants React</sk>",
 			"summary": "Refonte du front-end d’une plateforme de location en application React avec React Router."
-		},
-		"panhomestores": {
-			"title": "Pan Home",
-			"purpose": "professionnel",
-			"description": "Meilleur fournisseur des Emirats Arabe Unis",
-			"skills": "<sk>Optimiser une boutique en ligne conçue avec a Magento 2</sk>",
-			"summary": "Optimisation d’une grande boutique e-commerce Magento 2 au service de clients aux Émirats arabes unis."
 		}
 	},
 	"Footer": {

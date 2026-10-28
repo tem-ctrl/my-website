@@ -31,6 +31,8 @@ export interface SocialMedia {
 	name?: string;
 }
 
+export type ProjectType = 'professional' | 'personal' | 'education';
+
 export interface Project {
 	className?: string;
 	slug: string;
@@ -39,7 +41,11 @@ export interface Project {
 	githubLink?: string;
 	previewLink?: string;
 	requiredAuth?: boolean;
-	type?: 'education' | 'professional';
+	/** Shown in the home page "Featured work" section */
+	featured?: boolean;
+	type?: ProjectType;
+	/** Company I built the project for/with, shown on the project page */
+	company?: string;
 	technologies?: string[];
 }
 

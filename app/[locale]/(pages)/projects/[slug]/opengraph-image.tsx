@@ -58,7 +58,7 @@ const OpengraphImage = async ({
 							padding: '6px 18px',
 							borderRadius: 999,
 							fontSize: 22,
-							backgroundColor: project.type === 'professional' ? '#8a2be2' : '#1f2937',
+							backgroundColor: project.type === 'education' ? '#1f2937' : '#8a2be2',
 						}}
 					>
 						{types(project.type)}

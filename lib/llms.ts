@@ -161,7 +161,7 @@ export const buildLlmsFullTxt = async () => {
 		'',
 		'## Projects',
 		'',
-		...PROJECTS.flatMap(({ slug, type, technologies = [], previewLink, githubLink }) => {
+		...PROJECTS.flatMap(({ slug, type, company, technologies = [], previewLink, githubLink }) => {
 			const project = projects[slug];
 			const description = plain(project.description ?? '');
 
@@ -169,6 +169,7 @@ export const buildLlmsFullTxt = async () => {
 				`### ${project.title}`,
 				'',
 				`- Type: ${type ? filters[type] : 'n/a'}`,
+				...(company ? [`- Company: ${company}`] : []),
 				`- Page: ${localizedUrl(LOCALE, PAGES.projectDetails(slug))}`,
 				...(previewLink?.startsWith('http') ? [`- Live site: ${previewLink}`] : []),
 				...(githubLink ? [`- Source code: https://github.com/tem-ctrl/${githubLink}`] : []),
@@ -177,7 +178,7 @@ export const buildLlmsFullTxt = async () => {
 				project.summary,
 				'',
 				...(description ? [description, ''] : []),
-				'Skills applied:',
+				type === 'education' ? 'Skills applied:' : 'My contributions:',
 				'',
 				...skillList(project.skills).map((skill) => `- ${skill}`),
 				'',
