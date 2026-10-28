@@ -11,7 +11,7 @@ const SkillGroups: FC<SkillGroupsProps> = ({ className = '' }) => {
 	const t = useTranslations('AboutPage.skillGroups');
 
 	return (
-		<div className={`${className} grid gap-6 md:grid-cols-3`}>
+		<div className={`${className} grid gap-6 md:grid-cols-2`}>
 			{SKILL_GROUPS.map(({ key, items }, i) => (
 				<Reveal
 					key={key}

@@ -165,6 +165,7 @@
 		"skillGroups": {
 			"frontend": "Front-end",
 			"backend": "Back-end & données",
+			"cms": "CMS & e-commerce",
 			"tools": "Outils & design"
 		}
 	},

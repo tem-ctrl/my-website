@@ -49,6 +49,6 @@ export interface TechItem {
 }
 
 export interface SkillGroup {
-	key: 'frontend' | 'backend' | 'tools';
+	key: 'frontend' | 'backend' | 'cms' | 'tools';
 	items: TechItem[];
 }
