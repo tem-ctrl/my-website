@@ -41,6 +41,8 @@ export interface Project {
 	githubLink?: string;
 	previewLink?: string;
 	requiredAuth?: boolean;
+	/** Shown in the home page "Featured work" section */
+	featured?: boolean;
 	type?: ProjectType;
 	technologies?: string[];
 }

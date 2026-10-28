@@ -83,6 +83,7 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		slug: 'dobell',
+		featured: true,
 		title: 'dobell',
 		image: 'dobell.png',
 		previewLink: 'https://www.dobell.co.uk/',
@@ -93,7 +94,7 @@ export const PROJECTS: Project[] = [
 	{
 		slug: 'legeakademiet',
 		title: 'legeakademiet',
-		// TODO: replace with a real screenshot (the site blocks headless browsers)
+		featured: true,
 		image: 'legeakademiet.png',
 		previewLink: 'https://legeakademiet.dk/',
 		type: 'professional',
@@ -102,6 +103,7 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		slug: 'hoitolatukku',
+		featured: true,
 		title: 'hoitolatukku',
 		image: 'hoitolatukku.png',
 		previewLink: 'https://hoitolatukku.fi/',
@@ -147,6 +149,7 @@ export const PROJECTS: Project[] = [
 	{
 		slug: 'open-source-guru',
 		title: 'open-source-guru',
+		featured: true,
 		image: 'open-source-guru.png',
 		githubLink: 'open-source-guru',
 		previewLink: 'https://open-source-guru.dev/',

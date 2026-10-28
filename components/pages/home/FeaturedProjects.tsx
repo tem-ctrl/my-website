@@ -8,7 +8,7 @@ import { Link } from '@/i18n/navigation';
 import { PROJECTS } from '@/lib/constants';
 import { PAGES } from '@/lib/routes';
 
-const FEATURED = PROJECTS.filter(({ type }) => type === 'professional');
+const FEATURED = PROJECTS.filter(({ featured }) => featured);
 
 const FeaturedProjects: FC = () => {
 	const t = useTranslations('HomePage.featured');
