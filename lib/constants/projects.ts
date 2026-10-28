@@ -7,8 +7,7 @@ export const PROJECTS: Project[] = [
 		image: 'saloonprived.png',
 		previewLink: 'https://saloonprived.com/',
 		type: 'professional',
-		// TODO: confirm the full stack
-		technologies: ['Next.js'],
+		technologies: ['NextJs', 'TypeScript', 'GraphQL'],
 	},
 	{
 		slug: 'featlink',
@@ -16,8 +15,7 @@ export const PROJECTS: Project[] = [
 		image: 'featlink.png',
 		previewLink: 'https://feat-link.com/',
 		type: 'professional',
-		// TODO: confirm the full stack
-		technologies: ['Next.js'],
+		technologies: ['NextJs', 'TypeScript', 'GraphQL'],
 	},
 	{
 		slug: 'dobell',
@@ -26,8 +24,7 @@ export const PROJECTS: Project[] = [
 		image: 'dobell.png',
 		previewLink: 'https://www.dobell.co.uk/',
 		type: 'professional',
-		// TODO: confirm the full stack
-		technologies: ['Magento 2'],
+		technologies: ['Magento 2', 'React', 'Redux', 'GraphQL', 'HTML', 'SCSS'],
 	},
 	{
 		slug: 'legeakademiet',
@@ -36,8 +33,7 @@ export const PROJECTS: Project[] = [
 		image: 'legeakademiet.png',
 		previewLink: 'https://legeakademiet.dk/',
 		type: 'professional',
-		// TODO: confirm the full stack
-		technologies: ['Magento 2'],
+		technologies: ['Magento 2', 'Hÿva', 'PHP', 'Alpine.Js'],
 	},
 	{
 		slug: 'hoitolatukku',
@@ -55,8 +51,7 @@ export const PROJECTS: Project[] = [
 		previewLink: 'https://my.juliussilvert.com/',
 		requiredAuth: true,
 		type: 'professional',
-		// TODO: confirm the full stack
-		technologies: ['Magento 2'],
+		technologies: ['Magento 2', 'Hÿva', 'PHP'],
 	},
 	{
 		slug: 'seriesaddict',
@@ -64,8 +59,7 @@ export const PROJECTS: Project[] = [
 		image: 'seriesaddict.png',
 		previewLink: 'https://seriesaddict.fr/',
 		type: 'professional',
-		// TODO: confirm the full stack
-		technologies: ['Vue.js'],
+		technologies: ['NextJs', 'TypeScript', 'HTML', 'CSS', 'SCSS', 'REST APIs'],
 	},
 	{
 		slug: 'panhomestores',
@@ -82,7 +76,7 @@ export const PROJECTS: Project[] = [
 		previewLink: 'https://bantubeat.com',
 		requiredAuth: true,
 		type: 'professional',
-		technologies: ['NextJs', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Sass'],
+		technologies: ['NextJs', 'Tailwind CSS', 'TypeScript', 'HTML', 'CSS', 'SCSS'],
 	},
 	{
 		slug: 'open-source-guru',
@@ -92,7 +86,7 @@ export const PROJECTS: Project[] = [
 		githubLink: 'open-source-guru',
 		previewLink: 'https://open-source-guru.dev/',
 		type: 'personal',
-		technologies: ['Next.js', 'TypeScript', 'Fastify', 'PostgreSQL', 'Docker'],
+		technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Fastify', 'PostgreSQL', 'Docker'],
 	},
 	{
 		slug: 'retrouve-moi',
@@ -110,7 +104,7 @@ export const PROJECTS: Project[] = [
 		githubLink: 'oc_p7_kasa',
 		previewLink: '',
 		type: 'education',
-		technologies: ['ReactJs', 'JavaScript', 'HTML', 'CSS', 'Sass'],
+		technologies: ['ReactJs', 'JavaScript', 'HTML', 'CSS', 'SCSS'],
 	},
 	{
 		slug: 'piiquante',
@@ -137,7 +131,7 @@ export const PROJECTS: Project[] = [
 		githubLink: 'oc_p4_panthere',
 		previewLink: 'https://tem-ctrl.github.io/oc_p4_panthere',
 		type: 'education',
-		technologies: ['HTML', 'CSS', 'Sass'],
+		technologies: ['HTML', 'CSS', 'SCSS'],
 	},
 	{
 		slug: 'ohmyfood',
@@ -146,7 +140,7 @@ export const PROJECTS: Project[] = [
 		githubLink: 'oc_p3_ohmyfood',
 		previewLink: 'https://tem-ctrl.github.io/oc_p3_ohmyfood',
 		type: 'education',
-		technologies: ['HTML', 'CSS', 'Sass'],
+		technologies: ['HTML', 'CSS', 'SCSS'],
 	},
 	{
 		slug: 'booki',
