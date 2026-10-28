@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { pageMetadata } from '@/lib/seo';
 import { PAGES } from '@/lib/routes';
+import AvailabilityBadge from '@/components/common/AvailabilityBadge';
 import InfoItem from '@/components/pages/about-me/InfoItem';
 import PageHeader from '@/components/common/PageHeader';
 import Photo from '@/components/common/Photo';
@@ -63,6 +64,7 @@ const AboutPage = ({ params }: PageProps<'/[locale]/about-me'>) => {
 			<div className="flex w-full items-start max-lg:items-center max-md:flex-col md:pt-3">
 				<Photo />
 				<div className="grid grid-cols-1 gap-x-8 gap-y-4 text-lg max-md:mt-5 lg:grid-cols-2">
+					<AvailabilityBadge className="col-span-full max-md:justify-self-center" />
 					<div className="col-span-1 flex flex-col gap-4">
 						{personalInfo.map((info, i) => (
 							<InfoItem
