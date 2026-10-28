@@ -30,7 +30,6 @@ const Marquee: FC<MarqueeProps> = ({ className = '', children, speed = 40, rever
 
 		if (!container || !copy) return;
 
-		// Fires once on observe, then on every resize (viewport, fonts, content)
 		const observer = new ResizeObserver(() => {
 			copyWidth.current = copy.offsetWidth;
 			setCopies(Math.max(2, Math.ceil(container.offsetWidth / copy.offsetWidth) + 1));

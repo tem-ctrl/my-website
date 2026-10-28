@@ -9,7 +9,6 @@ interface RevealProps {
 	delay?: number;
 }
 
-// Fades and slides its content up the first time it scrolls into view
 const Reveal: FC<RevealProps> = ({ className = '', children, delay = 0 }) => {
 	return (
 		<motion.div

@@ -90,7 +90,6 @@ const AboutPage = () => {
 						href={cvPath(locale)}
 						icon={<FaDownload />}
 						className="col-span-full w-fit! text-sm max-md:justify-self-center"
-						// newTab
 						download
 					/>
 				</div>

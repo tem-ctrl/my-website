@@ -77,7 +77,6 @@ const header = async () => {
 	];
 };
 
-/** Short index: who Gilbert is and where to find each piece of content */
 export const buildLlmsTxt = async () => {
 	const { projects, filters } = await loadContent();
 
@@ -110,7 +109,6 @@ export const buildLlmsTxt = async () => {
 	].join('\n');
 };
 
-/** Everything a model needs to answer questions about Gilbert, in one file */
 export const buildLlmsFullTxt = async () => {
 	const { about, projects, filters } = await loadContent();
 	const t = await getTranslations({ locale: LOCALE, namespace: 'AboutPage' });

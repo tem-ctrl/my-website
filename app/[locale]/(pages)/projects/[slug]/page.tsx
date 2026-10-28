@@ -33,7 +33,7 @@ export const generateMetadata = async ({
 
 const sectionTitle = 'mb-4 text-2xl font-bold';
 
-// Placeholder shown until the slug resolves; project links prefetch the full page, so it rarely shows
+// Rarely shows: project links prefetch the full page
 const ProjectDetailsSkeleton = () => (
 	<div aria-hidden className="flex animate-pulse flex-col gap-12">
 		<div className="h-6 w-32 rounded-full bg-foreground/10" />

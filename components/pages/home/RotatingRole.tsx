@@ -8,7 +8,6 @@ interface RotatingRoleProps {
 	interval?: number;
 }
 
-// Cycles through `roles`, sliding each one in from below
 const RotatingRole: FC<RotatingRoleProps> = ({ roles, interval = 2500 }) => {
 	const [index, setIndex] = useState(0);
 

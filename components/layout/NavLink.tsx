@@ -9,7 +9,6 @@ interface NavLinkProps {
 	href: string;
 	text: string;
 	isActive?: boolean;
-	/** Shared layout id of the sliding indicator; the indicator renders when `showIndicator` */
 	indicatorId?: string;
 	showIndicator?: boolean;
 	onClick?: MouseEventHandler<HTMLAnchorElement>;

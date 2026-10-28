@@ -31,7 +31,6 @@ export const generateMetadata = async (): Promise<Metadata> => {
 };
 
 const RootLayout = async ({ children }: LayoutProps<'/[locale]'>) => {
-	// Unknown locales are rejected with notFound() in i18n/request.ts
 	const locale = await getLocale();
 
 	return (

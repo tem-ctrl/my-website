@@ -7,7 +7,7 @@ import { BsFillSunFill, BsMoonFill } from 'react-icons/bs';
 
 // Both icons are rendered and CSS picks the visible one, so the server markup
 // is correct for either theme and there is no hydration flash.
-const ThemeSwitcher = () => {
+const ThemeSwitch = () => {
 	const { resolvedTheme, setTheme } = useTheme();
 
 	// The new theme is revealed as a circle growing from the button (View Transitions API).
@@ -58,4 +58,4 @@ const ThemeSwitcher = () => {
 	);
 };
 
-export default ThemeSwitcher;
+export default ThemeSwitch;

@@ -9,7 +9,6 @@ interface TimelineBlockProps {
 	title: string;
 }
 
-// The purple line draws itself as the block scrolls through the viewport
 const TimelineBlock: FC<TimelineBlockProps> = ({ className = '', children = <></>, title }) => {
 	const ref = useRef<HTMLDivElement>(null);
 	const reduceMotion = useReducedMotion();

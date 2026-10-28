@@ -9,7 +9,6 @@ interface CounterProps {
 	suffix?: string;
 }
 
-// Counts up from 0 to `value` the first time it scrolls into view
 const Counter: FC<CounterProps> = ({ className = '', value, suffix = '' }) => {
 	const ref = useRef<HTMLSpanElement>(null);
 	const isInView = useInView(ref, { once: true, margin: '-40px' });

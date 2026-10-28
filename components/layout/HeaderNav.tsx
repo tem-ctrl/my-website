@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 import LocaleSwitch from '@/components/layout/LocaleSwitch';
 import MenuToggle from '@/components/layout/MenuToggle';
 import NavLink from '@/components/layout/NavLink';
-import ThemeSwitcher from '@/components/layout/ThemeSwitcher';
+import ThemeSwitch from '@/components/layout/ThemeSwitch';
 import { usePathname } from '@/i18n/navigation';
 import { PAGES } from '@/lib/routes';
 import { CustomLink } from '@/lib/types';
@@ -57,7 +57,6 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 	const isActive = (href: string) =>
 		href === PAGES.home ? pathName === href : pathName.startsWith(href);
 
-	// The indicator follows the hovered link and falls back to the active one
 	const highlightedHref = hoveredHref ?? navLinks.find(({ href }) => isActive(href))?.href;
 
 	const onStepOut = () => {
@@ -77,7 +76,6 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 			onKeyDown={onKeyDown}
 			ref={menuRef}
 		>
-			{/* Desktop links with the sliding indicator */}
 			<ul
 				className="flex items-center gap-6 max-md:hidden"
 				onMouseLeave={() => setHoveredHref(null)}
@@ -97,12 +95,11 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 			</ul>
 
 			<div className="flex w-5 items-center justify-center">
-				<ThemeSwitcher />
+				<ThemeSwitch />
 			</div>
 			<LocaleSwitch />
 			<MenuToggle className="md:hidden" isOpen={showMenu} onToggle={() => setShowMenu(!showMenu)} />
 
-			{/* Mobile menu: springs open from the toggle, links slide in one after another */}
 			<AnimatePresence>
 				{showMenu && (
 					<motion.div

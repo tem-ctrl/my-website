@@ -13,7 +13,6 @@ interface PageMetadataOptions {
 	description: string;
 }
 
-// Title/description plus canonical URL, hreflang alternates and social cards for a localized page.
 // OG/Twitter images come from the opengraph-image / twitter-image files of each route.
 export const pageMetadata = ({
 	locale,
@@ -32,7 +31,6 @@ export const pageMetadata = ({
 				...Object.fromEntries(routing.locales.map((l) => [l, localizedUrl(l, path)])),
 				'x-default': localizedUrl(routing.defaultLocale, path),
 			},
-			// Markdown version of the site for LLMs and AI agents
 			types: { 'text/markdown': `${SITE_URL}/llms.txt` },
 		},
 		openGraph: {
@@ -56,7 +54,6 @@ interface PersonJsonLdOptions {
 	email: string;
 }
 
-// schema.org Person + WebSite graph for the home page
 export const personJsonLd = ({
 	locale,
 	jobTitle,

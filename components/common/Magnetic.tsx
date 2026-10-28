@@ -9,7 +9,6 @@ interface MagneticProps {
 	strength?: number;
 }
 
-// Pulls its content slightly towards the cursor while hovered
 const Magnetic: FC<MagneticProps> = ({ className = '', children, strength = 0.3 }) => {
 	const x = useSpring(useMotionValue(0), { stiffness: 200, damping: 15 });
 	const y = useSpring(useMotionValue(0), { stiffness: 200, damping: 15 });

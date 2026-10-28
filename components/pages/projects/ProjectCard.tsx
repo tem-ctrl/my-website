@@ -59,7 +59,6 @@ const ProjectCard: FC<Project> = ({ className = '', slug, image, type, technolog
 			onMouseMove={onMouseMove}
 			onMouseLeave={onMouseLeave}
 		>
-			{/* Cursor spotlight */}
 			<motion.div
 				aria-hidden
 				className="pointer-events-none absolute inset-0 z-10 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -92,7 +91,6 @@ const ProjectCard: FC<Project> = ({ className = '', slug, image, type, technolog
 						</span>
 					)}
 
-					{/* Details reveal */}
 					<div className="absolute inset-x-0 bottom-0 flex translate-y-full items-center justify-center gap-2 bg-linear-to-t from-bg-dark/80 to-transparent pt-10 pb-4 font-medium text-white transition-transform duration-300 group-hover:translate-y-0">
 						{t('viewProject')}
 						<FiArrowRight />

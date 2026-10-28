@@ -9,7 +9,6 @@ export interface ContactState {
 	status: ContactStatus;
 }
 
-// Sends the contact form to CONTACT_EMAIL through Resend (https://resend.com/docs/api-reference/emails/send-email).
 export const sendContactMessage = async (
 	_previous: ContactState,
 	formData: FormData

@@ -37,7 +37,6 @@ const HomePage = () => {
 					description: t('description'),
 					email: CONTACT_EMAIL,
 					knowsAbout: TECH_STACK.map(({ name }) => name),
-					// Public profiles only (not WhatsApp)
 					sameAs: SOCIAL_MEDIA.filter(({ name }) => name !== 'whatsapp').map(({ link }) => link),
 				})}
 			/>

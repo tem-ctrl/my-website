@@ -20,7 +20,6 @@ const screenshotDataUrl = async (image: string) => {
 	return `data:${mime};base64,${data.toString('base64')}`;
 };
 
-// Social preview: brand background, project title, summary and stack, with the screenshot
 const OpengraphImage = async ({
 	params,
 }: {

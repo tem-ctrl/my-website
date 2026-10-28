@@ -4,7 +4,7 @@ interface JsonLdProps {
 	data: Record<string, unknown>;
 }
 
-// Structured data for search engines; `<` is escaped so the JSON can't close the script tag
+// `<` is escaped so the JSON can't close the script tag
 const JsonLd: FC<JsonLdProps> = ({ data }) => {
 	return (
 		<script

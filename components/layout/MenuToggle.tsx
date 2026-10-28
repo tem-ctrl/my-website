@@ -11,7 +11,6 @@ interface MenuToggleProps {
 
 const transition = { type: 'spring', stiffness: 400, damping: 25 } as const;
 
-// Hamburger icon whose three bars morph into a cross when the menu is open
 const MenuToggle: FC<MenuToggleProps> = ({ className = '', isOpen, onToggle }) => {
 	return (
 		<button
