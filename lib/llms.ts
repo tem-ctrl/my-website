@@ -134,7 +134,7 @@ export const buildLlmsFullTxt = async () => {
 		'## Profile',
 		'',
 		`- Name: Gilbert Temgoua Donkoo`,
-		`- Location: Yaoundé, Cameroon`,
+		`- Location: Bafoussam, Cameroon`,
 		`- Email: ${CONTACT_EMAIL}`,
 		`- Professional experience: ${formatDuration(monthsOfExperience(), LOCALE)}`,
 		...['openToWork', 'availability', 'jobtype', 'jobLocation', 'relocateTo'].map(

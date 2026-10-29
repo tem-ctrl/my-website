@@ -78,7 +78,7 @@ export const personJsonLd = ({
 			jobTitle,
 			description,
 			email: `mailto:${email}`,
-			address: { '@type': 'PostalAddress', addressLocality: 'Yaoundé', addressCountry: 'CM' },
+			address: { '@type': 'PostalAddress', addressLocality: 'Bafoussam', addressCountry: 'CM' },
 			knowsLanguage: ['en', 'fr'],
 			knowsAbout,
 			sameAs,
