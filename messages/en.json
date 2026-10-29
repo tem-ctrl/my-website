@@ -1,17 +1,17 @@
 {
 	"RootLayout": {
 		"title": "Gilbert Temgoua - Web Developer",
-		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowledge of the ReactJs and NextJS ecosystem. I'm open to work immediately."
+		"description": "Remote web developer building fast, accessible web apps with React, Next.js and TypeScript. Former front-end team lead, available now."
 	},
 	"HomePage": {
 		"title": "Home - Gilbert Temgoua",
-		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowledge of the ReactJs and NextJS ecosystem. I'm open to work immediately.",
+		"description": "Remote web developer building fast, accessible web apps with React, Next.js and TypeScript. Former front-end team lead, available now.",
 		"hero": {
 			"badge": "Available for new opportunities",
 			"greeting": "Hi, I’m Gilbert Temgoua",
 			"headline": "I build fast, polished web apps people love to use.",
 			"rolePrefix": "Web Developer specialized in",
-			"intro": "Based in Yaoundé, Cameroon, I turn designs into fast, accessible and maintainable products, and I’ve led front-end teams doing it.",
+			"intro": "Based in Bafoussam, Cameroon, I turn designs into fast, accessible and maintainable products, and I’ve led front-end teams doing it.",
 			"viewWork": "View my work",
 			"downloadCv": "Download CV",
 			"photoAlt": "Portrait of Gilbert Temgoua"
@@ -56,7 +56,7 @@
 	},
 	"AboutPage": {
 		"title": "About Me - Gilbert Temgoua",
-		"description": "I am a passionate web developer based in Yaounde, Cameroon. I have a strong knowledge of the ReactJs and NextJS ecosystem. I'm open to work immediately.",
+		"description": "Remote web developer building fast, accessible web apps with React, Next.js and TypeScript. Former front-end team lead, available now.",
 		"PageHeader": {
 			"simpleText": "About",
 			"primaryText": "me",
@@ -74,7 +74,7 @@
 			"country": "Country",
 			"countryValue": "Cameroon",
 			"city": "City",
-			"cityValue": "Yaounde"
+			"cityValue": "Bafoussam"
 		},
 		"professionalInfo": {
 			"experience": "Experience",

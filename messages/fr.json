@@ -1,17 +1,17 @@
 {
 	"RootLayout": {
 		"title": "Gilbert Temgoua - Développeur web",
-		"description": "Je suis un développeur web passionné basé à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement."
+		"description": "Développeur web en télétravail : applications web rapides et accessibles avec React, Next.js et TypeScript. Ancien lead front-end, disponible."
 	},
 	"HomePage": {
 		"title": "Accueil - Gilbert Temgoua: Développeur web",
-		"description": "Je suis un développeur web passionné basé à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement.",
+		"description": "Développeur web en télétravail : applications web rapides et accessibles avec React, Next.js et TypeScript. Ancien lead front-end, disponible.",
 		"hero": {
 			"badge": "Disponible pour de nouvelles opportunités",
 			"greeting": "Bonjour, je suis Gilbert Temgoua",
 			"headline": "Je crée des applications web rapides et soignées que les utilisateurs adorent.",
 			"rolePrefix": "Développeur web spécialisé en",
-			"intro": "Basé à Yaoundé, au Cameroun, je transforme des maquettes en produits rapides, accessibles et maintenables, et j’ai dirigé des équipes front-end pour le faire.",
+			"intro": "Basé à Bafoussam, au Cameroun, je transforme des maquettes en produits rapides, accessibles et maintenables, et j’ai dirigé des équipes front-end pour le faire.",
 			"viewWork": "Voir mes projets",
 			"downloadCv": "Télécharger mon CV",
 			"photoAlt": "Portrait de Gilbert Temgoua"
@@ -56,7 +56,7 @@
 	},
 	"AboutPage": {
 		"title": "A propos De Moi - Gilbert Temgoua",
-		"description": "Je suis un développeur web passionné basé à Yaoundé, Cameroun. J'ai une connaissance approfondie des écosystèmes ReactJs et NextJs. Je suis disponible travailler immédiatement.",
+		"description": "Développeur web en télétravail : applications web rapides et accessibles avec React, Next.js et TypeScript. Ancien lead front-end, disponible.",
 		"PageHeader": {
 			"simpleText": "A propos",
 			"primaryText": "de moi",
@@ -74,7 +74,7 @@
 			"country": "Pays",
 			"countryValue": "Cameroun",
 			"city": "Ville",
-			"cityValue": "Yaounde"
+			"cityValue": "Bafoussam"
 		},
 		"professionalInfo": {
 			"experience": "Expérience",
