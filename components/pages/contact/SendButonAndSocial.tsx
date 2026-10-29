@@ -1,5 +1,6 @@
 'use client';
 
+import Magnetic from '@/components/common/Magnetic';
 import PrimaryButton from '@/components/common/PrimaryButton';
 import SocialMedia from '@/components/pages/contact/SacialMedia';
 import { SOCIAL_MEDIA } from '@/lib/constants';
@@ -21,13 +22,15 @@ const SendButtonAndSocial: FC<SendButtonAndSocialProps> = ({
 
 	return (
 		<div className={`${className}`}>
-			<PrimaryButton
-				type="submit"
-				disabled={isPending}
-				text={isPending ? t('status.sending') : t('sendButtonText')}
-				icon={isPending ? <FiLoader className="animate-spin" /> : <FaTelegramPlane />}
-				className="h-11! w-fit! self-start px-5 uppercase disabled:cursor-wait disabled:opacity-70"
-			/>
+			<Magnetic className="self-start">
+				<PrimaryButton
+					type="submit"
+					disabled={isPending}
+					text={isPending ? t('status.sending') : t('sendButtonText')}
+					icon={isPending ? <FiLoader className="animate-spin" /> : <FaTelegramPlane />}
+					className="h-11! w-fit! px-5 uppercase disabled:cursor-wait disabled:opacity-70"
+				/>
+			</Magnetic>
 			<div className="flex items-center gap-2">
 				{SOCIAL_MEDIA.map((media) => (
 					<SocialMedia key={`social-media-${media.name}`} {...media} />

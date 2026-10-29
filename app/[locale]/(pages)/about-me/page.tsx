@@ -6,6 +6,7 @@ import { pageMetadata } from '@/lib/seo';
 import { PAGES } from '@/lib/routes';
 import AvailabilityBadge from '@/components/common/AvailabilityBadge';
 import InfoItem from '@/components/pages/about-me/InfoItem';
+import Magnetic from '@/components/common/Magnetic';
 import PageHeader from '@/components/common/PageHeader';
 import Photo from '@/components/common/Photo';
 import Separator from '@/components/common/Separator';
@@ -15,6 +16,7 @@ import TimelineBlock from '@/components/pages/about-me/TimelineBlock';
 import PrimaryButtonLink from '@/components/common/PrimaryButtonLink';
 import { cvPath, EXPERIENCES } from '@/lib/constants';
 import { formatMonth } from '@/lib/experience';
+import { InfoItemType } from '@/lib/types';
 import { FaDownload } from 'react-icons/fa';
 
 export const generateMetadata = async (): Promise<Metadata> => {
@@ -33,7 +35,14 @@ const AboutPage = () => {
 	const locale = useLocale();
 	const t = useTranslations('AboutPage');
 
-	const personalInfo = ['name', 'lastName', 'phone', 'email', 'country', 'city'];
+	const personalInfo: { key: string; type?: InfoItemType['type'] }[] = [
+		{ key: 'name' },
+		{ key: 'lastName' },
+		{ key: 'phone', type: 'tel' },
+		{ key: 'email', type: 'email' },
+		{ key: 'country' },
+		{ key: 'city' },
+	];
 	const professionalInfo = [
 		'experience',
 		'openToWork',
@@ -61,11 +70,12 @@ const AboutPage = () => {
 				<div className="grid grid-cols-1 gap-x-8 gap-y-4 text-lg max-md:mt-5 lg:grid-cols-2">
 					<AvailabilityBadge className="col-span-full max-md:justify-self-center" />
 					<div className="col-span-1 flex flex-col gap-4">
-						{personalInfo.map((info, i) => (
+						{personalInfo.map(({ key, type }, i) => (
 							<InfoItem
 								key={`personal-info-${i}`}
-								label={t(`personalInfo.${info}`)}
-								value={t(`personalInfo.${info}Value`)}
+								label={t(`personalInfo.${key}`)}
+								value={t(`personalInfo.${key}Value`)}
+								type={type}
 							/>
 						))}
 					</div>
@@ -85,14 +95,16 @@ const AboutPage = () => {
 							);
 						})}
 					</div>
-					<PrimaryButtonLink
-						text={t('downloadCvButton')}
-						href={cvPath(locale)}
-						icon={<FaDownload />}
-						className="col-span-full w-fit! text-sm max-md:justify-self-center"
-						// newTab
-						download
-					/>
+					<Magnetic className="col-span-full w-fit max-md:justify-self-center">
+						<PrimaryButtonLink
+							text={t('downloadCvButton')}
+							href={cvPath(locale)}
+							icon={<FaDownload />}
+							className="w-fit! text-sm"
+							// newTab
+							download
+						/>
+					</Magnetic>
 				</div>
 			</div>
 			<Separator />

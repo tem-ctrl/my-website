@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { BsGithub } from 'react-icons/bs';
 import { FiArrowLeft, FiArrowRight, FiCheckCircle, FiExternalLink } from 'react-icons/fi';
+import Magnetic from '@/components/common/Magnetic';
 import Reveal from '@/components/common/Reveal';
 import { Link } from '@/i18n/navigation';
 import { PROJECTS, projectImageTransitionName } from '@/lib/constants';
@@ -92,26 +93,30 @@ const ProjectDetails = ({ params }: Pick<PageProps<'/[locale]/projects/[slug]'>,
 				<p className="max-w-3xl text-lg text-foreground/70 md:text-xl">{t('summary')}</p>
 				<div className="flex flex-wrap gap-4">
 					{project.previewLink && (
-						<a
-							href={project.previewLink}
-							target="_blank"
-							rel="noreferrer"
-							className="flex h-12 items-center gap-2 rounded-full bg-primary px-6 font-medium text-white shadow-lg shadow-primary/30 transition-shadow hover:shadow-xl hover:shadow-primary/40"
-						>
-							{p('visitSite')}
-							<FiExternalLink />
-						</a>
+						<Magnetic>
+							<a
+								href={project.previewLink}
+								target="_blank"
+								rel="noreferrer"
+								className="flex h-12 items-center gap-2 rounded-full bg-primary px-6 font-medium text-white shadow-lg shadow-primary/30 transition-shadow hover:shadow-xl hover:shadow-primary/40"
+							>
+								{p('visitSite')}
+								<FiExternalLink />
+							</a>
+						</Magnetic>
 					)}
 					{project.githubLink && (
-						<a
-							href={`https://github.com/tem-ctrl/${project.githubLink}`}
-							target="_blank"
-							rel="noreferrer"
-							className="flex h-12 items-center gap-2 rounded-full border border-primary/50 px-6 font-medium text-primary-text transition-colors hover:bg-primary hover:text-white"
-						>
-							<BsGithub />
-							{p('viewOnGithub')}
-						</a>
+						<Magnetic>
+							<a
+								href={`https://github.com/tem-ctrl/${project.githubLink}`}
+								target="_blank"
+								rel="noreferrer"
+								className="flex h-12 items-center gap-2 rounded-full border border-primary/50 px-6 font-medium text-primary-text transition-colors hover:bg-primary hover:text-white"
+							>
+								<BsGithub />
+								{p('viewOnGithub')}
+							</a>
+						</Magnetic>
 					)}
 				</div>
 			</Reveal>

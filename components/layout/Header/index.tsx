@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { FC, Suspense } from 'react';
 import { PAGES } from '@/lib/routes';
 import { Link } from '@/i18n/navigation';
-import HeaderNav from '@/components/layout/HeaderNav';
+import HeaderNav from '@/components/layout/Header/HeaderNav';
 
 const Header: FC = () => {
 	return (

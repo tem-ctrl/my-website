@@ -19,7 +19,8 @@ export interface InfoItemType {
 	className?: string;
 	label: string;
 	value: string;
-	isEmail?: boolean;
+	/** Like an input `type`: `email` and `tel` values render as `mailto:` / `tel:` links */
+	type?: 'text' | 'email' | 'tel';
 	isExperience?: boolean;
 }
 

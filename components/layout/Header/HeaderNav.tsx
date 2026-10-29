@@ -3,10 +3,10 @@
 import React, { FC, KeyboardEvent, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
-import LocaleSwitch from '@/components/layout/LocaleSwitch';
-import MenuToggle from '@/components/layout/MenuToggle';
-import NavLink from '@/components/layout/NavLink';
-import ThemeSwitcher from '@/components/layout/ThemeSwitcher';
+import LocaleSwitch from '@/components/layout/Header/LocaleSwitch';
+import MenuToggle from '@/components/layout/Header/MenuToggle';
+import NavLink from '@/components/layout/Header/NavLink';
+import ThemeSwitch from '@/components/layout/Header/ThemeSwitch';
 import { usePathname } from '@/i18n/navigation';
 import { PAGES } from '@/lib/routes';
 import { CustomLink } from '@/lib/types';
@@ -97,7 +97,7 @@ const HeaderNav: FC<HeaderNavProps> = ({ className = '' }) => {
 			</ul>
 
 			<div className="flex w-5 items-center justify-center">
-				<ThemeSwitcher />
+				<ThemeSwitch />
 			</div>
 			<LocaleSwitch />
 			<MenuToggle className="md:hidden" isOpen={showMenu} onToggle={() => setShowMenu(!showMenu)} />
