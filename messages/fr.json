@@ -13,7 +13,7 @@
 			"rolePrefix": "Développeur web spécialisé en",
 			"intro": "Basé à Bafoussam, au Cameroun, je transforme des maquettes en produits rapides, accessibles et maintenables, et j’ai dirigé des équipes front-end pour le faire.",
 			"viewWork": "Voir mes projets",
-			"downloadCv": "Télécharger mon CV",
+			"viewCv": "Voir mon CV",
 			"photoAlt": "Portrait de Gilbert Temgoua"
 		},
 		"stats": {
@@ -152,7 +152,7 @@
 			"place": "University of Dschang",
 			"description": "Licence Physique, option Electronique"
 		},
-		"downloadCvButton": "TELECHARGER MON CV",
+		"viewCvButton": "VOIR MON CV",
 		"skills": "Compétences",
 		"experienceTitle": "Expérience",
 		"educationTitle": "Formation",

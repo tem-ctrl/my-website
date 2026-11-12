@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import { CSSProperties, FC } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { FiArrowRight, FiDownload } from 'react-icons/fi';
+import { FiArrowRight, FiFileText } from 'react-icons/fi';
 import AvailabilityBadge from '@/components/common/AvailabilityBadge';
 import Magnetic from '@/components/common/Magnetic';
 import RotatingRole from '@/components/pages/home/RotatingRole';
 import { Link } from '@/i18n/navigation';
-import { cvPath } from '@/lib/constants';
+import { resumePath } from '@/lib/constants';
 import { PAGES } from '@/lib/routes';
 
 const ROLES = ['Next.js', 'React & TypeScript', 'Tailwind CSS', 'GraphQL APIs'];
@@ -78,12 +78,13 @@ const Hero: FC = () => {
 					</Magnetic>
 					<Magnetic>
 						<a
-							href={cvPath(locale)}
-							download
+							href={resumePath(locale)}
+							target="_blank"
+							rel="noopener noreferrer"
 							className="flex h-12 items-center gap-2 rounded-full border border-primary/50 px-6 font-medium text-primary-text transition-colors hover:bg-primary hover:text-white"
 						>
-							<FiDownload />
-							{t('downloadCv')}
+							<FiFileText />
+							{t('viewCv')}
 						</a>
 					</Magnetic>
 				</div>

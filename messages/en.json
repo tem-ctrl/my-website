@@ -13,7 +13,7 @@
 			"rolePrefix": "Web Developer specialized in",
 			"intro": "Based in Bafoussam, Cameroon, I turn designs into fast, accessible and maintainable products, and I’ve led front-end teams doing it.",
 			"viewWork": "View my work",
-			"downloadCv": "Download CV",
+			"viewCv": "View my CV",
 			"photoAlt": "Portrait of Gilbert Temgoua"
 		},
 		"stats": {
@@ -152,7 +152,7 @@
 			"place": "University of Dschang",
 			"description": "Bachelor degree in Physics (major: Electronics)"
 		},
-		"downloadCvButton": "DOWNLOAD MY CV",
+		"viewCvButton": "VIEW MY CV",
 		"skills": "skills",
 		"experienceTitle": "Experience",
 		"educationTitle": "Education",

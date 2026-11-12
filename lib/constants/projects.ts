@@ -19,6 +19,7 @@ export const PROJECTS: Project[] = [
 			'GitHub Actions',
 			'NGINX',
 			'Vitest',
+			'Fumadocs',
 		],
 	},
 	{
@@ -27,7 +28,7 @@ export const PROJECTS: Project[] = [
 		image: 'seriesaddict.png',
 		previewLink: 'https://seriesaddict.fr/',
 		type: 'professional',
-		technologies: ['NextJs', 'TypeScript', 'HTML', 'CSS', 'SCSS', 'REST APIs'],
+		technologies: ['NextJs', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'REST APIs'],
 	},
 	{
 		slug: 'retrouve-moi',
