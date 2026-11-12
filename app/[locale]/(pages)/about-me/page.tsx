@@ -14,10 +14,10 @@ import TimelineItem from '@/components/pages/about-me/TimelineItem';
 import SkillGroups from '@/components/pages/about-me/SkillGroups';
 import TimelineBlock from '@/components/pages/about-me/TimelineBlock';
 import PrimaryButtonLink from '@/components/common/PrimaryButtonLink';
-import { cvPath, EXPERIENCES } from '@/lib/constants';
+import { resumePath, EXPERIENCES } from '@/lib/constants';
 import { formatMonth } from '@/lib/experience';
 import { InfoItemType } from '@/lib/types';
-import { FaDownload } from 'react-icons/fa';
+import { FaFileAlt } from 'react-icons/fa';
 
 export const generateMetadata = async (): Promise<Metadata> => {
 	const locale = await getLocale();
@@ -97,12 +97,11 @@ const AboutPage = () => {
 					</div>
 					<Magnetic className="col-span-full w-fit max-md:justify-self-center">
 						<PrimaryButtonLink
-							text={t('downloadCvButton')}
-							href={cvPath(locale)}
-							icon={<FaDownload />}
+							text={t('viewCvButton')}
+							href={resumePath(locale)}
+							icon={<FaFileAlt />}
 							className="w-fit! text-sm"
-							// newTab
-							download
+							newTab
 						/>
 					</Magnetic>
 				</div>

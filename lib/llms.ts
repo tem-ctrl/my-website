@@ -6,7 +6,7 @@ import {
 	PROJECTS,
 	SKILL_GROUPS,
 	SOCIAL_MEDIA,
-	cvPath,
+	resumePath,
 	SITE_URL,
 } from '@/lib/constants';
 import { formatDuration, formatMonth, monthsOfExperience } from '@/lib/experience';
@@ -103,8 +103,8 @@ export const buildLlmsTxt = async () => {
 		'',
 		'## Optional',
 		'',
-		`- [Resume (PDF, English)](${SITE_URL}${cvPath('en')})`,
-		`- [Resume (PDF, French)](${SITE_URL}${cvPath('fr')})`,
+		`- [Resume (PDF, English)](${SITE_URL}${resumePath('en')})`,
+		`- [Resume (PDF, French)](${SITE_URL}${resumePath('fr')})`,
 		...publicProfiles(),
 		'',
 	].join('\n');

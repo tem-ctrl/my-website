@@ -31,6 +31,7 @@ const PrimaryButtonLink = ({
 			href={href}
 			{...restProps}
 			target={blank ? '_blank' : '_self'}
+			rel={blank ? 'noopener noreferrer' : restProps.rel}
 		>
 			{!!icon && <span>{icon}</span>}
 			<span>
